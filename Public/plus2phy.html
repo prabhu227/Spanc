@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore +2 Science courses including Physics, Chemistry, and Biology. Learn more about the best science equipment for your studies." />
+    <meta name="keywords" content="Science Courses, +2 Physics, Chemistry, Biology, Science Equipment, Educational Tools" />
+    <meta name="author" content="Your Name or Company" />
+    <title>+2 Science Courses</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+
+      /* Custom style to remove blue link color */
+      a {
+        text-decoration: none;
+        color: inherit; /* Inherit the color of the parent element */
+      }
+
+      .subject-card {
+        height: 180px;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .subject-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .subject-card h4 {
+        font-weight: bold;
+      }
+
+      /* Adjust AOS animation */
+      [data-aos="zoom-in"] {
+        opacity: 0;
+        transition: opacity 1s ease-out;
+      }
+
+      /* For a smooth fading in effect */
+      [data-aos="zoom-in"].aos-animate {
+        opacity: 1;
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="text-center mb-5" data-aos="fade-down">
+        <h1 class="display-5">+2 Science Courses</h1>
+        <p>Select a stream to explore more about the courses and the required science equipment.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1500">
+          <a href="physics-equipment.html">
+            <div class="bg-white p-4 text-center subject-card">
+              <h4>Physics</h4>
+              <p>Explore core concepts and experiments in Physics</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1500">
+          <a href="chemistry-biology-equipment.html">
+            <div class="bg-white p-4 text-center subject-card">
+              <h4>Chemistry and Biology</h4>
+              <p>Atoms, reactions, biology, and the periodic world</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <!-- AOS + Bootstrap -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
