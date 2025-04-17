@@ -23,7 +23,7 @@
     />
     <style>
       .card-img-top {
-        height: 250px;
+        height: 200px;
         object-fit: contain;
         padding: 10px;
       }
@@ -47,6 +47,25 @@
       .fixed-btn {
         width: 150px;
       }
+
+      .card {
+        height: 100%;
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+
+      .card-title {
+        min-height: 50px;
+      }
+
+      .card-text {
+        min-height: 80px;
+      }
     </style>
   </head>
   <body>
@@ -66,19 +85,19 @@
             {
               name: "Inclined Plane 3",
               img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqDDsT8pJZgjjUkxwj8cM2kdqblbgZSw5qSQ&s",
-              desc: "60cm long, fitted with glass plate and clamping arrangement...",
+              desc: "60cm long, fitted with glass plate and clamping arrangement to change angle, provided with frictionless pully, metal roller, scale-pan and graduated arc.",
               link: "inclinedplane3.html",
             },
             {
               name: "Inertia Table",
               img: "https://4.imimg.com/data4/PK/GM/MY-2305490/inertia-table-optical-bench-ray-box-polarimeter.png",
-              desc: "Designed to study and demonstrate the moment of inertia.",
+              desc: "An aluminium disc of 150mm dia, accurately turned, supports three or more masses fitted into a groove concentric with the circumference, fitted with chuck & mirror, supported by steel .....",
               link: "inertia-table.html",
             },
             {
               name: "Torsion Pendulum",
               img: "https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-3-030-95596-0_2/MediaObjects/514724_1_En_2_Fig2_HTML.png",
-              desc: "Brass disc 125mm dia, 12mm thick for oscillation studies.",
+              desc: "A carefully turned brass disc 125mm dia and 12mm thickness is provided with split chuck in the centre. An aluminium ring of outside dia exactly 125mm has two pins which fit into two cavities of the disc.",
               link: "torsion-pendulum.html",
             },
             {
@@ -89,27 +108,327 @@
             },
             {
               name: "Simple Pendulum Stand",
-              img: "The apparatus consists of heavy metal base 9X6, iron rod, one set of clamp & boss-head, split rubber cork and 1" ,
+              img: "https://spancotek.in/wp-content/uploads/2024/04/Simple-Pendulum-Stand.webp",
+              desc: 'The apparatus consists of heavy metal base 9X6, iron rod, one set of clamp & boss-head, split rubber cork and 1".',
               link: "Simple-Pendulum-Stand.html",
             },
-
             {
-              name: "Compound Bar Pendulumd",
-              img: "    https://5.imimg.com/data5/SELLER/Default/2024/9/448645912/UK/BU/YR/593063/bar-pendulum-compound-pendulum-for-physics-laboratory-1000x1000.png",
+              name: "Compound Bar Pendulum",
+              img: "https://5.imimg.com/data5/SELLER/Default/2024/9/448645912/UK/BU/YR/593063/bar-pendulum-compound-pendulum-for-physics-laboratory-1000x1000.png",
               desc: "To study variation of time with length for a compound pendulum. A powder coated steel bar 100x2.5cms bored at every 5cms and provided with 2 removable knife edges.",
               link: "Compound-Bar-Penduluml.html",
             },
-        
+            {
+              name: "Young's Modulus App",
+              img: "https://m.media-amazon.com/images/I/31b-+pLDMAL._AC_UF1000,1000_QL80_.jpg",
+              desc: "To study variation of time with length for a compound pendulum. A powder coated steel bar 100x2.5cms bored at every 5cms and provided with 2 removable knife edges.",
+              link: "Young's-Modulus-App.html",
+            },
+            {
+              name: "Parallelogram of Forces App",
+              img: "https://5.imimg.com/data5/AQ/GW/MY-2271920/parallelogram-of-force-app-wall-type.jpg",
+              desc: "To study variation of time with length for a compound pendulum. A powder coated steel bar 100x2.5cms bored at every 5cms and provided with 2 removable knife edges.",
+              link: "parallelogram.html",
+            },
+            {
+              name: "Rising Table (Slow Motion Stand)",
+              img: "https://5.imimg.com/data5/SELLER/Default/2024/4/413757167/VA/SN/ZX/27574198/rising-table-with-capilliary-tube-500x500.jpg",
+              desc: "A machine cast aluminium table 10cm dia having a stem of 12cm can be lowered or raised to desired height and it can be tightened with a thumb screw......",
+              link: "rising-table.html",
+            },
+            {
+              name: "Jaeger's Surface Tension App",
+              img: "https://5.imimg.com/data5/SELLER/Default/2024/12/473202636/NO/WU/HI/593063/jaeger-s-surface-tension-apparatus-500x500.png",
+              desc: "This method is suitable for the purpose of studying the variation of surface tension with concentration of solution of common salt in water.....",
+              link: "jaeger-surface.html",
+            },
+            {
+              name: "Viscosity App. Stoke's Method",
+              img: "https://5.imimg.com/data5/SELLER/Default/2024/8/442717552/MX/GY/ZZ/593063/viscosity-apparatus-stokes-method.png",
+              desc: "The instrument is based on principle of fall of spherical ball through liquid. This instrument is used to determine.....",
+              link: "viscosity.html",
+            },
+            {
+              name: "Sonometer",
+              img: "https://5.imimg.com/data5/UZ/AR/ZU/SELLER-76817807/sonometer-wooden-500x500.PNG",
+              desc: "Consists of a wooden box one meter long with meter scales on both edges of box, provided with two wooden riders and 3 different wires each 100cm long attached to a fixed bridge. Pully and fixed sc...",
+              link: "snometer.html",
+            },
+            {
+              name: "Wave Motion Apparatus",
+              img: "https://www.eiscolabs.com/cdn/shop/products/xgtfw5zn40chwphu5jh5_1200x1492.jpg?v=1595509053",
+              desc: "With heavy discs supporting a series of rods. On revolving the handle, motion is transmitted from one rod to next appearing as a travelling wave, fitted on nicely polished wooden base.....",
+              link: "wave-motion.html",
+            },
+            {
+              name: "Tuning Fork Welch Type Medium",
+              img: "https://5.imimg.com/data5/SELLER/Default/2024/8/447093517/AF/TU/OI/136978674/tuning-fork-welch-type-set-of-8.jpg",
+              desc: "Meant for use by students in general lab experiments. The frequency of each fork is mentioned at the base of the fork bright chrome plated set of 8 in velvet case......",
+              link: "tuning-fork-medium.html",
+            },
+            {
+              name: "Resonance Apparatus",
+              img: "https://5.imimg.com/data5/SELLER/Default/2022/6/OQ/GR/ZP/33935950/resonance-apparatus-with-25mm-s-s-pipe.png",
+              desc: "To determine the velocity of sound, it consists of a vertical wooden plank which carries a wooden scale at one side, a brass tube on another and a transparent tube in .....",
+              link: "resonance.html",
+            },
+            {
+              name: "Resistance In Series or Parallel Kit(any one)",
+              img: "https://scientifickart.com/wp-content/uploads/2023/06/OM-566-Resistance-in-Series-Parallel-Apparatus.png",
+              desc: "The kit consists of one circuit board, one rheostat, one voltmeter, one ammeter (MR-80) and patch cords.......",
+              link: "resistance-in-series.html",
+            },
+            {
+              name: "Ohm's Law Apparatus",
+              img: "https://m.media-amazon.com/images/I/61kXc3uX8DL.jpg",
+              desc: "Same as 1257 but fitted with step down transformer giving 1.5, 3, 4.5, 6 volt output,provided with lead wire and a transparent resistance coil.......",
+              link: "ohms-law.html",
+            },
+            {
+              name: "Triode Valve Characteristic App.",
+              img: "https://2.imimg.com/data2/IX/US/MY-185822/triode-valve-characteristics-apparatus.jpg",
+              desc: "With built-in stabilized power supply, workable on 230 volts AC, fitted with triode valve on front panel, with two MO 65 moving coil......",
+              link: "triod-value.html",
+            },
+            {
+              name: "PN Junction Diode Characteristic Apperatus",
+              img: "https://scientifickart.com/wp-content/uploads/2023/06/OM-577-PN-Junction-Diode-Characteristics-Apparatus-2-Round-Mtr.jpeg",
+              desc: "With built-in stabilized power supply, workable on 230 volts AC, fitted with triode valve on front panel, with two MO 65 moving coil......",
+              link: "pn-junction.html",
+            },
+            {
+              name: "Zener Diode Characteristic Apperatus",
+              img: "https://5.imimg.com/data5/SELLER/Default/2024/7/433177591/AC/WC/HW/6462362/zener-diode-characteristics-apparatus.png",
+              desc: "With built-in stabilised power supply and two MO 65 moving coil meters 15V and 100mA are used, workable on 230 volts AC, fitted with zener diode 8.2 volts, connections of zener diode and meters are brought out on the panel.......",
+              link: "zener-diode.html",
+            },
+            {
+              name: "Transistor Characteristic Apperatus",
+              img: "https://www.almicroinstruments.com/wp-content/uploads/2022/06/pel-3.jpg",
+              desc: "With built-in dual stabilized continuosly variable power supply, workable on 230 volts AC, fitted with PNP transistor AC 128 on front panel, different terminals of transistor and ......",
+              link: "transistor-character.html",
+            },
+            {
+              name: "Half Wave/Full Wave & Bridge Rectifier",
+              img: "https://5.imimg.com/data5/SELLER/Default/2023/8/339331728/LS/YJ/YK/16321775/half-wave-full-wave-bridge-rectifier-apparatus.jpg",
+              desc: "To study Efficiency & Ripple factor in Half wave, Full wave & Bridge rectifier application of load & filters, instrument comprises of AC power supply, two MO 65 moving coil meters 20V and 250 mA to measur......",
+              link: "halfwave-fullwave.html",
+            },
+            {
+              name: "Verification of KCL and KVL",
+              img: "https://5.imimg.com/data5/MU/OM/MY-4787177/verification-of-kirchoff-27s-law-kcl-2f-kvl-500x500.jpeg",
+              desc: "Instrument comprises of DC regulated power supply 0-3 V/250mA, two MO 65 moving coil meters SX, 250mA for voltage & current measurement, combination of resistances mounted on front panel.......",
+              link: "verify-kcl-kvl.html",
+            },
+            {
+              name: "Leclanche Cell Electronic",
+              img: "https://samtechlabs.com/wp-content/uploads/2024/09/img_8462.jpeg.webp",
+              desc: "The Leclanché Cell Electronic model demonstrates the principles of electrochemical reactions and battery operation. It consists of carbon and zinc electrodes immersed in an electrolyte......",
+              link: "leclanche-cell.html",
+            },
+            {
+              name: "Solar Cell Characteristics Apparatus",
+              img: "https://5.imimg.com/data5/SELLER/Default/2024/3/396671285/XA/NP/LN/72678821/solar-cell-characterization-1-1000x1000.png",
+              desc: "To draw VI characteristics of solar cell, instrument comprises of moving coil meters fitted on panel with power supply, lamp house, solar cell mounted, supplied with wooden plank.......",
+              link: "solar-cell-characteristics.html",
+            },
+            {
+              name: "Daniel Cell Electronic",
+              img: "https://5.imimg.com/data5/SELLER/Default/2024/2/383907713/GT/OH/OT/1453678/daniel-cell-substitute.jpeg",
+              desc: " The Daniel Cell Electronic is a model voltaic cell used to demonstrate the generation of electrical energy through chemical reactions. This apparatus is ideal for illustrating the principles of electrochemistry and electrode ......",
+              link: "daniel-cell.html",
+            },
+            {
+              name: "IC Regulated Battery Eliminator",
+              img: "https://scientifickart.com/wp-content/uploads/2023/06/OM-509-IC-Regulated-Battery-Eliminators-2-12V_3A-DC-Large-Plastic-Box.jpg",
+              desc: "A useful device with integrated circuits and heavy duty transformer. Output voltage is provided through a selector switch, with jewel light, safety fuse and lock.......",
+              link: "ic-regulatorbattery.html",
+            },
+            {
+              name: "Micro-Ammeter",
+              img: "https://5.imimg.com/data5/SELLER/Default/2022/6/PR/MV/SM/20193325/milli-ammeter-500x500.png",
+              desc: "The Micro-Ammeter is a precise analog instrument designed to measure very small electric currents, typically in microamperes (μA). Ideal for experiments requiring.......",
+              link: "micro-ammeter.html",
+            },
+            {
+              name: "Galvanometer",
+              img: "https://aravlabsolutions.com/wp-content/uploads/2023/01/66.png.png",
+              desc: "DC mounted in beautiful ABS-Plastic stand with accuracy ± 2.0% F.S.D. with lock type terminals. Ranges available 30-0-30, 50- 0-50........",
+              link: "galvanometer.html",
+            },
+            {
+              name: "Voltmeter",
+              img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj5OLBpuVhF7zzy1xAqvwHJWQvROIH8GT3tQ&s",
+              desc: "DC mounted in beautiful ABS-Plastic stand accuracy +2.0% F.S.D. with lock type terminals. All common ranges 3V, 5V, 10V available........",
+              link: "voltmeter.html",
+            },
+            {
+              name: "Rheostat 4.4 cm Dia Porcelain Tube",
+              img: "https://m.media-amazon.com/images/I/61ehWUwBWkL.jpg",
+              desc: "Wound with heavily oxidised eureka wire and mounted on duco painted metal feet. Provided with laminated brush contacts of phosphorous bronze strips, with brash C.P. guide rod and 3 terminals.........",
+              link: "rheostat-tube.html",
+            },
+            {
+              name: "Tangent Galvanometer",
+              img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSed7tAJT1huU0XU1kOj5stMQ998QdhrOVaBA&s",
+              desc: "Having standard winding of 2-5-50 or 2, 50, 500. The bakelite ring with windings is mounted on bakelite base with four terminals. No. of turns is marked between the terminals. The whole........",
+              link: "tangent-galvanometer.html",
+            },
+            {
+  name: "Tangent Galvanometer Export Quality",
+  img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSed7tAJT1huU0XU1kOj5stMQ998QdhrOVaBA&s",
+  desc: "Having standard winding of 2-5-50 or 2, 50, 500. The bakelite ring with windings is mounted on bakelite base with four terminals. No. of turns is marked between the terminals. The whole assembly rotates on a non magnetic tripod base..",
+  link: "tangentgalvanometer.html"
+},
+{
+  name: "Spectrometer Standard",
+  img: "https://m.media-amazon.com/images/I/316psxYZjhL._AC_UF1000,1000_QL80_.jpg",
+  desc: "A basic instrument for performing spectroscopy experiments, designed to give best possible results, mounted on stable cast iron base, protracted scale 150mm is divided on precision machine, vernier reading 1 min., telescope is fitted with 25mm dia. and 178mm focal.....",
+  link: "spectrometer-standard.html"
+},
+{
+  name: "Optical Bench Double Rod",
+  img: "https://samtechlabs.com/wp-content/uploads/2024/08/img_8053.jpeg",
+  desc: "Consists of two 1 meter long metal rods, one of the rods evenly divided in mm, supported on heavy cast iron feet. Provided with four heavy metal slider and accessories. Two of the sliders have transverse ....",
+  link: "optical-bench.html"
+},
+{
+  name: "Travelling Microscope SSA-41",
+  img: "https://5.imimg.com/data5/SELLER/Default/2024/7/438897724/SJ/BO/HT/222639947/sb-medics-two-motion-travelling-microscope.jpg",
+  desc: "The Travelling Microscope SSA-41 is a precise measuring instrument used in physics laboratories to measure small lengths and dimensions with high accuracy. Ideal for experiments involving refractive index, surface tension, and interference patterns in optics and mechanics.",
+  link: "travelling-microscope.html"
+},
+{
+  name: "Glass Slab",
+  img: "https://5.imimg.com/data5/SELLER/Default/2025/4/500615091/TZ/QV/IN/54841566/rectangular-glass-slab-size-100x60x20mm.png",
+  desc: "Rectangular glass slab for refraction and optics practicals. Optical-grade material with polished edges.",
+  link: "glass-slab.html"
+},
+{
+  name: "Glass Prism",
+  img: "https://static1.industrybuying.com/products/lab-supplies/lab-science-models/physics-model/LAB.PHY.521895148_1696341723934.webp",
+  desc: "Equilateral glass prism for dispersion and refractive index experiments. Standard optical glass.",
+  link: "glass-prism.html"
+},
+{
+  name: "Physical Balance",
+  img: "https://www.microteknik.com/wp-content/uploads/2019/03/Physical-Balance-With-Weight.jpg",
+  desc: "With three stone agate, capacity 250gm. Sensitivity 5mg. On wooden base with lwvwlling screws,fitted in glass showcase..",
+  link: "physical-balance.html"
+},
+{
+  name: "Spectrometer Prism",
+  img: "spectrometer-prism.jpg",
+  desc: "Optical glass prism used in conjunction with spectrometer for spectrum analysis.",
+  link: "spectrometer-prism.html"
+},
+{
+  name: "Analytical Balance",
+  img: "analytical-balance.jpg",
+  desc: "High-sensitivity analytical balance for chemistry and physics applications. Fine adjustment knobs.",
+  link: "analytical-balance.html"
+},
+{
+  name: "Potentiometer 10 Wire",
+  img: "potentiometer.jpg",
+  desc: "10-wire potentiometer for EMF comparison and internal resistance experiments.",
+  link: "potentiometer.html"
+},
+{
+  name: "Meter Bridge",
+  img: "meter-bridge.jpg",
+  desc: "Bridge-type resistance measurement device with scale and jockey for Wheatstone bridge experiments.",
+  link: "meter-bridge.html"
+},
+{
+  name: "Resistance Box",
+  img: "resistance-box.jpg",
+  desc: "High-quality resistance box with plug key terminals. Precision resistance values marked clearly.",
+  link: "resistance-box.html"
+},
+{
+  name: "Resistance Box Plug Type (High Value)",
+  img: "resistance-box-high.jpg",
+  desc: "High-value resistance plug box for advanced electric circuit measurements and experiments.",
+  link: "resistance-box-high.html"
+},
+{
+  name: "Resistance Coil",
+  img: "resistance-coil.jpg",
+  desc: "Insulated resistance coil wound on bobbin. Used for circuit experiments and load testing.",
+  link: "resistance-coil.html"
+},
+{
+  name: "High Resistance Coil",
+  img: "high-resistance-coil.jpg",
+  desc: "High-resistance wire coil for Ohm's law and circuit experiments with negligible heating.",
+  link: "high-resistance-coil.html"
+},
+{
+  name: "Vernier Calipers",
+  img: "vernier-calipers.jpg",
+  desc: "Standard metal vernier calipers with 0.1 mm least count for precision length measurements.",
+  link: "vernier-calipers.html"
+},
+{
+  name: "Micrometer Screw Gauge",
+  img: "micrometer.jpg",
+  desc: "0.01 mm precision micrometer screw gauge with ratchet and lock. Heavy-duty finish.",
+  link: "micrometer.html"
+},
+{
+  name: "Spherometer Pye Type Double Disc",
+  img: "spherometer.jpg",
+  desc: "Spherometer with double disc arrangement for accurate measurement of curvature of lenses.",
+  link: "spherometer.html"
+},
+{
+  name: "Concave and Convex Mirror",
+  img: "concave-convex-mirror.jpg",
+  desc: "Optical grade concave and convex mirrors for reflection and focal length experiments.",
+  link: "concave-convex-mirror.html"
+},
+{
+  name: "Double Convex Lens",
+  img: "double-convex-lens.jpg",
+  desc: "High-clarity convex lenses for optical bench setups and lens formula verification.",
+  link: "double-convex-lens.html"
+},
+{
+  name: "Magnifiers",
+  img: "magnifiers.jpg",
+  desc: "Standard hand-held magnifiers used in microscopy and optical observation.",
+  link: "magnifiers.html"
+},
+{
+  name: "Double Concave Lens",
+  img: "double-concave-lens.jpg",
+  desc: "Concave lenses for diverging ray experiments and focal length determination.",
+  link: "double-concave-lens.html"
+},
+{
+  name: "Digital Multimeter",
+  img: "digital-multimeter.jpg",
+  desc: "Multi-functional digital multimeter for voltage, current, resistance and continuity testing.",
+  link: "digital-multimeter.html"
+},
+{
+  name: "Half Deflection Method (Galvanometer Figure of Merit)",
+  img: "half-deflection-method.jpg",
+  desc: "Used to determine figure of merit of a galvanometer via half-deflection principle.",
+  link: "half-deflection.html"
+}
+
           ];
 
           document.write(
             equipment
               .map(
                 (item) => `
-              <div class="col-md-4">
-                <div class="card hover-shadow" style="cursor: pointer">
+              <div class="col-md-4 d-flex">
+                <div class="card hover-shadow w-100" style="cursor: pointer">
                   <img src="${item.img}" class="card-img-top" alt="${item.name}" />
-                  <div class="card-body d-flex flex-column justify-content-between">
+                  <div class="card-body">
                     <div>
                       <h5 class="card-title">${item.name}</h5>
                       <p class="card-text">${item.desc}</p>
