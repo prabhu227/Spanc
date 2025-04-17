@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us Section</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+  <style>
+    /* Animation */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animated-section {
+      animation: fadeInUp 1s ease-in-out both;
+    }
+
+    .about-subtitle {
+      color: #000;
+      font-weight: 700;
+    }
+
+    .about-title {
+      font-weight: 800;
+      font-size: 2.5rem;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      color: #6c757d;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 576px) {
+      .about-title {
+        font-size: 2rem;
+      }
+
+      .about-text {
+        font-size: 1rem;
+      }
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .mission-text {
+      animation: slideInLeft 1s ease-out forwards;
+    }
+
+    .mission-img {
+      animation: slideInRight 1s ease-out forwards;
+      box-shadow:  rgba(0,0,0,0.1);
+      border-radius: 12px;
+    }
+
+    .mission-heading {
+      font-weight: 700;
+      color: #1e2430;
+    }
+
+    .mission-paragraph {
+      color: #6c757d;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .mission-img {
+        margin-top: 1rem;
+      }
+    }
+
+    .choose-card {
+      border: none;
+      border-radius: 16px;
+      background: #fff;
+      padding: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+    .choose-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    .choose-icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #000;
+    }
+    .choose-heading {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    .choose-text {
+      color: #6c757d;
+      font-size: 0.95rem;
+    }
+    body {
+      background-color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .section-title {
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #1c1c1e;
+    }
+    .team-member {
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 20px;
+    }
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    .team-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    .team-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .team-role {
+      font-weight: 500;
+      color: #343a40;
+      margin-bottom: 10px;
+    }
+    .team-desc {
+      color: #6c757d;
+      font-size: 0.95rem;
+    }
+
+    .cta-section {
+      background-color: #f9f1f1;
+      color: #080808;
+      padding: 60px 0;
+    }
+
+    .cta-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .cta-btn {
+      padding: 12px 24px;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-light:hover {
+      background-color: #fdf6f6;
+      color: #0c0c0c;
+    }
+
+    @media (max-width: 768px) {
+      .cta-actions {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .cta-text {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+ <!-- Nav bar -->  
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <span style="font-weight:bold; font-size: 20px;">
+        <span style="color:blue;">LOGO</span> Spanco Tek
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav me-3">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <a href="#" class="btn btn-dark">Get Quote</a>
+    </div>
+  </nav>
+
+<section class="py-5 text-center bg-light">
+  <div class="container animated-section">
+    <h2 class="about-subtitle">About Us</h2>
+    <h1 class="about-title mb-4">We Serve Technology</h1>
+    <p class="about-text">
+      Pioneering laboratory solutions with cutting-edge technology and unparalleled expertise since 2010.
+      We're committed to advancing scientific discovery through innovative equipment and exceptional service.
+    </p>
+  </div>
+
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <!-- Text Column -->
+      <div class="col-md-6 mission-text">
+        <h2 class="mission-heading mb-4">Our Mission</h2>
+        <p class="mission-paragraph">
+          At LabTech Solutions, we're dedicated to empowering scientific progress through state-of-the-art laboratory equipment.
+          With over a decade of experience, we understand the critical nature of precision and reliability in research and testing environments.
+        </p>
+        <p class="mission-paragraph">
+          Our commitment to quality, innovation, and customer satisfaction has made us a trusted partner for research institutions, universities,
+          and industrial laboratories worldwide.
+        </p>
+      </div>
+
+      <!-- Image Column -->
+      <div class="col-md-6 text-center mission-img">
+        <img src="https://png.pngtree.com/thumb_back/fh260/background/20220312/pngtree-laboratory-utensils-for-scientific-research-image_1061390.jpg" class="img-fluid" alt="Lab Equipment">
+        <!-- Replace image URL with your own if needed -->
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Why Choose Us</h2>
+      <p class="text-muted">Discover the advantages that make us the preferred choice for laboratory equipment solutions.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="choose-card h-100 text-center">
+          <div class="choose-icon"><i class="bi bi-award-fill"></i></div>
+          <div class="choose-heading">Premium Quality</div>
+          <p class="choose-text">Industry-leading quality standards ensuring reliable and precise equipment performance.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="choose-card h-100 text-center">
+          <div class="choose-icon"><i class="bi bi-truck"></i></div>
+          <div class="choose-heading">Fast Delivery</div>
+          <p class="choose-text">Swift and secure delivery services to get your equipment when you need it.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="choose-card h-100 text-center">
+          <div class="choose-icon"><i class="bi bi-clock-history"></i></div>
+          <div class="choose-heading">10+ Years Experience</div>
+          <p class="choose-text">A decade of expertise in providing cutting-edge laboratory solutions.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="choose-card h-100 text-center">
+          <div class="choose-icon"><i class="bi bi-headset"></i></div>
+          <div class="choose-heading">24/7 Support</div>
+          <p class="choose-text">Round-the-clock technical support and customer service assistance.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="choose-card h-100 text-center">
+          <div class="choose-icon"><i class="bi bi-patch-check-fill"></i></div>
+          <div class="choose-heading">Certified Products</div>
+          <p class="choose-text">All equipment meets international quality and safety standards.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="choose-card h-100 text-center">
+          <div class="choose-icon"><i class="bi bi-tools"></i></div>
+          <div class="choose-heading">Maintenance Service</div>
+          <p class="choose-text">Professional maintenance and calibration services for optimal performance.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Our Team</h2>
+        <p class="text-muted">Meet the experts behind our success</p>
+      </div>
+      
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+          <div class="team-member">
+            <img src="https://www.uicacs.com/wp-content/uploads/2021/10/single-team.jpg" alt="Robert Chen" class="team-img">
+            <div class="team-name">Dr. Robert Chen</div>
+            <div class="team-role">Chief Executive Officer</div>
+            <p class="team-desc">25+ years of experience in laboratory equipment innovation and business leadership.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="team-member">
+            <img src="https://wfcsradio.com/wp-content/uploads/2019/08/team-member-01.jpg" alt="Sarah Thompson" class="team-img">
+            <div class="team-name">Dr. Sarah Thompson</div>
+            <div class="team-role">Head of Research & Development</div>
+            <p class="team-desc">PhD in Biomedical Engineering with extensive research experience.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="team-member">
+            <img src="https://getwpteam.com/wp-content/uploads/2022/02/19.png" alt="Michael Foster" class="team-img">
+            <div class="team-name">Michael Foster</div>
+            <div class="team-role">Technical Director</div>
+            <p class="team-desc">15+ years specializing in laboratory equipment calibration and maintenance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container py-3">
+  <div class="row align-items-center justify-content-between">
+    <!-- Text -->
+    <div class="col-md-6 cta-text">
+      <h2>Ready to see our products?<br>Get in touch with us today.</h2>
+    </div>
+    
+    <!-- Buttons -->
+    <div class="col-md-6 text-md-end text-center cta-actions">
+      <a href="#products" class="btn btn-light cta-btn me-3">Explore Products</a>
+      <a href="#contact" class="btn btn-light cta-btn">Contact Us</a>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spanco Tek</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    .hero {
+      background:url('./assets//images/bg\ image.jpg') no-repeat center center/cover;
+     
+      height: 100vh;
+      position: relative;
+      color: white;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .hero-content {
+    
+      position: relative;
+      z-index: 2;
+      padding-top: 10%;
+    }
+    .btn-dark-custom {
+      background-color: #000;
+      border: none;
+    }
+    .navbar-brand span {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .category-card {
+    
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .category-card img {
+      height: 220px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .category-body h5 {
+      font-weight: 700;
+    }
+
+    .view-link {
+      font-weight: 600;
+      color: #000;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .view-link:hover {
+      color: #007bff;
+    }
+
+    .view-link i {
+      transition: transform 0.3s;
+    }
+
+    .view-link:hover i {
+      transform: translateX(4px);
+    }
+
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .icon-box {
+      background-color: #e9ecef;
+      border-radius: 12px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .choose-card {
+      border: none;
+      border-radius: 12px;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .choose-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .choose-card h5 {
+      font-weight: 700;
+      color: #111;
+    }
+
+    .choose-card p {
+      color: #555;
+    }
+
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .testimonial-card {
+      border: none;
+      border-radius: 16px;
+      background-color: #040404;
+      padding: 2rem;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .stars i {
+      color: #fccc1f;
+    }
+
+    .client-info {
+      display: flex;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+
+    .client-info img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 1rem;
+    }
+
+    .client-name {
+      font-weight: 700;
+    }
+
+    .client-role {
+      margin: 0;
+      color: #6c757d;
+    }
+    .navbar img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+
+
+
+  
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3">
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <span style="font-weight:bold; font-size: 5px;">
+      <img src="./assets/images/spanco logo.png" alt="Logo" />
+    </span>
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav me-3">
+      <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+      <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+    </ul>
+    <a href="#" class="btn btn-dark">Get Quote</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="container hero-content">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="display-4 fw-bold">Advanced Lab Equipment for Modern Research</h1>
+        <p class="lead mt-3">
+          Discover our comprehensive range of precision instruments and equipment designed for scientific excellence.
+        </p>
+        <div class="mt-4">
+          <a href="#" class="btn btn-dark-custom btn-lg me-3">Explore Products</a>
+          <a href="#" class="btn btn-light btn-lg">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+
+
+
+<div class="bg-gradient-custom p-5">
+
+  <div class="container text-center py-5">
+    <h2 class="fw-bold">Featured Categories</h2>
+    <p class="text-muted mb-4">Browse our extensive collection of laboratory equipment</p>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card category-card">
+          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEA8QEhAWFRAWEBUVFQ8VFxAQFRUQFRUWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGi0dHyUtLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBEwMBEQACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAABAAIDBAUGB//EAEEQAAEDAgQEAwUFBgUDBQAAAAEAAhEDBAUSITEGQVFhEyJxMkKBkaEUUrHB0QcVI2Jy8BYkM5KigrLxZHOj0uH/xAAbAQEBAQEBAQEBAAAAAAAAAAAAAQIDBAUGB//EADgRAAICAQMBBQYDBwQDAAAAAAABAhEDBBIhMQUTQVGhFCIyYXGRgeHwFSNCUrHB0QYWU/EzNEP/2gAMAwEAAhEDEQA/APZpVIKT0QBBQBQCJQCk9EA5AAoBSeiAIQBCAEnogCCeiAcoBFQAk9FQA1EoET6q1RLIi4oBjmTyQGZXovpnM3VvNvT0UPRGUZqpFyjTDgHQhxapjm2YnNGqlK7FvoSsoCZO6pB73QqBtNp3IQDXNzGCNFAUzamnUBZsTqFK5tHTfapmrqtHMWvRAOQEZJBQErah6KUCRrpUKOQFIPCEsdmQBzIBZlSWHMhQ5kAcyAMoBSgDKAKASAKAUqAY6orQInVCqSxqASAUIAgIBOCFKTXZH5fdOyHT4kXkOYkA3IgHwgIKJ8xQDLyp0Qoba8nQhQMuBUgkA14QBCAcwqAmUKc824H31CUPFfuqB32g9UIAXXcoCVt0qQeLsIAi4HVAPbXHVAPFYdUFjs/dBY4O7oWx4chbDmQEVR3dUgwIAoBFqAQb3QDghROCAEd0BWu6Mjvy9UNRdMdZVcze43QSVMmhDI4DugHOQEFIalAGtQnmgKxokIUtUHoQmjugBl7qAKoEgJG+qgPOnYHWG1V3xXGmbtDDZXTdqkpyOAF12OhVtikMF7dN3ZKWyUhDiOqDDqLvVb3Eoss4iPOm4fBTcNpIOI2cwQruJtJ6eOsPNXchRYZi7fvJaJROzFB94K2hRMzEh1QlE7cRQE9vfZjCoLZQo2VSEjSFCoJQCQopQBlAIBAB4QGYH5Kse678UOvxQ+hoZ+SHEcEKODkAGMgygJFANc0ICLLCoJWFAOKgBKoEgDKgMyFgALB0QA8MdEA00G9EKROsmHkFQNOHM+6FAQvwamfdCULI/wBw0/uhKLY13DzOiULK9XhsciUoFWrw28Dy1CFSGBiF5cWzgHHMwndZboqVnT8JXhqy4hdIOzDVHXBUEVXqqiGfhuJ56j2ZYg79VlO2z2ZtOseOMr6muqeUSAUIAgIByABCApYha5myPaGo9UN45bWKxhwDueyCcalReIQwNy9kA4BAFQChAAtHRABoVA5QAhUChAJAZoPZcwJAIlACeypQhAJAKeyAcCgHoAEoAZuyA4Lj6qCGt5lwhZkWJt8D2+WiCtw6GJdTqwey0CGsdCtIhHYW0S4jUozTk5dS58FkAc6EBUGJU/FFLMM5E5eyzuV0d/Z8nd95XBfWjgKexQBCARCAzmHw6hHuuMj1Q6P3o/QvB/ZDmEOQDpQAzdkAQUA5QDZ7KgIPZQCVA1xQCzdigM5cwJAJAJUokAkAUA4IAoBFAQ3NSGlAeY4vX8a7I5N0+Kw+pV0PReHaWWi0dguy6HM1w5UENU6qoEzCslMvHeIKVu3zGXHZg1JXOeSMOp9DRdn5dU/d6eZweLcV160gHw2dB7UdyvHPPKXyP1Wk7H0+Hlrc/mWuAbSo6v4xByQRnM6n81vTxe6zz9u5sccPdp8+R6YvafjgoBIBICK4ohwjnyPdCp0yG3qe6faCCSrkkp1QSQNxuhCdABAFAJAJAIlQCVACgEgM1cwDVAIIUSABVAtUAZQDggDqgCgMjiC6yU3HoFGDgcDo5nl53c6VlFken4cyGD0XY5k7jBVA2q7ZAZ+LYqaVJ794GyzOW1WerR4O/wAqgeb06Va7qktBc8nU8h8eQXzqlNn7nvMOkxVJ0kdngvA7Gw6uc7vu7NHw5r0w06XxcnwNX29OXu4VtXn4nW0LcMAa0AAcgvQuD4E5ym7k7ZOFTAUAigFqgCgKd/bkjMww8bdD2KG4SS69Chh983OWu8tbm06T3HUIaniaW6PKNhju6HIegGoBaoBwQAe2QgFBQAQBQGZK5lBKASAUoBSqBIBIB4KAcgASgOJ45voZk5uMLMioqcP0dG+oSKMyZ6Fajyj0XYyCqUBG/UIDB4lty5mQbvcB81zyq40fR7NyLHk3vwRuYHhjKFNrWN5anmSrGKiqRw1OqnqJ7pM01o84UAg5BYpQWEFAGUAkA0lAZuK4VTrDzDUbOGhB7FKT6m8eaeN3FmE6pdWx0Pi0h7rtHR2dz+KzUl05PWp6fN8a2PzXQ0sP4nov0cfDf91/l17HYpvXjwc56PIuY+8vkbdOu06gg+i0eZprqOD9Vm+SD1oCQBQDOaAKAyoXMokACgBCoEEAUAIQD2hAPlAR1joSgPNOKnGpcsYDoNSsN8lN7BaMFgW49TDO0boPguhDOqYrb6/x6f8Avb+q5e0Yv5l9z1rQal//ADl9iq7HbaDFxTkdHtKy9ThXO5G/2Zq/+N/Yqfv2gXNFSswEHSTup7Vhf8R1j2ZrEnWNmrT4ktIJNw2BuddE9qw/zIyuytZ07t+g4cT2Z2uGnWNMx1+ASWpxRdORf2Vq/HG/T/Iv8S22R9TxfI0tDjD9C72REKrUYnFyvhGP2ZqlNQ28u65Xh1FQ4ltnuY1tSS5wa3yvEuOg5KR1OKTST/qaydl6qEXKUeFy+UOGP25MBxJ191/L4L6XsWWrr1PC4tBfxBQbklx8zSQA1x0Bgz01SOiyybSXQiTC/iSgGucS6A3MTlOwgfmnsOW0uOXRaY2nxHRdqA/rsP1WnoMq8hTK9Piy3dmyh+hg6Rr81t9m5V1aDiw3PFVFha1zXy7bRv6pHs7LLo0NrYf35SfpkdvGuXn8VHoMi8USh17gjHTovFwyxySj0dGZ+6H0zNN7m9gTHy2U2LwOvtE38XP1Jad9cs3cHDuPzCbTG+D6r7F+2x3YPYR3GoUpk919GalpfU6nsu16c1A4tFtUyMhAHKgMslcyjc6AWZAKVQDMgFmQBQDwUAcwQFa/qQw+iMHnlMeJdPd0MLmupX0Oswyn5x6LrE5m9eO/hVI38N3zylWXws6Yl+8j9V/U8jDjJHIhfmpy5o/osY8GfhUxU/q/IfqtS+HjyLJ+878w4iHGtbnfzCfqmO3dmZNJJLz/ALGpSGjgfvDTtssJ9fqV+DRnYM8+GNffP5K5HUuCxVpN+Rq3ci3eOtejP/JerH/4pr6Hhm17Rjfyl/YfgxOagTyrt/7guemb3x+p01lPHNL+V/0Nahu7+p//AHFf0WPwr8D8NIirumswdKX4uJTH/F9f7GUHGTFCpHNrR9VYNbl9QupLh+w/o/JayBlLDPbr/wDvO/Ercn7qAMbH8S16Z6n4BZxS6lRq2/tN/rH4rnN8P6GWehFq/NGBjmhWyEFW3aUsGdd2MCQFWwVKVBzalMjR2bWPu81LOkE6fkdR4ihkLCgFKAyM65lBnQDc6AWdALOgDnQCzKge1yAeHIDKx+vlpu9FGDj+GmZnOd1JWYiZ2WFt866owbVWjma5vIgj5iFXyqLGW2SZxf8AgN8/64/2n9V8qXZrb+L0/M/Tx/1DGq7v1/Iitv2dlub/ADA1M+z2A69lt9nWq3ehP9xe833fr+Q+r+zvM5jjceyZHlH/ANkj2alfvehmX+oW6rH6/kWm8DRP8ef+kDb/AKkXZsf5vQn+4G/4PX8iK1/Z8xjQPtB3n2W7/NWXZsJP4mRf6hmlWxfcuO4KpFha+q8tzBxMtbBbt+K7Q0UIxcW27PPk7byympRilV/PqSW3CNu0ty1HEhwcBmadQZ5BIaLFBpqzOTtvUTi00uVXQt0uGqInzumST5m89ei+z7dkquD5Lm2Kpw7bgh7nEaRJeGzz+Ki1uRX8zO5gq4Da1GlmcO02DwfTZPbct2W2TUOH6AaIB23DnEQj12V+PoS2RUuGrZrnRuTJGd255p7dmrr6DcxXXD1q7Lm3B8sududNEWtzJ3Y3PzLFPAaII0On8z91HrcrXX0RNzIscxY03+HJaMgdmAJJkkcttvqueHGmrPjdp6ueN7Itri7RiUceLTPjuJnZ7XR84lep4ovij8/j7Qzwe5ZW35Plf5Ojw/GQ8DUE84IP9/ReSeHafotH2osy5q/H9f8ARpgNcJGoXF8H1oyUlaKdsyajnRoNAodpcRSLz0MCphAPhAYUrmUBUA0lUAlAGUAZQClAPaVUQkBQpznF1aKTvRZkVGZwxShgSJmXU7awt8rZjUrqiIfUDkKOoUIdIJJI2JbHXkFa8SbuKr8fEzrGl/nLpxbrLMpOw8oBj5K0jW9qNIi4lpkXFlUykjM9r8oJhjmxBjlJWJXaosGqZqut2mm5oEDIRJJmCORK3VGd7bszcAtAaNPMHBwbl9p7NB2BWXC/+zp3rjwkn9UmXLinlD2BpcHNjUl/wOZaqkc3Lc7f+DNwWxqMrtJHlyuHu9NPwXzNI9Xv/fRSX4fgejM8W33XybrSfEfOg01+AX0/A8pRxOmajQzLoHTMqlTKeG2L6dR5y6FkDUboGzWspFNrSIhuvqhkFNxzOJbGwmZ2QFfEqJcWQdiDO0ahaTIW3VGk+3qDsD35qU66HLv8alTkrM3iSxp1g13jNpVWghry4AEb5Xdv71XTE5x6K0fP7Rx6fMluyKEvBtr7HD4nUrUCBVBLPdqCKlM/0vH4HVeyOVH5rP2fNdeV4NdPwYbHE2EgjfkQY/Bb3KR4+6lilbX9jr8GxTMcoO42XjzY6R+n7L1ynNRv6nQ27YGy8h+jbtjX19YQE7XIB+dAYpXIowoUahAqgEoBSgFnHVAObUHVCDjWA5pZTjOL7sOhg3JWGaRpcOW8NYF0ijlKSXVnXVLxjG6n5arsoNnny6rFjVt/Youx6kNwfouncSPH+1sHjaLtteNeGOaDDmyD2XOUWup78WSOSKnHoyJuIsNarRynMwNcTpBzCdFlc8HV+ZBi+MU6ApucwuzVAwRGhcDqZ9FJy21ZqMdxf8cfd5StUZKmFYo2swODC0dDEgzEaKLlWVqnQ+tiLWlwLdgTuNYKtEKlhjzKlVtMU4JzayDsJ6L5un7RWbK8ai1V+h6cmmcI7rs0jdDxHMy6iNeshfSo8xm4rjzaLA40w45oLcwEd9iuOoy9zHd1O2DD3stt0U8M4sbVNUGiG5Keec8z29kQuWn1Petqqo6Z9L3VO7v5GpZYn4lOm8UwM1NrozTGYTG2q9a5Vnlap0Q2WNCo6u3w48NwEzOaWg7RpuiQrgp43jTmNDRTgvaYcDJA7CNVuKW9Jnl1bksE5Q6pGMMaA/mHZrh9QSvf3aPxb1c18/T+452K0nxmkEfyvRJx6GZ5IZK3Is29a3cC3M2CNQdAR3B3WJb2evBLTxVXXoQVeF7Z3ma0sJ95h/WQue9rwPX7NCXwydfdEdvgFelUBp1mubyc6WuHqACCtd4mqkcXockJbsLSZ1te+yU3E6wN/gvJOPG4/SaXP7yxSf0ZzNtxNJJg7/ReJ6hI+0tM2adLiDNsFzeq8kbWk82TjEXdVjv5GvZ4GTU4gZ95enceKinV4lYPeTcNpTq8WsHvJYor/wCMm8iliiOpxf0B+RSxRGeLHcmlLFETuJ6h2YUsUgjiKt9wpY4AzHbh5jJHdXklo2MPwkGK1cy47M/VenHp/GR8jUdpK3GD4XiaNTEGtGSJZtA3HcL3Y8VLg/OazW7nTdpk1pdiNKgcwblxhwnkBv8ANJxM6bLtXW0vF9foiuMD+0Vi4Py0h7YG5dvpyGnNYllcFR7dNoIanI5PhLr8zqrOzDBTY0eVogczHqV5W76n6XHBQiox6Ij/AHcBXqVgTLw0RyhoA/JZOhFjGEC4axr9mvDhE7gEfmo0n1KpNdC8ykQI7RK1ZCthuGii0tbrJJ1ncmVOhbsVzhucgu5A6apYshssGayqKgYAQTqN9QQfdHVcY4MUZboxSZt5JNU2X32/nc4bmNfQei7WYKd1hDanttDuoIn0/uFJJSVPksZOLtcEFtgDGF2Wm1siNBuOh8oUjCMfhVFlklLq7LtG0LWgAQAIjt8ls5kbLEAuIG++6WBla0ktJbMbE6x9EIZl5w3SeSQwsJ5sOX/jt9F0jlnHxPBm7N0+V240/l+qMq64XrDWlWBHSp5D8xIP0XaOp8z5ObsJdYNfjwY95Wr27/DrN80SNiSOoPNdo5FJHzM+inhlUlTLtnjZG4j1gFHjTLj1k8fVWbdrjDXkAFcJQcT6mDVxyGqXZm/3usRO+blWupnVOHqJktGXsCQPgFwlpcbPoY+1NRGPDv6ktthVNnI+u6xLRQ/hOmLtrLf71cfIvC3HReZ4WuKPrR1UJK0zkjwyFvYcN408Ljom0byKpwq3ortJuZGzhZo5K0NxMMAb0TaTcWKWBt6K7Sbiw3BWdArtQtkrMKZ0VpEskOHsY0uj/wAnRdMULmjx6/N3WnlL8PvwUeIWPDQ+nvliF9CD4o/I6uO3JGfRNUziHYrWkgsLY5kKd5I0tJiq07JG3r9y6T6KqTMywQXCR0XDDakPql75doAHOAgc4C+fq5tyUV1P1PYeCMMTyS6G1heL1xcMt30KpYXn/MkjJBaXazrvopGLUaZ7pzUpNrhCx6+uqVzVfQpOrDIxop53Na3SS4DYlNr3X4FtGDXu8Sr3FE1S6jRbB8JjvDL36y0w7M4Aaxtoq4vwNJx8S+/iPEg17RZAESGvJcQRMA6uHLXdGmX3fMns8Vu6DKbTb1bglpLn59Q6e4Mgz8FEmupHXgWW4jc1xUBoutyGuDZeXOMj2obtB+K1Qso8K4Zd0q9HxryrVa0uzB4uBmBY4CS8wYJB+CUHI0+IKd59oc6hc5KRY0eH4TqsOEyZG0yPklEspXuHXlS2p0/tbxWD8zqzc7C6CTlyNIMRpHZKFkeBYddU3vdUuqr2mkW5XCuwAzOYZzvyShZTGF4g1oYMRqFvXw6lUwTMZ9dhpKV8w5LyLWK2d4apdRvHUjk1p/6odt5gyZEdt5SvmLXkNw20vQXPfdue7MID2PptDdJblMTz13Qja8josVc9r6OWfaJPtEaRoY5eqqOUrNO1vA7QiHdP0UNpmfxNhLbmkWbPGrHfzdD2WoS2s4arTrNDb4+B5i+wrNc5nhPzNMEBrj9QvanatH5XJHZNwl1Rt4Lg1VxBeMg7yCraS5PM8UpyqHHzaZ1NEnM1g2A+iw0qs9Slk3rGXjUgwFyo+hGXkTMqqUb307Iz6rRxdp8E5aF4D9ORuCAjc1AQupoWiNzAtWhQgQlkosUaMoCU0AEBn4vUDQwci4T6DVevTRttn5/t3NtjCD6Nq/wIKdZrhBgjXutu0zyY3CeO3yNq0qJ3aPwWlKaOWTDp5dUQC0oEGGAjnMALrcvE8Tx4bbV8fNonsX02AiWtA90QQuc8du0j1aTWPGmnkpLwuyb94UGV6QdSzPqPhtRrGeWGl0vOhaNInqQF5p42uT7+l1scnEnz4fP8yvxRxFa25d9oa8tb4cxTo1BNTNl9r+grk3zR9JK1ZFgPGllcVKdvQZUa52rQabGNiY1g9eyy51RdpWq8Z4dRq1Q6m/xGOqZnNo0R/puIfBBk6ytBRLWOcT2VOnQqVWOyVKTqjf4NKocjQ0unMdD5ggSL+C8R2tem80mPDGATLGNEEToJhGK5ozeH+KbCrcilRY7xS9zAfBo025mgk+ZupENOqynasrjR018aJdD6YcY3LGP+pWiD21KWXKG+XpDYjpCAipsosJLaYbP3WU2n5hKBDcV7cxmpyRsXMY6PSUog9t/QiDPplEKgqXFzQpMc+mxoM6eRrQXEgCSPVWMbdHHPmWLG5vwBUeKmUuLXFuxIboTvHRd1BLwPi5NVknypkHjDNzEesLt3arofNetyOdbpcfWv6k7KxOzz8ysOKXVHox5Zz5jN/dkH2Nk5p15mYP00K0sjqjzy0cN25vnzvkLa/tNgxPtGNQsvzO0bXCsFKq1uvvOP/HYfP8yeS6bW+Dye0Qhcrtt+n5+H4seK8kn1j05LDieiOdsmY/RZo6yk9pLmCUN68Sw6V88/W0RunogKtS7A3UKV6mJtHNAZ9zjDZgFAT21bMAVSG5avAC0QdVqhAYfEDpDPU/gvXpZcs/Odv4tygzGoknQGHRtuCPyK9c14nwdLJ04r7ef5lC6ualM+YOjqBmUtHVwyJVf3KjsZA2a4n+Zp/AOATvDC0bfLa+46ljlQ6N+eRk/OSm6zXcLGuq/X4Gphd2c2Z4nkNmgeuisouSMYcscUzB49moytJ08SzE/y5qsfQr5uVVkP3Ghm56ZOX68jC4JcWX1g5p0lsx90udp+Cw0ep9CjxNpdXRHOre/Wqf1QsVwdVxw2cPw4/wDpKzfnSb+irMx6mn+zg/5W6/paP/jKqEupyf7MqRZe287/AGjLHY03D81EWXQ9qxA+c+g/BaORWFSFSokFdAMqNBQMrOtjyQgnUg5jqbhoVU6doxlxRyQcJdGcrf3Yt6hYahIndsgg9IXthmUlyj8fq+zpYp7ccr9A08aGn8U+jpb+K67onz3gyp+P4OycYzAnM3/c39VGos6Qnljwl6EtPHn7AT9VNkTr7RlXVo0KVRzmh9QwOTBz7u7duaihT4M5dS54/edLy8/r8vl4jBXkzPPQ99pXWuD56m5T/X3/AMEtCrqPisSVI9eDI5SVtFl9wGjUrnGNs9mfKscUmxpv29VrYzzPVQ8zpyxfIP6GMqM0KA5bGbZ+bynmgOfxEOHNVAyKVF7qjTOiMHb4cyGwVkGix5jdUDplGDMxcfw3diIXp0nxnw+3v/Xv5owQ7Yg68vVfR6o/IXslaFdX2nmb5lhLaeyWWOWPTn0M2pd0/uun0ED4q7kZWObXVDrYOeYZRedeQn6qOaXU3HTZMnw8/SySu2s0sAa0fxGF1NxglgcC4dNQI+K8+TUqqifY0PYr3b866eHn+R0WO4Yy7ova0BjnGm4HkHU4yzHLReJyt2fpIxpUjL4S4TNs7xKha54YGNAkgQSSZjfVGzRRxbgZ1a5e8PaKT88z7QNQgvgRrsVpIXRv8W8PG5tmUqZAcwENB0BaW5SPkq0RcEvBvDrrWi9ryC55HlGoAaI35qkk7L1jw/QpVvGbTh+bNMkwTuQOSEs1LgBzi7+9kIVjTVAwMQBQhLTKFDUphAchi2GPFRx8PMwvcQ8DN7RmCNxGy9eKcKpn5btHSajvHJJtfL7mcbB2/hu/2ldbj5nzlhz18L+zHNw98a04MiJCm+C8UdPZNQ3xCX2Lds2CWimS8DVvNa7/ABriznLsnWzW7Y6/XgTVK7xq9pHrI+uy0skX0Z5cuhzwdyi182gUrmdACewE/gtbkjz+zybpcssCuGeZ+h5N5/8A4uUp7uIntw6ZYPey8PwXiSCm94zkROzddljeo8I9C0ks15JqvL6BFqeh+i33pwfZz+Z3ML5B/QhrkBQvaYKjBw/FZDWkoDH4Vrh0c0KdjVu2tEnREQrPx2mIEhboGthtwKgkbLIG39LcHYqxk4u0cc2GGaDhNWmUKXDwcZDyB00Xqjqn5Hw5dgQviTop3HDlXMQ1zS3qZXRalVyeeXYeRS91qjWwzhekwfxQKj+pkAegXGeeT6cH09N2Vixr957z9Do2W7WsytaGjkAAAuNt8s+nCEYKoqkcfxHw+6o4PaSCDyUaNEmFUn02w5ZLZoiqCiKSNC6oyESqQu0naIRicgIi0oUYGFUgciAHhqFC1iEHlqoB4KhBfZ0FC+yjogSMXDLWa9y6PeA+SyurPVkVQijZbZzyVs4M0sOpAaQPkpbG2K6IsPsaZ3pt+QV3M5vBjfVIk8BsQGiOkKWzeyNVRAcOp/dCu9nH2XE/AjL1yPSMc5AVLnVQHIcUYa6o0gIClw5gxpjVaBfxbDHPEAlQHODhJ+bMXHdWwd1w5Z+GwA8kRGW8RpF2yjCLFhSIGqqDHmj5lohdbRUBJCpCOoxClKtbA8lAUa1mRqFEgSUhougJC1UMdSQhMWoQTWShUHwihA+EgoXhIUcKKAcKKCg+GgoIYgoWVCmbhtLK6oeryVlHbK7r6GsxiHEnpU4UKWEAUAkBmFYKNc1ARuAQFarSB5ICNtsOiADqSAY6moBjcwOioL9vSndaMsusZCAAp6yqCWFAAwqAF4QEZcEoDHNBCApVKcLaAGhAS02qAtU2BUUSCmgHZEAPDQDg1AGEA3IgFkQCyoBGmgK1C38s91k1PqXbdqGS0WqFoaAgCAgCgMsFYKFwlAN8NADwwgGOVIREIBzWILA2lqlCy5SaqQe5wCoIX3KAgqXaArVL3ugITeIAfakBbsqhcd1QXKlMLQK7WQYQyPdSQqFTfBQpZbU1QEmdAAPQCLkAMyAcgCgCIQD9IWN3JUirYOcS4EeUEwomzeRcl1sLRgkBUKIhCAJQAzID/9k=" class="card-img-top" alt="Analytical Instruments">
+          <div class="card-body category-body text-start">
+            <h5>Analytical Instruments</h5>
+            <p class="text-muted">High-precision tools for accurate analysis and measurement</p>
+            <a href="#" class="view-link">View Collection <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card category-card">
+          <img src="https://images.unsplash.com/photo-1602052577122-f73b9710adba?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFib3JhdG9yeXxlbnwwfHwwfHx8MA%3D%3D" class="card-img-top" alt="Physics Lab Instruments">
+          <div class="card-body category-body text-start">
+            <h5>Physics Lab Instruments</h5>
+            <p class="text-muted">Essential equipment for physics research and experiments</p>
+            <a href="#" class="view-link">View Collection <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card category-card">
+          <img src="https://www.setestindia.com/images/products/mechanical-convection-hot-air-oven-manufacturers.jpg" class="card-img-top" alt="Heating & Cooling Equipment">
+          <div class="card-body category-body text-start">
+            <h5>Heating & Cooling Equipment</h5>
+            <p class="text-muted">Temperature control solutions for lab applications</p>
+            <a href="#" class="view-link">View Collection <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card category-card">
+          <img src="https://img.freepik.com/premium-photo/microscope-laboratory-test-tube-equipment-lab-blue-lights-science-experiment-concept_101709-700.jpg?semt=ais_hybrid&w=740" class="card-img-top" alt="Microscopes">
+          <div class="card-body category-body text-start">
+            <h5>Microscopes</h5>
+            <p class="text-muted">Advanced optical solutions for detailed observation</p>
+            <a href="#" class="view-link">View Collection <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-gradient-custom p-5">
+  <div class="container text-center">
+    <h2 class="fw-bold">Why Choose Us</h2>
+    <p class="text-muted mb-5">Leading provider of laboratory equipment with exceptional service</p>
+
+    <div class="row g-4">
+      <!-- Quality Assurance -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card p-4 choose-card h-100 text-start">
+          <div class="icon-box">
+            <i class="bi bi-award-fill"></i>
+          </div>
+          <h5>Quality Assurance</h5>
+          <p>All our products undergo rigorous testing and quality control measures to ensure reliability and performance.</p>
+        </div>
+      </div>
+
+      <!-- Expert Support -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card p-4 choose-card h-100 text-start">
+          <div class="icon-box">
+            <i class="bi bi-headset"></i>
+          </div>
+          <h5>Expert Support</h5>
+          <p>Our team of technical experts provides comprehensive support and guidance for all your equipment needs.</p>
+        </div>
+      </div>
+
+      <!-- Global Shipping -->
+      <div class="col-md-6 col-lg-4 mx-md-auto mx-lg-0">
+        <div class="card p-4 choose-card h-100 text-start">
+          <div class="icon-box">
+            <i class="bi bi-truck"></i>
+          </div>
+          <h5>Global Shipping</h5>
+          <p>We deliver to laboratories worldwide with careful handling and efficient logistics services.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-gradient-custom p-5">
+  <div class="container text-center py-5">
+    <h2 class="fw-bold">Testimonials</h2>
+    <p class="text-muted mb-5">What our clients say about us</p>
+
+    <div class="row g-4">
+      <!-- Testimonial 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card text-start">
+          <div class="stars mb-3">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p>"The quality of equipment and level of service provided by LabTech Solutions has been exceptional. Their team's expertise and support have been invaluable to our research."</p>
+          <div class="client-info">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Sarah Chen" />
+            <div>
+              <div class="client-name">Dr. Sarah Chen</div>
+              <p class="client-role">Research Director, BioTech Institute</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card text-start">
+          <div class="stars mb-3">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p>"We've been consistently impressed with the reliability and precision of the analytical instruments. The technical support team is always ready to help."</p>
+          <div class="client-info">
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Prof. Michael Roberts" />
+            <div>
+              <div class="client-name">Prof. Michael Roberts</div>
+              <p class="client-role">Lead Researcher, University Labs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="col-md-6 col-lg-4 mx-md-auto mx-lg-0">
+        <div class="testimonial-card text-start">
+          <div class="stars mb-3">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p>"The microscopes we purchased have exceeded our expectations in terms of image quality and ease of use. Excellent products backed by great service."</p>
+          <div class="client-info">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Dr. Emily Thompson" />
+            <div>
+              <div class="client-name">Dr. Emily Thompson</div>
+              <p class="client-role">Lab Manager, Medical Research Center</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
