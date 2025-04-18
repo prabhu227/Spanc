@@ -3,9 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Explore essential Chemistry and Biology equipment for +2 students. Learn about laboratory tools and apparatus for experiments in chemistry and biology." />
-    <meta name="keywords" content="Chemistry Equipment, Biology Equipment, Educational Instruments, Science Equipment" />
-    <meta name="author" content="Your Name or Company" />
+    <meta
+      name="description"
+      content="Explore essential Chemistry and Biology equipment for +2 students. Learn about laboratory tools and apparatus for experiments in chemistry and biology."
+    />
+    <meta
+      name="keywords"
+      content="Chemistry Equipment, Biology Equipment, Educational Instruments, Science Equipment"
+    />
+    <meta name="author" content="Spanco Tek" />
     <title>Chemistry & Biology Equipment</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
@@ -16,31 +22,683 @@
     <div class="container mt-5">
       <div class="text-center mb-5">
         <h1 class="display-5">Chemistry & Biology Equipment</h1>
-        <p>Explore the essential tools and apparatus used in chemistry and biology labs for +2 students.</p>
+        <p>
+          Explore the essential tools and apparatus used in chemistry and
+          biology labs for +2 students.
+        </p>
       </div>
 
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card">
-            <img src="path/to/chemistry-equipment1.jpg" class="card-img-top" alt="Chemistry Equipment 1" />
-            <div class="card-body">
-              <h5 class="card-title">Bunsen Burner</h5>
-              <p class="card-text">Used for heating substances in chemistry labs.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="path/to/biology-equipment1.jpg" class="card-img-top" alt="Biology Equipment 1" />
-            <div class="card-body">
-              <h5 class="card-title">Microscope</h5>
-              <p class="card-text">Used to view small biological specimens and cells.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Add more equipment items as needed -->
+      <div class="row g-4" id="equipment-list">
+        <!-- Equipment will be dynamically inserted here -->
       </div>
     </div>
+
+    <script>
+      const equipment = [
+        {
+          title: "Digital pH Meter (Al-101)",
+          image: "https://5.imimg.com/data5/SELLER/Default/2024/2/392214308/PQ/TP/LY/928419/digital-ph-meter-500x500.png", // Replace with actual image path
+          description:
+            "Manual Temperature Compensation. Combination pH Electrode, LCD Display. Useful for pH and Redox Potential Measurements.",
+          detailsPage: "./plustwo-che-products/Digitalphmeter.html",
+        },
+        {
+          title: "Digital Conductivity/TDS Meter (AI-106/107)",
+          image: "path/to/conductivity-meter.jpg", // Replace with actual image path
+          description:
+            "Microprocessor Based for displaying TDS/EC measurements. Auto ranging functionality.",
+            detailsPage: "./plustwo-che-products/digital-conductivemeter.html",
+        },
+        {
+          title: "Digital Photo Colorimeter (Al-111)",
+          image: "path/to/photo-colorimeter.jpg", // Replace with actual image path
+          description:
+            "Measures color intensity with built-in filters for precise measurements.",
+          detailsPage: "./plustwo-che-products/digital-colorimeter.html",
+        },
+        {
+          title: "Digital Melting Point Apparatus (Al-122)",
+          image: "path/to/melting-point-apparatus.jpg", // Replace with actual image path
+          description:
+            "Used to determine melting points with a 4-digit LED display.",
+            detailsPage: "./plustwo-che-products/digital-melting-point-apparatus.html",
+        },
+        {
+          title: "Hot Air Oven (HCS-101)",
+          image: "path/to/hot-air-oven.jpg", // Replace with actual image path
+          description:
+            "Temperature up to 250°C, Accuracy ± 1°C, double-walled inner chamber of anodized Aluminum/Stainless Steel.",
+          detailsPage: "./plustwo-che-products/hot-air-oven.html",
+        },
+        {
+          title: "Incubator (HCS-105)",
+          image: "path/to/incubator.jpg", // Replace with actual image path
+          description:
+            "Temperature range from room to 90°C, double door with glass window, inner chamber of anodized aluminum stainless steel sheet.",
+          detailsPage: "./plustwo-che-products/incubator.html",
+        },
+        {
+          title: "Water Bath Rectangular (HCS-111)",
+          image: "path/to/water-bath.jpg", // Replace with actual image path
+          description:
+            "Stainless steel water bath with 6 holes or 12 holes for specific capacities.",
+         detailsPage: "./plustwo-che-products/water-bath.html",
+        },
+        {
+          title: "Heating Mental (HCS-123)",
+          image: "path/to/heating-mental.jpg", // Replace with actual image path
+          description:
+            "Made of glass yarn with energy regulator & on/off switch for 220V AC.",
+         detailsPage: "./plustwo-che-products/heating-mental.html",
+        },
+        {
+          title: "Hot Plate Round (HCS-124)",
+          image: "path/to/hot-plate.jpg", // Replace with actual image path
+          description: "Round heating plates for laboratory use.",
+         detailsPage: "./plustwo-che-products/hot-plate.html",
+        },
+        {
+          title: "Clinical Centrifuge (HCS-134)",
+          image: "path/to/clinical-centrifuge.jpg", // Replace with actual image path
+          description:
+            "Centrifuge for clinical use with multiple tube capacity.",
+        detailsPage: "./plustwo-che-products/clinical-centrifuge.html",
+        },
+        {
+    id: 2001,
+    name: "Spirit Lamp Aluminium",
+    title: "Spirit Lamp Aluminium - Die Pressed",
+    image: "path/to/spirit-lamp-aluminium.jpg", // Replace with actual image path
+    description: "A high-quality aluminium spirit lamp with jointless and jointed variations for laboratory use.",
+    detailsPage: "./plustwo-che-products/pirit-lamp-aluminium.html",
+    variations: [
+      { type: "Die pressed", size: "4 oz", style: "Jointless" },
+      { type: "Die pressed", size: "4 oz", style: "Jointed" }
+    ]
+  },
+  {
+    id: 2002,
+    name: "Spirit Lamp Brass",
+    title: "Spirit Lamp Brass - Die Pressed",
+    image: "path/to/spirit-lamp-brass.jpg", // Replace with actual image path
+    description: "Brass spirit lamp, die-pressed with jointless and jointed styles, ideal for laboratory heating applications.",
+    detailsPage: "./plustwo-che-products/spirit-lamp-brass.html",
+    variations: [
+      { type: "Die pressed", size: "4 oz", style: "Jointless" },
+      { type: "Die pressed", size: "4 oz", style: "Jointed" }
+    ]
+  },
+  {
+    id: 2003,
+    name: "Spirit Lamp Stainless Steel",
+    title: "Spirit Lamp Stainless Steel - Laboratory Heating Tool",
+    image: "path/to/spirit-lamp-stainless-steel.jpg", // Replace with actual image path
+    description: "Stainless steel spirit lamp with durable design for heating applications in laboratories.",
+    detailsPage: "./plustwo-che-products/spirit-lamp-stainless-steel.html",
+    variations: [{ type: "Die pressed", size: "4 oz", style: "Jointless" }]
+  },
+  {
+    id: 2004,
+    name: "Blow Pipe Brass",
+    title: "Blow Pipe Brass - Laboratory Glassware",
+    image: "path/to/blow-pipe-brass.jpg", // Replace with actual image path
+    description: "Brass blow pipe for laboratory use, available in 8-inch, 10-inch, and 12-inch sizes.",
+    detailsPage: "./plustwo-che-products/blow-pipe-brass.html",
+    variations: [
+      { size: "8 inch" },
+      { size: "10 inch" },
+      { size: "12 inch" }
+    ]
+  },
+  {
+    id: 2005,
+    name: "Defflagrating Spoon",
+    title: "Defflagrating Spoon - Laboratory Equipment",
+    image: "path/to/defflagrating-spoon.jpg", // Replace with actual image path
+    description: "Defflagrating spoon made from brass for laboratory flame control, used in various chemical experiments.",
+    detailsPage: "./plustwo-che-products/defflagrating-spoon.html",
+    variations: [{ size: "Standard" }]
+  },
+  {
+    id: 2006,
+    name: "Test Tube Holder",
+    title: "Test Tube Holder - Wooden Handle",
+    image: "path/to/test-tube-holder.jpg", // Replace with actual image path
+    description: "Test tube holder with a wooden handle, available in iron and brass material options.",
+    detailsPage: "./plustwo-che-products/test-tube-holder.html",
+    variations: [
+      { material: "Iron" },
+      { material: "Brass" }
+    ]
+  },
+  {
+    id: 2010,
+    name: "ESR Stand",
+    title: "ESR Stand - Laboratory Stand for Test Tubes",
+    image: "path/to/esr-stand.jpg", // Replace with actual image path
+    description: "ESR stand designed for testing and laboratory use, supporting various laboratory equipment.",
+    detailsPage: "./plustwo-che-products/esr-stand.html",
+    variations: [{ type: "Standard" }]
+  },
+  {
+    id: 2023,
+    name: "Magnesium Metal Ribbon",
+    title: "Magnesium Metal Ribbon - Laboratory Chemical",
+    image: "path/to/magnesium-metal-ribbon.jpg", // Replace with actual image path
+    description: "Magnesium metal ribbon, supplied in a 25gm packet, suitable for chemical experiments.",
+    detailsPage: "./plustwo-che-products/magnesium-metal-ribbon.html",
+    variations: [{ size: "25gm" }]
+  },
+  {
+    id: 2035,
+    name: "Silica Crucible",
+    title: "Silica Crucible - High-Temperature Laboratory Equipment",
+    image: "path/to/silica-crucible.jpg", // Replace with actual image path
+    description: "High-quality silica crucible used in high-temperature chemical processes, available in 15mm, 25mm, and 50mm sizes.",
+    detailsPage: "./plustwo-che-products/silica-crucible.html",
+    variations: [
+      { size: "15mm" },
+      { size: "25mm" },
+      { size: "50mm" }
+    ]
+  },
+  {
+    id: 2020,
+    name: "Water Bath",
+    title: "Water Bath - Laboratory Equipment for Temperature Control",
+    image: "path/to/water-bath.jpg", // Replace with actual image path
+    description: "Concentric ring water bath, ideal for temperature-sensitive chemical experiments. Available in 50mm, 75mm, and 100mm sizes.",
+    detailsPage: "./plustwo-che-products/waterbath.html",
+    variations: [
+      { type: "Concentric rings, copper die pressed", size: "50mm" },
+      { type: "Concentric rings, copper die pressed", size: "75mm" },
+      { type: "Concentric rings, copper die pressed", size: "100mm" }
+    ]
+  },
+  {
+    title: "Crucible Tong",
+    image: "path/to/crucible-tong.jpg",
+    description: "Durable tongs for handling hot crucibles in laboratory settings.",
+    detailsPage: "./plustwo-che-products/crucible-tong.html",
+    technicalSpecs: ["Size: 8\"", "Material: Iron C.P."]
+  },
+  {
+    title: "Wire Gauge",
+    image: "path/to/wire-gauge.jpg",
+    description: "High-quality wire gauge with asbestos coating for uniform heating.",
+    detailsPage: "./plustwo-che-products/wire-gauge.html",
+    technicalSpecs: [
+      "Model A: 6\"x6\" with asbestos",
+      "Model B: In metal frame 6\"x6\", superior coating in center"
+    ]
+  },
+  {
+    title: "Spatula Stainless Steel",
+    image: "path/to/spatula.jpg",
+    description: "Stainless steel spatula with flat and spoon ends for lab use.",
+    detailsPage: "./plustwo-che-products/spatula-ss.html",
+    technicalSpecs: [
+      "Sizes Available: 4\", 6\", 8\"",
+      "Design: Flat at one end, spoon at other"
+    ]
+  },
+  {
+    title: "Platinum Wire Fused",
+    image: "path/to/platinum-wire.jpg",
+    description: "College-type tested platinum wire fused for lab applications.",
+    detailsPage: "./plustwo-che-products/platinum-wire.html",
+    technicalSpecs: ["Tested: College Type"]
+  },
+  {
+    title: "Platinum Loop",
+    image: "path/to/platinum-loop.jpg",
+    description: "School-type platinum loop used for microbiology testing.",
+    detailsPage: "./plustwo-che-products/platinum-loop.html",
+    technicalSpecs: ["Type: School"]
+  },
+  {
+    title: "Platinum Loop Holder",
+    image: "path/to/platinum-loop-holder.jpg",
+    description: "Brass loop holder with bakelite handle for platinum loop support.",
+    detailsPage: "./plustwo-che-products/platinum-loop-holder.html",
+    technicalSpecs: ["Material: Brass rod", "Handle: Bakelite"]
+  },
+  {
+    title: "Watch Glass (Superior)",
+    image: "path/to/watch-glass.jpg",
+    description: "Moulded watch glass with ground edges, available in multiple sizes.",
+    detailsPage: "./plustwo-che-products/watch-glass.html",
+    technicalSpecs: ["Sizes: 50mm, 75mm, 100mm", "Edge: Ground"]
+  },
+  {
+    title: "Water Bath",
+    image: "path/to/water-bath.jpg",
+    description: "Concentric ring water bath made of polished copper with handle.",
+    detailsPage: "./plustwo-che-products/water-bath.html",
+    technicalSpecs: [
+      "Material: Copper",
+      "Type: Concentric ring hemispherical",
+      "Sizes: 4\", 5\", 6\", 8\""
+    ]
+  },
+  {
+    title: "Hoffman Screw Clip",
+    image: "path/to/hoffman-clip.jpg",
+    description: "Hoffman screw clip made of iron, suitable for tubing control.",
+    detailsPage: "./plustwo-che-products/hoffman-screw-clip.html",
+    technicalSpecs: ["Material: Iron"]
+  },
+  {
+    title: "Pinch Clip with Thumb",
+    image: "path/to/pinch-clip.jpg",
+    description: "Pinch clip with thumb control for secure tubing closure.",
+    detailsPage: "./plustwo-che-products/pinch-clip.html",
+    technicalSpecs: ["Control: Thumb operated"]
+  },
+  {
+    title: "Magnesium Metal Ribbon",
+    image: "path/to/magnesium-ribbon.jpg",
+    description: "25gm pack of magnesium ribbon for chemistry experiments.",
+    detailsPage: "./plustwo-che-products/magnesium-ribbon.html",
+    technicalSpecs: ["Pack Size: 25gm"]
+  },
+  {
+    title: "Copper Turning",
+    image: "path/to/copper-turning.jpg",
+    description: "500gm packet of copper turnings for chemical reactions.",
+    detailsPage: "./plustwo-che-products/copper-turning.html",
+    technicalSpecs: ["Pack Size: 500gm"]
+  },
+  {
+    title: "Zinc Granules",
+    image: "path/to/zinc-granules.jpg",
+    description: "500gm packet of zinc granules used in chemical reactions.",
+    detailsPage: "./plustwo-che-products/zinc-granules.html",
+    technicalSpecs: ["Pack Size: 500gm"]
+  },
+  {
+    title: "Spirit Level Wooden",
+    image: "path/to/spirit-level-wood.jpg",
+    description: "Wooden spirit level with sunmica top, size 6\".",
+    detailsPage: "./plustwo-che-products/spirit-level-wood.html",
+    technicalSpecs: ["Material: Wooden", "Top: Sunmica", "Size: 6\""]
+  },
+  {
+    title: "Spirit Level Aluminium",
+    image: "path/to/spirit-level-aluminium.jpg",
+    description: "Aluminium spirit level available in 4\" and 6\" sizes.",
+    detailsPage: "./plustwo-che-products/spirit-level-aluminium.html",
+    technicalSpecs: ["Sizes: 4\", 6\"", "Material: Aluminium"]
+  },
+  {
+    title: "Lead Shots",
+    image: "path/to/lead-shots.jpg",
+    description: "Pack of 250gm lead shots for laboratory counterweights.",
+    detailsPage: "./plustwo-che-products/lead-shots.html",
+    technicalSpecs: ["Weight: 250gm"]
+  },
+  {
+    title: "Litmus Paper Red/Blue",
+    image: "path/to/litmus-paper.jpg",
+    description: "Red and blue litmus paper packets with 10 books each.",
+    detailsPage: "./plustwo-che-products/litmus-paper.html",
+    technicalSpecs: ["10 books", "50 leaves per book"]
+  },
+  {
+    title: "pH Paper",
+    image: "path/to/ph-paper.jpg",
+    description: "pH testing paper with 10 books, each containing 50 leaves.",
+    detailsPage: "./plustwo-che-products/ph-paper.html",
+    technicalSpecs: ["10 books", "50 leaves per book"]
+  },
+
+  {
+    title: "Filter Paper Round (2031)",
+    image: "images/filter-paper-round.jpg",
+    description: "High-quality round filter paper for precision filtration tasks.",
+    detailsPage: "./plustwo-che-products/filter-paper-round.html",
+    technicalSpecs: [
+      "Shape: Round",
+      "Available Diameters: 11cm, 12.5cm",
+      "Application: Filtration in labs and classrooms"
+    ]
+  },
+  {
+    title: "Test Tube Brush (2032)",
+    image: "images/test-tube-brush.jpg",
+    description: "Durable brush for cleaning test tubes efficiently.",
+    detailsPage: "./plustwo-che-products/test-tube-brush.html",
+    technicalSpecs: [
+      "Type A: 11cm",
+      "Type B: 12.5cm",
+      "Material: Nylon bristles with metal handle"
+    ]
+  },
+  {
+    title: "Burette Brush (2033)",
+    image: "images/burette-brush.jpg",
+    description: "Long flexible brush for cleaning burettes thoroughly.",
+    detailsPage: "./plustwo-che-products/burette-brush.html",
+    technicalSpecs: [
+      "Length: Suitable for standard burettes",
+      "Material: Soft bristles with wire handle"
+    ]
+  },
+  {
+    title: "Bottle Brush (2034)",
+    image: "images/bottle-brush.jpg",
+    description: "Strong bottle brush ideal for laboratory flasks and bottles.",
+    detailsPage: "./plustwo-che-products/bottle-brush.html",
+    technicalSpecs: [
+      "Material: Nylon bristles",
+      "Flexible wire for tight spaces"
+    ]
+  },
+  {
+    title: "Silica Crucible & Lid (2035, 2035A)",
+    image: "images/silica-crucible.jpg",
+    description: "Silica crucible with optional lid for high-temp reactions.",
+    detailsPage: "./plustwo-che-products/silicacrucible.html",
+    technicalSpecs: [
+      "Available Sizes: 15mm, 25mm, 50mm",
+      "Includes optional lid (2035A)",
+      "Application: Ashing, calcination, high-temperature use"
+    ]
+  },
+  {
+    title: "Gooch Crucible (2036)",
+    image: "images/gooch-crucible.jpg",
+    description: "Sintered glass crucible for filtration and residue collection.",
+    detailsPage: "./plustwo-che-products/gooch-crucible.html",
+    technicalSpecs: [
+      "Material: Sintered glass",
+      "Sizes: 15mm, 25mm, 50mm",
+      "Grades: G3, G4"
+    ]
+  },
+  {
+    title: "Burette Clamp Fisher Type (2065)",
+    image: "images/burette-clamp-fisher.jpg",
+    description: "Durable steel burette clamp, single or double.",
+    detailsPage: "./plustwo-che-products/burette-clamp-fisher.html",
+    technicalSpecs: [
+      "Material: Powder coated steel",
+      "Variants: Single, Double",
+      "Finish: Staple grey"
+    ]
+  },
+  {
+    title: "Burette Clamp Brass (2066)",
+    image: "images/burette-clamp-brass.jpg",
+    description: "Brass angle-type clamp with cork lining and boss head.",
+    detailsPage: "./plustwo-che-products/burette-clamp-brass.html",
+    technicalSpecs: [
+      "Material: Brass oxidised",
+      "Features: Cork lining, boss head"
+    ]
+  },
+  {
+    title: "Universal Condenser Clamp (2067)",
+    image: "images/condenser-clamp.jpg",
+    description: "Versatile clamp for condensers with cork-lined jaws.",
+    detailsPage: "./plustwo-che-products/universal-condenser-clamp.html",
+    technicalSpecs: [
+      "Material: Iron with cork lining",
+      "Includes: Boss head, cylindrical jaws"
+    ]
+  },
+  {
+    title: "Boss Head Oxidised (2070)",
+    image: "images/boss-head.jpg",
+    description: "Brass boss head with dual screw locking for lab stands.",
+    detailsPage: "./plustwo-che-products/boss-head.html",
+    technicalSpecs: [
+      "Material: Brass body with iron screws",
+      "Finish: Oxidised"
+    ]
+  },
+  {
+    title: "Three Finger Clamp (2068)",
+    image: "images/three-finger-clamp.jpg",
+    description: "Adjustable three-finger clamp with rubber grip.",
+    detailsPage: "./plustwo-che-products/three-finger-clamp.html",
+    technicalSpecs: [
+      "Material: Aluminium arms with rubber tips",
+      "Includes: Boss head and iron rod"
+    ]
+  },
+  {
+    title: "Jaw Clamp with Boss Head (2069)",
+    image: "images/jaw-clamp.jpg",
+    description: "Four-jaw clamp for heavy-duty lab holding applications.",
+    detailsPage: "./plustwo-che-products/jaw-clamp.html",
+    technicalSpecs: [
+      "Jaws: Cork lined",
+      "Features: Long T-screw, iron boss head"
+    ]
+  },
+  {
+    title: "Retort Stand - Sheet Metal (2072)",
+    image: "images/retort-stand-sheet.jpg",
+    description: "Powder-coated metal stand for lab apparatus support.",
+    detailsPage: "./plustwo-che-products/retort-stand-sheet.html",
+    technicalSpecs: [
+      "Material: 12 SWG iron sheet",
+      "Sizes: 6x4x18\", 7.5x24\", 8x5x24\", 9x6x30\""
+    ]
+  },
+  {
+    title: "Retort Stand - Cast Iron (2073)",
+    image: "images/retort-stand-cast.jpg",
+    description: "Heavy cast base retort stand for stable support.",
+    detailsPage: "./plustwo-che-products/retort-stand-cast.html",
+    technicalSpecs: [
+      "Material: Cast iron base, iron rod",
+      "Sizes: 7x5x24\", 8x5x24\""
+    ]
+  },
+  {
+    title: "Retort Stand - Stainless Steel (2074)",
+    image: "images/retort-stand-ss.jpg",
+    description: "Rust-free stainless steel retort stand for laboratory use.",
+    detailsPage: "./plustwo-che-products/retort-stand-ss.html",
+    technicalSpecs: [
+      "Material: Stainless steel",
+      "Size: 7.5x24\""
+    ]
+  },
+  {
+    title: "Funnel Stand Wooden (2076)",
+    image: "images/funnel-stand.jpg",
+    description: "Classic wooden stand for supporting laboratory funnels.",
+    detailsPage: "./plustwo-che-products/funnel-stand-wood.html",
+    technicalSpecs: [
+      "Material: Polished wood",
+      "Size: 7.5x24\""
+    ]
+  },
+  {
+    title: "Burette Stand Wooden (2077)",
+    image: "images/burette-stand-wood.jpg",
+    description: "Wooden burette stand for precise titration support.",
+    detailsPage: "./plustwo-che-products/burette-stand-wood.html",
+    technicalSpecs: [
+      "Material: Wood",
+      "Size: 8x5x24\""
+    ]
+  },
+  {
+    title: "Tripod Stand (2075)",
+    image: "images/tripod-stand.jpg",
+    description: "Metal tripod stand with plastic feet for heating purposes.",
+    detailsPage: "./plustwo-che-products/tripod-stand.html",
+    technicalSpecs: [
+      "Top: Triangular duco painted",
+      "Rod: Zinc-plated",
+      "Sizes: 6x4\", 8x4\""
+    ]
+  },
+  {
+    title: "Bunsen Burner with Stop Cock",
+    image: "path/to/bunsen-burner-stopcock.jpg",
+    description: "Standard Bunsen burner with an integrated stop cock for flame control.",
+    detailsPage: "./plustwo-che-products/bunsen-burner-stopcock.html",
+    technicalSpecs: ["Feature: Integrated Stop Cock"]
+  },
+  {
+    title: "Pipette Bulb",
+    image: "path/to/pipette-bulb.jpg",
+    description: "Rubber pipette bulb for accurate and safe liquid handling.",
+    detailsPage: "./plustwo-che-products/pipette-bulb.html",
+    technicalSpecs: []
+  },
+  {
+    title: "Rubber Corks",
+    image: "path/to/rubber-corks.jpg",
+    description: "Extra soft, red-coloured rubber corks available in various sizes.",
+    detailsPage: "./plustwo-che-products/rubber-corks.html",
+    technicalSpecs: [
+      "Size A: Top Dia 11mm, Bottom Dia 9mm, Height 17mm",
+      "Size B: Top Dia 14mm",
+      "Size C: Top Dia 16mm",
+      "Size D: Top Dia 19mm",
+      "Size E: Top Dia 20mm",
+      "Size F: Top Dia 22mm",
+      "Size G: Top Dia 24mm",
+      "Size H: Top Dia 25mm",
+      "Size I: Top Dia 26mm",
+      "Size J: Top Dia 27mm",
+      "Size K: Top Dia 29mm",
+      "Size L: Top Dia 32mm",
+      "Size M: Top Dia 34mm",
+      "Size N: Top Dia 37mm",
+      "Size O: Top Dia 41mm",
+      "Size P: Top Dia 42mm",
+      "Size Q: Top Dia 48mm",
+      "Size R: Top Dia 55mm"
+    ]
+  },
+  {
+    title: "Test Tube Stand",
+    image: "path/to/test-tube-stand.jpg",
+    description: "Fixed stand for six tubes: 2 of 25mm dia and 4 of 15mm dia.",
+    detailsPage: "./plustwo-che-products/test-tube-stand.html",
+    technicalSpecs: [
+      "Holds: 2 tubes of 25mm dia, 4 tubes of 15mm dia",
+      "Material: Acrylic showcase",
+      "Packaging: Thick corrugated boxes"
+    ]
+  },
+  {
+    title: "Sodium Chloride / Hydrocarbon Model",
+    image: "path/to/sodium-chloride-model.jpg",
+    description: "Molecular models of Sodium Chloride and various hydrocarbons.",
+    detailsPage: "./plustwo-che-products/sodium-chloride-hydrocarbon-model.html",
+    technicalSpecs: [
+      "Methane", "Ethane", "Propane", "Butane", "Iso-butane", "N-pentane",
+      "Iso-pentane", "Neo pentane", "Ethene", "Ethylene"
+    ]
+  },
+  {
+    title: "Sulphur Atomic Model",
+    image: "path/to/sulphur-atomic-model.jpg",
+    description: "Accurate 3D model of Sulphur atom for educational use.",
+    detailsPage: "./plustwo-che-products/sulphur-atomic-model.html",
+    technicalSpecs: []
+  },
+  {
+    title: "Yellow Phosphorus Atomic Model",
+    image: "path/to/yellow-phosphorus-model.jpg",
+    description: "Model depicting the atomic structure of yellow phosphorus.",
+    detailsPage: "./plustwo-che-products/yellow-phosphorus-model.html",
+    technicalSpecs: []
+  },
+  {
+    title: "Black Phosphorus Atomic Model",
+    image: "path/to/black-phosphorus-model.jpg",
+    description: "Model depicting the atomic structure of black phosphorus.",
+    detailsPage: "./plustwo-che-products/black-phosphorus-model.html",
+    technicalSpecs: []
+  },
+  {
+    title: "Orbit of Atom",
+    image: "path/to/orbit-of-atom.jpg",
+    description: "Educational model showing orbits in atomic structure.",
+    detailsPage: "./plustwo-che-products/orbit-of-atom.html",
+    technicalSpecs: []
+  },
+  {
+    title: "Silicon Electronic Configuration",
+    image: "path/to/silicon-electronic-config.jpg",
+    description: "Model demonstrating the electronic configuration of silicon.",
+    detailsPage: "./plustwo-che-products/silicon-electronic-configuration.html",
+    technicalSpecs: []
+  },
+  {
+    title: "Diamond Crystal Model (Open Model)",
+    image: "path/to/diamond-model.jpg",
+    description: "Open model of diamond crystal structure.",
+    detailsPage: "./plustwo-che-products/diamond-crystal-model.html",
+    technicalSpecs: []
+  },
+  {
+    title: "Graphite Crystal Model (Open Model)",
+    image: "path/to/graphite-model.jpg",
+    description: "Open model of graphite crystal structure.",
+    detailsPage: "./plustwo-che-products/graphite-crystal-model.html",
+    technicalSpecs: []
+  },
+  {
+    title: "Isotopes of Hydrogen",
+    image: "path/to/hydrogen-isotopes.jpg",
+    description: "Open model demonstrating Hydrogen, Deuterium, and Tritium.",
+    detailsPage: "./plustwo-che-products/isotopes-of-hydrogen.html",
+    technicalSpecs: []
+  },
+  {
+    title: "Structure of Atom",
+    image: "path/to/structure-of-atom.jpg",
+    description: "Model illustrating the structure of a general atom.",
+    detailsPage: "./plustwo-che-products/structure-of-atom.html",
+    technicalSpecs: []
+  }
+      ];
+
+      const equipmentList = document.getElementById("equipment-list");
+
+  equipment.forEach((item) => {
+    const titleId = item.title.replace(/\s+/g, "-").toLowerCase();
+    let cardHTML = `
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="${item.image}" class="card-img-top" alt="${item.title}" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">${item.title}</h5>
+            <p class="card-text">${item.description}</p>
+    `;
+
+    if (item.detailsPage) {
+      cardHTML += `<a href="${item.detailsPage}" class="btn btn-primary mt-auto">View Technical Specifications</a>`;
+    } else if (item.technicalSpecs) {
+      cardHTML += `
+        <button class="btn btn-outline-secondary mt-auto" data-bs-toggle="collapse" data-bs-target="#specs-${titleId}">View Specs</button>
+        <div class="collapse mt-3" id="specs-${titleId}">
+          <ul class="list-group list-group-flush">
+            ${item.technicalSpecs.map((spec) => `<li class="list-group-item">${spec}</li>`).join("")}
+          </ul>
+        </div>
+      `;
+    }
+
+    cardHTML += `
+          </div>
+        </div>
+      </div>
+    `;
+
+    equipmentList.innerHTML += cardHTML;
+  });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
   </body>

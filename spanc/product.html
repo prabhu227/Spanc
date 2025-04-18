@@ -1,247 +1,751 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spanco Tek | Science & Engineering Products</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spanco Tek | Science & Engineering Products</title>
+    <meta
+      name="description"
+      content="Explore high-quality Physics, Chemistry, and Biology lab kits and Engineering tools from Spanco Tek. Trusted for academic and industrial labs."
+    />
+    <meta
+      name="keywords"
+      content="Physics Lab, Chemistry Kit, Biology Equipment, Engineering Tools, Science Kits, Educational Equipment"
+    />
+    <meta name="author" content="Spanco Tek" />
 
-  <meta name="description" content="Explore high-quality Physics, Chemistry, and Biology lab kits and Engineering tools from Spanco Tek. Trusted for academic and industrial labs." />
-  <meta name="keywords" content="Physics Lab, Chemistry Kit, Biology Equipment, Engineering Tools, Science Kits, Educational Equipment" />
-  <meta name="author" content="Spanco Tek" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/CSS/footer.css">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-  <style>
-    .category-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .category-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .scroll-wrapper {
-      overflow: hidden;
-      position: relative;
-    }
-
-    .product-cards-container {
-      display: flex;
-      gap: 1rem;
-      animation: scroll 30s linear infinite;
-      width: max-content;
-    }
-
-    .product-card {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      min-width: 250px;
-      max-width: 250px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .product-card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
-
-    .badge-new {
-      position: absolute;
-      background: #dc3545;
-      color: white;
-      font-size: 0.75rem;
-      padding: 2px 6px;
-      top: 10px;
-      left: 10px;
-      border-radius: 5px;
-      z-index: 2;
-    }
-
-    @keyframes scroll {
-      0% {
-        transform: translateX(0%);
+    <!-- <style>
+      .category-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
-      100% {
-        transform: translateX(-50%);
+      .category-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
-    }
 
-    @media (max-width: 768px) {
+      .scroll-wrapper {
+        overflow: hidden;
+        position: relative;
+      }
+
       .product-cards-container {
-        animation: none;
-        overflow-x: auto;
-        flex-wrap: nowrap;
+        display: flex;
+        gap: 1rem;
+        animation: scroll 30s linear infinite;
+        width: max-content;
       }
 
       .product-card {
-        flex-shrink: 0;
-        margin-right: 1rem;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        min-width: 250px;
+        max-width: 250px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
-    }
-  </style>
-</head>
 
-<body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Spanco Tek</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      .product-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+
+      .badge-new {
+        position: absolute;
+        background: #dc3545;
+        color: white;
+        font-size: 0.75rem;
+        padding: 2px 6px;
+        top: 10px;
+        left: 10px;
+        border-radius: 5px;
+        z-index: 2;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0%);
+        }
+
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .product-cards-container {
+          animation: none;
+          overflow-x: auto;
+          flex-wrap: nowrap;
+        }
+
+        .product-card {
+          flex-shrink: 0;
+          margin-right: 1rem;
+        }
+        .product-card-link {
+          text-decoration: none;
+          color: inherit;
+        }
+        .product-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+.product-card {
+  min-width: 220px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+      }
+      
+    </style> -->
+  
+  
+  
+    <style>
+      .category-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .category-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .scroll-wrapper {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .product-cards-container {
+  display: flex;
+  gap: 1rem;
+  animation: scroll 15s linear infinite;
+  width: max-content;
+}
+
+
+      .product-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        min-width: 250px;
+        max-width: 250px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .product-card:hover {
+        transform: scale(1.05);
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      .badge-new {
+        position: absolute;
+        background: #dc3545;
+        color: white;
+        font-size: 0.75rem;
+        padding: 2px 6px;
+        top: 10px;
+        left: 10px;
+        border-radius: 5px;
+        z-index: 2;
+      }
+
+      .product-card-link {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0%);
+        }
+
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (max-width: 768px) {
+  .product-cards-container {
+    animation: scroll 30s linear infinite;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+    width: max-content;
+  }
+
+  .product-card {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    margin-right: 1rem;
+  }
+}
+.navbar img {
+        height: 40px;
+        margin-right: 15px;
+      }
+
+    </style>
+  
+  
+  
+  
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Spanco Tek</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/product.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/testimonials.html">Testimonial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav> -->
+
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3"
+    >
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <span style="font-weight: bold; font-size: 5px">
+          <img src="./assets/images/spanco logo.png" alt="Logo" />
+        </span>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav me-3">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
-         
-          <li class="nav-item">
-            <a class="nav-link" href="/about.html">About Us</a>
+            <a class="nav-link" href="about.html">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/product.html">Products</a>
+            <a class="nav-link" href="product.html">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/testimonials.html">Testimonial</a>
+            <a class="nav-link" href="testimonials.html">Testimonials</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact.html">Contact</a>
+            <a class="nav-link" href="contact.html">Contact</a>
           </li>
         </ul>
+        <a href="#" class="btn btn-dark">Get Quote</a>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <div class="container mt-5">
-    <!-- Heading -->
-    <div class="mb-4 text-center" data-aos="fade-down">
-      <h1 class="display-5 fw-bold">Our Products</h1>
-      <p class="lead text-muted">High-quality equipment for Science & Engineering education</p>
-    </div>
 
-    <div class="row g-4" data-aos="fade-up">
-      <!-- Science -->
-      <div class="col-12 col-md-6">
-        <a href="./products-page/sciencepage.html" class="text-decoration-none">
-          <div class="category-card border rounded p-4 text-center shadow-sm bg-white h-100">
-            <i class="bi bi-lightbulb display-6 mb-3 text-primary"></i>
-            <h5 class="fw-semibold text-primary">Science Lab Kits</h5>
-            <p class="text-muted mb-0">Physics, Chemistry, and Biology equipment for all academic levels.</p>
+    <div class="container mt-5">
+      <!-- Heading -->
+      <div class="mb-4 text-center" data-aos="fade-down">
+        <h1 class="display-5 fw-bold">Our Products</h1>
+        <p class="lead text-muted">
+          High-quality equipment for Science & Engineering education
+        </p>
+      </div>
+
+      <div class="row g-4" data-aos="fade-up">
+        <!-- Science -->
+        <div class="col-12 col-md-6">
+          <a
+            href="./products-page/sciencepage.html"
+            class="text-decoration-none"
+          >
+            <div
+              class="category-card border rounded p-4 text-center shadow-sm bg-white h-100"
+            >
+              <i class="bi bi-lightbulb display-6 mb-3 text-primary"></i>
+              <h5 class="fw-semibold text-primary">Science Lab Kits</h5>
+              <p class="text-muted mb-0">
+                Physics, Chemistry, and Biology equipment for all academic
+                levels.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Engineering -->
+        <div class="col-12 col-md-6">
+          <a href="engineering.html" class="text-decoration-none">
+            <div
+              class="category-card border rounded p-4 text-center shadow-sm bg-white h-100"
+            >
+              <i class="bi bi-gear-fill display-6 mb-3 text-success"></i>
+              <h5 class="fw-semibold text-success">Engineering Tools</h5>
+              <p class="text-muted mb-0">
+                Precision instruments for electronics, mechanics, and automation
+                labs.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="row mt-5 align-items-center">
+        <div class="col-12 col-md-6">
+          <img
+            src="https://www.spanco.com/wp-content/uploads/2023/12/Motrzd-Trolley_cropped-1024x739.jpg"
+            class="img-fluid rounded shadow"
+            alt="Motorized Trolley Equipment by Spanco Tek"
+          />
+        </div>
+        <div class="col-12 col-md-6">
+          <h4 class="fw-bold">Precision in Every Piece</h4>
+          <p>
+            Every Spanco Tek product is designed with a focus on durability,
+            performance, and educational impact. Whether you're building lab
+            infrastructure or equipping students, we’ve got the right tools.
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <section class="mt-5 bg-light p-4 rounded shadow-sm" data-aos="fade-up">
+        <h4 class="mb-3">Trusted by Institutions Nationwide</h4>
+        <blockquote class="blockquote">
+          <p>
+            "Spanco Tek’s lab kits are reliable, well-designed, and perfect for
+            our senior secondary curriculum!"
+          </p>
+          <footer class="blockquote-footer">
+            Dr. Meena Rao, <cite>National Science High School</cite>
+          </footer>
+        </blockquote>
+      </section>
+
+      <!-- Product Slider -->
+      <div class="scroll-wrapper mt-5" data-aos="fade-up">
+        <h2>Physics Equipment</h2>
+      
+        <!-- Swiper Container -->
+        <div class="swiper mySwiper mb-5">
+          <div class="swiper-wrapper mb-4">
+            <!-- Torsion Pendulum -->
+            <div class="swiper-slide">
+              <a
+                href="./products-page/plus2product/torsion-pendulum.html"
+                class="product-card-link"
+              >
+                <div class="product-card position-relative">
+                  <span class="badge-new">New</span>
+                  <img
+                    src="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-3-030-95596-0_2/MediaObjects/514724_1_En_2_Fig2_HTML.png"
+                    alt="Torsion Pendulum"
+                  />
+                  <div class="p-3">
+                    <h6 class="mt-2">Torsion Pendulum</h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+      
+            <!-- Kater's Reversible Pendulum -->
+            <div class="swiper-slide">
+              <a
+                href="./products-page/plus2product/KatertsReversible-Pendulum.html"
+                class="product-card-link"
+              >
+                <div class="product-card position-relative">
+                  <span class="badge-new">New</span>
+                  <img
+                    src="assets/images/kater-s-reversible-pendulum-removebg-preview.png"
+                    alt="Kater's Reversible Pendulum"
+                  />
+                  <div class="p-3">
+                    <h6 class="mt-2">Kater's Reversible Pendulum</h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+      
+            <!-- Compound Bar Pendulum -->
+            <div class="swiper-slide">
+              <a
+                href="./products-page/plus2product/Compound-Bar-Pendulum.html"
+                class="product-card-link"
+              >
+                <div class="product-card position-relative">
+                  <span class="badge-new">New</span>
+                  <img
+                    src="https://5.imimg.com/data5/SELLER/Default/2024/9/448645912/UK/BU/YR/593063/bar-pendulum-compound-pendulum-for-physics-laboratory-1000x1000.png"
+                    alt="Compound Bar Pendulum"
+                  />
+                  <div class="p-3">
+                    <h6 class="mt-2">Compound Bar Pendulum</h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+      
+            <!-- Jaeger's Surface Tension App -->
+            <div class="swiper-slide">
+              <a
+                href="./products-page/plus2product/jaeger-surface.html"
+                class="product-card-link"
+              >
+                <div class="product-card position-relative">
+                  <span class="badge-new">New</span>
+                  <img
+                    src="https://5.imimg.com/data5/SELLER/Default/2024/12/473202636/NO/WU/HI/593063/jaeger-s-surface-tension-apparatus-500x500.png"
+                    alt="Jaeger's Surface Tension App"
+                  />
+                  <div class="p-3">
+                    <h6 class="mt-2">Jaeger's Surface Tension App</h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+      
+            <!-- Sonometer -->
+            <div class="swiper-slide">
+              <a
+                href="./products-page/plus2product/snometer.html"
+                class="product-card-link"
+              >
+                <div class="product-card position-relative">
+                  <span class="badge-new">New</span>
+                  <img
+                    src="https://5.imimg.com/data5/UZ/AR/ZU/SELLER-76817807/sonometer-wooden-500x500.PNG"
+                    alt="Sonometer"
+                  />
+                  <div class="p-3">
+                    <h6 class="mt-2">Sonometer</h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+      
+            <!-- Tuning Fork Welch Type -->
+            <div class="swiper-slide">
+              <a
+                href="./products-page/plus2product/tuning-fork-medium.html"
+                class="product-card-link"
+              >
+                <div class="product-card position-relative">
+                  <span class="badge-new">New</span>
+                  <img
+                    src="https://5.imimg.com/data5/SELLER/Default/2024/8/447093517/AF/TU/OI/136978674/tuning-fork-welch-type-set-of-8.jpg"
+                    alt="Tuning Fork Welch Type Medium"
+                  />
+                  <div class="p-3">
+                    <h6 class="mt-2">Tuning Fork Welch Type Medium</h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+      
+          <!-- Swiper Pagination (Dots) -->
+          <div class="swiper-pagination"></div>
+      
+          <!-- Swiper Navigation Arrows -->
+          <!-- <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div> -->
+        </div>
+      </div>
+      
+
+      <!-- Section Start -->
+<div class="scroll-wrapper mt-5" data-aos="fade-up">
+  <h2 class=" mb-4">Chemistry Equipment</h2>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper mb-5">
+
+      <!-- Chemistry Slide 1 -->
+      <div class="swiper-slide">
+        <a href="./products-page/plus2product/organic-kit.html" class="product-card-link">
+          <div class="product-card position-relative">
+            <span class="badge-new">New</span>
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/8/336311831/BC/BR/OQ/96344694/organic-chemistry-lab-kit-500x500.jpg" alt="Organic Chemistry Kit" />
+            <div class="p-3">
+              <h6 class="mt-2">Organic Chemistry Kit</h6>
+            </div>
           </div>
         </a>
       </div>
 
-      <!-- Engineering -->
-      <div class="col-12 col-md-6">
-        <a href="engineering.html" class="text-decoration-none">
-          <div class="category-card border rounded p-4 text-center shadow-sm bg-white h-100">
-            <i class="bi bi-gear-fill display-6 mb-3 text-success"></i>
-            <h5 class="fw-semibold text-success">Engineering Tools</h5>
-            <p class="text-muted mb-0">Precision instruments for electronics, mechanics, and automation labs.</p>
+      <!-- Chemistry Slide 2 -->
+      <div class="swiper-slide">
+        <a href="./products-page/plus2product/test-tube-set.html" class="product-card-link">
+          <div class="product-card position-relative">
+            <span class="badge-new">New</span>
+            <img src="https://5.imimg.com/data5/SELLER/Default/2021/4/NR/QJ/VX/18156721/test-tube-stand-plastic-500x500.jpg" alt="Test Tube Stand" />
+            <div class="p-3">
+              <h6 class="mt-2">Test Tube Stand</h6>
+            </div>
           </div>
         </a>
       </div>
-    </div>
 
-
-    <div class="row mt-5 align-items-center">
-      <div class="col-12 col-md-6">
-        <img src="https://www.spanco.com/wp-content/uploads/2023/12/Motrzd-Trolley_cropped-1024x739.jpg" class="img-fluid rounded shadow" alt="Motorized Trolley Equipment by Spanco Tek" />
+      <!-- Chemistry Slide 3 -->
+      <div class="swiper-slide">
+        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
+          <div class="product-card position-relative">
+            <span class="badge-new">New</span>
+            <img src="https://5.imimg.com/data5/SELLER/Default/2021/10/FW/QV/AK/18156721/burette-stand-500x500.jpg" alt="Burette Setup" />
+            <div class="p-3">
+              <h6 class="mt-2">Burette Setup</h6>
+            </div>
+          </div>
+        </a>
       </div>
-      <div class="col-12 col-md-6">
-        <h4 class="fw-bold">Precision in Every Piece</h4>
-        <p>Every Spanco Tek product is designed with a focus on durability, performance, and educational impact. Whether you're building lab infrastructure or equipping students, we’ve got the right tools.</p>
+
+      <div class="swiper-slide">
+        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
+          <div class="product-card position-relative">
+            <span class="badge-new">New</span>
+            <img src="https://5.imimg.com/data5/SELLER/Default/2021/10/FW/QV/AK/18156721/burette-stand-500x500.jpg" alt="Burette Setup" />
+            <div class="p-3">
+              <h6 class="mt-2">Burette Setup</h6>
+            </div>
+          </div>
+        </a>
       </div>
-    </div>
 
-    <!-- Testimonials -->
-    <section class="mt-5 bg-light p-4 rounded shadow-sm" data-aos="fade-up">
-      <h4 class="mb-3">Trusted by Institutions Nationwide</h4>
-      <blockquote class="blockquote">
-        <p>"Spanco Tek’s lab kits are reliable, well-designed, and perfect for our senior secondary curriculum!"</p>
-        <footer class="blockquote-footer">Dr. Meena Rao, <cite>National Science High School</cite></footer>
-      </blockquote>
-    </section>
-
-
-    <!-- Product Slider -->
-    <div class="scroll-wrapper mt-5" data-aos="fade-up">
-      <div class="product-cards-container">
-        <!-- Physics Equipment -->
-        <div class="product-card position-relative">
-          <span class="badge-new">New</span>
-          <img src="physics1.jpg" alt="Optics Kit - Physics" />
-          <div class="p-3">
-            <small>Art. no: 25280-88</small>
-            <h6 class="mt-2">Optics 3, Wave Physics</h6>
+      <div class="swiper-slide">
+        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
+          <div class="product-card position-relative">
+            <span class="badge-new">New</span>
+            <img src="https://5.imimg.com/data5/SELLER/Default/2021/10/FW/QV/AK/18156721/burette-stand-500x500.jpg" alt="Burette Setup" />
+            <div class="p-3">
+              <h6 class="mt-2">Burette Setup</h6>
+            </div>
           </div>
-        </div>
-
-        <!-- Chemistry Equipment -->
-        <div class="product-card position-relative">
-          <span class="badge-new">New</span>
-          <img src="chem1.jpg" alt="Organic Chemistry Kit" />
-          <div class="p-3">
-            <small>Art. no: 36270-45</small>
-            <h6 class="mt-2">Organic Chemistry Kit</h6>
-          </div>
-        </div>
-
-        <!-- Biology Equipment -->
-        <div class="product-card position-relative">
-          <span class="badge-new">New</span>
-          <img src="bio1.jpg" alt="Biology Student Microscope" />
-          <div class="p-3">
-            <small>Art. no: 47210-11</small>
-            <h6 class="mt-2">Student Microscope</h6>
-          </div>
-        </div>
-
-        <!-- Repeat for seamless scrolling -->
-        <div class="product-card position-relative">
-          <span class="badge-new">New</span>
-          <img src="physics1.jpg" alt="Optics Kit - Physics" />
-          <div class="p-3">
-            <small>Art. no: 25280-88</small>
-            <h6 class="mt-2">Optics 3, Wave Physics</h6>
-          </div>
-        </div>
-
-        <div class="product-card position-relative">
-          <span class="badge-new">New</span>
-          <img src="chem1.jpg" alt="Organic Chemistry Kit" />
-          <div class="p-3">
-            <small>Art. no: 36270-45</small>
-            <h6 class="mt-2">Organic Chemistry Kit</h6>
-          </div>
-        </div>
-
-        <div class="product-card position-relative">
-          <span class="badge-new">New</span>
-          <img src="bio1.jpg" alt="Biology Student Microscope" />
-          <div class="p-3">
-            <small>Art. no: 47210-11</small>
-            <h6 class="mt-2">Student Microscope</h6>
-          </div>
-        </div>
+        </a>
       </div>
+
+      <div class="swiper-slide">
+        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
+          <div class="product-card position-relative">
+            <span class="badge-new">New</span>
+            <img src="https://5.imimg.com/data5/SELLER/Default/2021/10/FW/QV/AK/18156721/burette-stand-500x500.jpg" alt="Burette Setup" />
+            <div class="p-3">
+              <h6 class="mt-2">Burette Setup</h6>
+            </div>
+          </div>
+        </a>
+      </div>
+
     </div>
+    <div class="swiper-pagination"></div>
   </div>
+</div>
+<div class="scroll-wrapper mt-5" data-aos="fade-up">
+  <h2 class=" mb-4">Biology Equipment</h2>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
-</body>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper mb-5">
 
+      <!-- Biology Slide 1 -->
+      <div class="swiper-slide">
+        <a href="./products-page/plus2product/organic-kit.html" class="product-card-link">
+          <div class="product-card position-relative">
+            <span class="badge-new">New</span>
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/8/336311831/BC/BR/OQ/96344694/organic-chemistry-lab-kit-500x500.jpg" alt="Organic Chemistry Kit" />
+            <div class="p-3">
+              <h6 class="mt-2">Organic Chemistry Kit</h6>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Biology Slide 2 -->
+      <div class="swiper-slide">
+        <a href="./products-page/plus2product/test-tube-set.html" class="product-card-link">
+          <div class="product-card position-relative">
+            <span class="badge-new">New</span>
+            <img src="https://5.imimg.com/data5/SELLER/Default/2021/4/NR/QJ/VX/18156721/test-tube-stand-plastic-500x500.jpg" alt="Test Tube Stand" />
+            <div class="p-3">
+              <h6 class="mt-2">Test Tube Stand</h6>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Biology Slide 3 -->
+      <div class="swiper-slide">
+        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
+          <div class="product-card position-relative">
+            <span class="badge-new">New</span>
+            <img src="https://5.imimg.com/data5/SELLER/Default/2021/10/FW/QV/AK/18156721/burette-stand-500x500.jpg" alt="Burette Setup" />
+            <div class="p-3">
+              <h6 class="mt-2">Burette Setup</h6>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
+          <div class="product-card position-relative">
+            <span class="badge-new">New</span>
+            <img src="https://5.imimg.com/data5/SELLER/Default/2021/10/FW/QV/AK/18156721/burette-stand-500x500.jpg" alt="Burette Setup" />
+            <div class="p-3">
+              <h6 class="mt-2">Burette Setup</h6>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
+          <div class="product-card position-relative">
+            <span class="badge-new">New</span>
+            <img src="https://5.imimg.com/data5/SELLER/Default/2021/10/FW/QV/AK/18156721/burette-stand-500x500.jpg" alt="Burette Setup" />
+            <div class="p-3">
+              <h6 class="mt-2">Burette Setup</h6>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
+          <div class="product-card position-relative">
+            <span class="badge-new">New</span>
+            <img src="https://5.imimg.com/data5/SELLER/Default/2021/10/FW/QV/AK/18156721/burette-stand-500x500.jpg" alt="Burette Setup" />
+            <div class="p-3">
+              <h6 class="mt-2">Burette Setup</h6>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+    </div>
+
+
+
+    <div id="footer-container"></div>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="./assets/JS/footer.js"></script>
+
+    <script>
+      AOS.init();
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          576: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          992: {
+            slidesPerView: 4,
+          },
+        },
+      });
+    </script>
+    
+  </body>
 </html>

@@ -8,7 +8,7 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="./assets/CSS/footer.css">
   <style>
     body {
       background-color: #f8f9fa;
@@ -33,10 +33,46 @@
       margin: 0;
       padding-bottom: 0.75rem;
     }
+
+    .navbar img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    @media (max-width: 576px) {
+      iframe {
+        height: 200px;
+      }
+
+      .contact-info p {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="./assets/images/spanco logo.png" alt="Logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav me-3">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <a href="#" class="btn btn-dark">Get Quote</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
   <div class="container py-5">
     <div class="text-center mb-5">
       <h2 class="fw-bold">Contact Us</h2>
@@ -73,27 +109,38 @@
       <div class="col-md-6">
         <h5 class="mb-3">Our Location</h5>
         <div class="mb-4">
-          <iframe src="https://maps.google.com/maps?q=Laurel%20Hill,%20VA&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          <iframe src="https://maps.google.com/maps?q=123+Science+Park+Drive,+CA+94105&t=&z=13&ie=UTF8&iwloc=&output=embed"
             width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
         <div class="contact-info">
-          <p><i class="bi bi-geo-alt-fill"></i><strong>Address:</strong><br>
-            123 Science Park Drive<br>
-            Innovation District<br>
-            CA 94105, USA
+          <p>
+            <i class="bi bi-geo-alt-fill"></i><strong>Address:</strong><br>
+            <a href="https://www.google.com/maps?q=123+Science+Park+Drive,+CA+94105" target="_blank" class="text-decoration-none text-dark">
+              123 Science Park Drive<br>
+              Innovation District<br>
+              CA 94105, USA
+            </a>
           </p>
-          <p><i class="bi bi-telephone-fill"></i><strong>Phone:</strong> +1 (555) 123-4567</p>
-          <p><i class="bi bi-envelope-fill"></i><strong>Email:</strong> info@spancotek.com</p>
+          <p>
+            <i class="bi bi-telephone-fill"></i><strong>Phone:</strong>
+            <a href="tel:+15551234567" class="text-decoration-none text-dark">+1 (555) 123-4567</a>
+          </p>
+          <p>
+            <i class="bi bi-envelope-fill"></i><strong>Email:</strong>
+            <a href="mailto:info@spancotek.com" class="text-decoration-none text-dark">info@spancotek.com</a>
+          </p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Bootstrap + JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Footer -->
+  <div id="footer-container"></div>
 
-  <!-- Contact Form Handling -->
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="footer.js"></script>
   <script>
     document.getElementById("contactForm").addEventListener("submit", function (e) {
       e.preventDefault();
@@ -110,6 +157,7 @@
       }
     });
   </script>
+  <script src="./assets/JS/footer.js"></script>
 </body>
 
 </html>
