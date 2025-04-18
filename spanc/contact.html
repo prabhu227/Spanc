@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Spanco Tek</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #000;
+    }
+
+    .btn-dark:hover {
+      background-color: #222;
+    }
+
+    .contact-info i {
+      font-size: 1.2rem;
+      margin-right: 8px;
+      color: #000;
+    }
+
+    .contact-info p {
+      margin: 0;
+      padding-bottom: 0.75rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container py-5">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Contact Us</h2>
+      <p class="text-muted">Get in touch with our team of experts</p>
+    </div>
+
+    <div class="row g-5">
+      <!-- Contact Form -->
+      <div class="col-md-6">
+        <form id="contactForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Your name" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" placeholder="your@email.com" required />
+          </div>
+          <div class="mb-3">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" id="subject" class="form-control" placeholder="How can we help?" required />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" rows="5" class="form-control" placeholder="Your message" required></textarea>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-dark">Send Message</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Map & Contact Info -->
+      <div class="col-md-6">
+        <h5 class="mb-3">Our Location</h5>
+        <div class="mb-4">
+          <iframe src="https://maps.google.com/maps?q=Laurel%20Hill,%20VA&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="contact-info">
+          <p><i class="bi bi-geo-alt-fill"></i><strong>Address:</strong><br>
+            123 Science Park Drive<br>
+            Innovation District<br>
+            CA 94105, USA
+          </p>
+          <p><i class="bi bi-telephone-fill"></i><strong>Phone:</strong> +1 (555) 123-4567</p>
+          <p><i class="bi bi-envelope-fill"></i><strong>Email:</strong> info@spancotek.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap + JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Contact Form Handling -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (name && email && subject && message) {
+        alert("Thanks for contacting us, " + name + "! We'll get back to you soon.");
+        document.getElementById("contactForm").reset();
+      } else {
+        alert("Please fill in all fields.");
+      }
+    });
+  </script>
+</body>
+
+</html>
