@@ -21,6 +21,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="../assets/CSS/footer.css" />
     <style>
       .card-img-top {
         height: 200px;
@@ -66,10 +67,49 @@
       .card-text {
         min-height: 80px;
       }
+      .navbar img {
+        height: 40px;
+        margin-right: 15px;
+      }
     </style>
   </head>
   <body>
-    <div class="container mt-5">
+    <nav
+    class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3"
+  >
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <span style="font-weight: bold; font-size: 5px">
+        <img src="../assets/images/spanco logo.png" alt="Logo" />
+      </span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav me-3">
+        <li class="nav-item"><a class="nav-link active" href="/index.html">Home</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/product.html">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/testimonials.html">Testimonials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact.html">Contact</a>
+        </li>
+      </ul>
+      <a href="#" class="btn btn-dark">Get Quote</a>
+    </div>
+  </nav>
+    <div class="container mt-5 mb-4">
       <div class="text-center mb-5">
         <h1 class="display-5">Physics Equipment</h1>
         <p>
@@ -424,7 +464,7 @@
             equipment
               .map(
                 (item) => `
-              <div class="col-md-4 d-flex">
+              <div class="col-md-4 d-flex ">
                 <div class="card hover-shadow w-100" style="cursor: pointer">
                   <img src="${item.img}" class="card-img-top" alt="${item.name}" />
                   <div class="card-body">
@@ -444,7 +484,8 @@
         </script>
       </div>
     </div>
-
+    <div id="footer-container"></div>
+    <script src="../assets/JS/footer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Background shapes -->
