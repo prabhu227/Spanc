@@ -8,53 +8,100 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+   
+    
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
 <link rel="stylesheet" href="./assets/CSS/footer.css">
     <style>
-      .hero {
-        background: url("./assets//images/bg\ image.jpg") no-repeat center
-          center/cover;
+      
+      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-        height: 100vh;
-        position: relative;
-        color: white;
-      }
-      .overlay {
-        background-color: rgba(0, 0, 0, 0.5);
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        padding-top: 10%;
-      }
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.hero {
+  background: url("./assets//images/bg image.jpg") no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  color: rgb(56, 15, 15);
+  
+  overflow: hidden;
+}
+
+@keyframes zoomInBg {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 105%;
+  }
+}
+
+.overlay {
+  background-color: rgba(107, 102, 102, 0.5);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fadeInOverlay 2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInOverlay {
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 10%;
+  text-align:start;
+  animation: fadeSlideUp 2s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
       .btn-dark-custom {
-        background-color: #000;
+        background-color: #641717;
         border: none;
+        color: #f8f9fa;
       }
       .navbar-brand span {
         font-weight: bold;
         font-size: 1.2rem;
+        
       }
 
       .category-card {
         border: none;
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 4px 16px rgba(135, 52, 52, 0.08);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+      
       }
 
       .category-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 24px rgba(8, 8, 8, 0.15);
       }
 
       .category-card img {
@@ -69,13 +116,13 @@
 
       .view-link {
         font-weight: 600;
-        color: #000;
+        color: #865454;
         text-decoration: none;
         transition: color 0.3s;
       }
 
       .view-link:hover {
-        color: #007bff;
+        color: #5a2523;
       }
 
       .view-link i {
@@ -116,11 +163,11 @@
 
       .choose-card h5 {
         font-weight: 700;
-        color: #111;
+        color: #460e0e;
       }
 
       .choose-card p {
-        color: #555;
+        color: #543434;
       }
 
       body {
@@ -130,7 +177,8 @@
       .testimonial-card {
         border: none;
         border-radius: 16px;
-        background-color: #040404;
+        background-color: #f6f1f1;
+        
         padding: 2rem;
         height: 100%;
         transition: all 0.3s ease;
@@ -171,6 +219,13 @@
         height: 40px;
         margin-right: 15px;
       }
+      .my-custom-text {
+        color: #5a2523;
+      }
+      .my-custom-text p{
+     color: #270404;
+      }
+    
       
     </style>
   </head>
@@ -192,7 +247,7 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
         <ul class="navbar-nav me-3">
           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
           <li class="nav-item">
@@ -221,12 +276,12 @@
             <h1 class="display-4 fw-bold">
               Advanced Lab Equipment for Modern Research
             </h1>
-            <p class="lead mt-3">
+            <p class="fw-bold mt-3">
               Discover our comprehensive range of precision instruments and
               equipment designed for scientific excellence.
             </p>
             <div class="mt-4">
-              <a href="#" class="btn btn-dark-custom btn-lg me-3"
+              <a href="product.html" class="btn btn-dark-custom btn-lg me-3"
                 >Explore Products</a
               >
               <a href="#" class="btn btn-light btn-lg">Learn More</a>
@@ -237,9 +292,9 @@
     </section>
 
     <div class="bg-gradient-custom p-5">
-      <div class="container text-center py-5">
-        <h2 class="fw-bold">Featured Categories</h2>
-        <p class="text-muted mb-4">
+      <div class="container text-center py-5 ">
+        <h2 class="fw-bold my-custom-text">Featured Categories</h2>
+        <p class="my-custom-text mb-4">
           Browse our extensive collection of laboratory equipment
         </p>
 
@@ -329,8 +384,8 @@
 
     <div class="bg-gradient-custom p-5">
       <div class="container text-center">
-        <h2 class="fw-bold">Why Choose Us</h2>
-        <p class="text-muted mb-5">
+        <h2 class="fw-bold my-custom-text">Why Choose Us</h2>
+        <p class="my-custom-text mb-5">
           Leading provider of laboratory equipment with exceptional service
         </p>
 
@@ -382,8 +437,8 @@
 
     <div class="bg-gradient-custom p-5">
       <div class="container text-center py-5">
-        <h2 class="fw-bold">Testimonials</h2>
-        <p class="text-muted mb-5">What our clients say about us</p>
+        <h2 class="fw-bold my-custom-text">Testimonials</h2>
+        <p class="my-custom-text mb-5">What our clients say about us</p>
 
         <div class="row g-4">
           <!-- Testimonial 1 -->
@@ -397,19 +452,19 @@
                 <i class="bi bi-star-fill"></i>
               </div>
               <p>
-                "The quality of equipment and level of service provided by
-                LabTech Solutions has been exceptional. Their team's expertise
-                and support have been invaluable to our research."
+                "Spancotek is a well-Known laboratory supply vendor in Odisha.
+                It can be difficult at times, but it is also extermly
+                rewarding for their support in every respect."
               </p>
               <div class="client-info">
                 <img
                   src="https://randomuser.me/api/portraits/women/44.jpg"
-                  alt="Dr. Sarah Chen"
+                  alt="Dr. Sidharth Sankar Panda"
                 />
                 <div>
-                  <div class="client-name">Dr. Sarah Chen</div>
+                  <div class="client-name">Dr. Sidharth Sankar Panda</div>
                   <p class="client-role">
-                    Research Director, BioTech Institute
+                    Prof., Berhampur University
                   </p>
                 </div>
               </div>
@@ -427,18 +482,18 @@
                 <i class="bi bi-star-fill"></i>
               </div>
               <p>
-                "We've been consistently impressed with the reliability and
-                precision of the analytical instruments. The technical support
-                team is always ready to help."
+                "We are regular customer of Spancotek Instruments.
+                We find the products to be of good quality andreliable,
+                We strongly recommend the instruction for Physics laboratories."
               </p>
               <div class="client-info">
                 <img
                   src="https://randomuser.me/api/portraits/men/45.jpg"
-                  alt="Prof. Michael Roberts"
+                  alt="Dr. L.P Singh, Physics"
                 />
                 <div>
-                  <div class="client-name">Prof. Michael Roberts</div>
-                  <p class="client-role">Lead Researcher, University Labs</p>
+                  <div class="client-name">Dr. L.P Singh, Physics,</div>
+                  <p class="client-role">UTKAL University</p>
                 </div>
               </div>
             </div>
@@ -455,24 +510,54 @@
                 <i class="bi bi-star-fill"></i>
               </div>
               <p>
-                "The microscopes we purchased have exceeded our expectations in
-                terms of image quality and ease of use. Excellent products
-                backed by great service."
+                "It's nice to note that the equipments, science apparatus
+                and laboratory fittings supplied by your farm area of good
+                quality. We wish all best wishes."
               </p>
               <div class="client-info">
                 <img
                   src="https://randomuser.me/api/portraits/women/65.jpg"
-                  alt="Dr. Emily Thompson"
+                  alt="Dr Tarun Kumar Pradhan"
                 />
                 <div>
-                  <div class="client-name">Dr. Emily Thompson</div>
+                  <div class="client-name">Dr Tarun Kumar Pradhan,</div>
                   <p class="client-role">
-                    Lab Manager, Medical Research Center
+                   Reader in Chemistry Khariar Auto College,Nuapada
                   </p>
                 </div>
               </div>
             </div>
           </div>
+
+        <!--Testimonal 4-->
+
+
+          <!-- <div class="col-md-6 col-lg-4">
+            <div class="testimonial-card text-start">
+              <div class="stars mb-3">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                "We are happy to certify that we have been using instruments and
+                 accessories supplied by Spancotek has been responsive in understanding
+                 our laboratory needs."
+              </p>
+              <div class="client-info">
+                <img
+                  src="https://randomuser.me/api/portraits/men/45.jpg"
+                  alt="Dr.Purnendu charan Dash"
+                />
+                <div>
+                  <div class="client-name">Dr.Purnendu charan Dash,</div>
+                  <p class="client-role">ExHod Physics, SOA University</p>
+                </div>
+              </div>
+            </div>
+          </div> -->
         </div>
       </div>
     </div>

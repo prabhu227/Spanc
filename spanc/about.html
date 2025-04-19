@@ -102,30 +102,99 @@
     }
 
     .choose-card {
-      border: none;
-      border-radius: 16px;
-      background: #fff;
-      padding: 30px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      height: 100%;
-    }
-    .choose-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-    .choose-icon {
-      font-size: 2rem;
-      margin-bottom: 15px;
-      color: #000;
-    }
-    .choose-heading {
-      font-weight: 600;
-      font-size: 1.2rem;
-    }
-    .choose-text {
-      color: #6c757d;
-      font-size: 0.95rem;
-    }
+  position: relative;
+  border: none;
+  border-radius: 16px;
+  background: #fff;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.choose-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 18px;
+  background: linear-gradient(
+    45deg,
+    #ff6b6b,
+    #c67f53,
+    #836a4c,
+    #c8bbb0,
+    #97959a,
+    #b94747
+  );
+  background-size: 400%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: glowBorder 6s linear infinite;
+}
+
+.choose-card:hover::before {
+  opacity: 1;
+}
+
+@keyframes glowBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.choose-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.choose-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #000;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.choose-card:hover .choose-icon {
+  color: #ff6b6b;
+  animation: pulseGlow 1.5s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 0 rgba(255, 107, 107, 0);
+  }
+  50% {
+    transform: scale(1.15);
+    text-shadow: 0 0 8px rgba(255, 107, 107, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 rgba(255, 107, 107, 0);
+  }
+}
+
+.choose-heading {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.choose-text {
+  color: #582a26;
+  font-size: 0.95rem;
+}
+
     body {
       background-color: #fff;
       font-family: 'Segoe UI', sans-serif;
@@ -167,8 +236,8 @@
     }
 
     .cta-section {
-      background-color: #f9f1f1;
-      color: #080808;
+      background-color: #0d0d0d;
+      color: #f6eeee;
       padding: 60px 0;
     }
 
@@ -186,8 +255,8 @@
     }
 
     .btn-outline-light:hover {
-      background-color: #fdf6f6;
-      color: #0c0c0c;
+      background-color: #0e0d0d;
+      color: #bfb8b8;
     }
 
     @media (max-width: 768px) {
@@ -199,6 +268,13 @@
         text-align: center;
       }
     }
+    .my-custom-text{
+      color: rgb(95, 47, 47);
+    }
+    .navbar img {
+        height: 40px;
+        margin-right: 15px;
+      }
   </style>
 </head>
 <body>
@@ -208,8 +284,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3">
     <a class="navbar-brand d-flex align-items-center" href="#">
       <span style="font-weight:bold; font-size: 20px;">
-        <span style="color:blue;">LOGO</span> Spanco Tek
-      </span>
+        <img src="./assets/images/spanco logo.png" alt="Logo" />
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -226,11 +301,11 @@
     </div>
   </nav>
 
-<section class="py-5 text-center bg-light">
+<section class="py-5 text-center bg-light my-custom-text">
   <div class="container animated-section">
-    <h2 class="about-subtitle">About Us</h2>
+    <h2 class="about-subtitlemy-custom-text">About Us</h2>
     <h1 class="about-title mb-4">We Serve Technology</h1>
-    <p class="about-text">
+    <p class="about-text ">
       Pioneering laboratory solutions with cutting-edge technology and unparalleled expertise since 2010.
       We're committed to advancing scientific discovery through innovative equipment and exceptional service.
     </p>
@@ -344,7 +419,7 @@
     </div>
   </div>
 </div>
-<div class="container py-3">
+<div class="cta-section py-3">
   <div class="row align-items-center justify-content-between">
     <!-- Text -->
     <div class="col-md-6 cta-text">
@@ -353,8 +428,8 @@
     
     <!-- Buttons -->
     <div class="col-md-6 text-md-end text-center cta-actions">
-      <a href="#products" class="btn btn-light cta-btn me-3">Explore Products</a>
-      <a href="#contact" class="btn btn-light cta-btn">Contact Us</a>
+      <a href="product.html" class="btn btn-light cta-btn me-3">Explore Products</a>
+      <a href="contact.html" class="btn btn-light cta-btn">Contact Us</a>
     </div>
   </div>
 </div>
