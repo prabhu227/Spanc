@@ -80,42 +80,49 @@
       footer a:hover {
         color: white;
       }
+      .navbar img {
+        height: 40px;
+        margin-right: 15px;
+      }
     </style>
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#">Spanco Tek</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Courses</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="plus2phy.html">+2</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="plus3.html">+3</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pg.html">PG</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <nav
+    class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3"
+  >
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <span style="font-weight: bold; font-size: 5px">
+        <img src="../assets/images/spanco logo.png" alt="Logo" />
+      </span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav me-3">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/product.html">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/testimonials.html">Testimonials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact.html">Contact</a>
+        </li>
+      </ul>
+      <a href="#" class="btn btn-dark">Get Quote</a>
+    </div>
+  </nav>
 
     <!-- Hero Section -->
     <div class="hero" data-aos="fade-down">
@@ -149,7 +156,7 @@
 
         <!-- +3 Card -->
         <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <a href="plus3.html" class="text-decoration-none text-dark">
+          <a href="plus-three.html" class="text-decoration-none text-dark">
             <div class="course-card">
               <div class="course-icon">🧪</div>
               +3
@@ -158,14 +165,14 @@
         </div>
 
         <!-- PG Card -->
-        <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <!-- <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="300">
           <a href="pg.html" class="text-decoration-none text-dark">
             <div class="course-card">
               <div class="course-icon">📚</div>
               PG
             </div>
           </a>
-        </div>
+        </div> -->
       </div>
     </div>
 

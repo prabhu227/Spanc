@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Quantum Mechanics experiments for studying Spectroscope Splitting, Zeeman Effect, Tunneling in Diodes, and more with modern lab equipment.">
+  <meta name="keywords" content="Quantum Mechanics, ESR Technique, Zeeman Effect, Tunneling Diode, Physics Experiments">
+  <meta name="author" content="Physics Lab">
+  <title>Quantum Mechanics Experiments</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h1 class="text-center">Quantum Mechanics Lab Equipment</h1>
+    <div class="row" id="product-list">
+      <!-- Product Cards will be injected here by JavaScript -->
+    </div>
+  </div>
+
+  <!-- Bootstrap JS & jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    const quantumMechanicsProducts = [
+      {
+        title: "Spectroscope Splitting of DPPH using ESR Technique",
+        model: "QMP-001",
+        specs: [
+          "Dimensions: 165x105x135 mm³ approx.",
+          "Weight: 1.25 kg approx.",
+          "Windings: 500 each, Magnetic field: 0-3.37 mT",
+          "Frequency Range: 45 to 75 MHz (ESR), 10 to 15 MHz (NMR)",
+          "ESR Supplementary Set includes: ESR probe-head, DPPH sample, Control sample tube, Mounting rings, and Mounting cylinders",
+          "Output: 0-1V resonance signal, BNC socket",
+          "Coil Current: 0-250mA, 50ms Sawtooth current source",
+          "Optional: Digital Oscilloscope-100MHz, 2GS/s Dual Channel Color Oscilloscope with Software"
+        ]
+      },
+      {
+        title: "Study of Zeeman Effect: External Magnetic Field & Hyperfine Splitting",
+        model: "QMP-002",
+        specs: [
+          "Power Supply: 0-30V DC, 10A",
+          "Input Voltage: AC 220V ±5%, Output Voltage: 0-30V, Output Current: 0-10A",
+          "Electromagnet: Coils – 400 turns, Coil Current: 10A max",
+          "Core: U-Core (150x130mm), I-Core (150mm length, 40x40mm cross section)",
+          "Optical Bench: Aluminium alloy, Scale: 0-100cm, Least Count: 1mm",
+          "Fabry Perot Etalon: Mirror optics, 532nm Green Filter",
+          "Polarizer Filter: Adjustable angle (0-90°), 21mm aperture",
+          "Quarter Wave Plate: Adjustable angle (0°-90°), 15mm aperture",
+          "CCD Camera: CMOS sensor, VGA output, BNC connector",
+          "Optional Accessories: Various polarizers, filters, and optical setups"
+        ]
+      },
+      {
+        title: "Tunneling Effect in Tunnel Diode Using I-V Characteristics",
+        model: "SK-075",
+        specs: [
+          "Inbuilt Fixed DC regulated power supply",
+          "DC Voltmeter: 0-600mV",
+          "DC Ammeter: 0-50mA",
+          "Tunnel Diode: IN 3717"
+        ]
+      },
+      {
+        title: "To Determine the Diameter of Narrow Wire",
+        model: "QMP-003",
+        specs: [
+          "Optical Bench: Small U-shape, mild steel",
+          "PIN Diode Laser",
+          "Single Wire Frame Size: 50mm x 50mm, Wire Thickness: 0.5mm approx.",
+          "Cross Wire Frame Size: 50mm x 50mm, Wire Thickness: 0.5mm approx.",
+          "Diffraction Slide: Set of 13 objects, Frame Size: 50mm x 50mm",
+          "Single Slit, Double Slit, Circular Prism Table with varying aperture sizes (1.0mm, 0.60mm, etc.)"
+        ]
+      },  {
+    title: "Verification of Brewster's Law",
+    model: "QMP-003",
+    specs: [
+      "He-Ne LASER: Wavelength 632.8 nm, Working current: 4mA - 6mA",
+      "Output power: >2mW, Continuous working time: > 8 hrs.",
+      "Working voltage: AC 220V ± 22 V, Input Power Rating: <2 W",
+      "Polarizer/Analyzer: Adjustable angle (0°-90°), Aperture: 21mm dia., Frame: 130mm dia.",
+      "Photo Detector: Silicon photocell, Terminals: 4mm safety socket, Aperture: 1 mm",
+      "Spectrometer: Brass scale, dia. 150mm, Objective: Achromatic lens, f=178mm, Aperture 32mm"
+    ]
+  },
+  {
+    title: "Calibration of Meter Bridge",
+    model: "QMP-004",
+    specs: [
+      "DC Supply: 1.5V/250 mA (Switch Controlled)",
+      "Decade Resistance Box: 0.10 to 100-2nos (Fractional)",
+      "Galvanometer: 30-0-30 μA (Moving Coil)",
+      "DC Regulated Fixed Power Supply: 1.5V/250 mA",
+      "Fixed Resistors: 10Ω +1%-2nos",
+      "Carry Foster Bridge with jockey"
+    ]
+  },
+  {
+    title: "Determination of n of the Given Viscous Liquid by Searle's Viscometer",
+    model: "QMP-005",
+    specs: [
+      "Outer cylinder is clamped to supporting pillar at various heights.",
+      "Inner cylinder, which is graduated, revolves as a pillar fitted with two pulleys, complete with scale pan.",
+      "Optional accessories: Weight and wire."
+    ]
+  },
+  {
+    title: "To Determine H-Component of Earth's Magnetic Field and Magnetic Moment of a Bar Magnet",
+    model: "QMP-006",
+    specs: [
+      "Deflection Magnetometer",
+      "Vibration Magnetometer",
+      "Magnet",
+      "Brass bar",
+      "Magnetic compass",
+      "Stopwatch"
+    ]
+  }
+    ];
+
+    const productListContainer = document.getElementById("product-list");
+
+    quantumMechanicsProducts.forEach(product => {
+      const productCard = document.createElement("div");
+      productCard.classList.add("col-md-4", "mb-4");
+
+      const productContent = `
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">${product.title}</h5>
+            <p class="card-text">Model: ${product.model}</p>
+            <ul class="list-group list-group-flush">
+              ${product.specs.map(spec => `<li class="list-group-item">${spec}</li>`).join("")}
+            </ul>
+          </div>
+        </div>
+      `;
+      productCard.innerHTML = productContent;
+      productListContainer.appendChild(productCard);
+    });
+  </script>
+
+</body>
+</html>

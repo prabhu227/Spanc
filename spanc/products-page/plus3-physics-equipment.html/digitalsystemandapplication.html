@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Digital Systems and Applications Lab Experiments - Measurements, Logic Gates, and Circuits.">
+  <meta name="author" content="Your Name">
+  <meta name="keywords" content="Digital Systems, Logic Gates, Transistor Test, Boolean Expression, Adder, Subtractor, CRO, Frequency">
+  <title>Digital Systems and Applications - Experiments</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    .experiment-card {
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .experiment-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .experiment-specs {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .experiment-specs li {
+      padding: 5px 0;
+    }
+
+    .experiment-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .experiment-container {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container-fluid experiment-container">
+    <div class="row">
+      <div class="col-12 experiment-header">
+        <h1>Digital Systems and Applications - Lab Experiments</h1>
+      </div>
+    </div>
+
+    <div class="row" id="experiment-list">
+      <!-- Dynamic Experiment Cards will be rendered here -->
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script>
+    const experiments = [
+      {
+        title: "To Measure (a) Voltage, and (b) Frequency of a Periodic Waveform Using a CRO/DSO",
+        model: "OS-20",
+        specs: [
+          "20/50 MHz Dual Trace Dual Channel 1mv Sensitivity/50MHz Digital Storage",
+          "CRT Type: 6-inch rectangular with internal graticule 8x10div('div-1cm)",
+          "Bandwidth XI-DC (AC 10Hz) ~20MHz (-3dB Mode: Ch1, Ch2, Dual(Alt/Chop/Add. Ch2 INV)"
+        ]
+      },
+      {
+        title: "To Test a Diode and Transistor Using a Multimeter",
+        model: "EME - 63A",
+        specs: [
+          "DCV: 0.1mV to 1000V, ACV: 0.1mV to 750V",
+          "DC Current: 0.1μA to 20A, AC Current: 0.1μA to 20A",
+          "Resistance: 0.10 to 40MQ, Capacitance: 10pF to 200uF",
+          "Frequency: 0.1 Hz to 30Mhz, Celsius: -40°C to 1000°C",
+          "Transistor: hhFE (NPN or PNP), Diode Test, Continuity Buzzer"
+        ]
+      },
+      {
+        title: "To Design a Switch (NOT Gate) Using a Transistor",
+        model: "DSA-001",
+        specs: [
+          "Data Switch: 0-5V-2nos",
+          "LED Indication: LED (RED)-2nos",
+          "Transistor: BC547",
+          "Resistor: 10K-2nos",
+          "DC Supply: 5V"
+        ]
+      },
+      {
+        title: "To Verify and Design AND, OR, NOT and XOR Gates Using NAND Gates",
+        model: "DSA-002",
+        specs: [
+          "Regulated DC Supply: +5V/1 Amp.",
+          "Logic Input Switches (Bounce less) - 4 Nos.",
+          "LED Indicators (buffered) -4Nos.",
+          "IC7400-6nos"
+        ]
+      },
+      {
+        title: "To Design a Combinational Logic System for a Specified Truth Table",
+        model: "DSA-003",
+        specs: [
+          "Regulated DC Supply: +5V/1 Amp.",
+          "Logic Input Switches (Bounce less) - 3 Nos.",
+          "LED Indicators (buffered) - 2 Nos.",
+          "IC7408-6nos, MC7432-3nos, IC7404-1no"
+        ]
+      },
+      {
+        title: "To Convert a Boolean Expression into Logic Circuit",
+        model: "DSA-004",
+        specs: [
+          "Regulated DC Supply: +5V/1 Amp.",
+          "Logic Input Switches (Bounce less) - 3 Nos.",
+          "LED Indicators (buffered) - 2 Nos.",
+          "IC7408-6nos, MC7432-3nos, IC7404-1no"
+        ]
+      }, {
+        title: "To Design an Astable Multivibrator of Given Specifications Using 555 Timer",
+        model: "DSA-005",
+        specs: [
+          "DC Supply: 5V",
+          "IC: NE555",
+          "LED Indicator: 2nos",
+          "Resistor: 100KΩ-2nos, 10KΩ-2nos, 1KΩ",
+          "Capacitor: 1μF, 0.1μF-2nos, 0.01μF-2nos, 10μF",
+          "Variable Resistor: 5KΩ",
+          "Optional: 20MHz Dual Channel Analog Oscilloscope"
+        ]
+      },
+      {
+        title: "To Design a Monostable Multivibrator of Given Specifications Using 555 Timer",
+        model: "DSA-006",
+        specs: [
+          "DC Supply: 5V",
+          "IC: NE555",
+          "LED Indicator: 2nos",
+          "Resistor: 100KΩ-2nos, 10KΩ-2nos, 1KΩ",
+          "Capacitor: 1μF, 0.1μF-2nos, 0.01μF-2nos, 10μF",
+          "Variable Resistor: 5KΩ",
+          "Optional: 20MHz Dual Channel Analog Oscilloscope"
+        ]
+      },
+      {
+        title: "To Build Flip-Flop (RS, Clocked RS, D-type, and JK) Circuits Using NAND Gates",
+        model: "DSA-007",
+        specs: [
+          "DC Supply: +5V/250mA (Fixed)",
+          "Data Switch: 0-5V-4nos",
+          "LED Indication: 2nos",
+          "Clock Pulse: High & Low",
+          "Quad 4 IC7846: 3nos",
+          "Quad 4 IC7404: 2nos",
+          "Quad 4 IC7432: 1no",
+          "Quad 4 IC7483: 1no"
+        ]
+      },
+      {
+        title: "To Build JK Master-Slave Flip-Flop Using Flip-Flop ICs",
+        model: "DSA-008",
+        specs: [
+          "DC Supply: +5V/250mA (Fixed)",
+          "Data Switch: 0-5V-4nos",
+          "LED Indication: 2nos",
+          "Clock Pulse: High & Low",
+          "Quad 4 IC7846: 3nos",
+          "Quad 4 IC7404: 2nos",
+          "Quad 4 IC7432: 1no",
+          "Quad 4 IC7483: 1no"
+        ]
+      },
+      {
+        title: "To Build a 4-Bit Counter Using D-type/JK Flip-Flop ICs and Study Timing Diagram",
+        model: "DSA-009",
+        specs: [
+          "DC Supply: +5V/250mA (Fixed)",
+          "Data Switch: 0-5V-4nos",
+          "LED Indication: 4nos",
+          "Clock Generator Mono Pulsar given on Board",
+          "IC74194-4nos"
+        ]
+      },
+      {
+        title: "To Make a 4-Bit Shift Register (Serial and Parallel) Using D-type/JK Flip-Flop ICs",
+        model: "DSA-010",
+        specs: [
+          "DC Supply: +5V/250mA (Fixed)",
+          "Data Switch: 0-5V-4nos",
+          "LED Indication: 4nos",
+          "Clock Generator Mono Pulsar given on Board",
+          "IC74194-4nos"
+        ]
+      }
+    ];
+
+    // Function to create and render the experiment cards dynamically
+    function renderExperiments() {
+      const experimentList = document.getElementById('experiment-list');
+      
+      experiments.forEach(experiment => {
+        const card = document.createElement('div');
+        card.classList.add('col-md-4', 'col-sm-6', 'experiment-card');
+        
+        const cardContent = `
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title experiment-title">${experiment.title}</h5>
+              <p><strong>Model:</strong> ${experiment.model}</p>
+              <ul class="experiment-specs">
+                ${experiment.specs.map(spec => `<li>${spec}</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        `;
+        
+        card.innerHTML = cardContent;
+        experimentList.appendChild(card);
+      });
+    }
+
+    // Call the render function
+    renderExperiments();
+  </script>
+</body>
+
+</html>

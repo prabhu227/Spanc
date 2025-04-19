@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="+3 Science Courses including advanced Physics, Chemistry, and Biology. Discover experiments and essential science equipment for higher education." />
+  <meta name="keywords" content="+3 Science, Advanced Physics, Chemistry, Biology, Science Equipment, Educational Tools, Lab Instruments" />
+  <meta name="author" content="Your Name or Company" />
+  <title>+3 Science Courses</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .subject-card {
+      height: 100%;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .subject-card h4 {
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .subject-card {
+        height: auto;
+      }
+    }
+    .navbar img {
+        height: 40px;
+        margin-right: 15px;
+      }
+  </style>
+</head>
+<body>
+    <nav
+    class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3"
+  >
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <span style="font-weight: bold; font-size: 5px">
+        <img src="../assets/images/spanco logo.png" alt="Logo" />
+      </span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav me-3">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="product.html">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="testimonials.html">Testimonials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+      <a href="#" class="btn btn-dark">Get Quote</a>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="text-center mb-5" data-aos="fade-down">
+      <h1 class="display-5 fw-bold">+3 Science Courses</h1>
+      <p class="lead">Dive deeper into advanced science concepts and practicals in Physics, Chemistry, and Biology.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <!-- +3 Physics -->
+      <div class="col-12 col-sm-10 col-md-6 col-lg-5" data-aos="zoom-in" data-aos-duration="1500">
+        <a href="./plusthree-phyequipments.html">
+          <div class="bg-white p-4 text-center subject-card">
+            <h4>+3 Physics</h4>
+            <p>Advanced mechanics, electromagnetism, thermodynamics, and experimental physics.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- +3 Chemistry and Biology -->
+      <div class="col-12 col-sm-10 col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1500">
+        <a href="./plusthree-cheandbio.html">
+          <div class="bg-white p-4 text-center subject-card">
+            <h4>+3 Chemistry and Biology</h4>
+            <p>Explore organic chemistry, biochemistry, and essential lab experiments in life sciences.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Background canvas (optional visual effect) -->
+  <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="background.js"></script>
+</body>
+</html>

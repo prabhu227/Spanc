@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Elements of Modern Physics Lab Experiments - Planck's Constant, Photoelectric Effect, and Work Function Determination.">
+  <meta name="author" content="Your Name">
+  <meta name="keywords" content="Planck's Constant, Photoelectric Effect, Work Function, LED, Modern Physics">
+  <title>Modern Physics - Lab Experiments</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    .experiment-card {
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .experiment-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .experiment-specs {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .experiment-specs li {
+      padding: 5px 0;
+    }
+
+    .experiment-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .experiment-container {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container-fluid experiment-container">
+    <div class="row">
+      <div class="col-12 experiment-header">
+        <h1>Elements of Modern Physics - Lab Experiments</h1>
+      </div>
+    </div>
+
+    <div class="row" id="experiment-list">
+      <!-- Dynamic Experiment Cards will be rendered here -->
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script>
+    const experiments = [
+      {
+        title: "Measurement of Planck's Constant Using (Blackbody) Radiation",
+        model: "SK-014",
+        specs: [
+          "SELECTOR SWITCH AT VI POSITION",
+          "Voltmeter & Current Display: 3½ digit, 7segment, Voltage Range: 0.000-2.000V, Current Range: 0-2000mA",
+          "SELECTOR SWITCH AT TI POSITION",
+          "Current Display: 3½ digit, 7segment LED, Current Range: 0-20mA",
+          "Temperature Display: 3½ digit, 7segment LED, Temperature Range: Room temperature to 60.0°C",
+          "Oven, Oven Connector: 5 Pin, DIN type",
+          "Heating Element: 20 ohm, Oven Connector: 5 Pin, DIN",
+          "Ambient Temp.: 60°C, Temp. Sensor: Pt100",
+          "Output Pin: Heater pin 4 & 5. Temperature pin 1 & 2"
+        ]
+      },
+      {
+        title: "Photo-electric Effect: Photo Current Versus Intensity and Wavelength of Light",
+        model: "EMP-012",
+        specs: [
+          "DC SUPPLY: 0-16V, 5V/1A, DC Current: 5 Amp",
+          "Display: Two separate displays (3 digits LED) for output voltage and load current continuously.",
+          "RESISTANCE MODULE - Resistance: 10ohm, Wattage: 10W, Connection: 4mm safety socket",
+          "PHOTO DETECTOR - Detector: Silicon photocell, Terminals: 4mm, Aperture: 1mm, Rod: 10mm diameter"
+        ]
+      },
+      {
+        title: "To Determine Work Function of Material of Filament of Directly Heated Vacuum Diode",
+        model: "EMP-001",
+        specs: [
+          "DC Supply: 0-250V",
+          "Vacuum Diode: EZ80",
+          "DC Voltmeter: 0-6 & 0-150V (Moving Coil)",
+          "DC Ammeter: 0-600mA & 0-30mA (Moving Coil)",
+          "Variable Pot: 2nos"
+        ]
+      },
+      {
+        title: "To Determine Planck's Constant Using LEDs of At Least 4 Different Colours",
+        model: "EMP-002",
+        specs: [
+          "DC Supply: 0-5V/150mA",
+          "DC Voltmeter: 0-5V",
+          "DC Ammeter: 0-2000μA",
+          "LED: RED-630nM, YELLOW-578nM, BLUE-436nM, GREEN-546nM"
+        ]
+      }, {
+        title: "To Determine the Wavelength of H-alpha Emission Line of Hydrogen Atom",
+        model: "EMP-003",
+        specs: [
+          "SPECTROMETER: 6\" dia circle reading 30 seconds.",
+          "Diffraction Grating: Hilger & Watts, Type, 15000 line per inch/6000 lines per cm",
+          "HYDROGEN TUBE: Gas: Hydrogen research grade",
+          "Violet: 420, 440nm, Blue: 490nm, Red: 670nm",
+          "SPECTRUM TUBE POWER SUPPLY: Input Voltage: 220V, 50 Hz AC",
+          "Output Voltage: 0-5000V (open circuit), Overload: 2mA (Max.) with reset switch",
+          "Socket: Spring loaded"
+        ]
+      },
+      {
+        title: "To Determine Ionization Potential of Mercury",
+        model: "EMP-004",
+        specs: [
+          "DC Power Supply: 0-3 VDC/50mA",
+          "AC Power Supply: 6.3V 0 to 25V 500mA",
+          "DC Voltmeter: 0-30V (Moving Coil)",
+          "DC Ammeter: 0-30mA (Moving Coil)"
+        ]
+      },
+      {
+        title: "To Determine the Absorption Lines in the Rotational Spectrum of Iodine Vapour",
+        model: "EMP-005",
+        specs: [
+          "SPECTROMETER: 6\" dia circle reading 30 seconds.",
+          "Diffraction Grating: Hilger & Watts, Type, 15000 line per inch/6000 lines per cm",
+          "Optical Bench: One meter long with five metallic sliders with holders. Three of them are provided with lateral motion.",
+          "Incandescent bulb 100W with house",
+          "Glass tube of bore 3cm and length 50cm with an inlet for Iodine grains with stopper.",
+          "Double convex lens of 75mm dia with F.L. 10cm",
+          "Double convex lens of 50mm dia with F.L. 10cm",
+          "Iodine, Spirit lamp, Spirit level",
+          "10' x 10' thick Card board with hole of 3cm dia",
+          "Reading lens 40/50mm diameter"
+        ]
+      },
+      {
+        title: "To Determine the Value of e/m by (a) Magnetic Focusing",
+        model: "EMP-006",
+        specs: [
+          "To study charge of an electron by using Magnetic Focusing method.",
+          "Kit comprises of High voltage Power Supply with intensity, focus X, Y deflection & Solenoid current controls.",
+          "Two meters provided for acceleration voltage & for solenoid current controls.",
+          "One 3\" CRT mounted on Teak Wood Stand & a Ring Type Solenoid slides over the CRT.",
+          "Dimension 11\"x7\"x4\"."
+        ]
+      },
+      {
+        title: "To Determine the Value of e/m by (b) Bar Magnet",
+        model: "EMP-007",
+        specs: [
+          "Cathode Ray Tube",
+          "Power supply for Cathode ray tube",
+          "Stand For CRT",
+          "Compass",
+          "Compass Stand",
+          "Bar Magnet"
+        ]
+      }, {
+        title: "To Setup the Millikan Oil Drop Apparatus and Determine the Charge of an Electron",
+        model: "EMP-008",
+        specs: [
+          "Base: Triangular",
+          "Lamp House: 12Volt SMD LED",
+          "Condenser Plates: Made of brass, mounted at the top of the central pillar, separated by 6-7mm",
+          "Top Plate: Has a small hole for oil drops to enter the condenser chamber",
+          "Oil: Mustard Oil used by the atomizer",
+          "Power Supply: AC 300V HT and AC 10V LT"
+        ]
+      },
+      {
+        title: "To Show the Tunneling Effect in Tunnel Diode Using I-V Characteristics",
+        model: "EMP-009",
+        specs: [
+          "Inbuilt Fixed DC regulated power supply",
+          "DC Voltmeter: 0-600mV",
+          "DC Ammeter: 0-50mA",
+          "Tunnel Diode: IN 3717"
+        ]
+      },
+      {
+        title: "To Determine the Wavelength of Laser Source Using Diffraction of Single Slit",
+        model: "EMP-010",
+        specs: [
+          "OPTICAL BENCH: Material: Aluminium alloy, Type: Hexagonal section, Scale: 0-100cm, Least count: 1mm",
+          "DIODE LASER: Peak wavelength: 635nm, Operating voltage: 5V DC, Operating current: 250mA, Optical power: 0.4-0.8mW",
+          "PIN HOLE PHOTO DETECTOR: Detector: Silicon photocell, Terminals: 4mm safety socket, Aperture: 1mm"
+        ]
+      },
+      {
+        title: "To Determine (1) Wavelength and (2) Angular Spread of He-Ne Laser Using Plane Diffraction Grating",
+        model: "EMP-011",
+        specs: [
+          "He-Ne LASER: Wavelength: 632.8nm, Working current: 4mA-6mA, Output power: >2mW",
+          "OPTICAL BENCH: Material: Aluminium alloy, Type: Hexagonal section, Scale: 0-100cm, Least count: 1mm",
+          "GLASS SCALE: Length: 15cm, Least Count: 1mm",
+          "DIFFRACTION SLIT: Frame Size: 50mm x 50mm, Slit: Width-0.06mm, Separation-0.20mm"
+        ]
+      },
+      {
+        title: "To Determine the Value of Boltzmann Constant Using V-I Characteristics of PN Diode",
+        model: "EMP-012",
+        specs: [
+          "Digital DC Voltmeter to measure the voltage across the diode",
+          "Highly stabilized variable D.C. power supply (0-2 Volts)",
+          "Digital Milliammeter to measure forward bias current in diode",
+          "Silicon Diode mounted inside the cabinet",
+          "Temperature controlled oven at 70°C to heat the diode for different readings"
+        ]
+      }
+    ];
+
+    // Function to create and render the experiment cards dynamically
+    function renderExperiments() {
+      const experimentList = document.getElementById('experiment-list');
+      
+      experiments.forEach(experiment => {
+        const card = document.createElement('div');
+        card.classList.add('col-md-4', 'col-sm-6', 'experiment-card');
+        
+        const cardContent = `
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title experiment-title">${experiment.title}</h5>
+              <p><strong>Model:</strong> ${experiment.model}</p>
+              <ul class="experiment-specs">
+                ${experiment.specs.map(spec => `<li>${spec}</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        `;
+        
+        card.innerHTML = cardContent;
+        experimentList.appendChild(card);
+      });
+    }
+
+    // Call the render function
+    renderExperiments();
+  </script>
+</body>
+
+</html>
