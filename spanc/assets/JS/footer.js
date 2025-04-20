@@ -11,9 +11,9 @@ const footerHTML = `
       <div class="col-6 col-md-2 mb-4">
         <h6 class="fw-semibold">Products</h6>
         <ul class="list-unstyled small">
-          <li><a href="#" class="text-secondary text-decoration-none d-block py-1">Analytical Instruments</a></li>
-          <li><a href="#" class="text-secondary text-decoration-none d-block py-1">Physics Lab Instruments</a></li>
-          <li><a href="#" class="text-secondary text-decoration-none d-block py-1">Heating & Cooling</a></li>
+          <li><a href="/products-page/plus-three-product-che&bio/analytical.html" class="text-secondary text-decoration-none d-block py-1">Analytical Instruments</a></li>
+          <li><a href="/products-page/plusthree-phyequipments.html" class="text-secondary text-decoration-none d-block py-1">Physics Lab Instruments</a></li>
+          <li><a href="/products-page/plus-three-product-che&bio/heating-cooling.html" class="text-secondary text-decoration-none d-block py-1">Heating & Cooling</a></li>
           <li><a href="/products-page/plus-three-product-che&bio/microscope.html" class="text-secondary text-decoration-none d-block py-1">Microscopes</a></li>
         </ul>
       </div>
