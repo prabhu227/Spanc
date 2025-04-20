@@ -46,6 +46,15 @@
       height: 40px;
       margin-right: 15px;
     }
+    canvas#particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
   </style>
 </head>
 <body>
@@ -951,9 +960,12 @@ microscopes.forEach((item, index) => {
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- Footer -->
+  <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
   <div id="footer-container" class="mt-5"></div>
   <script src="/assets/JS/footer.js"></script>
   <link rel="stylesheet" href="/assets/CSS/footer.css">
   <script src="/background.js"></script>
+ 
+
 </body>
 </html>
