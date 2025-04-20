@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Microscope Equipment for educational and medical purposes." />
+  <meta name="author" content="Physics Lab" />
+  <title>Microscope Equipment</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .microscope-card {
+      background: #fff;
+      border-left: 5px solid #6c63ff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+    .microscope-card:hover {
+      transform: translateY(-3px);
+    }
+    .badge-tag {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: #8e44ad;
+      color: #fff;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 5px;
+    }
+    .details h5 {
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
+    .img-fluid {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    .navbar img {
+      height: 40px;
+      margin-right: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="/assets/images/spanco logo.png" alt="Logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav me-3">
+        <li class="nav-item"><a class="nav-link active" href="/index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="/product.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="/testimonials.html">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+      </ul>
+      <a href="/get-quote.html?modal=true" class="btn btn-dark">Get Quote</a>
+    </div>
+  </nav>
+
+  <!-- Product Section -->
+ <!-- Place this in the body where products go -->
+<div class="container">
+  <h1 class="text-center mb-5 mt-5">Microscope Equipment</h1>
+  <div id="microscope-container">
+    </div>
+</div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="specificationModal" tabindex="-1" role="dialog" aria-labelledby="specificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="specificationModalLabel">Product Specifications</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img id="modal-image" src="" alt="Product Image" class="img-fluid mb-3" />
+          <ul id="modal-specifications" class="list-group"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AOS Library for scroll animation -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init(); // Initialize AOS
+</script>
+
+<script>
+   document.addEventListener('DOMContentLoaded', () => {
+    console.log("Page Loaded");
+  const microscopes = [
+    {
+      id: "SSA-101",
+      title: "Dissecting Microscope (SSA-101)",
+      image: "images/ssa-101.png",
+     specifications:{
+      base: "Heavy Round Base With Precisely Designed Body.",
+      focusing: "Sensitive Focusing, Done By Rack And Pinion Arrangement. Revolving Arm Provided For Moving Magnifying Lens Over Full Stage Area.",
+      stage: "85 Mm X 75 Mm With Glass Area.",
+      illumination: "A Plano-Concave Lens Fitted In Fork For Light Reflection.",
+      optics: "10x & 20X Eyepieces",
+      tag: "Dissecting Microscope"
+     }
+    },
+    {
+      id: "SSA-102",
+      title: "Dissecting Microscope (SSA-102)",
+      image: "images/ssa-102.png",
+      specifications:{
+        base: "Heavy Round Base With Precisely Designed Body.",
+      focusing: "Sensitive Focusing, Done By Rack And Pinion Arrangement. Revolving Arm Provided For Moving Magnifying Lens Over Full Stage Area.",
+      stage: "85 Mm X 75 Mm With Glass Area.",
+      illumination: "A Plano-Concave Lens Fitted In Fork For Light Reflection.",
+      optics: "10x & 20X Eyepieces",
+      tag: "Dissecting Microscope"
+      }
+    },
+    {
+      id: "SSA-103",
+      title: "Dissecting Microscope (SSA-103)",
+      image: "images/ssa-103.png",
+      specifications:{
+        base: "Heavy Round Base With Precisely Designed Body.",
+      focusing: "Sensitive Focusing, Done By Rack And Pinion Arrangement. A Joint Revolving Arm Provided For Moving Magnifying Lens Over Full Stage Area.",
+      stage: "85 Mm X 75 Mm With Glass Area.",
+      illumination: "A Plano-Concave Lens Fitted In Fork For Light Reflection.",
+      optics: "10x & 20X Eyepieces And Special Bulls Eye Lens (83 Mm Dia)",
+      tag: "Dissecting Microscope"
+      }
+    },
+    {
+      id: "SSA-104",
+      title: "Pentex Microscope (SSA-104)",
+      image: "images/ssa-104.png",
+     specifications:{
+      base: "",
+      focusing: "Easy to use maintenance free simple microscope having monocular body, one 10x objective and one 10x eye piece, small reflector, packed in card board box",
+      stage: "",
+      illumination: "",
+      optics: "",
+      tag: "Pentex Microscope"
+     }
+    },
+     {
+    id: "SSA-105",
+    title: "Single Nose Microscope (SSA-105)",
+    image: "images/ssa-105.png",
+    specifications: {
+      base: "Cast Iron Base With Inclinable Body.",
+      focusing: "Sensitive Focusing, Done By Rack And Pinion Arrangement.",
+      stage: "85 Mm X 75 Mm With Iris Diaphragm Underneath And Stage Clip On It.",
+      illumination: "A Plano-Concave Reflector.",
+      optics: "10x Eyepieces And 10x Objective"
+    },
+    tag: "Single Nose Microscope"
+  },
+  {
+    id: "SSA-106",
+    title: "Student Microscope (Economy Model) (SSA-106)",
+    image: "images/ssa-106.png",
+    specifications: {
+      base: "U-Shaped Cast Iron Base 90° Inclinable Body.",
+      focusing: "Separate Knobs For Coarse And Fine Motion.",
+      stage: "110 X 110 Mm With Stage Clips.",
+      illumination: "A Plano-Concave Reflector, A Bright Field Condenser Is Fixed To The Stage.",
+      optics: "10x & 15x Eyepieces And 10x & 40x Objectives, Maximum Magnification 600x."
+    },
+    tag: "Economy Model"
+  },
+  {
+    id: "SSA-107",
+    title: "Student Microscope (SSA-107)",
+    image: "images/ssa-107.png",
+    specifications: {
+      base: "Straight With Body Inclinable Trough 90°.",
+      focusing: "Separate Coarse And Fine Focus Controls.",
+      stage: "12 X 120 Mm With Stage Clips.",
+      illumination: "Sub-Stage Fixed Iris Diaphragm, Condenser Na 1.25.",
+      optics: "10x & 15x Eyepiece, 10x/Na 0.25 & 40x/Na 0.65 Objectives."
+    },
+    tag: "Student Microscope"
+  },
+  {
+    id: "SSA-108",
+    title: "Junior Medical Microscope Economy Model (SSA-108)",
+    image: "images/ssa-108.png",
+    specifications: {
+      base: "U-Shaped Heavy Cast Iron Base 90° Inclinable Body.",
+      focusing: "Separate Knobs For Coarse And Fine Motion.",
+      stage: "120 X 120 Mm With Stage Clips.",
+      illumination: "A Plano-Concave Reflector, A Bright Field Condenser Is Fixed To The Stage.",
+      optics: "10x & 15x Eyepieces And 10x & 40x, Maximum Magnification 600x."
+    },
+    tag: "Junior Medical Microscope"
+  },
+  {
+    id: "SSA-109",
+    title: "Junior Medical Microscope (SSA-109)",
+    specifications: {
+      viewingBody: "Monocular Tube",
+      stand: "Straight With Body Inclinable Through 90°",
+      eyepiece: "WF Eyepiece 10x",
+      nosepiece: "Quadruple Revolving Nosepiece",
+      objective: "SA Series Achromatic Objective 10x/Na 0.25 & 40x/Na 0.65(SI)",
+      stage: "Stage Plate Size 12 X 120 Mm With Stage Clips",
+      focusing: "Separate Coarse And Fine Focus Controls Coarse Movement By Rack & Pinion And Fine Movement By Screw Lever Mechanism",
+      condenser: "Sub-Stage Fixed Iris Diaphragm, Condenser Na 1.25",
+      illuminationSystem: "Plano Concave Reflector Mirror Mounted At The Base",
+      packageContents: "Thermocole Box And Cleaning Cloth"
+    },
+    tag: "Junior Medical Microscope"
+  },
+  {
+    id: "SSA-110",
+    title: "Medical Microscope (SSA-110)",
+    specifications: {
+      viewingBody: "Monocular tube",
+      stand: "Straight with body inclinable through 90°",
+      eyepiece: "Huygenian eyepiece 10x & 15x",
+      nosepiece: "Triple revolving Nosepiece",
+      objective: "SA series achromatic objective 10x/NA 0.25 & 40x/ NA 0.65(SL)",
+      stage: "Stage plate size 12 x 120 mm with Mechanical stage for X and Y movement of slide up to 30x75mm with graduated scale and verniers",
+      focusing: "Separate coarse and fine focus controls coarse movement by rack & pinion and fine movement by screw lever mechanism",
+      condenser: "Sub-stage fixed Iris diaphragm, condenser NA 1.25",
+      illuminationSystem: "Plano concave reflector mirror mounted at the base",
+      packageContents: "Thermocole box and cleaning cloth"
+    },
+    tag: "Medical Microscope"
+  },
+  {
+    id: "SSA-111",
+    title: "Medical Microscope with 45° Head (SSA-111)",
+    specifications: {
+      viewingBody: "Monocular tube, 45 degree head, with body inclinable through 90°",
+      stand: "Monocular, frame inclines back to 90°",
+      eyepiece: "WF eyepiece 10x",
+      nosepiece: "Quadruple revolving Nosepiece",
+      objective: "SA series achromatic objective 4x/ NA 0.10, 10x/ NA 0.25, 40x/ NA 0.65 (SL), 100x/ NA 1.25 (SL, Oil)",
+      stage: "Stage plate size 12 x 120 mm with Mechanical stage for X and Y movement of slide up to 30 x 75mm with graduated scale and verniers",
+      focusing: "Separate coarse and fine focus controls coarse movement by rack & pinion and fine movement by screw lever mechanism",
+      condenser: "Sub-stage fixed Iris diaphragm, condenser NA 1.25",
+      illuminationSystem: "Plano concave reflector mirror mounted at the base & LED LAMP with Electronics supply or Battery backup.",
+      packageContents: "Thermocole box, operating manual and cleaning cloth"
+    },
+    tag: "Medical Microscope with 45° Head"
+  },
+  {
+    id: "SSA-112A",
+    title: "SSA 112A Monocular Microscope",
+    specifications: {
+      viewingBody: "Monocular tube, 45° inclined, 360° rotatable",
+      stand: "L-shaped sturdy stand with anti-rust materials. Ergonomic base with greater stability.",
+      eyepiece: "Wide Field eyepiece WF 10x (paired)",
+      nosepiece: "Quadruple Nosepiece",
+      objective: "Achromatic objectives 4x/ NA 0.10, 10x/ NA 0.25, 40x/ NA 0.65 (SL), 100x/ NA 1.25 (SL, Oil)",
+      mechanicalStage: "Graduated mechanical stage 140 mm x 120 mm, moving area 80 mm (x), x 50 mm (y) with co-axial controls",
+      focusing: "Separate coarse and fine focusing mechanism",
+      condenser: "Abbe Condenser N.A 1.25 with Iris Diaphragm and swing out Filter Holder, Moving Up and Down",
+      illuminationSystem: "Built-in bright white LED, brightness adjustable with intensity control regulator",
+      electronics: "Power input 220V AC, 50 Hz",
+      tag: "Monocular Microscope"
+    }
+  },
+  {
+    id: "SSA-112B",
+    title: "SSA 112B Binocular Microscope",
+    specifications: {
+      viewingBody: "Binocular Head, 45° inclined, 360° rotatable",
+      stand: "L-shaped sturdy stand with anti-rust materials. Ergonomic base with greater stability.",
+      eyepiece: "Wide Field eyepiece WF 10x (paired)",
+      nosepiece: "Quadruple Nosepiece",
+      objective: "Achromatic objectives 4x/ NA 0.10, 10x/ NA 0.25, 40x/ NA 0.65 (SL), 100x/ NA 1.25 (SL, Oil)",
+      mechanicalStage: "Graduated mechanical stage 140 mm x 120 mm, moving area 80 mm (x), x 50 mm (y) with co-axial controls",
+      focusing: "Separate coarse and fine focusing mechanism",
+      condenser: "Abbe Condenser N.A 1.25 with Iris Diaphragm and swing out Filter Holder, Moving Up and Down",
+      illuminationSystem: "Built-in bright white LED, brightness adjustable with intensity control regulator",
+      electronics: "Power input 220V AC, 50 Hz",
+      tag: "Binocular Microscope"
+    }
+  },
+  {
+    id: "SSA-112C",
+    title: "SSA 112C Trinocular Microscope",
+    specifications: {
+      viewingBody: "Binocular tube, 45° inclined, 360° rotatable with IPD 55-75 mm and Dioptric adjustment. Anti-fungus treated",
+      stand: "L-shaped sturdy stand with anti-rust materials. Ergonomic base with greater stability.",
+      eyepiece: "Wide Field eyepiece WF 10x (paired)",
+      nosepiece: "Quadruple Nosepiece",
+      objective: "Achromatic objectives 4x/ NA 0.10, 10x/ NA 0.25, 40x/ NA 0.65 (SL), 100x/ NA 1.25 (SL, Oil)",
+      mechanicalStage: "Graduated mechanical stage 140 mm x 120 mm, moving area 80 mm (x), x 50 mm (y) with co-axial controls",
+      focusing: "Separate coarse and fine focusing mechanism",
+      condenser: "Abbe Condenser N.A 1.25 with Iris Diaphragm and swing out Filter Holder, Moving Up and Down",
+      illuminationSystem: "Built-in bright white LED, brightness adjustable with intensity control regulator",
+      electronics: "Power input 220V AC, 50 Hz",
+      tag: "Trinocular Microscope"
+    }
+  },
+  {
+    id: "SSA-113A",
+    title: "SSA 113A Monocular Microscope",
+    specifications: {
+      viewingBody: "Monocular tube, 45° inclined, 360° rotatable",
+      stand: "L-shaped sturdy stand with anti-rust materials. Ergonomic base with greater stability.",
+      eyepiece: "Wide Field eyepiece WF 10x/16 mm (paired)",
+      nosepiece: "Quadruple Nosepiece (Ball bearing Type)",
+      objective: "Achromatic objectives 4x/ NA 0.10, 10x/ NA 0.25, 40x/ NA 0.65 (SL), 100x/ NA 1.25 (SL, Oil)",
+      mechanicalStage: "Graduated mechanical stage 140 mm x 120 mm, moving area 80 mm (x), x 50 mm (y) with co-axial controls",
+      focusing: "Separate coarse and fine focusing mechanism",
+      condenser: "Abbe Condenser N.A 1.25 with Iris Diaphragm and swing out Filter Holder, Moving Up and Down",
+      illuminationSystem: "Built-in bright white LED, brightness adjustable with intensity control regulator",
+      electronics: "Power input 220V AC, 50 Hz",
+      tag: "Monocular Microscope"
+    }
+  },
+  {
+    id: "SSA-113B",
+    title: "SSA 113B Binocular Microscope",
+    specifications: {
+      viewingBody: "Binocular Head, 45° inclined, 360° rotatable",
+      stand: "L-shaped sturdy stand with anti-rust materials. Ergonomic base with greater stability.",
+      eyepiece: "Wide Field eyepiece WF 10x/16 mm (paired)",
+      nosepiece: "Quadruple Nosepiece (Ball bearing Type)",
+      objective: "Achromatic objectives 4x/ NA 0.10, 10x/ NA 0.25, 40x/ NA 0.65 (SL), 100x/ NA 1.25 (SL, Oil)",
+      mechanicalStage: "Graduated mechanical stage 140 mm x 120 mm, moving area 80 mm (x), x 50 mm (y) with co-axial controls",
+      focusing: "Separate coarse and fine focusing mechanism",
+      condenser: "Abbe Condenser N.A 1.25 with Iris Diaphragm and swing out Filter Holder, Moving Up and Down",
+      illuminationSystem: "Built-in bright white LED, brightness adjustable with intensity control regulator",
+      electronics: "Power input 220V AC, 50 Hz",
+      tag: "Binocular Microscope"
+    }
+  },
+  {
+    id: "SSA-113C",
+    title: "SSA 113C Trinocular Microscope",
+    specifications: {
+      viewingBody: "Binocular tube, 45° inclined, 360° rotatable with IPD 55-75 mm and Dioptric adjustment. Anti-fungus treated",
+      stand: "L-shaped sturdy stand with anti-rust materials. Ergonomic base with greater stability.",
+      eyepiece: "Wide Field eyepiece WF 10x/16 mm (paired)",
+      nosepiece: "Quadruple Nosepiece (Ball bearing Type)",
+      objective: "Achromatic objectives 4x/ NA 0.10, 10x/ NA 0.25, 40x/ NA 0.65 (SL), 100x/ NA 1.25 (SL, Oil)",
+      mechanicalStage: "Graduated mechanical stage 140 mm x 120 mm, moving area 80 mm (x), x 50 mm (y) with co-axial controls",
+      focusing: "Separate coarse and fine focusing mechanism",
+      condenser: "Abbe Condenser N.A 1.25 with Iris Diaphragm and swing out Filter Holder, Moving Up and Down",
+      illuminationSystem: "Built-in bright white LED, brightness adjustable with intensity control regulator",
+      electronics: "Power input 220V AC, 50 Hz",
+      tag: "Trinocular Microscope"
+    }
+  },
+  {
+    id: "SSA-114A",
+    title: "SSA 114A Monocular Microscope",
+    specifications: {
+      viewingBody: "Monocular tube, 45° inclined, 360° rotatable",
+      stand: "Sturdy stand with anti-rust materials and window in arm. Ergonomic base with a carrying grip for easy transportation.",
+      eyepiece: "Wide Field eyepiece WF 10x/16 mm (paired)",
+      nosepiece: "Quadruple Nosepiece (Ball bearing Type with click stops and rubber ring)",
+      objective: "Achromatic objectives 4x/ NA 0.10, 10x/ NA 0.25, 40x/ NA 0.65 (SL), 100x/ NA 1.25 (SL, Oil)",
+      mechanicalStage: "Graduated mechanical stage 140 mm x 120 mm, moving area 80 mm (x), x 50 mm (y) with co-axial controls",
+      focusing: "Ergonomically designed Co-axial Coarse and Fine focusing system on ball drive with tension control ring",
+      condenser: "Abbe Condenser N.A 1.25 with Iris Diaphragm and swing out Filter Holder, Moving Up and Down",
+      illuminationSystem: "Built-in bright white LED, brightness adjustable with intensity control regulator",
+      electronics: "Power input 220V AC, 50 Hz",
+      tag: "Monocular Microscope"
+    }
+  },
+  {
+    id: "SSA-114B",
+    title: "SSA 114B Binocular Microscope",
+    specifications: {
+      viewingBody: "Binocular Head, 45° inclined, 360° rotatable",
+      stand: "Sturdy stand with anti-rust materials and window in arm. Ergonomic base with a carrying grip for easy transportation.",
+      eyepiece: "Wide Field eyepiece WF 10x/16 mm (paired)",
+      nosepiece: "Quadruple Nosepiece (Ball bearing Type with click stops and rubber ring)",
+      objective: "Achromatic objectives 4x/ NA 0.10, 10x/ NA 0.25, 40x/ NA 0.65 (SL), 100x/ NA 1.25 (SL, Oil)",
+      mechanicalStage: "Graduated mechanical stage 140 mm x 120 mm, moving area 80 mm (x), x 50 mm (y) with co-axial controls",
+      focusing: "Ergonomically designed Co-axial Coarse and Fine focusing system on ball drive with tension control ring",
+      condenser: "Abbe Condenser N.A 1.25 with Iris Diaphragm and swing out Filter Holder, Moving Up and Down",
+      illuminationSystem: "Built-in bright white LED, brightness adjustable with intensity control regulator",
+      electronics: "Power input 220V AC, 50 Hz",
+      tag: "Binocular Microscope"
+    }
+  },
+  {
+    id: "SSA-114C",
+    title: "SSA 114C Trinocular Microscope",
+    specifications: {
+      viewingBody: "Trinocular Head, Inclined at 45°, Inter pupillary Distance 55-75mm, 360° Rotatable with Dioptric adjustment. Anti-fungus treated",
+      stand: "Sturdy stand with anti-rust materials and window in arm. Ergonomic base with a carrying grip for easy transportation.",
+      eyepiece: "Wide Field eyepiece WF 10x/16 mm (paired)",
+      nosepiece: "Quadruple Nosepiece (Ball bearing Type with click stops and rubber ring)",
+      objective: "Achromatic objectives 4x/ NA 0.10, 10x/ NA 0.25, 40x/ NA 0.65 (SL), 100x/ NA 1.25 (SL, Oil)",
+      mechanicalStage: "Graduated mechanical stage 140 mm x 120 mm, moving area 80 mm (x), x 50 mm (y) with co-axial controls",
+      focusing: "Ergonomically designed Co-axial Coarse and Fine focusing system on ball drive with tension control ring",
+      condenser: "Abbe Condenser N.A 1.25 with Iris Diaphragm and swing out Filter Holder, Moving Up and Down",
+      illuminationSystem: "Built-in bright white LED, brightness adjustable with intensity control regulator",
+      electronics: "Power input 220V AC, 50 Hz",
+      tag: "Trinocular Microscope"
+    }
+  },
+  {
+    id: "SSA-115A",
+    title: "SSA 115A Monocular Microscope",
+    specifications: {
+      viewingBody: "Monocular tube, 45° inclined, 360° rotatable",
+      stand: "C-shaped stand with modular base, ergonomic and easy to use for laboratory and university applications.",
+      eyepiece: "Wide Field eyepiece WF 10x/18 mm (paired)",
+      nosepiece: "Reverse Para focal Quadruple revolving nosepiece (Ball bearing type)",
+      objective: "Semi Plan Achromatic, Anti-fungus treated objectives: 4x/ 0.10, 10x/0.25, 40x (Spring loaded)/ 0.65, 100x (Spring loaded, Oil/ 1.25)",
+      mechanicalStage: "Double layer graduated mechanical rectangular stage size 142 x 135 mm, cross travel 60 mm (x), 75 mm (y) on ball bearing co-axial controls, spring clip",
+      focusing: "COAXIAL coarse & fine focusing mechanism, with tension control ring. Low positioned Coaxial Knobs for easy reach.",
+      condenser: "Moveable ABBE Condenser, NA 1.25 with aspheric lens, Iris diaphragm with swing out filter holder",
+      illuminationSystem: "Built-in bright white LED, brightness adjustable with intensity control regulator",
+      electronics: "Power input 220V AC, 50/60 Hz",
+      tag: "Monocular Microscope"
+    }
+  },
+  {
+    id: "SSA-115B",
+    title: "SSA 115B Binocular Microscope",
+    specifications: {
+      viewingBody: "Binocular Head, 45° inclined, 360° rotatable with IPD 55-75 mm and one side Dioptric adjustment. Anti-fungus treated",
+      stand: "C-shaped stand with modular base, ergonomic and easy to use for laboratory and university applications.",
+      eyepiece: "Wide Field eyepiece WF 10x/18 mm (paired)",
+      nosepiece: "Reverse Para focal Quadruple revolving nosepiece (Ball bearing type)",
+      objective: "Semi Plan Achromatic, Anti-fungus treated objectives: 4x/ 0.10, 10x/0.25, 40x (Spring loaded)/ 0.65, 100x (Spring loaded, Oil/ 1.25)",
+      mechanicalStage: "Double layer graduated mechanical rectangular stage size 142 x 135 mm, cross travel 60 mm (x), 75 mm (y) on ball bearing co-axial controls, spring clip",
+      focusing: "COAXIAL coarse & fine focusing mechanism, with tension control ring. Low positioned Coaxial Knobs for easy reach.",
+      condenser: "Moveable ABBE Condenser, NA 1.25 with aspheric lens, Iris diaphragm with swing out filter holder",
+      illuminationSystem: "Built-in bright white LED, brightness adjustable with intensity control regulator",
+      electronics: "Power input 220V AC, 50/60 Hz",
+      tag: "Binocular Microscope"
+    }
+  },
+  {
+    id: "SSA-115C",
+    title: "SSA 115C Trinocular Microscope",
+    specifications: {
+      viewingBody: "Trinocular inclined tube, 45° rotatable through 360° with IPD 55-75 mm and one side Dioptric adjustment. Anti-fungus treated",
+      stand: "C-shaped stand with modular base, ergonomic and easy to use for laboratory and university applications.",
+      eyepiece: "Wide Field eyepiece WF 10x/18 mm (paired)",
+      nosepiece: "Reverse Para focal Quadruple revolving nosepiece (Ball bearing type)",
+      objective: "Semi Plan Achromatic, Anti-fungus treated objectives: 4x/ 0.10, 10x/0.25, 40x (Spring loaded)/ 0.65, 100x (Spring loaded, Oil/ 1.25)",
+      mechanicalStage: "Double layer graduated mechanical rectangular stage size 142 x 135 mm, cross travel 60 mm (x), 75 mm (y) on ball bearing co-axial controls, spring clip",
+      focusing: "COAXIAL coarse & fine focusing mechanism, with tension control ring. Low positioned Coaxial Knobs for easy reach.",
+      condenser: "Moveable ABBE Condenser, NA 1.25 with aspheric lens, Iris diaphragm with swing out filter holder",
+      illuminationSystem: "Built-in bright white LED, brightness adjustable with intensity control regulator",
+      electronics: "Power input 220V AC, 50/60 Hz",
+      tag: "Trinocular Microscope"
+    }
+  },
+  {
+    id: "SSA-116A",
+    title: "SSA 116A Monocular Microscope",
+    specifications: {
+      viewingBody: "Monocular Inclined Tube, Inclined at 30° Rotatable through 360°. Anti Fungus Treated",
+      stand: "C-shaped stand with modular base, ergonomic, easy-to-use for laboratory and university applications. Window in the arm section for observing the specimen with the naked eye. Ergonomic carrying grip enables easy transportation.",
+      eyepiece: "Wide Field Eyepiece WF 10x/18 mm (paired)",
+      nosepiece: "Reverse Para focal Quadruple Revolving Nosepiece (Ball Bearing Type)",
+      objective: "Achromatic, Anti Fungus Treated Objectives: 4x/0.10, 10x/0.25, 40x(Spring Loaded)/0.65, 100x(Spring Loaded, Oil)/1.25",
+      mechanicalStage: "Double Layer Graduated Mechanical Rectangular Stage Size 142 x 135 mm, Cross Travel 60 mm (X) x 75 mm (Y) on Ball Bearing Co-Axial Controls, Spring Clip, Stage Focus Stop Adjustable through Focus Locking Screw.",
+      focusing: "Coaxial Coarse & Fine Focusing Mechanism with Tension Control Ring. Low positioned Coaxial Knobs for easy reach of the operator.",
+      condenser: "Moveable Abbe Condenser, NA 1.25 with Aspheric Lens, Iris Diaphragm with Swing-out Filter Holder",
+      illuminationSystem: "Built-in Bright White LED, with Intensity Control Regulator",
+      electronics: "Power Input 220V AC, 50/60Hz",
+      tag: "Monocular Microscope"
+    }
+  },
+  {
+    id: "SSA-116B",
+    title: "SSA 116B Binocular Microscope",
+    specifications: {
+      viewingBody: "Binocular Inclined Tube, Inclined at 30° Rotatable through 360° with IPD 55-75 mm and one side Dioptric Adjustment. Anti Fungus Treated",
+      stand: "C-shaped stand with modular base, ergonomic, easy-to-use for laboratory and university applications. Window in the arm section for observing the specimen with the naked eye. Ergonomic carrying grip enables easy transportation.",
+      eyepiece: "Wide Field Eyepiece WF 10x/18 mm (paired)",
+      nosepiece: "Reverse Para focal Quadruple Revolving Nosepiece (Ball Bearing Type)",
+      objective: "Achromatic, Anti Fungus Treated Objectives: 4x/0.10, 10x/0.25, 40x(Spring Loaded)/0.65, 100x(Spring Loaded, Oil)/1.25",
+      mechanicalStage: "Double Layer Graduated Mechanical Rectangular Stage Size 142 x 135 mm, Cross Travel 60 mm (X) x 75 mm (Y) on Ball Bearing Co-Axial Controls, Spring Clip, Stage Focus Stop Adjustable through Focus Locking Screw.",
+      focusing: "Coaxial Coarse & Fine Focusing Mechanism with Tension Control Ring. Low positioned Coaxial Knobs for easy reach of the operator.",
+      condenser: "Moveable Abbe Condenser, NA 1.25 with Aspheric Lens, Iris Diaphragm with Swing-out Filter Holder",
+      illuminationSystem: "Built-in Bright White LED, with Intensity Control Regulator",
+      electronics: "Power Input 220V AC, 50/60Hz",
+      tag: "Binocular Microscope"
+    }
+  },
+  {
+    id: "SSA-116C",
+    title: "SSA 116C Trinocular Microscope",
+    specifications: {
+      viewingBody: "Trinocular Inclined Tube, Inclined at 30°, Interpupillary Distance 48-75mm, 360° Rotatable and Dioptric Adjustment. Anti Fungus Treated",
+      stand: "C-shaped stand with modular base, ergonomic, easy-to-use for laboratory and university applications. Window in the arm section for observing the specimen with the naked eye. Ergonomic carrying grip enables easy transportation.",
+      eyepiece: "Wide Field Eyepiece WF 10x/18 mm (paired)",
+      nosepiece: "Reverse Para focal Quadruple Revolving Nosepiece (Ball Bearing Type)",
+      objective: "Achromatic, Anti Fungus Treated Objectives: 4x/0.10, 10x/0.25, 40x(Spring Loaded)/0.65, 100x(Spring Loaded, Oil)/1.25",
+      mechanicalStage: "Double Layer Graduated Mechanical Rectangular Stage Size 142 x 135 mm, Cross Travel 60 mm (X) x 75 mm (Y) on Ball Bearing Co-Axial Controls, Spring Clip, Stage Focus Stop Adjustable through Focus Locking Screw.",
+      focusing: "Coaxial Coarse & Fine Focusing Mechanism with Tension Control Ring. Low positioned Coaxial Knobs for easy reach of the operator.",
+      condenser: "Moveable Abbe Condenser, NA 1.25 with Aspheric Lens, Iris Diaphragm with Swing-out Filter Holder",
+      illuminationSystem: "Built-in Bright White LED, with Intensity Control Regulator",
+      electronics: "Power Input 220V AC, 50/60Hz",
+      tag: "Trinocular Microscope"
+    }
+  }
+];
+
+const seriesSSA117 = [
+  {
+    id: "SSA-117A",
+    title: "SSA 117A Monocular Microscope",
+    specifications: {
+      viewingBody: "Monocular Inclined Tube, Inclined at 30° Rotatable through 360°. Anti Fungus Treated",
+      stand: "C-shaped stand with modular base, ergonomic, easy-to-use for laboratory and university applications.",
+      eyepiece: "Wide Field Eyepiece WF 10x & H5x (paired)",
+      nosepiece: "Reverse Para focal Quadruple Revolving Nosepiece (Ball Bearing Type)",
+      objective: "Achromatic, Anti Fungus Treated Objectives: 4x, 10x, 20x, 40x (Spring Loaded)",
+      mechanicalStage: "Double Layer Graduated Mechanical Rectangular Stage Size 142 x 135 mm, Cross Travel 60 mm (X) x 75 mm (Y) on Ball Bearing Co-Axial Controls, Spring Clip, Stage Focus Stop Adjustable through Focus Locking Screw.",
+      focusing: "Coaxial Coarse & Fine Focusing Mechanism with Tension Control Ring. Low positioned Coaxial Knobs for easy reach of the operator.",
+      condenser: "Moveable Abbe Condenser, NA 1.25 with Aspheric Lens, Iris Diaphragm with Swing-out Filter Holder",
+      illuminationSystem: "Built-in Halogen Light 6V 20W, with Intensity Control Regulator. Illuminator equipped with Iris Diaphragm and Slot for Dropping Filter",
+      electronics: "Power Input 220V AC, 50/60Hz",
+      tag: "Monocular Microscope"
+    }
+  },
+  {
+    id: "SSA-117B",
+    title: "SSA 117B Binocular Microscope",
+    specifications: {
+      viewingBody: "Binocular Inclined Tube, Inclined at 30° Rotatable through 360° with IPD 55-75 mm and one side Dioptric Adjustment. Anti Fungus Treated",
+      stand: "C-shaped stand with modular base, ergonomic, easy-to-use for laboratory and university applications.",
+      eyepiece: "Wide Field Eyepiece WF 10x & H5x (paired)",
+      nosepiece: "Reverse Para focal Quadruple Revolving Nosepiece (Ball Bearing Type)",
+      objective: "Achromatic, Anti Fungus Treated Objectives: 4x, 10x, 20x, 40x (Spring Loaded)",
+      mechanicalStage: "Double Layer Graduated Mechanical Rectangular Stage Size 142 x 135 mm, Cross Travel 60 mm (X) x 75 mm (Y) on Ball Bearing Co-Axial Controls, Spring Clip, Stage Focus Stop Adjustable through Focus Locking Screw.",
+      focusing: "Coaxial Coarse & Fine Focusing Mechanism with Tension Control Ring. Low positioned Coaxial Knobs for easy reach of the operator.",
+      condenser: "Moveable Abbe Condenser, NA 1.25 with Aspheric Lens, Iris Diaphragm with Swing-out Filter Holder",
+      illuminationSystem: "Built-in Halogen Light 6V 20W, with Intensity Control Regulator. Illuminator equipped with Iris Diaphragm and Slot for Dropping Filter",
+      electronics: "Power Input 220V AC, 50/60Hz",
+      tag: "Binocular Microscope"
+    }
+  },
+  {
+    id: "SSA-117C",
+    title: "SSA 117C Trinocular Microscope",
+    specifications: {
+      viewingBody: "Trinocular Inclined Tube, Inclined at 30° Rotatable through 360° with IPD 55-75 mm and one side Dioptric Adjustment. Anti Fungus Treated",
+      stand: "C-shaped stand with modular base, ergonomic, easy-to-use for laboratory and university applications.",
+      eyepiece: "Wide Field Eyepiece WF 10x & H5x (paired)",
+      nosepiece: "Reverse Para focal Quadruple Revolving Nosepiece (Ball Bearing Type)",
+      objective: "Achromatic, Anti Fungus Treated Objectives: 4x, 10x, 20x, 40x (Spring Loaded)",
+      mechanicalStage: "Double Layer Graduated Mechanical Rectangular Stage Size 142 x 135 mm, Cross Travel 60 mm (X) x 75 mm (Y) on Ball Bearing Co-Axial Controls, Spring Clip, Stage Focus Stop Adjustable through Focus Locking Screw.",
+      focusing: "Coaxial Coarse & Fine Focusing Mechanism with Tension Control Ring. Low positioned Coaxial Knobs for easy reach of the operator.",
+      condenser: "Moveable Abbe Condenser, NA 1.25 with Aspheric Lens, Iris Diaphragm with Swing-out Filter Holder",
+      illuminationSystem: "Built-in Halogen Light 6V 20W, with Intensity Control Regulator. Illuminator equipped with Iris Diaphragm and Slot for Dropping Filter",
+      electronics: "Power Input 220V AC, 50/60Hz",
+      tag: "Trinocular Microscope"
+    }
+  },
+  {
+    id: "SSA-118",
+    title: "SSA 118 Trinocular Inverted Tissue Culture Microscope",
+    specifications: {
+      viewingBody: "Inverted Trinocular Microscope for Tissue Culture Examination",
+      focusing: "Co-Axial Coarse and Fine Focusing System",
+      mechanicalStage: "Triple Layer Co-Axial Mechanical Stage for X-Y movement of specimen",
+      illumination: "12V/50W Incident Lamp with Variable Light Control Arrangement",
+      objectives: "Long Working Distance Objectives: 4x, 10x, 20x, 40x (SI)",
+      eyepiece: "Wide Field 10x (paired)",
+      accessories: "Complete with optics in wooden box",
+      tag: "Inverted Tissue Culture Microscope"
+    }
+  },
+  {
+    id: "SSA-119",
+    title: "SSA 119 Stereoscopic Binocular Microscope",
+    specifications: {
+      description: "Economical and Convenient Stereo Microscope",
+      viewingBody: "Straight Binocular Head with Adjustable Inter Pupillary Distance",
+      stand: "Pole Type Stand allows easy repositioning of the head",
+      focusing: "Rack & Pinion focusing",
+      objective: "Fixed 2x, 3x, or 4x",
+      eyepiece: "10x or 15x (paired)",
+      accessories: "Supplied in box",
+      tag: "Stereoscopic Binocular Microscope"
+    }
+  },
+  {
+    id: "SSA-120",
+    title: "SSA 120 Stereoscopic Binocular Deluxe Microscope",
+    specifications: {
+      description: "Deluxe model with removable trans illumination base for natural light by reflector",
+      viewingBody: "Inclined Binocular Body with Diopteric Adjustment",
+      stage: "Stage with Hand Rest Stand and Interchangeable White/Transparent Stage Plate",
+      eyepiece: "10x or 15x Wide Field (paired)",
+      objectives: "Sliding 2x & 4x or 3x & 5x",
+      magnification: "20x to 75x",
+      tag: "Stereoscopic Binocular Deluxe Microscope"
+    }
+  },
+  {
+    id: "SSA-121",
+    title: "SSA 121 Stereoscopic Binocular Research Microscope",
+    specifications: {
+      description: "Research model with removable trans illumination base for natural light by reflector",
+      viewingBody: "Inclined Binocular Body with Diopteric Adjustment",
+      stage: "Stage with Hand Rest Stand and Interchangeable White/Transparent Stage Plate",
+      eyepiece: "10x or 15x Wide Field (paired)",
+      objectives: "Sliding 2x & 4x or 3x & 5x",
+      magnification: "20x to 75x",
+      illumination: "Base illumination system with 6V/20W Lamp",
+      electronics: "Transformer fitted in the base for artificial light",
+      tag: "Stereoscopic Binocular Research Microscope"
+    }
+  },
+  {
+    id: "SSA-122",
+    title: "SSA 122 Stereoscopic Binocular Advance Microscope",
+    specifications: {
+      description: "Heavy all-metal construction, inclined head, rotatable at 360°",
+      stage: "Round stage 75mm diameter, frosted glass insert",
+      focusing: "Rack & Pinion",
+      illumination: "Built-in illumination for incident (Epi) and sub-stage (transmitted) light, both usable individually or simultaneously",
+      eyepiece: "10x Wide Field (paired)",
+      objectives: "2x & 4x on quick-changing turret",
+      magnification: "20x to 40x (can vary from 10x to 160x with spare 15x eyepiece and auxiliary lens 0.5x to 2.0x)",
+      accessories: "Packed in plywood box",
+      tag: "Stereoscopic Binocular Advance Microscope"
+    }
+  },
+  {
+    id: "SSA-123",
+    title: "SSA 123 Inclined Trinocular Stereoscopic Microscope",
+    specifications: {
+      description: "45° inclined trinocular stereoscopic microscope with 360° movable trinocular head",
+      objective: "2x & 4x with 10x WF eyepiece pair",
+      illumination: "Dual LED light with light control knob",
+      magnification: "Total magnification: 20x & 40x",
+      accessories: "Optional camera, 15x and 20x eyepiece also available",
+      tag: "Inclined Trinocular Stereoscopic Microscope"
+    }
+  },
+  {
+    id: "SSA-124",
+    title: "SSA 124 Zoom Stereoscopic Microscope",
+    specifications: {
+      zoomRange: "0.7x-4.5x",
+      zoomRatio: "1:6.4",
+      magnification: "7-45x (standard), 3.5-270x with optional lens",
+      workingDistance: "100mm (standard), 30-287mm with optional lens",
+      interpupillaryDistance: "54-76mm",
+      diopterAdjustment: "+5 Diopters",
+      binocularTube: "Inclined at 45° for greater ease of observation",
+      trinocularBody: "0%/100%, 50%/50%, 20%/80% with vertical photo tube",
+      accessories: "Eyepieces: WF10x, WF15x, WF20x, WF25x, WF30x, variety of stands, illumination options",
+      illumination: "Fluorescent ring light, LED ring light, halogen lamp",
+      phototube: "C-Mount for camera",
+      tag: "Zoom Stereoscopic Microscope"
+    }
+  },
+  {
+    id: "SSA-125",
+    title: "SSA 125 Projection Microscope 4\"",
+    specifications: {
+      description: "Projection microscope with built-in illumination system in the base",
+      objective: "10x",
+      eyepiece: "10x",
+      projectionScreen: "100mm diameter",
+      focusing: "Knob for focusing",
+      tag: "Projection Microscope"
+    }
+  },
+  {
+    id: "SSA-126",
+    title: "SSA 126 Projection Microscope 6\"",
+    specifications: {
+      description: "Heavy-duty microscope ideal for demonstrations in classroom or small groups",
+      focusingSystem: "Coarse and fine focusing system",
+      nosepiece: "Triple revolving nosepiece",
+      objectives: "Two objectives: 10x, 40x",
+      eyepiece: "10x",
+      projectionScreen: "150mm diameter",
+      illumination: "12V-20W halogen lamp with intensity control knob",
+      packaging: "Packed in plywood box",
+      tag: "Projection Microscope"
+    }
+  },
+  {
+    id: "SSA-127",
+    title: "SSA 127 Senior Projection Microscope",
+    specifications: {
+      description: "Dual purpose instrument with a removable fine grain glass screen for projecting the image on the wall or screen",
+      projectionScreen: "150mm diameter, built-in fine grain glass screen",
+      illumination: "12V-100W halogen lamp",
+      additionalFeatures: "Loop and arrow pointer, mechanical stage, cooling fan",
+      objectives: "Two objectives: 10x, 40x",
+      eyepiece: "10x",
+      packaging: "Packed in a cardboard box",
+      tag: "Senior Projection Microscope"
+    }
+  },
+  {
+    id: "DGI-210",
+    title: "DGI 210",
+    specifications: {
+      sensorType: "CMOS",
+      resolution: "2MP",
+      frameRate: "8-30 fr/sec",
+      whiteBalance: "Automatic",
+      lensMount: "C/CS",
+      output: "VGA/USB",
+      tag: "DGI 210"
+    }
+  },
+  {
+    id: "Ultra-5-CMOS",
+    title: "Ultra 5 CMOS",
+    specifications: {
+      sensorSize: "5.1M/MT9P001@1/2.5\" (5.7x4.28)",
+      pixelSize: "2.2x2.2",
+      responsivity: "Dynamic Range SNR max: 0.53 V/lux-sec",
+      fps: "40.5dB",
+      resolution: "5@2592x1944, 18@1280x960, 60@640x480",
+      exposure: "0.294ms-2000ms",
+      spectralRange: "380-650nm (with IR cut filter)",
+      whiteBalance: "ROI white balance/ Manual Temp. Tint Adjustment",
+      sensorType: "Color Technique ultra fine TM color engine",
+      captureControlAPI: "Native C/C++, C#/VB.NET, Direct Show, Twain and Labview",
+      recordingSystem: "Still Picture and Movie",
+      coolingSystem: "Natural",
+      powerSupply: "DC 5V over PC USB Port",
+      tag: "Ultra 5 CMOS"
+    }
+  },
+  {
+    id: "Ultra-3-CMOS",
+    title: "Ultra 3 CMOS",
+    specifications: {
+      sensorSize: "18M/AR 1820(C) 1/2.3\" (6.14x4.605)",
+      pixelSize: "1.25x1.25",
+      responsivity: "Dynamic Range SNR max: 0.62 V/lux-sec",
+      fps: "36.3 FPS",
+      resolution: "5.6@4912x3684, 18.1@2456x1842, 32.2@1228x922",
+      binning: "1x1, 2x2, 4x4",
+      exposure: "0.1ms-2000ms",
+      spectralRange: "380-650nm (with IR cut filter)",
+      whiteBalance: "ROI white balance/ Manual Temp. Tint Adjustment/ NA for Monochromatic",
+      sensorType: "Color Technique ultra fine TM color engine/ NA for Monochromatic",
+      captureControlAPI: "Native C/C++, C#/VB.NET, Direct Show, Twain and Labview",
+      recordingSystem: "Still Picture and Movie",
+      coolingSystem: "Natural",
+      tag: "Ultra 3 CMOS"
+    }
+  },
+  {
+    id: "Ultra-10-CMOS",
+    title: "Ultra 10 CMOS",
+    specifications: {
+      sensorSize: "10M/MT9J003 (C) 1/2.3\" (5.98x4.59)",
+      pixelSize: "1.67x1.67",
+      responsivity: "Dynamic Range SNR max: 0.31 V/lux-sec",
+      fps: "34dB",
+      resolution: "1.9@3584x2748, 8@1792x1374, 27@896x684",
+      binning: "1x1, 2x2, 4x4",
+      exposure: "0.4ms-2000ms",
+      spectralRange: "380-650nm (with IR cut filter)",
+      whiteBalance: "ROI white balance/ Manual Temp. Tint Adjustment",
+      sensorType: "Color Rendering Technique ultra fine color engine",
+      captureControlAPI: "Native C/C++, Direct Show, Twain and Labview",
+      recordingSystem: "Still Picture and Movie",
+      coolingSystem: "Natural",
+      tag: "Ultra 10 CMOS"
+    }
+  },
+  {
+    id: "Ultra-14-CMOS",
+    title: "Ultra 14 CMOS",
+    specifications: {
+      sensorSize: "14M/MT9F002 (C)",
+      pixelSize: "1.4x1.4",
+      responsivity: "Dynamic Range SNR Max: 1.0.724 V/lux-sec",
+      fps: "35.5dB",
+      resolution: "1.8@4096x3288, 10@2048x1644, 27@1024x822",
+      binning: "1x1, 2x2, 4x4",
+      exposure: "0.4ms-2000ms",
+      spectralRange: "380-650nm (with IR cut filter)",
+      whiteBalance: "ROI white balance/ Manual Temp. Tint Adjustment/ NA for Monochromatic",
+      sensorType: "Color Technique ultra fine TM color engine/ NA for Monochromatic",
+      captureControlAPI: "Native C/C++, C#/VB.NET, Direct Show, Twain and Labview",
+      recordingSystem: "Still Picture and Movie",
+      coolingSystem: "Natural",
+      powerSupply: "DC 5V over PC USB Port",
+      tag: "Ultra 14 CMOS"
+    }
+  },
+  {
+    id: "HDMI720P",
+    title: "HDMI Microscope Camera 720P",
+    specifications: {
+      modelNumber: "HDMI720P",
+      sensorSize: "720/2M/IM x 322(C)",
+      pixelSize: "1/2.8\" (5.78x3.02)",
+      pixelSize2: "2.9x2.9",
+      gSensitivity: "Dark Signal: 510 mv with 1/30S (G Sensitivity) 0.15 mv with 1/30S (Dark Signal)",
+      fpsResolution: "30 @1280*720 (HDMI), 1920*1080 (Capture)",
+      output: "HDMI + USB",
+      tag: "HDMI Microscope Camera 720P"
+    }
+  },
+  {
+    id: "HDMI1080P",
+    title: "HDMI Microscope Camera 1080P",
+    specifications: {
+      modelNumber: "HDMI1080P",
+      sensorSize: "1080P/ Sony Imx290",
+      pixelSize: "1/2.8\" (5.57x4.1 30U)",
+      pixelSize2: "2.9x2.9",
+      gSensitivity: "Dark Signal: 1300 mv with 1/30S, 0.15 mv with 1/30S",
+      fpsResolution: "26 @1920*1080 P(HDMI), 26 @1920*1080 (USB)",
+      binning: "1x1",
+      exposure: "0.036ms-8s (HDMI), 0.06ms-1900ms (USB)",
+      output: "USB + HDMI + SD Card",
+      tag: "HDMI Microscope Camera 1080P"
+    }
+  },
+  
+  {
+    id: "SCOPEPAD-B",
+    title: "SCOPEPAD-B (All in One Monitor Camera)",
+    specifications: {
+      sensor: "1/3\" SONY sensor",
+      effectivePixel: "Full HD",
+      screen: "9\" Screen, resolution 1024*600",
+      output: "USB2.0",
+      pixelSize: "2.75um*2.75um",
+      power: "DC-12V/1A",
+      basicFunctions: ["Brightness", "Contrast", "Saturation", "White balance", "Black-and-white switch", "HDR wide dynamic"],
+      imageAdjustment: ["Exposure", "Anti-Flicker", "Sharpness", "Gamma", "Cb Cr Gain adjustment"],
+      cameraFunctions: ["Zoom in (Max. 10x)", "Mirror", "Flip", "Freeze"],
+      uiInterface: "Mouse Control",
+      storageFunction: ["Snap", "Video", "Preview", "Dynamic contrast", "SD formatting"],
+      crosshair: "4 sets of reticle (can adjust color, size, shift, and hide)",
+      grid: "8 sets of grid lines (each set can be corresponding to one product)",
+      size: "225.00*52.04*175.00mm",
+      weight: "0.7kg",
+      accessory: ["USB2.0 cable", "mouse", "DC-12V power"]
+    }
+  },
+  {
+    id: "SCOPEPAD-C",
+    title: "SCOPEPAD-C (Android 5.1 Table Camera)",
+    specifications: {
+      model: "SCOPEPAD/ANDROID-B",
+      category: "All in one Android5.1 table camera",
+      sensor: "1/2.5\"",
+      effectivePixel: "5M",
+      screen: "9.7\", Resolution 2048*1536@15Fps retina screen",
+      operatingSystem: "Android 5.1.1",
+      wifi: "2.4GHz/5GHz dual bands WIFI (802.11a/b/g/n/ac protocol)",
+      bluetooth: "Bluetooth 4.0",
+      output: "USB2.0, HDMI, WIFI, TF card",
+      pixelSize: "2.2um*2.2um",
+      power: "DC-12V/2A",
+      basicFunctions: ["Brightness", "Contrast", "Saturation", "White balance"],
+      imageAdjustment: ["Exposure", "Sharpness", "Gamma", "Color temperature"],
+      cameraFunctions: ["Mirror", "Flip"],
+      uiInterface: "Support mouse and touch control",
+      imageVideoSupport: ["16M image capture", "1080P video"],
+      storageFunction: ["Image capture", "Video", "Preview", "SD card formatting"],
+      labelingFunction: ["Point coordinates", "Cross lines", "Coordinate systems", "Text annotations"],
+      lengthMeasurement: ["Line length", "Broken line length", "Curve length", "Parallel lines distance", "Point line distance"],
+      geometricMeasurement: ["Line length", "Radius defining circle", "Two point defining circle", "Three point defining circle", "Concentric circles"],
+      geometricArea: ["Polygon", "Square"],
+      measurementSystem: "Built in S-EYE",
+      size: "238.00*51.00*206.00mm",
+      weight: "0.6kg",
+      accessory: "DC-12V/2A power"
+    }
+  }
+  ];
+  console.log(microscopes); 
+  const container = document.getElementById("microscope-container");
+
+microscopes.forEach((item, index) => {
+  const row = document.createElement("div");
+  row.className = `row align-items-center mb-5 ${index % 2 === 1 ? 'flex-row-reverse' : ''}`;
+  row.setAttribute('data-aos', index % 2 === 0 ? 'fade-right' : 'fade-left');
+
+  row.innerHTML = `
+  <div class="col-md-6 text-center">
+    <img src="${item.image}" alt="${item.title}" class="img-fluid rounded shadow" style="max-height: 300px;" />
+    <div class="badge-tag mt-2">${item.tag}</div>
+  </div>
+  <div class="col-md-6">
+    <h5 class="text-primary font-weight-bold mb-3">${item.title}</h5>
+   <ul class="list-unstyled">
+      ${item.specifications.viewingBody ? `<li><strong>Viewing Body:</strong> ${item.specifications.viewingBody}</li>` : ""}
+      ${item.specifications.stand ? `<li><strong>Stand:</strong> ${item.specifications.stand}</li>` : ""}
+      ${item.specifications.eyepiece ? `<li><strong>Eyepiece:</strong> ${item.specifications.eyepiece}</li>` : ""}
+      ${item.specifications.nosepiece ? `<li><strong>Nosepiece:</strong> ${item.specifications.nosepiece}</li>` : ""}
+      ${item.specifications.objective ? `<li><strong>Objective:</strong> ${item.specifications.objective}</li>` : ""}
+      ${item.specifications.stage ? `<li><strong>Stage:</strong> ${item.specifications.stage}</li>` : ""}
+      ${item.specifications.base ? `<li><strong>Base:</strong> ${item.specifications.base}</li>` : ""}
+      ${item.specifications.illumination ? `<li><strong>Illumination:</strong> ${item.specifications.illumination}</li>` : ""}
+      ${item.specifications.optics ? `<li><strong>optics:</strong> ${item.specifications.optics}</li>` : ""}
+      ${item.specifications.focusing ? `<li><strong>Focusing:</strong> ${item.specifications.focusing}</li>` : ""}
+      ${item.specifications.condenser ? `<li><strong>Condenser:</strong> ${item.specifications.condenser}</li>` : ""}
+      ${item.specifications.illuminationSystem ? `<li><strong>Illumination System:</strong> ${item.specifications.illuminationSystem}</li>` : ""}
+      ${item.specifications.packageContents ? `<li><strong>Package Contents:</strong> ${item.specifications.packageContents}</li>` : ""}
+<!-- New specifications for SCOPEPAD-B and SCOPEPAD-C -->
+      ${item.specifications.sensor ? `<li><strong>Sensor:</strong> ${item.specifications.sensor}</li>` : ""}
+  ${item.specifications.effectivePixel ? `<li><strong>Effective Pixel:</strong> ${item.specifications.effectivePixel}</li>` : ""}
+  ${item.specifications.screen ? `<li><strong>Screen:</strong> ${item.specifications.screen}</li>` : ""}
+  ${item.specifications.output ? `<li><strong>Output:</strong> ${item.specifications.output}</li>` : ""}
+  ${item.specifications.pixelSize ? `<li><strong>Pixel Size:</strong> ${item.specifications.pixelSize}</li>` : ""}
+  ${item.specifications.power ? `<li><strong>Power:</strong> ${item.specifications.power}</li>` : ""}
+  ${item.specifications.basicFunctions ? `<li><strong>Basic Functions:</strong> ${item.specifications.basicFunctions.join(", ")}</li>` : ""}
+  ${item.specifications.imageAdjustment ? `<li><strong>Image Adjustment:</strong> ${item.specifications.imageAdjustment.join(", ")}</li>` : ""}
+  ${item.specifications.cameraFunctions ? `<li><strong>Camera Functions:</strong> ${item.specifications.cameraFunctions.join(", ")}</li>` : ""}
+  ${item.specifications.uiInterface ? `<li><strong>UI Interface:</strong> ${item.specifications.uiInterface}</li>` : ""}
+  ${item.specifications.storageFunction ? `<li><strong>Storage Function:</strong> ${item.specifications.storageFunction.join(", ")}</li>` : ""}
+  ${item.specifications.crosshair ? `<li><strong>Crosshair:</strong> ${item.specifications.crosshair}</li>` : ""}
+  ${item.specifications.grid ? `<li><strong>Grid:</strong> ${item.specifications.grid}</li>` : ""}
+  ${item.specifications.size ? `<li><strong>Size:</strong> ${item.specifications.size}</li>` : ""}
+  ${item.specifications.weight ? `<li><strong>Weight:</strong> ${item.specifications.weight}</li>` : ""}
+  ${item.specifications.accessory ? `<li><strong>Accessory:</strong> ${item.specifications.accessory.join(", ")}</li>` : ""}
+    </ul>
+  </div>
+`;
+
+  container.appendChild(row);
+});
+});
+
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Footer -->
+  <div id="footer-container" class="mt-5"></div>
+  <script src="/assets/JS/footer.js"></script>
+  <link rel="stylesheet" href="/assets/CSS/footer.css">
+  <script src="/background.js"></script>
+</body>
+</html>

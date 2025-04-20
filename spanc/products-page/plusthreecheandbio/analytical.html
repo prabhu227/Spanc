@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analytical Equipment | Spanco Tek</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+   
+      body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  opacity: 0; /* Start with hidden */
+  transition: opacity 1s ease-in-out; /* Fade-in effect */
+}
+
+.product-item.fade-in {
+  opacity: 1; /* Fade in */
+}
+
+.product-item .product-image {
+  max-width: 300px;
+  margin-right: 20px;
+}
+
+.product-item .product-details {
+  flex: 1;
+}
+
+.product-item h3 {
+  font-size: 24px;
+}
+
+.product-item p {
+  font-size: 16px;
+  color: #555;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+strong {
+  font-weight: bold;
+}
+
+/* Layout for the even rows (image on the left, text on the right) */
+.product-item.row {
+  flex-direction: row;
+}
+
+/* Layout for the odd rows (image on the right, text on the left) */
+.product-item.row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .product-item {
+    flex-direction: column; /* Stack vertically on smaller screens */
+  }
+
+  .product-item .product-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-item h3 {
+    font-size: 20px;
+  }
+
+  .product-item p {
+    font-size: 14px;
+  }
+
+  li {
+    font-size: 12px;
+  }
+}
+
+
+      .navbar img {
+        height: 40px;
+        margin-right: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3"
+    >
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <span style="font-weight: bold; font-size: 5px">
+          <img src="/assets/images/spanco logo.png" alt="Logo" />
+        </span>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav me-3">
+          <li class="nav-item">
+            <a class="nav-link active" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/product.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/testimonials.html">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact.html">Contact</a>
+          </li>
+        </ul>
+        <a href="/get-quote.html?modal=true" class="btn btn-dark">Get Quote</a>
+      </div>
+    </nav>
+    <div class="container equipment-section">
+      <h2 class="text-center mb-5">Analytical Equipment</h2>
+      <div id="product-container"></div>
+    </div>
+
+    <script>
+    //   const equipmentData = [
+    //     {
+    //       title: "pH Meter",
+    //       description:
+    //         "A digital device used to measure the pH level of various solutions with high accuracy.",
+    //       image:
+    //         "https://cfrouting.zoeysite.com/cdn-cgi/image/format=auto,fit=scale-down,quality=70/https://s3.amazonaws.com/zcom-media/sites/a0i0L00000VJHGsQAP/media/catalog/product/g/5/g5md2256__.jpg",
+    //     },
+    //     {
+    //       title: "Conductivity/TDS Meter",
+    //       description:
+    //         "Measures the electrical conductivity and total dissolved solids in water.",
+    //       image:
+    //         "https://a0.anyrgb.com/pngimg/1842/234/tds-meter-electrical-conductivity-meter-reduction-potential-124-scale-ph-meter-physicist-laboratory-equipment-electrode-ph-experiment.png",
+    //     },
+    //     {
+    //       title: "Colorimeter (Digital)",
+    //       description:
+    //         "Used for measuring the absorbance of specific wavelengths of light by a solution.",
+    //       image:
+    //         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtpTkpk7E-qai6nDAF7wg-Q21biN2AbIbBgQ&s",
+    //     },
+    //     {
+    //       title: "Dissolved Oxygen Meter",
+    //       description:
+    //         "Measures the amount of dissolved oxygen in water, crucial for aquatic testing.",
+    //       image: "assets/images/do-meter.jpg",
+    //     },
+    //     {
+    //       title: "Digital Potentiometer",
+    //       description:
+    //         "An instrument for measuring the voltage of electrochemical cells.",
+    //       image: "assets/images/potentiometer.jpg",
+    //     },
+    //     {
+    //       title: "Digital Turbidity Meter",
+    //       description: "Determines the turbidity (clarity) of a liquid.",
+    //       image: "assets/images/turbidity.jpg",
+    //     },
+    //     {
+    //       title: "Melting/Boiling Point Apparatus",
+    //       description:
+    //         "Used to determine the melting and boiling points of substances accurately.",
+    //       image: "assets/images/melting-point.jpg",
+    //     },
+    //     {
+    //       title: "KARL FISHER / Flame Photometer",
+    //       description:
+    //         "Moisture analysis by Karl Fischer titration and elemental detection via flame photometry.",
+    //       image: "assets/images/karl-fisher.jpg",
+    //     },
+    //     {
+    //       title: "Water & Soil Analysis Kit",
+    //       description:
+    //         "Complete kit for analyzing various physical and chemical properties of soil and water.",
+    //       image: "assets/images/water-soil.jpg",
+    //     },
+    //     {
+    //       title: "Bomb Calorimeter / Viscometer",
+    //       description:
+    //         "Used for determining the calorific value and viscosity of fuels and fluids.",
+    //       image: "assets/images/bomb-calorimeter.jpg",
+    //     },
+    //     {
+    //       title: "Spectrophotometer (Digital/UV)",
+    //       description:
+    //         "Analyzes light absorption and transmittance across different wavelengths.",
+    //       image: "assets/images/spectrophotometer.jpg",
+    //     },
+    //     {
+    //       title: "UV-Vis Spectrophotometer",
+    //       description:
+    //         "Advanced optical instrument used to measure absorption of ultraviolet and visible light.",
+    //       image: "assets/images/uv-vis.jpg",
+    //     },
+    //   ];
+
+    //   const container = document.getElementById("equipment-container");
+
+    //   equipmentData.forEach((item, index) => {
+    //     const row = document.createElement("div");
+    //     row.className = "row align-items-center mb-5 fade-in";
+
+    //     const textCol = document.createElement("div");
+    //     textCol.className = "col-md-6";
+    //     textCol.innerHTML = `
+    //   <h3 class="equipment-title">${item.title}</h3>
+    //   <p class="equipment-description">${item.description}</p>
+    // `;
+
+    //     const imgCol = document.createElement("div");
+    //     imgCol.className = "col-md-6 text-center";
+    //     imgCol.innerHTML = `
+    //   <img src="${item.image}" alt="${item.title}" class="equipment-img"/>
+    // `;
+
+    //     if (index % 2 === 0) {
+    //       row.appendChild(textCol);
+    //       row.appendChild(imgCol);
+    //     } else {
+    //       row.appendChild(imgCol);
+    //       row.appendChild(textCol);
+    //     }
+
+    //     container.appendChild(row);
+    //   });
+
+    //   // Scroll animation trigger
+    //   const observer = new IntersectionObserver(
+    //     (entries) => {
+    //       entries.forEach((entry) => {
+    //         if (entry.isIntersecting) {
+    //           entry.target.classList.add("show");
+    //         }
+    //       });
+    //     },
+    //     { threshold: 0.2 }
+    //   );
+
+    //   document
+    //     .querySelectorAll(".fade-in")
+    //     .forEach((el) => observer.observe(el));
+   
+   
+   
+   
+   
+   
+   // Define the specifications for both products
+const productData = [
+  {
+    id: "AL-101",
+    title: "Digital pH Meter (Al-101)",
+    description: "Manual Temperature Compensation. Combination pH Electrode, LCD Display. Useful for pH and Redox Potential Measurements.",
+    image: "https://cfrouting.zoeysite.com/cdn-cgi/image/format=auto,fit=scale-down,quality=70/https://s3.amazonaws.com/zcom-media/sites/a0i0L00000VJHGsQAP/media/catalog/product/g/5/g5md2256__.jpg", // Add your image path here
+    specifications: {
+      type: "Microprocessor Based",
+      display: "16 x 4 Alphanumeric",
+      range: "0 to 14 pH, 0 to 1000mV",
+      resolution: "0.01 pH, 0.1 mV",
+      accuracy: "±4%",
+      temperatureCompensation: "Manual",
+      calibration: "3 Point",
+      dimension: "275 x 187 x 94 mm (Approx)",
+      power: "220 V + 10 V AC",
+      accessories: ["pH Electrode", "Electrode Stand", "3 Buffers", "Operating Manual"]
+    }
+  },
+  {
+    id: "AL-102",
+    title: "Microprocessor Auto pH Meter (Al-102)",
+    description: "With Automatic Temperature Compensation, Combination pH Electrode and RTD Probe, LCD Display. Useful for pH and Redox Potential Measurements.",
+    image: "https://a0.anyrgb.com/pngimg/1842/234/tds-meter-electrical-conductivity-meter-reduction-potential-124-scale-ph-meter-physicist-laboratory-equipment-electrode-ph-experiment.png", // Add your image path here
+    specifications: {
+      type: "Microprocessor Based",
+      display: "16 x 4 Alphanumeric",
+      range: "0 to 14 pH, 0 to 1000mV, 0 to 70°C",
+      resolution: "0.01 pH, 0.1 mV, 0.1°C",
+      accuracy: "±4%",
+      temperatureCompensation: "Automatic",
+      calibration: "3 Point",
+      memory: "Storage of 100 Samples",
+      dimension: "275 x 187 x 94 mm (Approx)",
+      power: "220 V +10 V AC",
+      accessories: ["pH Electrode", "Temperature Probe", "3 Buffers", "Electrode Stand", "Operating Manual"]
+    }
+  },{
+    id: "AL-103",
+    title: "pH Meter with Graphical Display (Al-103)",
+    description: "A Research Grade Instrument with 128x64 Large Graphical LCD Display having Auto Temperature Compensation, Range -2.000 to 20 pH.",
+    image: "path/to/image/al103.jpg", // Add your image path here
+    specifications: {
+      display: "256 x 64 dots Graphical LCD Display",
+      range: "-2.000 to 20.000 pH, 0 to 1999.9 mV",
+      resolution: "Selectable 0.1, 0.01 & 0.001 pH",
+      accuracy: "0.002 pH ± 1 digit",
+      calibration: "Auto & Manual with 5 Point Calibration",
+      autoBufferRecognition: "1.680, 4.000, 7.000, 9.200 & 12.450 pH or User Defined",
+      temperatureCompensation: "-5 to 110°C Auto/Manual",
+      sensor: "Semi Conductor Type",
+      printerInterface: "External Serial RS 232 Dot Matrix Printer Interface",
+      power: "220 V +10 V AC",
+      accessories: ["pH Electrode", "Temperature Probe", "2 Buffers", "Electrode Stand", "Operating Manual"]
+    }
+  },
+  {
+    id: "AL-104",
+    title: "Touch Screen pH Meter (Al-104)",
+    description: "A Research Grade Instrument with Touch Screen Display with High Resolution and Sensitivity.",
+    image: "path/to/image/al104.jpg", // Add your image path here
+    specifications: {
+      readOut: "5\" High Sensitive Touch Screen Display",
+      range: "-2.000 to 20.000 pH, ± 2000 mV, -10 to 110°C",
+      resolution: "0.001 pH, 0.01 mV, 0.1°C, 0.10 F",
+      accuracy: "±0.002 pH +1 LSD, ±0.2 mV +1",
+      calibration: "Automatic up to 5 Point Calibration (1.68, 4.01, 7.01, 9.18, 12.45)",
+      powerSupply: "12V DC Adopter",
+      memory: "up to 1000 Sample",
+      printer: "USB Interface",
+      dimension: "160x231x94 mm",
+      accessories: ["pH Electrode", "Temperature Probe", "Rotational Electrode Stand", "USB Lead", "Dust Cover", "Instruction Manual"]
+    }
+  },
+  {
+    id: "AI-105",
+    title: "pH Meter Handy (AI-105)",
+    description: "31⁄2 Digital LCD Display in ABS Plastic Body, Touch Switches with Combination pH Electrode.",
+    image: "path/to/image/ai105.jpg", // Add your image path here
+    specifications: {
+      display: "31⁄2 Digital LCD",
+      material: "ABS Plastic Body",
+      switchType: "Touch Switches",
+      electrode: "Combination pH Electrode",
+      power: "Battery Operated",
+      accessories: ["pH Electrode", "Battery", "Instruction Manual"]
+    }
+  },
+  {
+    id: "AL-103",
+    title: "pH Meter with Graphical Display (Al-103)",
+    description: "A Research Grade Instrument with 128x64 Large Graphical LCD Display having Auto Temperature Compensation, Range -2.000 to 20 pH.",
+    image: "path/to/image/al103.jpg", // Add your image path here
+    specifications: {
+      display: "256 x 64 dots Graphical LCD Display",
+      range: "-2.000 to 20.000 pH, 0 to 1999.9 mV",
+      resolution: "Selectable 0.1, 0.01 & 0.001 pH",
+      accuracy: "0.002 pH ± 1 digit",
+      calibration: "Auto & Manual with 5 Point Calibration",
+      autoBufferRecognition: "1.680, 4.000, 7.000, 9.200 & 12.450 pH or User Defined",
+      temperatureCompensation: "-5 to 110°C Auto/Manual",
+      sensor: "Semi Conductor Type",
+      printerInterface: "External Serial RS 232 Dot Matrix Printer Interface",
+      power: "220 V +10 V AC",
+      accessories: ["pH Electrode", "Temperature Probe", "2 Buffers", "Electrode Stand", "Operating Manual"]
+    }
+  },
+  {
+    id: "AL-104",
+    title: "Touch Screen pH Meter (Al-104)",
+    description: "A Research Grade Instrument with Touch Screen Display with High Resolution and Sensitivity.",
+    image: "path/to/image/al104.jpg", // Add your image path here
+    specifications: {
+      readOut: "5\" High Sensitive Touch Screen Display",
+      range: "-2.000 to 20.000 pH, ± 2000 mV, -10 to 110°C",
+      resolution: "0.001 pH, 0.01 mV, 0.1°C, 0.10 F",
+      accuracy: "±0.002 pH +1 LSD, ±0.2 mV +1",
+      calibration: "Automatic up to 5 Point Calibration (1.68, 4.01, 7.01, 9.18, 12.45)",
+      powerSupply: "12V DC Adopter",
+      memory: "up to 1000 Sample",
+      printer: "USB Interface",
+      dimension: "160x231x94 mm",
+      accessories: ["pH Electrode", "Temperature Probe", "Rotational Electrode Stand", "USB Lead", "Dust Cover", "Instruction Manual"]
+    }
+  },
+  {
+    id: "AI-105",
+    title: "pH Meter Handy (AI-105)",
+    description: "31⁄2 Digital LCD Display in ABS Plastic Body, Touch Switches with Combination pH Electrode.",
+    image: "path/to/image/ai105.jpg", // Add your image path here
+    specifications: {
+      display: "31⁄2 Digital LCD",
+      material: "ABS Plastic Body",
+      switchType: "Touch Switches",
+      electrode: "Combination pH Electrode",
+      power: "Battery Operated",
+      accessories: ["pH Electrode", "Battery", "Instruction Manual"]
+    }
+  },
+  {
+    id: "AL-111",
+    title: "Digital Photo Colorimeter (Al-111)",
+    description: "A compact colorimeter with built-in filters for accurate wavelength measurements.",
+    image: "path/to/image/al111.jpg", // Add your image path here
+    specifications: {
+      wavelengthRange: "405-700 nm",
+      filters: "Built in 8 Digital Filters",
+      filtersWavelength: "405nm, 450nm, 480nm, 520nm, 540nm, 578nm, 620nm, 700nm",
+      displayParameters: "O.D. % T, Wavelength",
+      detector: "Silicon Photo Diode",
+      accuracy: "+0.01 O.D",
+      stability: "+0.02 O.D./ Hour",
+      lightSource: "Highly Accurate LED Source",
+      volume: "1ml Minimum",
+      dimension: "275 x 187 x 94 mm (approx)",
+      power: "230 ± 10 V, 50 Hz",
+      accessories: ["Set of Test Tube- 5nos", "Test Tube Holder: 1Nos", "Operating Manual"]
+    }
+  },
+  {
+    id: "AL-112",
+    title: "Digital Fully Automatic Colorimeter (Al-112)",
+    description: "Advanced colorimeter with a laser source, automatic zero adjustment, and multiple filter options.",
+    image: "path/to/image/al112.jpg", // Add your image path here
+    specifications: {
+      range: "400-700 nm",
+      display: "Dual Digital",
+      filters: "Built in 9 Digital Filters",
+      filtersWavelength: "400nm, 430nm, 500nm, 520nm, 540nm, 580nm, 600nm, 620nm, 680nm",
+      displayMode: "Absorbance & Wavelength",
+      detector: "Silicon Photo Diode",
+      zeroAdjustment: "Auto Zero",
+      accuracy: "±0.01 O.D.",
+      stability: "±0.02 O.D./ Hour",
+      lightSource: "Highly Accurate Laser Source",
+      amplifier: "Micro Controlled Based",
+      volume: "1ml Minimum",
+      dimension: "L210 x B160 x H80 mm (Approx)",
+      power: "230 ± 10% AC, 50Hz",
+      batteryBackup: "6V Ni-Cd Re-Chargeable Battery",
+      accessories: ["Set of Test Tube- 6nos", "Dust Cover: 1no"]
+    }
+  },
+  {
+    id: "AL-113",
+    title: "Digital Potentiometer (with 2 Electrodes) (Al-113)",
+    description: "A digital potentiometer with two electrodes for accurate voltage measurement.",
+    image: "path/to/image/al113.jpg", // Add your image path here
+    specifications: {
+      range: "-414 to +414 mv",
+      readability: "0.1",
+      accuracy: "±0.1",
+      display: "Parameter mv",
+      calibration: "Single Point",
+      resolution: "0.1 mv",
+      displayType: "16x2 LCD",
+      power: "220 Volt AC +10 Volt",
+      dimension: "275x187x94 mm (Approx.)",
+      accessories: ["Standard Solutions 4,7 and 9.2 pH Buffers", "Glass and Reference Electrode", "Electrode Stand", "Instruction Manual"]
+    }
+  },
+  {
+    id: "AL-114",
+    title: "Digital Potentiometer (with 4 Electrodes) (AI-114)",
+    description: "A potentiometer with four electrodes for enhanced accuracy and versatility.",
+    image: "path/to/image/al114.jpg", // Add your image path here
+    specifications: {
+      range: "-414 to +414 mv",
+      readability: "0.1",
+      accuracy: "±0.1",
+      display: "Parameter mv",
+      calibration: "Single Point",
+      resolution: "0.1 mv",
+      displayType: "16x2 LCD",
+      power: "220 Volt AC +10 Volt",
+      dimension: "275x187x94 mm (Approx.)",
+      accessories: ["Standard Solutions 4,7 and 9.2 pH Buffers", "Glass, Reference, Silver, Platinum Electrode", "Electrode Stand", "Instruction Manual"]
+    }
+  },
+  {
+    id: "AL-115",
+    title: "Digital Potentiometer (Inbuilt Stirrer) (Al-115)",
+    description: "A potentiometer with an inbuilt stirrer for precise measurement with added mixing functionality.",
+    image: "path/to/image/al115.jpg", // Add your image path here
+    specifications: {
+      readout: "3% Digit Bright Red LED Display",
+      range: "0 to 1999 mv",
+      resolution: "1 mv",
+      accuracy: "± 1 mv ± 1 digit",
+      operatingTemperature: "10°C to 50°C",
+      inbuiltStirrer: "Available",
+      powerSupply: "230V ± 10% AC, 50 Hz",
+      dimension: "270x248x101 mm (LxBxH)",
+      accessories: ["Glass and Reference Electrode", "Electrode Stand", "Magnetic Capsule", "Titration Beaker", "Dust Cover", "Instruction Manual"]
+    }
+  },
+  {
+    id: "AL-116",
+    title: "Dissolved Oxygen Meter (Al-116)",
+    description: "A microprocessor-based meter for simultaneously displaying dissolved oxygen and temperature.",
+    image: "path/to/image/al116.jpg", // Add your image path here
+    specifications: {
+      type: "Microprocessor Based",
+      function: "Dissolved Oxygen/ Temperature Simultaneously Display",
+      range: "DO 0 to 20 ppm, Temperature 0 to 70°C",
+      resolution: "DO 0.01 ppm, Temperature 0.10°C",
+      accuracy: "±0.1 ppm",
+      display: "16x2 Alphanumeric",
+      measuringCell: "Amperometric Gold/Silver Electrode",
+      temperatureCompensation: "Automatic",
+      memory: "Storage of 100 Samples",
+      dimension: "275 x 187 x 94 mm (Approx)",
+      powerSupply: "230/10V AC, 50Hz",
+      accessories: ["DO Cell", "Cell Stand", "Temperature Probe", "Operating Manual"]
+    }
+  },
+  {
+    id: "AL-117",
+    title: "Microprocessor D.O. Meter (Al-117)",
+    description: "Similar to AL-116, but with enhanced features for dissolved oxygen and temperature measurements.",
+    image: "path/to/image/al117.jpg", // Add your image path here
+    specifications: {
+      type: "Microprocessor Based",
+      function: "Dissolved Oxygen/ Temperature Simultaneously Display",
+      range: "DO 0 to 20 ppm, Temperature 0 to 70°C",
+      resolution: "DO 0.01 ppm, Temperature 0.1°C",
+      accuracy: "±0.1 ppm",
+      display: "16x2 Alphanumeric",
+      measuringCell: "Amperometric Gold/Silver Electrode",
+      temperatureCompensation: "Automatic",
+      memory: "Storage of 100 Samples",
+      dimension: "275 x 187 x 94 mm (Approx)",
+      powerSupply: "230/10V AC, 50Hz",
+      accessories: ["DO Cell", "Cell Stand", "Temperature Probe", "Operating Manual"]
+    }
+  },
+  {
+    id: "AL-118",
+    title: "Digital Colony Counter (Al-118)",
+    description: "A digital counter with LED display for colony counting, memory storage, and data restoration after power failure.",
+    image: "path/to/image/al118.jpg", // Add your image path here
+    specifications: {
+      display: "3 Digits & 4 Digits LED Display",
+      range: "0-999",
+      memory: "150 Memory",
+      holdAndCountCorrection: "Hold and Count Correction Facility",
+      dataRestoration: "Data Restored Even After Power Failure",
+      dimension: "Standard Dimensions (approx)",
+      accessories: ["Counter Unit", "Operating Manual"]
+    }
+  },{
+    id: "AL-119",
+    title: "Digital Turbidity Meter (Al-119)",
+    description: "A microprocessor-based digital turbidity meter for accurate measurement of turbidity.",
+    image: "path/to/image/al119.jpg", // Add your image path here
+    specifications: {
+      range: "0 to 1000 NTU",
+      resolution: "1 NTU",
+      accuracy: "±2% FS",
+      sampleSystem: "30 mm Clear Glass Tube",
+      lightSource: "High Power White",
+      detector: "Photo Diode",
+      display: "16 x 2 Alphanumeric",
+      measuringCell: "Platinum DIP Type",
+      temperatureCompensation: "Automatic",
+      dimension: "275 x 187 x 94 mm (Approx)",
+      powerSupply: "220V ±10V AC, 50 Hz",
+      accessories: ["Test Tube Set", "Operating Manual"]
+    }
+  },
+  {
+    id: "AI-120",
+    title: "Microprocessor Turbidity Meter (AI-120)",
+    description: "Advanced microprocessor turbidity meter with dual-range measurement capabilities.",
+    image: "path/to/image/ai120.jpg", // Add your image path here
+    specifications: {
+      display: "16 x 2 Lines Alphanumeric",
+      range: "0 to 200.0 & 200.0 to 1000.0 JTU/NTU",
+      accuracy: "±3% FS",
+      deflection: "0-1000 JTU/NTU",
+      sampleSystem: "30 mm Clear Glass Cuvettes",
+      lightSource: "6.8 V, 0.3 Amp Tungsten Lamp",
+      detector: "Photo Diode",
+      memory: "In Built Memory To Retain Both Range Standard Solution and Last Set Value Even After Power Loss",
+      measuringCell: "Platinum DIP Type",
+      temperatureCompensation: "Automatic",
+      calibration: "with Formazine Solution",
+      powerSupply: "230V ±10%, 50 Hz"
+    }
+  },
+  {
+    id: "AL-121",
+    title: "Digital Hemoglobin Meter (Al-121)",
+    description: "A precise digital hemoglobin meter using cyanmethemoglobin method for fast results.",
+    image: "path/to/image/al121.jpg", // Add your image path here
+    specifications: {
+      measurementMethod: "Cyanmethemoglobin method (optional alkaline hematin D available)",
+      display: "16 x 2 Alphanumeric",
+      wavelength: "540 nm",
+      calibration: "Automatic by press CAL key",
+      setZero: "Automatic by push switch",
+      measuringRate: "0.0 to 30.0 g/dl",
+      photoDetector: "Silicon Photodiode",
+      accuracy: "4%",
+      lightSource: "540 nm Green LED",
+      powerSupply: "220 V ±10V AC",
+      frequency: "50Hz",
+      dimension: "275x187x94mm (approx)",
+      accessories: ["Operating Manual"]
+    }
+  },
+  {
+    id: "AL-122",
+    title: "Digital Melting Point Apparatus (Al-122)",
+    description: "A digital apparatus for measuring the melting point of substances with high accuracy.",
+    image: "path/to/image/al122.jpg", // Add your image path here
+    specifications: {
+      display: "4 Digit Seven Segment LED",
+      temperatureRange: "Ambient to 275°C",
+      resolution: "1°C",
+      capillaryGlassTube: "100mm Long, 0.8 to 1.1 mm Internal Diameter",
+      boilingPointTube: "6x75 mm Glass Tube",
+      sampleSize: "Fine Powdered Properly Dried",
+      oilBath: "Silicon Oil Bath Beaker- 200 ml Capacity with Teflon Cover Fitted with Oil Immersion Heater",
+      powerSupply: "220 V ±10% AC, 50Hz"
+    }
+  },
+  {
+    id: "AI-123",
+    title: "Microprocessor Melting Point Apparatus (AI-123)",
+    description: "Microprocessor-controlled apparatus with advanced features for melting point determination.",
+    image: "path/to/image/ai123.jpg", // Add your image path here
+    specifications: {
+      samples: "1 Sample at a Time",
+      temperatureRange: "Ambient to 300°C",
+      temperatureAccuracy: "1°C at 200°C & 2.5°C at 275°C",
+      temperatureSensor: "Platinum Resistance PT100",
+      selectableHeatingModes: "Slow, Medium, Fast",
+      display: "128x64 Graphical LCD",
+      noOfKeys: "4",
+      memory: "Storage Upto 1000 Results",
+      powerSupply: "230 V ±10% AC, 50Hz"
+    }
+  },
+  {
+    id: "AI-124",
+    title: "Microprocessor Melting/Boiling Apparatus (AI-124)",
+    description: "Advanced microprocessor apparatus with melting and boiling point measurement and graphical display.",
+    image: "path/to/image/ai124.jpg", // Add your image path here
+    specifications: {
+      display: "128x64 Graphical LCD & 7\" LED HD Display",
+      temperatureRange: "0 to 300°C",
+      temperatureResolution: "0.1°C",
+      calibration: "Using Software",
+      sampleAmount: "Fine powdered, properly dried at a temperature below its melting point (4 to 6 mm high)",
+      oilBath: "Silicon oil bath beaker 200ml capacity with oil immersion heater",
+      storage: "1000 sample results with date, time, sample number and batch number",
+      dataOutput: "Through USB port",
+      sampleDisplay: "Facility to display stored sample results",
+      stirrer: "On/Off using key",
+      stirrerSpeed: "Controllable using stirrers keys",
+      camera: "HD camera to view capillary",
+      powerSupply: "230 V ±10% AC, 50Hz"
+    }
+  },
+];
+
+// Function to render product specifications dynamically
+function renderProductSpecifications(product) {
+  const ulElement = document.createElement('ul');
+  ulElement.classList.add('list-unstyled');
+
+  // Iterate through the specifications and add them as list items
+  Object.keys(product.specifications).forEach(key => {
+    const value = product.specifications[key];
+    const listItem = document.createElement('li');
+
+    // Handle arrays (accessories, etc.) to display comma-separated values
+    if (Array.isArray(value)) {
+      listItem.innerHTML = `<strong>${capitalizeFirstLetter(key.replace(/([A-Z])/g, ' $1'))}:</strong> ${value.join(", ")}`;
+    } else {
+      listItem.innerHTML = `<strong>${capitalizeFirstLetter(key.replace(/([A-Z])/g, ' $1'))}:</strong> ${value}`;
+    }
+
+    ulElement.appendChild(listItem);
+  });
+
+  return ulElement;
+}
+
+// Function to capitalize the first letter of each word in a string
+function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+// Function to render product details to the page
+function renderProducts() {
+  const container = document.getElementById('product-container');
+  productData.forEach((product, index) => {
+    const productDiv = document.createElement('div');
+    productDiv.classList.add('product-item');
+    productDiv.classList.add('product-layout'); // For the two-column layout
+
+    // If it's an even product, we keep the layout normal (image left, details right).
+    // If it's odd, we reverse the order (image right, details left).
+    const layoutClass = index % 2 === 0 ? 'row' : 'row-reverse';
+    productDiv.classList.add(layoutClass);
+
+    // Left side: Image
+    const imageElement = document.createElement('img');
+    imageElement.src = product.image; // Path to the image
+    imageElement.alt = product.title;
+    imageElement.classList.add('product-image');
+    productDiv.appendChild(imageElement);
+
+    // Right side: Title, Description, Specifications
+    const detailsDiv = document.createElement('div');
+    detailsDiv.classList.add('product-details');
+
+    const titleElement = document.createElement('h3');
+    titleElement.textContent = product.title;
+    detailsDiv.appendChild(titleElement);
+
+    const descriptionElement = document.createElement('p');
+    descriptionElement.textContent = product.description;
+    detailsDiv.appendChild(descriptionElement);
+
+    // Render the specifications list
+    const specificationsList = renderProductSpecifications(product);
+    detailsDiv.appendChild(specificationsList);
+
+    productDiv.appendChild(detailsDiv);
+    container.appendChild(productDiv);
+
+    // Add scroll animation class
+    productDiv.classList.add('hidden');
+    window.addEventListener('scroll', () => {
+      if (isInViewport(productDiv)) {
+        productDiv.classList.add('fade-in');
+      }
+    });
+  });
+}
+
+// Check if an element is in the viewport
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// Call the function to render products
+window.onload = renderProducts;
+   
+   </script>
+
+    <canvas
+      id="particles-bg"
+      style="position: fixed; top: 0; left: 0; z-index: -1"
+    ></canvas>
+    <div id="footer-container" class="mt-5"></div>
+    <script src="/assets/JS/footer.js"></script>
+    <link rel="stylesheet" href="/assets/CSS/footer.css" />
+    <!-- <script src="/background.js"></script> -->
+    <script src="/background.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
