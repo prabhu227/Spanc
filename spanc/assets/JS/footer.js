@@ -3,7 +3,9 @@ const footerHTML = `
   <div class="container">
     <div class="row justify-content-around text-start text-md-start">
       <div class="col-12 col-sm-6 col-md-3 mb-4">
-        <div class="footer-logo text-primary fw-bold fst-italic fs-4">LOGO</div>
+        <div class="footer-logo mb-2">
+          <img src="" alt="Company Logo" class="img-fluid" style="max-height: 50px;">
+        </div>
         <p class="mt-3 small">Leading provider of advanced laboratory equipment and solutions for research facilities worldwide.</p>
       </div>
       <div class="col-6 col-md-2 mb-4">
@@ -19,9 +21,9 @@ const footerHTML = `
         <h6 class="fw-semibold">Company</h6>
         <ul class="list-unstyled small">
           <li><a href="/about.html" class="text-secondary text-decoration-none d-block py-1">About Us</a></li>
-          <li><a href="/" class="text-secondary text-decoration-none d-block py-1">Careers</a></li>
-          <li><a href="/contact.html" class="text-secondary text-decoration-none d-block py-1">Contact</a></li>
-          <li><a href="#" class="text-secondary text-decoration-none d-block py-1">Blog</a></li>
+          <li><a href="/product.html" class="text-secondary text-decoration-none d-block py-1">Products</a></li>
+          <li><a href="/testimonials.html" class="text-secondary text-decoration-none d-block py-1">Testimonals</a></li>
+          <li><a href="/contact.html" class="text-secondary text-decoration-none d-block py-1">Contacts</a></li>
         </ul>
       </div>
       <div class="col-12 col-md-3 mb-4">
