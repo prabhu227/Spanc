@@ -15,12 +15,27 @@
       margin-bottom: 20px;
       background-color: #f9f9f9;
     }
+
     .product-title {
       font-size: 1.25rem;
       font-weight: bold;
     }
+
     .spec-list {
       padding-left: 20px;
+    }
+
+    .product-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .modal-content {
+      width: 90%;
+      max-width: 800px;
+      margin: 0 auto;
     }
   </style>
 </head>
@@ -28,14 +43,41 @@
 <body>
   <div class="container py-5">
     <h1 class="text-center mb-5">Thermal & Statistical Mechanics Lab</h1>
-    <div id="productList"></div>
+    <div id="productList" class="row"></div>
+   
   </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="specificationModal" tabindex="-1" role="dialog" aria-labelledby="specificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="specificationModalLabel">Product Specifications</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h4 id="modalProductTitle"></h4>
+          <ul id="modalSpecsList" class="spec-list"></ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script>
     const thermalProducts = [
       {
         title: "Mechanical Equivalent of Heat by Callender and Barne's Method",
         model: "TPSM-001",
+        image: "path_to_image_1.jpg", 
         specs: [
           "Calendar and Barn's continuous flow calorimeter",
           "AC Ammeter: 0-3A (Moving Coil)",
@@ -50,6 +92,7 @@
       {
         title: "Planck's Constant using LEDs",
         model: "TPSM-002",
+        image: "path_to_image_1.jpg", 
         specs: [
           "DC Supply: 0-250V",
           "Vacuum diode",
@@ -60,6 +103,7 @@
       {
         title: "Stefan's Constant",
         model: "TPSM-003",
+        image: "path_to_image_1.jpg", 
         specs: [
           "DC Power Supply: 12V / 250mA",
           "DC Voltmeter: 0-12V",
@@ -73,6 +117,7 @@
       {
         title: "Thermal Conductivity of Copper by Searle's Apparatus",
         model: "TPSM-004",
+        image: "path_to_image_1.jpg", 
         specs: [
           "Searle's Thermal Conductivity Apparatus",
           "Thermometers (1/10°C) - 4 nos",
@@ -84,6 +129,7 @@
       {
         title: "Thermal Conductivity of Bad Conductor by Lee and Charlton's Method",
         model: "TPSM-005",
+        image: "path_to_image_1.jpg", 
         specs: [
           "Hollow metal box, MS chrome plated rod",
           "Chrome plated brass disc",
@@ -98,6 +144,7 @@
       {
         title: "Temperature Co-efficient by Platinum Resistance Thermometer",
         model: "TPSM-006",
+        image: "path_to_image_1.jpg", 
         specs: [
           "Trainer Kit with Platinum Resistance Thermometer",
           "Steam Boiler with Heating Arrangement",
@@ -109,6 +156,7 @@
       }, {
     title: "Coefficient of Thermal Conductivity of Cu by Angstrom's Method",
     model: "TPSM-007",
+    image: "path_to_image_1.jpg", 
     specs: [
       "POWER SUPPLY 0-30V, 20A DC",
       "Input Voltage: 220V, ±5%, 50Hz AC, Output Voltage: 0-30V",
@@ -130,6 +178,7 @@
   {
     title: "Determination of J by Calorimeter",
     model: "TPSM-008",
+    image: "path_to_image_1.jpg", 
     specs: [
       "Joules Calorimeter",
       "Digital Voltmeter 19.99VDC",
@@ -143,6 +192,7 @@
   {
     title: "Variation of Thermo EMF Across Thermocouple",
     model: "TPSM-009",
+    image: "path_to_image_1.jpg", 
     specs: [
       "Copper Iron Thermocouple & Potentiometer: 10 wire",
       "Water containing Beaker: 250ml - 2 Nos",
@@ -159,6 +209,7 @@
   {
     title: "Calibrate Resistance Temperature Device (RTD) using Null Method",
     model: "TPSM-010",
+    image: "path_to_image_1.jpg", 
     specs: [
       "Meter Bridge",
       "Galvanometer",
@@ -171,6 +222,7 @@
   },{
     title: "Calibrate a Thermocouple to Measure Temperature in a Specified Range using Null Method",
     model: "TPSM-010",
+    image: "path_to_image_1.jpg", 
     specs: [
       "Copper-iron Thermocouple & Potentiometer: 10 wire",
       "Water containing Beaker: 250ml - 2 Nos",
@@ -189,19 +241,33 @@
     const productList = document.getElementById('productList');
 
     thermalProducts.forEach(product => {
-      const productDiv = document.createElement('div');
-      productDiv.className = 'product-card';
+  const productCol = document.createElement('div');
+  productCol.className = 'col-md-4 d-flex align-items-stretch'; // 3 per row, full height cards
 
-      productDiv.innerHTML = `
-        <div class="product-title">${product.title}</div>
-        <div><strong>Model No:</strong> ${product.model}</div>
-        <ul class="spec-list">
-          ${product.specs.map(spec => `<li>${spec}</li>`).join('')}
-        </ul>
-      `;
+  const productCard = document.createElement('div');
+  productCard.className = 'product-card w-100 d-flex flex-column';
 
-      productList.appendChild(productDiv);
-    });
+  productCard.innerHTML = `
+    <img src="${product.image}" alt="${product.title}" class="product-image" />
+    <div class="product-title mt-2">${product.title}</div>
+    <div><strong>Model No:</strong> ${product.model}</div>
+    <div class="mt-auto">
+      <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#specificationModal" onclick='showSpecifications("${product.title}", ${JSON.stringify(product.specs)})'>
+        View Specifications
+      </button>
+    </div>
+  `;
+
+  productCol.appendChild(productCard);
+  productList.appendChild(productCol);
+});
+
+// Function to populate modal with product specs
+function showSpecifications(title, specs) {
+  document.getElementById('modalProductTitle').textContent = title;
+  const modalSpecsList = document.getElementById('modalSpecsList');
+  modalSpecsList.innerHTML = specs.map(spec => `<li>${spec}</li>`).join('');
+}
   </script>
 </body>
 

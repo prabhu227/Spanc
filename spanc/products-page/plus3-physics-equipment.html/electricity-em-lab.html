@@ -5,39 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Physics Electricity, Magnetism & EMT lab experiments with model numbers and technical specifications for +3 level science students." />
   <meta name="keywords" content="Physics Lab, Electricity Lab, Magnetism Experiments, EMT, Educational Equipment, SPML, EME" />
-  <meta name="author" content="Your Name or Company" />
+  <meta name="author" content="Spanco Tek" />
   <title>Physics: Electricity, Magnetism & EMT Lab</title>
 
-  <!-- Bootstrap CSS & AOS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
   <style>
     body {
       background-color: #f4f8fa;
       font-family: 'Segoe UI', sans-serif;
     }
-
     .experiment-card {
-      border-radius: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
       background-color: #fff;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
 
     .experiment-card:hover {
-      transform: translateY(-8px);
+      transform: scale(1.05);
     }
 
+    .experiment-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
     .model-no {
       font-weight: bold;
       color: #0d6efd;
     }
-
     .optional {
       font-style: italic;
       color: #555;
     }
+    .modal-body ul {
+    padding-left: 1.2rem;
+  }
+  .modal-body li {
+    margin-bottom: 0.4rem;
+  }
+  .btn-outline-primary {
+    font-size: 0.9rem;
+  }
   </style>
 </head>
 <body>
@@ -51,17 +67,41 @@
     <div class="row" id="experiment-list"></div>
   </div>
 
-  <!-- Bootstrap + AOS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <div class="container mt-5">
+    <div class="row" id="experiment-container">
+      <!-- Dynamic Cards will be inserted here -->
+    </div>
+  </div>
+<!-- Modal Structure -->
+ <!-- Modal for Specifications -->
+ <div class="modal fade" id="specModal" tabindex="-1" aria-labelledby="specModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="specModalLabel">Experiment Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Model No:</strong> <span id="modalModel"></span></p>
+        <ul id="modalSpecs"></ul>
+        <p class="optional mt-3" id="modalOptional"></p>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- JavaScript Mapping -->
   <script>
+    
     const experiments = [
       {
         title: "To use a Multimeter for measuring Resistances, Voltages, Current and checking Fuses",
         model: "EME-001",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "Display: 3% Big LCD Display",
           "DC Voltage: 6V to 600V, AC Voltage: 600mV to 600V",
@@ -74,6 +114,7 @@
       {
         title: "To measure charge/current sensitivity & CDR using Ballistic Galvanometer",
         model: "EME-002",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "Moving Coil Ballistic Galvanometer",
           "Lamp & Scale arrangement",
@@ -86,6 +127,7 @@
       {
         title: "To determine a high resistance by leakage method using Ballistic Galvanometer",
         model: "EME-003",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "Moving Coil Ballistic Galvanometer",
           "Lamp & Scale arrangement",
@@ -98,6 +140,7 @@
       {
         title: "To determine self-inductance of a coil by Rayleigh's method",
         model: "EME-004",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "Ballistic Galvanometer: Moving Coil Type",
           "Lamp & Scale Arrangement",
@@ -111,6 +154,7 @@
       {
         title: "To compare capacitances using De'Sauty's Bridge",
         model: "EME-005",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "On-board Decade Resistance: 10, 100, 1kΩ",
           "Standard Capacitors: 0.1μF & 0.2μF",
@@ -124,6 +168,7 @@
       },      {
         title: "Measurement of B-field variation in a Solenoid & Magnetic Field in Circular Coil",
         model: "EME-006",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "Power Supply: 0-16V DC stabilized (Ripple < 25mV)",
           "Voltage Display: 3½ Digit LED, Current: 5A variable",
@@ -137,6 +182,7 @@
       {
         title: "To Study the Characteristics of a Series RC Circuit",
         model: "SED-1001",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "Built-in DC Regulated Power Supply: 0-12V (Variable)",
           "Voltmeter: 0-12V (Moving Coil), Galvanometer: 1-0-1 (Moving Coil)",
@@ -148,6 +194,7 @@
       {
         title: "To study a Series LCR Circuit",
         model: "EME-008",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "DC Voltmeter: 0-5V (Moving Coil)",
           "DC Ammeter: 0-25mA (Moving Coil)",
@@ -160,6 +207,7 @@
       {
         title: "To study a Parallel LCR Circuit",
         model: "EME-009",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "DC Voltmeter: 0-5V (Moving Coil)",
           "DC Ammeter: 0-25mA (Moving Coil)",
@@ -172,6 +220,7 @@
       {
         title: "To Determine a Low Resistance by Carey Foster's Bridge",
         model: "EME-010",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "DC Supply: 1.5V/250mA (Switch Controlled)",
           "Decade Resistance Box: 0.1Ω to 100Ω (x2, fractional)",
@@ -185,6 +234,7 @@
       {
         title: "To Determine a Low Resistance by Potentiometer",
         model: "EME-011",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "Power Supply: +2VDC, Standard Cell: +1.018VDC",
           "Built-in Moving Coil Galvanometer & Digital Ammeter",
@@ -197,6 +247,7 @@
       {
         title: "To Verify Thevenin and Norton Theorems",
         model: "EME-012",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "DC Supply: 12V/150mA (Variable)",
           "Variable Resistor: 5000Ω/1W",
@@ -209,6 +260,7 @@
       {
         title: "To Verify Superposition Theorem",
         model: "EME-013",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "DC Regulated Power Supply: 12V/150mA & 5V/150mA (Fixed)",
           "Fixed Resistors: 2200Ω, 1000Ω, 1500Ω",
@@ -220,6 +272,7 @@
       {
         title: "To Verify Maximum Power Transfer Theorem",
         model: "EME-014",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "DC Regulated Power Supply: 12V/150mA (Fixed)",
           "Fixed Resistors: 5000Ω, 1000Ω, 1500Ω",
@@ -233,6 +286,7 @@
       {
         title: "To determine self-inductance by Anderson's Bridge",
         model: "EME-015",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "Decade Resistance (3 nos): Range 10Ω to 1kΩ",
           "Standard Capacitors: 0.1μF & 0.2μF",
@@ -247,6 +301,7 @@
       {
         title: "Triode Valve: Draw Static & Mutual Characteristics",
         model: "EME-016",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "HT DC Power Supply: 0–300V/30mA",
           "LT Power Supply: 0–6.3V AC",
@@ -258,6 +313,7 @@
       {
         title: "Diode Valve: Draw Static Characteristics & Calculate Plate Resistance",
         model: "EME-017",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "DC Regulated Power Supply: 0–300V",
           "LT Power Supply Included",
@@ -270,6 +326,7 @@
       {
         title: "Compare EMF of Two Cells using Stretched Wire Potentiometer",
         model: "EME-018",
+        image: 'https://via.placeholder.com/500x300?text=Analog+System+%26+Applications',
         specs: [
           "DC Supply: 0–12V, Standard Cell: 1.018V DC",
           "Unknown Resistors: 10Ω, 50Ω, 100Ω",
@@ -284,26 +341,47 @@
 
     ];
 
-    const listContainer = document.getElementById("experiment-list");
 
+
+
+    const container = document.getElementById('experiment-container');
     experiments.forEach((exp, index) => {
-      const card = document.createElement("div");
-      card.className = "col-12 col-md-6 col-lg-4 mb-4";
-      card.setAttribute("data-aos", "fade-up");
-      card.setAttribute("data-aos-delay", `${index * 100}`);
-
-      card.innerHTML = `
-        <div class="p-4 experiment-card h-100">
-          <h5>${index + 1}. ${exp.title}</h5>
-          <p class="model-no">Model No: ${exp.model}</p>
-          <ul>
-            ${exp.specs.map(s => `<li>${s}</li>`).join('')}
-          </ul>
-          ${exp.optional.length > 0 ? `<p class="optional">${exp.optional.join(", ")}</p>` : ""}
+      const col = document.createElement('div');
+      col.className = 'col-md-6 col-lg-4 mb-4';
+      col.innerHTML = `
+        <div class="experiment-card p-4 h-100">
+          <img src="${exp.image}" alt="${exp.title}" class="img-fluid mb-3">
+          <h5 class="fw-bold">${exp.title}</h5>
+          <p class="model-no">Model: ${exp.model}</p>
+          <button class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#specModal" onclick="showSpecs(${index})">
+            View Specification
+          </button>
         </div>
       `;
-      listContainer.appendChild(card);
+      container.appendChild(col);
     });
-  </script>
+
+    // Function to show specs in the modal
+    function showSpecs(index) {
+      const exp = experiments[index];
+      document.getElementById('specModalLabel').textContent = exp.title;
+      document.getElementById('modalModel').textContent = exp.model;
+
+      const specsList = document.getElementById('modalSpecs');
+      specsList.innerHTML = '';
+      exp.specs.forEach(spec => {
+        const li = document.createElement('li');
+        li.textContent = spec;
+        specsList.appendChild(li);
+      });
+
+      const optionalText = exp.optional?.length ? `<strong>Optional Accessories:</strong> ${exp.optional.join(', ')}` : '';
+      document.getElementById('modalOptional').innerHTML = optionalText;
+    }
+    AOS.init({
+      duration: 1000, // Duration of the animation
+      once: true // Animation occurs only once
+    });
+ </script>
 </body>
 </html>

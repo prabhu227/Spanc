@@ -25,6 +25,21 @@
         </div>
     </div>
 
+    <!-- Modal for Specifications -->
+    <div class="modal fade" id="specModal" tabindex="-1" aria-labelledby="specModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="specModalLabel">Specifications</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalBodyContent">
+                    <!-- Dynamic content will go here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         const experiments = [
             {
@@ -91,7 +106,6 @@
             }
         ];
 
-        // Function to generate and display experiment cards dynamically
         function displayExperiments() {
             const experimentList = document.getElementById('experiment-list');
             experiments.forEach(experiment => {
@@ -105,16 +119,11 @@
                             <p class="card-subtitle text-muted">Model: ${experiment.model}</p>
                         </div>
                         <div class="card-body">
-                            <h5>Specifications:</h5>
-                            <ul class="specs-list">
-                                ${experiment.specs.map(spec => `<li>${spec}</li>`).join('')}
-                            </ul>
-                            ${experiment.optionalItems ? `
-                                <h5>Optional Accessories:</h5>
-                                <ul class="specs-list">
-                                    ${experiment.optionalItems.map(item => `<li>${item}</li>`).join('')}
-                                </ul>
-                            ` : ''}
+                            <button class="btn btn-primary" onclick='showSpecifications(
+                                "${experiment.title.replace(/"/g, '&quot;')}",
+                                ${JSON.stringify(experiment.specs)},
+                                ${JSON.stringify(experiment.optionalItems || [])}
+                            )'>View Specifications</button>
                         </div>
                     </div>
                 `;
@@ -123,7 +132,32 @@
             });
         }
 
-        // Initialize the display of experiments on page load
+        function showSpecifications(title, specs, optionalItems) {
+            const modalTitle = document.getElementById('specModalLabel');
+            const modalBody = document.getElementById('modalBodyContent');
+
+            modalTitle.innerText = `${title} - Specifications`;
+
+            let content = `<h5>Specifications:</h5><ul class="specs-list">`;
+            specs.forEach(spec => {
+                content += `<li>${spec}</li>`;
+            });
+            content += `</ul>`;
+
+            if (optionalItems.length > 0) {
+                content += `<h5>Optional Accessories:</h5><ul class="specs-list">`;
+                optionalItems.forEach(item => {
+                    content += `<li>${item}</li>`;
+                });
+                content += `</ul>`;
+            }
+
+            modalBody.innerHTML = content;
+
+            const specModal = new bootstrap.Modal(document.getElementById('specModal'));
+            specModal.show();
+        }
+
         window.onload = displayExperiments;
     </script>
 
