@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Quantum Mechanics experiments for studying Spectroscope Splitting, Zeeman Effect, Tunneling in Diodes, and more with modern lab equipment.">
   <meta name="keywords" content="Quantum Mechanics, ESR Technique, Zeeman Effect, Tunneling Diode, Physics Experiments">
   <meta name="author" content="Physics Lab">
   <title>Quantum Mechanics Experiments</title>
   <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
 
-  <div class="container mt-5">
-    <h1 class="text-center">Quantum Mechanics Lab Equipment</h1>
-    <div class="row" id="product-list">
-      <!-- Product Cards will be injected here by JavaScript -->
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Quantum Mechanics Lab Equipment</h1>
+  <div class="row" id="product-list"></div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="specModal" tabindex="-1" aria-labelledby="specModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="specModalLabel">Specifications</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 id="modal-product-title"></h5>
+        <p id="modal-product-model"></p>
+        <ul id="modal-spec-list" class="list-group list-group-flush"></ul>
+      </div>
     </div>
   </div>
+</div>
 
-  <!-- Bootstrap JS & jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Bootstrap JS & jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script>
     const quantumMechanicsProducts = [
       {
         title: "Spectroscope Splitting of DPPH using ESR Technique",
         model: "QMP-001",
+        image: "https://via.placeholder.com/300x200?text=QMP-002",
         specs: [
           "Dimensions: 165x105x135 mm³ approx.",
           "Weight: 1.25 kg approx.",
@@ -44,6 +61,7 @@
       {
         title: "Study of Zeeman Effect: External Magnetic Field & Hyperfine Splitting",
         model: "QMP-002",
+        image: "https://via.placeholder.com/300x200?text=QMP-002",
         specs: [
           "Power Supply: 0-30V DC, 10A",
           "Input Voltage: AC 220V ±5%, Output Voltage: 0-30V, Output Current: 0-10A",
@@ -60,6 +78,7 @@
       {
         title: "Tunneling Effect in Tunnel Diode Using I-V Characteristics",
         model: "SK-075",
+        image: "https://via.placeholder.com/300x200?text=QMP-002",
         specs: [
           "Inbuilt Fixed DC regulated power supply",
           "DC Voltmeter: 0-600mV",
@@ -70,6 +89,7 @@
       {
         title: "To Determine the Diameter of Narrow Wire",
         model: "QMP-003",
+        image: "https://via.placeholder.com/300x200?text=QMP-002",
         specs: [
           "Optical Bench: Small U-shape, mild steel",
           "PIN Diode Laser",
@@ -81,6 +101,7 @@
       },  {
     title: "Verification of Brewster's Law",
     model: "QMP-003",
+    image: "https://via.placeholder.com/300x200?text=QMP-002",
     specs: [
       "He-Ne LASER: Wavelength 632.8 nm, Working current: 4mA - 6mA",
       "Output power: >2mW, Continuous working time: > 8 hrs.",
@@ -93,6 +114,7 @@
   {
     title: "Calibration of Meter Bridge",
     model: "QMP-004",
+    image: "https://via.placeholder.com/300x200?text=QMP-002",
     specs: [
       "DC Supply: 1.5V/250 mA (Switch Controlled)",
       "Decade Resistance Box: 0.10 to 100-2nos (Fractional)",
@@ -105,6 +127,7 @@
   {
     title: "Determination of n of the Given Viscous Liquid by Searle's Viscometer",
     model: "QMP-005",
+    image: "https://via.placeholder.com/300x200?text=QMP-002",
     specs: [
       "Outer cylinder is clamped to supporting pillar at various heights.",
       "Inner cylinder, which is graduated, revolves as a pillar fitted with two pulleys, complete with scale pan.",
@@ -114,6 +137,7 @@
   {
     title: "To Determine H-Component of Earth's Magnetic Field and Magnetic Moment of a Bar Magnet",
     model: "QMP-006",
+    image: "https://via.placeholder.com/300x200?text=QMP-002",
     specs: [
       "Deflection Magnetometer",
       "Vibration Magnetometer",
@@ -127,24 +151,37 @@
 
     const productListContainer = document.getElementById("product-list");
 
-    quantumMechanicsProducts.forEach(product => {
-      const productCard = document.createElement("div");
-      productCard.classList.add("col-md-4", "mb-4");
+quantumMechanicsProducts.forEach((product, index) => {
+  const productCard = document.createElement("div");
+  productCard.classList.add("col-md-4", "mb-4");
 
-      const productContent = `
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">${product.title}</h5>
-            <p class="card-text">Model: ${product.model}</p>
-            <ul class="list-group list-group-flush">
-              ${product.specs.map(spec => `<li class="list-group-item">${spec}</li>`).join("")}
-            </ul>
-          </div>
-        </div>
-      `;
-      productCard.innerHTML = productContent;
-      productListContainer.appendChild(productCard);
-    });
+  productCard.innerHTML = `
+    <div class="card h-100">
+      <img src="${product.image}" class="card-img-top" alt="${product.title}">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title">${product.title}</h5>
+        <p class="card-text">Model: ${product.model}</p>
+        <button class="btn btn-primary mt-auto" data-toggle="modal" data-target="#specModal" onclick="showSpecs(${index})">View Specifications</button>
+      </div>
+    </div>
+  `;
+  productListContainer.appendChild(productCard);
+});
+
+function showSpecs(index) {
+  const product = quantumMechanicsProducts[index];
+  document.getElementById("modal-product-title").innerText = product.title;
+  document.getElementById("modal-product-model").innerText = "Model: " + product.model;
+
+  const specList = document.getElementById("modal-spec-list");
+  specList.innerHTML = "";
+  product.specs.forEach(spec => {
+    const li = document.createElement("li");
+    li.classList.add("list-group-item");
+    li.textContent = spec;
+    specList.appendChild(li);
+  });
+}
   </script>
     <!-- Background shapes -->
 

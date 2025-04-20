@@ -50,7 +50,21 @@
 
     <div class="row" id="experiment-list"></div>
   </div>
-
+  <div class="modal fade" id="specificationModal" tabindex="-1" role="dialog" aria-labelledby="specificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="specificationModalLabel">Experiment Specifications</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="specificationDetails">
+          <!-- Specifications will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Bootstrap + AOS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -58,218 +72,266 @@
 
   <!-- JavaScript Mapping -->
   <script>
-    const experiments = [
-      {
-        title: "To study surface tension by capillary rise method",
-        model: "SPML-001",
-        specs: [
-          "Rising Table: Cast Aluminium 10cm dia with 12cm stem",
-          "Capillary Tube Clamp: 10cm with glass tubes of different internal diameters",
-          "+9mm Rod with Metal Frame, +Beaker"
-        ],
-        optional: ["Travelling Microscope"]
-      },
-      {
-        title: "To determine the Height of a Building using a Sextant",
-        model: "SPML-002",
-        specs: [
-          "Micrometer: Divided to 1 minute on black drum",
-          "Graduated: -5° to 125° in 1°",
-          "Index Mirror: Rectangular 33x49mm, Horizon Mirror: Circular 50mm",
-          "Shade glasses, Galilean Telescope (4x40mm), Illuminator, Tools, Hardwood case"
-        ],
-        optional: ["Measuring Tape"]
-      },
-      {
-        title: "To determine the Moment of Inertia of a Flywheel",
-        model: "SPML-003",
-        specs: [
-          "Steel disc 250mm x 30mm, engraved marking",
-          "Ball bearing shaft, bracket for vertical mounting",
-          "Supports 10 revolutions with free fall"
-        ],
-        optional: ["Slotted Weights", "Meter Scale", "Digital Stopwatch"]
-      },
-      {
-        title: "To determine Young's Modulus using Optical Lever Method",
-        model: "SPML-004",
-        specs: [
-          "Brass Rod: 1 meter, 2 Mirrors with holders",
-          "G clamps with knife edges",
-          "Slotted weights: 4x500g (2kg total)"
-        ],
-        optional: ["Cylindrical base, Telescope", "Screw Gauge", "Meter Scale"]
-      },
-      {
-        title: "To determine Modulus of Rigidity by Maxwell's Needle",
-        model: "SPML-005",
-        specs: [
-          "Hollow cylindrical brass tube: 40cm",
-          "Maxwell's Needle, Wall Bracket, Wire"
-        ],
-        optional: ["Screw Gauge", "Meter Scale", "Digital Balance", "Stopwatch"]
-      },
-      {
-        title: "To determine Elastic Constants using Searle's Method",
-        model: "SPML-006",
-        specs: [
-          "2x SS rectangular bars (30cm each)",
-          "Telescope"
-        ],
-        optional: ["Stand for Searle’s Apparatus", "Vernier Caliper", "Screw Gauge"]
-      },  {
-        title: "To study surface tension by capillary rise method",
-        model: "SPML-001",
-        specs: [
-          "Rising Table: Cast Aluminium 10cm dia with 12cm stem",
-          "Capillary Tube Clamp: 10cm with glass tubes of different internal diameters",
-          "+9mm Rod with Metal Frame, +Beaker"
-        ],
-        optional: ["Travelling Microscope"]
-      },
-      {
-        title: "To determine the Height of a Building using a Sextant",
-        model: "SPML-002",
-        specs: [
-          "Micrometer: Divided to 1 minute on black drum",
-          "Graduated: -5° to 125° in 1°",
-          "Index Mirror: Rectangular 33x49mm, Horizon Mirror: Circular 50mm",
-          "Shade glasses, Galilean Telescope (4x40mm), Illuminator, Tools, Hardwood case"
-        ],
-        optional: ["Measuring Tape"]
-      },
-      {
-        title: "To determine the Moment of Inertia of a Flywheel",
-        model: "SPML-003",
-        specs: [
-          "Steel disc 250mm x 30mm, engraved marking",
-          "Ball bearing shaft, bracket for vertical mounting",
-          "Supports 10 revolutions with free fall"
-        ],
-        optional: ["Slotted Weights", "Meter Scale", "Digital Stopwatch"]
-      },
-      {
-        title: "To determine Young's Modulus using Optical Lever Method",
-        model: "SPML-004",
-        specs: [
-          "Brass Rod: 1 meter, 2 Mirrors with holders",
-          "G clamps with knife edges",
-          "Slotted weights: 4x500g (2kg total)"
-        ],
-        optional: ["Cylindrical base, Telescope", "Screw Gauge", "Meter Scale"]
-      },
-      {
-        title: "To determine Modulus of Rigidity by Maxwell's Needle",
-        model: "SPML-005",
-        specs: [
-          "Hollow cylindrical brass tube: 40cm",
-          "Maxwell's Needle, Wall Bracket, Wire"
-        ],
-        optional: ["Screw Gauge", "Meter Scale", "Digital Balance", "Stopwatch"]
-      },
-      {
-        title: "To determine Elastic Constants using Searle's Method",
-        model: "SPML-006",
-        specs: [
-          "2x SS rectangular bars (30cm each)",
-          "Telescope"
-        ],
-        optional: ["Stand for Searle’s Apparatus", "Vernier Caliper", "Screw Gauge"]
-      },
-      {
-        title: "To determine g by Bar Pendulum",
-        model: "SPML-007",
-        specs: [
-          "Brass Bar: 100 x 3.75 x 0.5 cm with 19 holes at 5cm intervals",
-          "Wall bracket: 1no"
-        ],
-        optional: ["Meter Scale (100cm)"]
-      },
-      {
-        title: "To determine g by Kater's Pendulum",
-        model: "SPML-008",
-        specs: [
-          "Steel rod: 100cm length, 1.2cm diameter",
-          "Adjustable SS masses: 600g & 300g",
-          "Removable sharp knife edges-2nos",
-          "Adjustable wooden masses-2nos",
-          "Wall bracket"
-        ],
-        optional: ["Stopwatch"]
-      },
-      {
-        title: "To study the Motion of a Spring and calculate Spring Constant",
-        model: "SPML-009",
-        specs: [
-          "Adjustable scale on 37.5cm stand",
-          "Helical spring with pointer"
-        ],
-        optional: ["Weights", "Stopwatch"]
-      },
-      {
-        title: "To determine Coefficient of Viscosity by Capillary Flow Method",
-        model: "SPML-010",
-        specs: [
-          "Constant water level reservoir with stand",
-          "Pinch cock, 100ml Graduated Cylinder",
-          "Manometer on wooden stand",
-          "38cm Glass Capillary Tube with stand"
-        ],
-        optional: ["Stopwatch", "Rubber Tube (1m)", "Thermometer"]
-      },
-      {
-        title: "To determine g and velocity for free fall using Digital Timer",
-        model: "SPML-011",
-        specs: [
-          "Electronic Timer with dual Gate & Solenoid sockets",
-          "Toggle switch, Base & Rod",
-          "Solenoid Holder: 144x97x113mm",
-          "Ball Dropper: 115x16x2mm, Steel Balls: 12mm & 18mm"
-        ],
-        optional: []
-      },
-      {
-        title: "To determine Young's Modulus by Double Cantilever",
-        model: "SPML-012",
-        specs: [
-          "Steel Strip: 1m (L), 2.5cm (B), 5mm (T)",
-          "Knife Edges G-Clamp, Stirrup with Hook",
-          "Hanger 500g + 9x500g MS weights"
-        ],
-        optional: []
-      },
-      {
-        title: "To determine Rigidity Modulus by Static Method",
-        model: "SPML-013",
-        specs: [
-          "Barton Apparatus",
-          "Hanger 0.5kg + 6x500g Slotted Weights",
-          "Screw Gauge, Meter Scale"
-        ],
-        optional: []
-      }
-    ];
+  const experiments = [
+  {
+    title: "To study surface tension by capillary rise method",
+    model: "SPML-001",
+    specs: [
+      "Rising Table: Cast Aluminium 10cm dia with 12cm stem",
+      "Capillary Tube Clamp: 10cm with glass tubes of different internal diameters",
+      "+9mm Rod with Metal Frame, +Beaker"
+    ],
+    optional: ["Travelling Microscope"],
+    image: "path/to/image/SPML-001.jpg"
+  },
+  {
+    title: "To determine the Height of a Building using a Sextant",
+    model: "SPML-002",
+    specs: [
+      "Micrometer: Divided to 1 minute on black drum",
+      "Graduated: -5° to 125° in 1°",
+      "Index Mirror: Rectangular 33x49mm, Horizon Mirror: Circular 50mm",
+      "Shade glasses, Galilean Telescope (4x40mm), Illuminator, Tools, Hardwood case"
+    ],
+    optional: ["Measuring Tape"],
+    image: "path/to/image/SPML-002.jpg"
+  },
+  {
+    title: "To determine the Moment of Inertia of a Flywheel",
+    model: "SPML-003",
+    specs: [
+      "Steel disc 250mm x 30mm, engraved marking",
+      "Ball bearing shaft, bracket for vertical mounting",
+      "Supports 10 revolutions with free fall"
+    ],
+    optional: ["Slotted Weights", "Meter Scale", "Digital Stopwatch"],
+    image: "path/to/image/SPML-003.jpg"
+  },
+  {
+    title: "To determine Young's Modulus using Optical Lever Method",
+    model: "SPML-004",
+    specs: [
+      "Brass Rod: 1 meter, 2 Mirrors with holders",
+      "G clamps with knife edges",
+      "Slotted weights: 4x500g (2kg total)"
+    ],
+    optional: ["Cylindrical base, Telescope", "Screw Gauge", "Meter Scale"],
+    image: "path/to/image/SPML-004.jpg"
+  },
+  {
+    title: "To determine Modulus of Rigidity by Maxwell's Needle",
+    model: "SPML-005",
+    specs: [
+      "Hollow cylindrical brass tube: 40cm",
+      "Maxwell's Needle, Wall Bracket, Wire"
+    ],
+    optional: ["Screw Gauge", "Meter Scale", "Digital Balance", "Stopwatch"],
+    image: "path/to/image/SPML-005.jpg"
+  },
+  {
+    title: "To determine Elastic Constants using Searle's Method",
+    model: "SPML-006",
+    specs: [
+      "2x SS rectangular bars (30cm each)",
+      "Telescope"
+    ],
+    optional: ["Stand for Searle’s Apparatus", "Vernier Caliper", "Screw Gauge"],
+    image: "path/to/image/SPML-006.jpg"
+  },
+  {
+    title: "To study surface tension by capillary rise method",
+    model: "SPML-001",
+    specs: [
+      "Rising Table: Cast Aluminium 10cm dia with 12cm stem",
+      "Capillary Tube Clamp: 10cm with glass tubes of different internal diameters",
+      "+9mm Rod with Metal Frame, +Beaker"
+    ],
+    optional: ["Travelling Microscope"],
+    image: "path/to/image/SPML-001.jpg"
+  },
+  {
+    title: "To determine the Height of a Building using a Sextant",
+    model: "SPML-002",
+    specs: [
+      "Micrometer: Divided to 1 minute on black drum",
+      "Graduated: -5° to 125° in 1°",
+      "Index Mirror: Rectangular 33x49mm, Horizon Mirror: Circular 50mm",
+      "Shade glasses, Galilean Telescope (4x40mm), Illuminator, Tools, Hardwood case"
+    ],
+    optional: ["Measuring Tape"],
+    image: "path/to/image/SPML-002.jpg"
+  },
+  {
+    title: "To determine the Moment of Inertia of a Flywheel",
+    model: "SPML-003",
+    specs: [
+      "Steel disc 250mm x 30mm, engraved marking",
+      "Ball bearing shaft, bracket for vertical mounting",
+      "Supports 10 revolutions with free fall"
+    ],
+    optional: ["Slotted Weights", "Meter Scale", "Digital Stopwatch"],
+    image: "path/to/image/SPML-003.jpg"
+  },
+  {
+    title: "To determine Young's Modulus using Optical Lever Method",
+    model: "SPML-004",
+    specs: [
+      "Brass Rod: 1 meter, 2 Mirrors with holders",
+      "G clamps with knife edges",
+      "Slotted weights: 4x500g (2kg total)"
+    ],
+    optional: ["Cylindrical base, Telescope", "Screw Gauge", "Meter Scale"],
+    image: "path/to/image/SPML-004.jpg"
+  },
+  {
+    title: "To determine Modulus of Rigidity by Maxwell's Needle",
+    model: "SPML-005",
+    specs: [
+      "Hollow cylindrical brass tube: 40cm",
+      "Maxwell's Needle, Wall Bracket, Wire"
+    ],
+    optional: ["Screw Gauge", "Meter Scale", "Digital Balance", "Stopwatch"],
+    image: "path/to/image/SPML-005.jpg"
+  },
+  {
+    title: "To determine Elastic Constants using Searle's Method",
+    model: "SPML-006",
+    specs: [
+      "2x SS rectangular bars (30cm each)",
+      "Telescope"
+    ],
+    optional: ["Stand for Searle’s Apparatus", "Vernier Caliper", "Screw Gauge"],
+    image: "path/to/image/SPML-006.jpg"
+  },
+  {
+    title: "To determine g by Bar Pendulum",
+    model: "SPML-007",
+    specs: [
+      "Brass Bar: 100 x 3.75 x 0.5 cm with 19 holes at 5cm intervals",
+      "Wall bracket: 1no"
+    ],
+    optional: ["Meter Scale (100cm)"],
+    image: "path/to/image/SPML-007.jpg"
+  },
+  {
+    title: "To determine g by Kater's Pendulum",
+    model: "SPML-008",
+    specs: [
+      "Steel rod: 100cm length, 1.2cm diameter",
+      "Adjustable SS masses: 600g & 300g",
+      "Removable sharp knife edges-2nos",
+      "Adjustable wooden masses-2nos",
+      "Wall bracket"
+    ],
+    optional: ["Stopwatch"],
+    image: "path/to/image/SPML-008.jpg"
+  },
+  {
+    title: "To study the Motion of a Spring and calculate Spring Constant",
+    model: "SPML-009",
+    specs: [
+      "Adjustable scale on 37.5cm stand",
+      "Helical spring with pointer"
+    ],
+    optional: ["Weights", "Stopwatch"],
+    image: "path/to/image/SPML-009.jpg"
+  },
+  {
+    title: "To determine Coefficient of Viscosity by Capillary Flow Method",
+    model: "SPML-010",
+    specs: [
+      "Constant water level reservoir with stand",
+      "Pinch cock, 100ml Graduated Cylinder",
+      "Manometer on wooden stand",
+      "38cm Glass Capillary Tube with stand"
+    ],
+    optional: ["Stopwatch", "Rubber Tube (1m)", "Thermometer"],
+    image: "path/to/image/SPML-010.jpg"
+  },
+  {
+    title: "To determine g and velocity for free fall using Digital Timer",
+    model: "SPML-011",
+    specs: [
+      "Electronic Timer with dual Gate & Solenoid sockets",
+      "Toggle switch, Base & Rod",
+      "Solenoid Holder: 144x97x113mm",
+      "Ball Dropper: 115x16x2mm, Steel Balls: 12mm & 18mm"
+    ],
+    optional: [],
+    image: "path/to/image/SPML-011.jpg"
+  },
+  {
+    title: "To determine Young's Modulus by Double Cantilever",
+    model: "SPML-012",
+    specs: [
+      "Steel Strip: 1m (L), 2.5cm (B), 5mm (T)",
+      "Knife Edges G-Clamp, Stirrup with Hook",
+      "Hanger 500g + 9x500g MS weights"
+    ],
+    optional: [],
+    image: "path/to/image/SPML-012.jpg"
+  },
+  {
+    title: "To determine Rigidity Modulus by Static Method",
+    model: "SPML-013",
+    specs: [
+      "Barton Apparatus",
+      "Hanger 0.5kg + 6x500g Slotted Weights",
+      "Screw Gauge, Meter Scale"
+    ],
+    optional: [],
+    image: "path/to/image/SPML-013.jpg"
+  }
+];
 
     const listContainer = document.getElementById("experiment-list");
 
-    experiments.forEach((exp, index) => {
-      const card = document.createElement("div");
-      card.className = "col-12 col-md-6 col-lg-4 mb-4";
-      card.setAttribute("data-aos", "fade-up");
-      card.setAttribute("data-aos-delay", `${index * 100}`);
+experiments.forEach((exp, index) => {
+  const card = document.createElement("div");
+  card.className = "col-12 col-md-6 col-lg-4 mb-4";
+  card.setAttribute("data-aos", "fade-up");
+  card.setAttribute("data-aos-delay", `${index * 100}`);
 
-      card.innerHTML = `
-        <div class="p-4 experiment-card h-100">
-          <h5>${index + 1}. ${exp.title}</h5>
-          <p class="model-no">Model No: ${exp.model}</p>
-          <ul>
-            ${exp.specs.map(s => `<li>${s}</li>`).join('')}
-          </ul>
-          <p class="optional">Optional Items: ${exp.optional.join(", ")}</p>
+  card.innerHTML = `
+  <div class="p-4 experiment-card h-100">
+    <img src="${exp.image}" alt="Experiment Image" class="img-fluid mb-3 rounded" style="max-height: 200px; object-fit: cover;">
+    <h5>${index + 1}. ${exp.title}</h5>
+    <p class="model-no">Model No: ${exp.model}</p>
+    <ul>
+      ${exp.specs.map(s => `<li>${s}</li>`).join('')}
+    </ul>
+    <p class="optional">Optional Items: ${exp.optional.join(", ")}</p>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#specsModal${index}">View Specifications</button>
+  </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="specsModal${index}" tabindex="-1" aria-labelledby="specsModalLabel${index}" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="specsModalLabel${index}">${exp.title} - Specifications</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="${exp.image}" class="img-fluid mb-3" alt="Experiment Image">
+            <h6>Model No: ${exp.model}</h6>
+            <ul>
+              ${exp.specs.map(s => `<li>${s}</li>`).join('')}
+            </ul>
+            <h6>Optional Items:</h6>
+            <ul>
+              ${exp.optional.length > 0 ? exp.optional.map(o => `<li>${o}</li>`).join('') : "<li>None</li>"}
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
         </div>
-      `;
-      listContainer.appendChild(card);
-    });
+      </div>
+    </div>
+  `;
+  listContainer.appendChild(card);
+});
   </script>
     <!-- Background shapes -->
 

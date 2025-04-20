@@ -19,6 +19,23 @@
       <!-- Product Cards will be injected here by JavaScript -->
     </div>
   </div>
+<!-- Modal for Product Specifications -->
+ <!-- Modal -->
+ <div class="modal fade" id="specsModal" tabindex="-1" role="dialog" aria-labelledby="specsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="specsModalLabel">Product Specifications</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span> <!-- × Close Button -->
+        </button>
+      </div>
+      <div class="modal-body" id="modal-specs-body">
+        <!-- Dynamic specs will be inserted here -->
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- Bootstrap JS & jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -240,44 +257,41 @@
   }
     ];
 
-    const productListContainer = document.getElementById("product-list");
+    const productList = document.getElementById("product-list");
 
+devicesAndInstruments.forEach((product, index) => {
+  const col = document.createElement("div");
+  col.className = "col-md-4 mb-4";
+  col.setAttribute("data-aos", "fade-up");
 
-    devicesAndInstruments.forEach((product, index) => {
-    const productCard = document.createElement("div");
-    productCard.className = "col-md-6 col-lg-4 experiment-card";
-
-    const productContent = `
-      <div class="card h-100 d-flex flex-column">
-        <img src="${product.image}" class="card-img-top" alt="${product.title}">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">${product.title}</h5>
-          <p class="card-text"><strong>Model:</strong> ${product.model}</p>
-          <ul class="experiment-specs list-group list-group-flush" id="specs-${index}" style="display: none;">
-            ${product.specs.map(spec => `<li class="list-group-item">${spec}</li>`).join("")}
-          </ul>
-          <button class="btn btn-primary mt-3 btn-toggle" onclick="toggleSpecs(${index})">View Specifications</button>
-        </div>
+  col.innerHTML = `
+    <div class="card h-100 shadow-sm">
+      <img src="${product.image}" class="card-img-top" alt="${product.title}">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title">${product.title}</h5>
+        <p class="card-text"><strong>Model:</strong> ${product.model}</p>
+        <button class="btn btn-primary mt-auto" onclick="openSpecsModal(${index})">View Specifications</button>
       </div>
-    `;
+    </div>
+  `;
 
-    productCard.innerHTML = productContent;
-    productListContainer.appendChild(productCard);
-  });
+  productList.appendChild(col);
+});
 
-  function toggleSpecs(index) {
-    const specs = document.getElementById(`specs-${index}`);
-    const button = specs.nextElementSibling;
+function openSpecsModal(index) {
+  const product = devicesAndInstruments[index];
+  const modalBody = document.getElementById("modal-specs-body");
+  const modalTitle = document.getElementById("specsModalLabel");
 
-    if (specs.style.display === "none" || specs.style.display === "") {
-      specs.style.display = "block";
-      button.textContent = "Hide Specifications";
-    } else {
-      specs.style.display = "none";
-      button.textContent = "View Specifications";
-    }
-  }
+  modalTitle.textContent = `${product.title} - ${product.model}`;
+  modalBody.innerHTML = `
+    <ul class="list-group">
+      ${product.specs.map(spec => `<li class="list-group-item">${spec}</li>`).join("")}
+    </ul>
+  `;
 
+  $('#specsModal').modal('show');
+}
   </script>
     <!-- Background shapes -->
 
