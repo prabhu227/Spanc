@@ -34,6 +34,7 @@ const footerHTML = `
           <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
           <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
         </div>
+         <p class="mt-3 small"><strong>GSTIN:</strong> 21XXXXXXXZXZ1Z1</p>
       </div>
     </div>
 
