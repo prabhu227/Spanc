@@ -24,6 +24,16 @@
         height: 40px;
         margin-right: 15px;
       }
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+      .card:hover{
+        transform: translateY(-6px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      }
     </style>
   </head>
   <body>
@@ -721,10 +731,10 @@
     `;
 
     if (item.detailsPage) {
-      cardHTML += `<a href="${item.detailsPage}" class="btn btn-primary mt-auto">View Technical Specifications</a>`;
+      cardHTML += `<a href="${item.detailsPage}" class="btn btn-danger mt-auto">View Technical Specifications</a>`;
     } else if (item.technicalSpecs) {
       cardHTML += `
-        <button class="btn btn-outline-secondary mt-auto" data-bs-toggle="collapse" data-bs-target="#specs-${titleId}">View Specs</button>
+        <button class="btn btn-outline-secondary  mt-auto" data-bs-toggle="collapse" data-bs-target="#specs-${titleId}">View Specs</button>
         <div class="collapse mt-3" id="specs-${titleId}">
           <ul class="list-group list-group-flush">
             ${item.technicalSpecs.map((spec) => `<li class="list-group-item">${spec}</li>`).join("")}
