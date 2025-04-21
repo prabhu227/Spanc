@@ -1,3 +1,4 @@
+<<<<<<< HEAD:spanc/products-page/plus3-physics-equipment.html/waveandoptics.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -269,3 +270,275 @@ specModal.addEventListener('show.bs.modal', function (event) {
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wave & Optics Experiments for Physics Lab">
+  <meta name="keywords" content="Physics, Wave, Optics, Experiment, Lab">
+  <meta name="author" content="Spanco Tek">
+  <title>Wave & Optics Experiments</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 50px;
+      font-family: Arial, sans-serif;
+    }
+    .experiment-card {
+      margin-bottom: 30px;
+    }
+    .experiment-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+    .spec-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    footer {
+      background-color: #f8f9fa;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .card-img-top {
+      max-height: 200px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="text-center mb-5">Wave & Optics Experiments</h1>
+  <div id="experimentList" class="row gy-4"></div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="specModal" tabindex="-1" aria-labelledby="specModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="specModalLabel">Specifications</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Content will be loaded dynamically -->
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+  <!-- Bootstrap JS and Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const experiments = [
+      {
+        title: "To Investigate the Motion of Coupled Oscillators",
+        model: "FE-111",
+        image: "https://via.placeholder.com/300x200?text=Experiment+1",
+        specs: [
+          "Support Base: Dimension: 250x160mm (LxW), Material: Mild steel",
+          "Support Rod: 1000x12.5mm (Lx), Material: Mild steel",
+          "Pendulum Rod & Weight: Material: Mild steel, Rod dimension: 750 x 12mm (L x dia.)",
+          "Weight dimension: 50 x 50.8mm (Lx dia.)"
+        ]
+      },
+      {
+        title: "To Determine the Frequency of an Electrically Maintained Tuning Fork by Melde's Experiment",
+        model: "WO-001",
+        image: "https://via.placeholder.com/300x200?text=Experiment+2",
+        specs: [
+          "Heavy steel fork, Heavy cast Iron base, Electromagnet",
+          "Weight box 1, Voltage source 1.5V - 12V/3A",
+          "Pulley with clamp, Reel of thread, Scale pan"
+        ]
+      },
+      {
+        title: "To Study Lissajous Figures",
+        model: "WO-002",
+        image: "https://via.placeholder.com/300x200?text=Experiment+3",
+        specs: [
+          "Function Generator - 2 nos",
+          "Frequency range: 0.1Hz to 100KHz",
+          "Amplitude: 20Vpp",
+          "Frequency Multiplier: 1 to 10K in decade step",
+          "Opamp-IC 741",
+          "Optional Essential Accessories: Digital Oscilloscope"
+        ]
+      },
+      {
+        title: "To Determine the Thickness of Thin Paper by Measuring the Width of the Interference Fringes Produced by a Wedge-Shaped Film",
+        model: "WO-003",
+        image: "https://via.placeholder.com/300x200?text=Experiment+4",
+        specs: [
+          "Sodium Light Source: Mount horizontally and vertically",
+          "Metal housing, Aperture dia.: 25mm, Complete with sodium lamp, Transformer, Base rod, Boss head and Sodium Bulb",
+          "Newton's Rings Reflector: Housing: PVC, Finish: Matt black, Glass plate: Mounted 45°",
+          "Spherometer (Disc Brass): Types: 3 legs, Vertical scale: 6mmx6mm (WxT), Micrometer: Dia. 40mm",
+          "Plano Convex Lens: Dia.: 61.5mm, Glass, Focal Length: 200mm"
+        ]
+      },
+      {
+        title: "To Determine the Wavelength of Laser Light Using Diffraction of Single Slit & Double Slit",
+        model: "WO-004",
+        image: "https://via.placeholder.com/300x200?text=Experiment+5", 
+        specs: [
+          "Optical Bench: Material: Aluminium alloy, Type: Hexagonal section, Scale: 0-100cm",
+          "Diode Laser: Peak wavelength: 635nm, Operating voltage: 5V DC, Optical power: 0.4-0.8mW",
+          "Pin Hole Photo Detector: Detector: Silicon photocell, Aperture: 1 mm",
+          "Slit Holder: Clear Aperture: 45x45mm, Object holder: Clip type"
+        ]
+      },{
+    title: "Familiarization with Schuster's Focusing Determination of Angle of Prism",
+    model: "WO-005",
+    image: "https://via.placeholder.com/300x200?text=Experiment+6",
+    specs: [
+      "Spectrometer: Scale: Brass, Dia: 7, LC: 30/20 Second",
+      "Objective: Achromatic lens, f: 178mm, Aperture: 32mm",
+      "Slit: Brass with micrometer, Reticle: 90 cross etched on glass",
+      "Eyepiece: 10X, Gauss eyepiece, in-built magnifier",
+      "Base: 190mm Triangular, Cast Iron",
+      "Prism: Size: 38x38x38mm, Material: EDF",
+      "Optional Essential Accessories: Sodium Vapour Lamp 35W, Transformer with Metal Box, Mercury Vapour Lamp: 80/125W, Lamp House: 300x85mm(Lx), Aperture dia: 25mm"
+    ]
+  },
+  {
+    title: "To Determine the Refractive Index of the Material of a Prism Using Sodium Light",
+    model: "WO-006",
+    image: "https://via.placeholder.com/300x200?text=Experiment+7",
+    specs: [
+      "Optical Bench: 1.25 Meter Long, Dual S.S Rod",
+      "Fresnel Bi-Prism, Bi-Prism Holder",
+      "Auto Action/Lens Holder, Micrometer Eyepiece",
+      "Optical Slit, Condensing Lens",
+      "Optional Essential Accessories: Sodium Vapour Lamp 35W, Sodium Lamp Transformer, Sodium Lamp Housing with Metal Box"
+    ]
+  },
+  {
+    title: "To Determine the Dispersive Power of the Material of a Prism",
+    model: "WO-007",
+    image: "https://via.placeholder.com/300x200?text=Experiment+8",
+    specs: [
+      "Spectrometer: Scale: Brass, Dia: 7, LC: 30/20 Second",
+      "Objective: Achromatic lens, f: 178mm, Aperture: 32mm",
+      "Slit: Brass with micrometer, Reticle: 90 cross etched on glass",
+      "Eyepiece: 10X, Gauss eyepiece, in-built magnifier",
+      "Base: 190mm Triangular, Cast Iron",
+      "Prism: Size: 38x38x38mm, Material: EDF",
+      "Optional Essential Accessories: Sodium Vapour Lamp 35W, Transformer with Metal Box, Mercury Vapour Lamp: 80/125W, Lamp House: 300x85mm(Lx), Aperture dia: 25mm"
+    ]
+  },
+  {
+    title: "To Determine Cauchy Constant",
+    model: "WO-008",
+    image: "https://via.placeholder.com/300x200?text=Experiment+9",
+    specs: [
+      "Spectrometer: Scale: Brass, Dia: 7, LC: 30/20 Second",
+      "Objective: Achromatic lens, f: 178mm, Aperture: 32mm",
+      "Slit: Brass with micrometer, Reticle: 90 cross etched on glass",
+      "Eyepiece: 10X, Gauss eyepiece, in-built magnifier",
+      "Base: 190mm Triangular, Cast Iron",
+      "Prism: Size: 38x38x38mm, Material: EDF",
+      "Optional Essential Accessories: Sodium Vapour Lamp 35W, Transformer with Metal Box, Mercury Vapour Lamp: 80/125W, Lamp House: 300x85mm(Lx), Aperture dia: 25mm"
+    ]
+  },
+  {
+    title: "To Determine the Resolving Power of a Prism",
+    model: "WO-009",
+    image: "https://via.placeholder.com/300x200?text=Experiment+10",
+    specs: [
+      "Spectrometer: Scale: Brass, Dia: 7, LC: 30/20 Second",
+      "Objective: Achromatic lens, f: 178mm, Aperture: 32mm",
+      "Slit: Brass with micrometer, Reticle: 90 cross etched on glass",
+      "Eyepiece: 10X, Gauss eyepiece, in-built magnifier",
+      "Base: 190mm Triangular, Cast Iron",
+      "Prism: Size: 38x38x38mm, Material: EDF",
+      "Optional Essential Accessories: Sodium Vapour Lamp 35W, Transformer with Metal Box, Mercury Vapour Lamp: 80/125W, Lamp House: 300x85mm(Lx), Aperture dia: 25mm"
+    ]
+  },
+  {
+    title: "To Determine Wavelength of Sodium and Spectral Lines of Mercury Light Using Plane Diffraction Grating",
+    model: "WO-010",
+    image: "https://via.placeholder.com/300x200?text=Experiment+11",
+    specs: [
+      "Optical Bench: Material: Aluminium alloy, Type: Hexagonal section, Scale: 0-100cm",
+      "Diode Laser: Peak wavelength: 635nm, Operating voltage: 5V DC, Optical power: 0.4-0.8mW",
+      "Pin Hole Photo Detector: Detector: Silicon photocell, Aperture: 1 mm",
+      "Slit Holder: Clear Aperture: 45x45mm, Object holder: Clip type",
+      "Diffraction Grating: 80 lines/mm, 300 lines/mm, Single slit: Tapered, Double slit: Tapered",
+      "Optional Essential Accessories: Digital Oscilloscope"
+    ]
+  },
+  {
+    title: "To Determine the Resolving Power of a Plane Diffraction Grating",
+    model: "WO-011",
+    image: "https://via.placeholder.com/300x200?text=Experiment+12",
+    specs: [
+      "Optical Bench: Material: Aluminium alloy, Type: Hexagonal section, Scale: 0-100cm",
+      "Diode Laser: Peak wavelength: 635nm, Operating voltage: 5V DC, Optical power: 0.4-0.8mW",
+      "Pin Hole Photo Detector: Detector: Silicon photocell, Aperture: 1 mm",
+      "Slit Holder: Clear Aperture: 45x45mm, Object holder: Clip type",
+      "Diffraction Grating: 80 lines/mm, 300 lines/mm, Single slit: Tapered, Double slit: Tapered",
+      "Optional Essential Accessories: Digital Oscilloscope"
+    ]
+  },
+    ];
+
+    const experimentList = document.getElementById('experimentList');
+
+experiments.forEach((exp, index) => {
+  const col = document.createElement('div');
+  col.className = 'col-md-6 col-lg-4 d-flex';
+
+  const card = document.createElement('div');
+  card.className = 'card experiment-card h-100 d-flex flex-column';
+
+  card.innerHTML = `
+    <img src="${exp.image}" class="card-img-top" alt="${exp.title}">
+    <div class="card-body d-flex flex-column">
+      <h5 class="experiment-title">${exp.title}</h5>
+      <p><strong>Model No:</strong> ${exp.model}</p>
+      <div class="mt-auto">
+        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#specModal" data-index="${index}">
+          View Specifications
+        </button>
+      </div>
+    </div>
+  `;
+
+  col.appendChild(card);
+  experimentList.appendChild(col);
+});
+
+
+const modalTitle = document.getElementById('specModalLabel');
+const modalBody = document.getElementById('modalBody');
+
+const specModal = document.getElementById('specModal');
+specModal.addEventListener('show.bs.modal', function (event) {
+  const button = event.relatedTarget;
+  const index = button.getAttribute('data-index');
+  const experiment = experiments[index];
+
+  modalTitle.textContent = experiment.title;
+  modalBody.innerHTML = `
+    <p><strong>Model No:</strong> ${experiment.model}</p>
+    <ul class="spec-list">${experiment.specs.map(spec => `<li>• ${spec}</li>`).join('')}</ul>
+  `;
+});
+
+  </script>
+    <!-- Background shapes -->
+
+    <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+
+    <script src="/Spanc/spanc/products-page/background.js"></script>
+
+</body>
+</html>
+>>>>>>> b2a6b83c8ffbd60865325a6438f9e8028bc3062c:spanc/products-page/plus3-physics-equipment/waveandoptics.html

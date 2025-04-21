@@ -1,3 +1,4 @@
+<<<<<<< HEAD:spanc/products-page/plus3-physics-equipment.html/mechania.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -563,3 +564,569 @@
   <script src="/Spanc/spanc/products-page/background.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanics Lab Experiments</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card {
+            margin-bottom: 20px;
+        }
+        .specs-list {
+            list-style-type: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">Mechanics Lab Experiments</h1>
+
+        <div id="experiment-list" class="row">
+            <!-- Dynamic content will be injected here by JS -->
+        </div>
+    </div>
+
+    <script>
+        const experiments = [
+            {
+                title: "Capillary Rise Method",
+                model: "SPML-001A",
+                specs: [
+                    "Rising Table: Cast Aluminium 10 cm dia with a stem of 12 cm",
+                    "Capillary Tube Clamp: 10 cm long fitted with 9 mm Rod attached to Metal Frame",
+                    "Capillary Tube: Made of glass with different internal diameter",
+                    "Glass Beaker: 500 ml",
+                    "Optional Accessories Not Supplied with this Setup: Travelling Microscope (Vernier Type)",
+                    "Travelling Microscope Base: Iron, Scale: Stainless Steel",
+                    "Vertical Scale: Main Scale: 0-150 mm, Vernier Scale: 0-1 mm, Least Count: 0.01 mm",
+                    "Horizontal Scale: Main Scale: 0-180 mm, Vernier Scale: 0-1 mm, Least Count: 0.01 mm",
+                    "Eyepiece: 10X"
+                ]
+            },
+            {
+                title: "Digital Travelling Microscope",
+                model: "SPML-001",
+                specs: [
+                    "Number of Axis: 1 (Vertical)",
+                    "Base: Cast Iron",
+                    "Moving Parts: Brass",
+                    "Focus: Adjustable Free",
+                    "Micrometer movement: 10 mm, Least Count: 0.01 mm",
+                    "Capillary stand and beaker holder Type: Desktop",
+                    "Material: Acrylic",
+                    "Reference Pointer",
+                    "Capillary Tube: Changeable (3 different diameters)",
+                    "Beaker: Max size 250 ml",
+                    "Display: LCD",
+                    "Detector: Resistive type",
+                    "Power: AC 220V/50Hz or AC 110V/60Hz"
+                ]
+            },
+            {
+                title: "Sextant with Stand Apparatus",
+                model: "SPML-002",
+                specs: [
+                    "DC Voltmeter Range: 0-5V, Display: Analog (Moving Coil)",
+                    "DC Ammeter Range: 0-25 mA, Display: Analog (Moving Coil)",
+                    "Resistances: 1000Ω, 1500Ω & 2200Ω",
+                    "Capacitors: 0.1 μF, 0.2 μF & 0.3 μF",
+                    "Inductance: 50 mH",
+                    "Interconnection: 4 mm",
+                    "Optional Items Not Supplied with this Setup: Signal Generator"
+                ]
+            },
+            {
+                title: "Flywheel Apparatus",
+                model: "SPML-003",
+                specs: [
+                    "Steel flywheel, Steel shaft used as drive pulley",
+                    "Set of weights",
+                    "Ball bearing mounted shaft",
+                    "Wall mounting plate made of anodized aluminum",
+                    "Flywheel: D = 300 mm, Height: 40 mm, Mass: 22.2 kg",
+                    "Mass Moment of Inertia: 0.25 kg m²",
+                    "Pulley: D = 22 mm",
+                    "Set of weights - 1x 1N (hanger), 4x 1N, 3x 5N",
+                    "Base plate: 250 x 200 mm, Hole spacing: 230 x 180 mm",
+                    "Dimensions: 200 x 355 x 300 mm",
+                    "Weight: Approx. 30 kg",
+                    "Optional Items Not Supplied with this Setup"
+                ]
+            },
+            {
+                title: "Capillary Rise Method",
+                model: "SPML-001A",
+                specs: [
+                    "Rising Table: Cast Aluminium 10 cm dia with a stem of 12 cm",
+                    "Capillary Tube Clamp: 10 cm long fitted with 9 mm Rod attached to Metal Frame",
+                    "Capillary Tube: Made of glass with different internal diameter",
+                    "Glass Beaker: 500 ml",
+                    "Optional Accessories Not Supplied with this Setup: Travelling Microscope (Vernier Type)",
+                    "Travelling Microscope Base: Iron, Scale: Stainless Steel",
+                    "Vertical Scale: Main Scale: 0-150 mm, Vernier Scale: 0-1 mm, Least Count: 0.01 mm",
+                    "Horizontal Scale: Main Scale: 0-180 mm, Vernier Scale: 0-1 mm, Least Count: 0.01 mm",
+                    "Eyepiece: 10X"
+                ]
+            },
+            {
+                title: "Digital Travelling Microscope",
+                model: "SPML-001",
+                specs: [
+                    "Number of Axis: 1 (Vertical)",
+                    "Base: Cast Iron",
+                    "Moving Parts: Brass",
+                    "Focus: Adjustable Free",
+                    "Micrometer movement: 10 mm, Least Count: 0.01 mm",
+                    "Capillary stand and beaker holder Type: Desktop",
+                    "Material: Acrylic",
+                    "Reference Pointer",
+                    "Capillary Tube: Changeable (3 different diameters)",
+                    "Beaker: Max size 250 ml",
+                    "Display: LCD",
+                    "Detector: Resistive type",
+                    "Power: AC 220V/50Hz or AC 110V/60Hz"
+                ]
+            },
+            {
+                title: "Sextant with Stand Apparatus",
+                model: "SPML-002",
+                specs: [
+                    "DC Voltmeter Range: 0-5V, Display: Analog (Moving Coil)",
+                    "DC Ammeter Range: 0-25 mA, Display: Analog (Moving Coil)",
+                    "Resistances: 1000Ω, 1500Ω & 2200Ω",
+                    "Capacitors: 0.1 μF, 0.2 μF & 0.3 μF",
+                    "Inductance: 50 mH",
+                    "Interconnection: 4 mm",
+                    "Optional Items Not Supplied with this Setup: Signal Generator"
+                ]
+            },
+            {
+                title: "Flywheel Apparatus",
+                model: "SPML-003",
+                specs: [
+                    "Steel flywheel, Steel shaft used as drive pulley",
+                    "Set of weights",
+                    "Ball bearing mounted shaft",
+                    "Wall mounting plate made of anodized aluminum",
+                    "Flywheel: D = 300 mm, Height: 40 mm, Mass: 22.2 kg",
+                    "Mass Moment of Inertia: 0.25 kg m²",
+                    "Pulley: D = 22 mm",
+                    "Set of weights - 1x 1N (hanger), 4x 1N, 3x 5N",
+                    "Base plate: 250 x 200 mm, Hole spacing: 230 x 180 mm",
+                    "Dimensions: 200 x 355 x 300 mm",
+                    "Weight: Approx. 30 kg",
+                    "Optional Items Not Supplied with this Setup"
+                ]
+            },
+            {
+                title: "Optical Lever Method",
+                model: "SPML-004",
+                specs: [
+                    "Brass Rod: 1 meter",
+                    "G clamps with sharp knife: 2 sets of mirror and holder",
+                    "Slotted weight: (4*500g = 2 kg)",
+                    "Optional Accessories Not Supplied with this Setup: Telescope"
+                ]
+            },
+            {
+                title: "Maxwell's Needle",
+                model: "SPML-005",
+                specs: [
+                    "Hollow cylindrical: Material Made of brass",
+                    "Dimension: 0.3 m (L) x 0.3 m (W) x 0.5 m (H)",
+                    "Hollow Cylinder length: 40 cm",
+                    "Solid Cylinder: Material Made of Brass",
+                    "Solid Cylinder Length: 40 cm",
+                    "Weight: Approx. 5 kg",
+                    "Maxwell's needle, Mirror with graduated scales",
+                    "Wall Bracket with chuck",
+                    "Wire",
+                    "Optional Items Not Supplied with this Setup: Vernier Calliper, Screw Gauge, Telescope, Digital Stop Watch, Spring Balance"
+                ]
+            },
+            {
+                title: "Elastic Constants of a Wire by Searle's Method",
+                model: "SPML-006",
+                specs: [
+                    "Two inertia bars of equal length: Approx. 30 cm length",
+                    "Square cross-section: 12 mm, Holes drilled at their centres",
+                    "Bars have screws fitted to hold a test wire: 30 cm long and 1 mm dia approx.",
+                    "Ceiling bracket with hooks, three test wires",
+                    "Optional Items Not Supplied with this Setup: Vernier Calliper, Screw Gauge"
+                ]
+            },
+            {
+                title: "Elastic Constants of a Wire by Searle's Method (Advanced)",
+                model: "SPML-006A",
+                specs: [
+                    "Two brass frames, Constant weight and suitable wire",
+                    "Two metal rectangular frames hinged together and parallel to each other to allow only vertical relative motion",
+                    "Spirit level fixed on cross bar pivoted across the frames for noting the reference point",
+                    "Each frame has a self-centering chuck at its top for holding wires and hooks at the bottom",
+                    "One frame has a vertical scale 10-0-10 mm with a Micrometer head along it reading to 0.01 mm for adjusting the spirit level",
+                    "Optional Items Not Supplied with this Setup: Slotted Weights, Meter Scale, Screw Gauge"
+                ]
+            },
+            {
+    title: "Analog Bar Pendulum",
+    productCode: "",
+    image: "images/analog-bar-pendulum.jpg",
+    description: "Brass bar pendulum with removable knife edges and precision holes for accurate oscillation study in mechanics labs.",
+    detailsPage: "analog-bar-pendulum.html",
+    technicalSpecs: [
+      "Bar Material: Brass",
+      "Removable Knife Edges",
+      "Dimension: 100 x 3.75 x 0.5 cm³",
+      "Drilled with 19 holes at equal distances of 5 cm",
+      "Wall bracket: 1no"
+    ],
+    optionalAccessories: ["Digital Stopwatch", "Meter Scale"]
+  },
+  {
+    title: "Digital Bar Pendulum (Advanced)",
+    productCode: "SPML-007A",
+    image: "images/digital-bar-pendulum.jpg",
+    description: "Advanced digital compound pendulum setup for time period and oscillation study with high precision and electronic counters.",
+    detailsPage: "digital-bar-pendulum-advanced.html",
+    technicalSpecs: [
+      "Type: Desktop version",
+      "Length: 600 mm, Number of holes: 11",
+      "Material: Aluminium, Fulcrum: Suitable for all holes",
+      "Pitch: 50 mm",
+      "Stand: Heavy cast iron base with grooved rod",
+      "Oscillation counter: Range 0-999.999 sec, Resolution 0.001 sec",
+      "Counts number of oscillations and time period using single sensor",
+      "Digital stop clock: Range 0-999.9 sec, Resolution 0.1 sec",
+      "Power: 220 V/50 Hz, <20 W"
+    ],
+    optionalAccessories: ["Digital Stopwatch", "Meter Scale"]
+  },
+  {
+    title: "Kater's Pendulum",
+    productCode: "",
+    image: "images/katers-pendulum.jpg",
+    description: "Precision stainless steel Kater’s pendulum for determining acceleration due to gravity using interchangeable knife edges and adjustable masses.",
+    detailsPage: "katers-pendulum.html",
+    technicalSpecs: [
+      "Material: Stainless Steel Rod, Length: 100 cm, Diameter: 1.2 cm",
+      "SS adjustable masses: 600g & 300g",
+      "Meter scale: 1m",
+      "Removable sharp knife edges - 2 nos",
+      "Adjustable wooden light masses - 2 nos",
+      "Wall bracket - 1no"
+    ],
+    optionalAccessories: ["Digital Stopwatch"]
+  },
+  {
+    title: "Kater's Pendulum (Advanced)",
+    productCode: "SPML-008A",
+    image: "images/katers-pendulum-advanced.jpg",
+    description: "Advanced Kater’s Pendulum apparatus for high-accuracy gravity experiments with precision components and adjustable design.",
+    detailsPage: "katers-pendulum-advanced.html",
+    technicalSpecs: [
+      "Material: Stainless Steel Rod, Length: 100 cm, Diameter: 1.2 cm",
+      "SS adjustable masses: 600g & 300g",
+      "Meter scale: 1m",
+      "Removable sharp knife edges - 2 nos",
+      "Adjustable wooden light masses - 2 nos",
+      "Stand for Kater's Apparatus - 1no"
+    ],
+    optionalAccessories: ["Digital Stopwatch"]
+  },
+  {
+    title: "Kater's Pendulum (Digital)",
+    productCode: "",
+    image: "images/katers-pendulum-digital.jpg",
+    description: "Iron rod Kater’s Pendulum with photo detector-based digital oscillation counter for accurate gravity experiments.",
+    detailsPage: "katers-pendulum-digital.html",
+    technicalSpecs: [
+      "Rod Material: Iron",
+      "Rod cross-section: Approx 12mm",
+      "Rod Length: 1000 mm",
+      "Balancing Weights: 2 nos",
+      "Clamp: Wall mount type",
+      "Digital Oscillation Counter",
+      "Sensor Type: Photo detector",
+      "Max Time: 999.999 Sec, Resolution: 0.001 Sec",
+      "Oscillations: Up to 200",
+      "Timer Auto Starts after 1 trial oscillation",
+      "Reset Function: Yes",
+      "Power: 220V, 50Hz mains"
+    ],
+    optionalAccessories: []
+  },
+  {
+    title: "Spring Constant Apparatus",
+    productCode: "SPML-008D",
+    image: "images/spring-constant-apparatus.jpg",
+    description: "Apparatus to determine the spring constant with adjustable scale, helical spring, and weights.",
+    detailsPage: "spring-constant-apparatus.html",
+    technicalSpecs: [
+      "Adjustable scale on a stand: 37.5 cm",
+      "Helical Spring Diameter: 25mm",
+      "Helical Spring Length: 10cm",
+      "Pointer included",
+      "Heavy Metal Base Plate",
+      "Metal Rod",
+      "Weights: 50 x 5 gm"
+    ],
+    optionalAccessories: []
+  },
+  {
+    title: "Viscosity of Water by Poiseuille's Method",
+    productCode: "SPML-009",
+    image: "images/poiseuille-viscosity-apparatus.jpg",
+    description: "Poiseuille’s method setup with borosilicate glass tubes, manometer, and water level reservoir for measuring viscosity of water.",
+    detailsPage: "viscosity-poiseuille-method.html",
+    technicalSpecs: [
+      "Manometer on wooden stand",
+      "L-shaped glass tubes: Borosilicate",
+      "Capillary tube length: 38cm (borosilicate)",
+      "Constant water level reservoir",
+      "Base with rod (MS chrome plated)",
+      "Rubber Tube: 8mm diameter, 1 meter length",
+      "Measuring Cylinder: 100ml (Plastic, Graduated)",
+      "Pinch Cock: Stainless Steel with clamps and flap",
+      "Digital Stopwatch: 1/100 Sec, Date/Time function, Long Neck Slang"
+    ],
+    optionalAccessories: ["Digital Stopwatch", "Measuring Cylinder"]
+  },
+  {
+    title: "Free Fall Apparatus with Digital Timer",
+    productCode: "SPML-011",
+    image: "images/free-fall-digital-timer.jpg",
+    description: "Digital Free Fall apparatus with timer, solenoid, and steel balls to measure gravitational acceleration.",
+    detailsPage: "free-fall-digital-timer.html",
+    technicalSpecs: [
+      "Electronic Timer with gate and solenoid sockets",
+      "Toggle switch included",
+      "Base & Base rod",
+      "Solenoid Base holding size: 144 x 97 x 113 mm",
+      "Ball drop base size: 115 x 16 x 2 mm",
+      "Steel balls: 12mm & 18mm diameter"
+    ],
+    optionalAccessories: ["Digital Stopwatch", "Measuring Tape"]
+  },{
+    title: "Bending of Single Beam",
+    productCode: "SPML-0125",
+    image: "images/bending-single-beam.jpg",
+    description: "Apparatus to study the bending of a single steel beam with knife edges, weights, and stirrup.",
+    detailsPage: "bending-single-beam.html",
+    technicalSpecs: [
+      "Steel strip: Length = 1 m, Breadth = 2.5 cm, Thickness = 5 mm",
+      "Knife edges acting as G-Clamp (MS)",
+      "Stirrup with hook",
+      "Hanger: 50g + 4 x 50g slotted weights (MS)"
+    ],
+    optionalAccessories: [
+      "Screw Gauge",
+      "Vernier Calliper",
+      "Slotted Weight",
+      "Telescope"
+    ]
+  },
+  {
+    title: "Bending of Double Beams",
+    productCode: "SPML-012D",
+    image: "images/bending-double-beam.jpg",
+    description: "Double beam bending setup for mechanical deflection analysis using slotted weights and knife-edge clamps.",
+    detailsPage: "bending-double-beam.html",
+    technicalSpecs: [
+      "Steel strip: Length = 1 m, Breadth = 2.5 cm, Thickness = 5 mm",
+      "Knife edges acting as G-Clamp (MS)",
+      "Stirrup with hook",
+      "Hanger: 500g + 9 x 500g slotted weights (MS)"
+    ],
+    optionalAccessories: [
+      "Screw Gauge",
+      "Vernier Calliper",
+      "Slotted Weight",
+      "Telescope"
+    ]
+  },
+  {
+    title: "Sonometer",
+    productCode: "SPML-013",
+    image: "images/sonometer.jpg",
+    description: "Wooden sonometer box with steel wires and tuning forks to study the frequency of vibration.",
+    detailsPage: "sonometer.html",
+    technicalSpecs: [
+      "Wooden Sonometer: 6\" x 6\"",
+      "Two steel wires: 0.3 mm dia. x 1 meter long",
+      "Includes three bridges (1 large, 2 small)",
+      "Slotted weights Hanger: 6 x 500 gm",
+      "Rubber Pad",
+      "Tuning Fork"
+    ],
+    optionalAccessories: []
+  },
+  {
+    title: "Sonometer (Electric)",
+    productCode: "SPML-013E",
+    image: "images/sonometer-electric.jpg",
+    description: "Electric sonometer with electromagnet and transformer for frequency and resonance studies.",
+    detailsPage: "sonometer-electric.html",
+    technicalSpecs: [
+      "Wooden Sonometer: 6\" x 6\"",
+      "Two steel wires: 0.3 mm dia. x 1 meter long",
+      "Three bridges (1 large, 2 small)",
+      "Slotted weights Hanger: 6 x 500 gm",
+      "Electromagnet with stand & holder",
+      "Transformer"
+    ],
+    optionalAccessories: []
+  },
+  {
+    title: "Rigidity Modulus by Static Method (Barton's Apparatus Horizontal Type)",
+    productCode: "SPML-013H",
+    image: "images/rigidity-horizontal.jpg",
+    description: "Horizontal setup for measuring rigidity modulus using Barton's apparatus with test rods and dual-scale pointers.",
+    detailsPage: "rigidity-horizontal.html",
+    technicalSpecs: [
+      "Cast iron V-shaped supports joined by two support rods",
+      "One support rod graduated in cm/mm",
+      "Wheel: 165 mm diameter with ball bearings",
+      "Self-centring chuck to hold test rod (55 cm long)",
+      "Two pointers and two scales graduated 30-0-30 degrees",
+      "Two test rods: brass and steel"
+    ],
+    optionalAccessories: [
+      "Screw Gauge",
+      "Meter Scale"
+    ]
+  },
+  {
+    title: "Rigidity Modulus by Static Method (Barton's Apparatus Vertical Type)",
+    productCode: "SPML-013HV",
+    image: "images/rigidity-vertical.jpg",
+    description: "Vertical Barton's apparatus with torsional drum for measuring rigidity modulus using suspended weights.",
+    detailsPage: "rigidity-vertical.html",
+    technicalSpecs: [
+      "Steel frame mounted on heavy cast iron base with levelling screws",
+      "Rod under test: 900 mm length, 5 mm diameter",
+      "Clamped at upper end using 3-jaw chuck, lower end to torsional drum",
+      "Torsional drum operated via weights on scale pans",
+      "Three circular scales graduated in single degrees",
+      "Three test rods, strings, and two scale pans included"
+    ],
+    optionalAccessories: [
+      "Screw Gauge",
+      "Meter Scale"
+    ]
+  },
+  {
+    title: "Young's Modulus of Rubber",
+    productCode: "SPML-014",
+    image: "images/youngs-modulus-rubber.jpg",
+    description: "Apparatus to measure Young’s modulus of rubber using a suspended rubber tube and slotted weights.",
+    detailsPage: "youngs-modulus-rubber.html",
+    technicalSpecs: [
+      "Rubber tube approx. 1 meter with cork, vertically held by stand",
+      "Stand includes levelling screws",
+      "Hook for slotted weights at lower end",
+      "Pointer attachment at base to measure extension",
+      "Meter scale fitted to the stand"
+    ],
+    optionalAccessories: [
+      "Travelling Microscope"
+    ]
+  },
+  {
+    title: "Magnifying Power of Telescope",
+    productCode: "SPML-015",
+    image: "images/magnifying-power-telescope.jpg",
+    description: "Telescope setup to study magnifying power using achromatic lens and Ramsden eyepiece with precise positioning.",
+    detailsPage: "magnifying-power-telescope.html",
+    technicalSpecs: [
+      "Achromatic objective: focal length 178 cm, aperture 25 mm",
+      "10x Ramsden eyepiece with rack and pinion focusing",
+      "Motion range: 1000 mm to infinity",
+      "Carriage with adjustable rings, precise positioning screws",
+      "Cross wire fitted (without cross line graticule)",
+      "Scale and scale holder included"
+    ],
+    optionalAccessories: [
+      "Travelling Microscope"
+    ]
+  },
+  {
+    title: "Optical Bench",
+    productCode: "SPML-020",
+    image: "images/optical-bench.jpg",
+    description: "Precision optical bench with nickel-plated rods and heavy cast iron feet, ideal for optical experiments.",
+    detailsPage: "optical-bench.html",
+    technicalSpecs: [
+      "Two Nickel plated rods with heavy cast iron feet",
+      "Levelling screws provided for alignment",
+      "Graduated in mm and cm for precision measurement",
+      "Four sliders with machined plane surface for accurate vertical fitting",
+      "Two sliders with transverse lateral slow-motion arrangement",
+      "All sliders have uniform hollow pillars and index marks"
+    ],
+    optionalAccessories: []
+  },
+  {
+    title: "Half Deflection Method & Figure of Merit",
+    productCode: "SPML-021",
+    image: "images/half-deflection-figure-merit.jpg",
+    description: "Complete setup for verifying half deflection method and calculating the figure of merit of a galvanometer.",
+    detailsPage: "half-deflection-figure-merit.html",
+    technicalSpecs: [
+      "DC Regulated Fixed Power Supply: 0–12V / 150 mA",
+      "High Resistance Box: 10,000 ohm",
+      "Low Resistance Box: 1,000 ohm",
+      "Includes Rheostat, One-way key",
+      "Galvanometer: Range 30-0-30 μA",
+      "Display: Analog (Moving Coil)",
+      "Panel Size: 70 mm x 60 mm (L x W)",
+      "Includes connecting wires"
+    ],
+    optionalAccessories: []
+  }
+        ];
+
+        // Function to generate and display experiment cards dynamically
+        function displayExperiments() {
+            const experimentList = document.getElementById('experiment-list');
+            experiments.forEach(experiment => {
+                const card = document.createElement('div');
+                card.classList.add('col-md-6', 'col-lg-4');
+
+                card.innerHTML = `
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">${experiment.title}</h3>
+                            <p class="card-subtitle text-muted">Model: ${experiment.model}</p>
+                        </div>
+                        <div class="card-body">
+                            <h5>Specifications:</h5>
+                            <ul class="specs-list">
+                                ${experiment.specs.map(spec => `<li>${spec}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+
+                experimentList.appendChild(card);
+            });
+        }
+
+        // Initialize the display of experiments on page load
+        window.onload = displayExperiments;
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Background shapes -->
+
+  <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+
+  <script src="/Spanc/spanc/products-page/background.js"></script>
+</body>
+</html>
+>>>>>>> b2a6b83c8ffbd60865325a6438f9e8028bc3062c:spanc/products-page/plus3-physics-equipment/mechania.html

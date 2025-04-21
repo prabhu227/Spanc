@@ -1,3 +1,4 @@
+<<<<<<< HEAD:spanc/products-page/plus3-physics-equipment.html/thermal-statisticalmechanics-lab.html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -278,3 +279,284 @@ function showSpecifications(title, specs) {
 </body>
 
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore our Thermal & Statistical Mechanics Physics Lab equipment. Detailed specifications for each experiment including conductivity, Stefan's Law, and more." />
+  <title>Thermal & Statistical Mechanics Lab - Physics Equipment</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <style>
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .product-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    .spec-list {
+      padding-left: 20px;
+    }
+
+    .product-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .modal-content {
+      width: 90%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container py-5">
+    <h1 class="text-center mb-5">Thermal & Statistical Mechanics Lab</h1>
+    <div id="productList" class="row"></div>
+   
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="specificationModal" tabindex="-1" role="dialog" aria-labelledby="specificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="specificationModalLabel">Product Specifications</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h4 id="modalProductTitle"></h4>
+          <ul id="modalSpecsList" class="spec-list"></ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    const thermalProducts = [
+      {
+        title: "Mechanical Equivalent of Heat by Callender and Barne's Method",
+        model: "TPSM-001",
+        image: "path_to_image_1.jpg", 
+        specs: [
+          "Calendar and Barn's continuous flow calorimeter",
+          "AC Ammeter: 0-3A (Moving Coil)",
+          "AC Voltmeter: 0-10V (Moving Coil)",
+          "Thermometers: 10°C to 100°C - 2 nos",
+          "Measuring cylinder: 0 to 100ml",
+          "DC Supply: 2V to 12V / 3A",
+          "Three Flow Water containing Beaker -1 no",
+          "Rubber tubing: 8mm - 2 Meter"
+        ]
+      },
+      {
+        title: "Planck's Constant using LEDs",
+        model: "TPSM-002",
+        image: "path_to_image_1.jpg", 
+        specs: [
+          "DC Supply: 0-250V",
+          "Vacuum diode",
+          "DC Voltmeter and Ammeter - 2 nos",
+          "Variable Pot: 2 nos"
+        ]
+      },
+      {
+        title: "Stefan's Constant",
+        model: "TPSM-003",
+        image: "path_to_image_1.jpg", 
+        specs: [
+          "DC Power Supply: 12V / 250mA",
+          "DC Voltmeter: 0-12V",
+          "DC Ammeter: 0-250mA",
+          "DC Bulb: 12V",
+          "Mounted on board",
+          "Interconnection: 4mm banana patch cord",
+          "Mains Power: 230V / 50Hz"
+        ]
+      },
+      {
+        title: "Thermal Conductivity of Copper by Searle's Apparatus",
+        model: "TPSM-004",
+        image: "path_to_image_1.jpg", 
+        specs: [
+          "Searle's Thermal Conductivity Apparatus",
+          "Thermometers (1/10°C) - 4 nos",
+          "Constant Level Tank",
+          "Steam Boiler with Heating Arrangement",
+          "Rubber Tubing, Measuring Flask"
+        ]
+      },
+      {
+        title: "Thermal Conductivity of Bad Conductor by Lee and Charlton's Method",
+        model: "TPSM-005",
+        image: "path_to_image_1.jpg", 
+        specs: [
+          "Hollow metal box, MS chrome plated rod",
+          "Chrome plated brass disc",
+          "Disc made of ebonite and glass",
+          "Steam generator and steam chamber",
+          "Glass beaker 250ml",
+          "Lee disc stand with base plate",
+          "Two thermometers: 10°C to 100°C",
+          "Rubber tube"
+        ]
+      },
+      {
+        title: "Temperature Co-efficient by Platinum Resistance Thermometer",
+        model: "TPSM-006",
+        image: "path_to_image_1.jpg", 
+        specs: [
+          "Trainer Kit with Platinum Resistance Thermometer",
+          "Steam Boiler with Heating Arrangement",
+          "DC Power Supply: 2V / 100mA",
+          "Calender and Griffith bridge with Jockey",
+          "Galvanometer 30-0-30, 22 ohm",
+          "Thermometer -10°C to 150°C"
+        ]
+      }, {
+    title: "Coefficient of Thermal Conductivity of Cu by Angstrom's Method",
+    model: "TPSM-007",
+    image: "path_to_image_1.jpg", 
+    specs: [
+      "POWER SUPPLY 0-30V, 20A DC",
+      "Input Voltage: 220V, ±5%, 50Hz AC, Output Voltage: 0-30V",
+      "Voltage Resolution: 0.1V, Voltage Display: 2½ Digit LED",
+      "Output Current: 0-20 Amp, Current Resolution: 0.1 Amp",
+      "Current Display: 2 Digit LED",
+      "CONDUCTIVITY ROD CU/AI",
+      "Dimension: 420 x 25.4mm (Length x Diameter)",
+      "Current Connection: 4mm socket",
+      "Temperature Points: 10 Nos, equal spacing 35mm",
+      "Calorimeter Socket: 20 x 20mm (Length x Diameter)",
+      "THREE FINGER CLAMP: Material: Aluminium alloy, Rod: Aluminium, length-160mm",
+      "BOSS HEAD: Object type: Square & round shape, Object size: Up-to 13mm dia",
+      "Object can be held both vertically and horizontally",
+      "LABORATORY JACK: Material: Aluminium, Top Plate Size: 160x130mm",
+      "Static Loading: 10kg, Vertical Elevation: 65 to 260mm"
+    ]
+  },
+  {
+    title: "Determination of J by Calorimeter",
+    model: "TPSM-008",
+    image: "path_to_image_1.jpg", 
+    specs: [
+      "Joules Calorimeter",
+      "Digital Voltmeter 19.99VDC",
+      "Digital Ammeter 19.99ADC",
+      "Battery Eliminator 1.5 to 12V AC/DC 3A",
+      "Rheostat",
+      "Connecting Wires",
+      "Optional Essential Accessories: Digital Stop-watch, Thermometer"
+    ]
+  },
+  {
+    title: "Variation of Thermo EMF Across Thermocouple",
+    model: "TPSM-009",
+    image: "path_to_image_1.jpg", 
+    specs: [
+      "Copper Iron Thermocouple & Potentiometer: 10 wire",
+      "Water containing Beaker: 250ml - 2 Nos",
+      "Heating Arrangement",
+      "DC Voltage: 2V & 4V / 100mA",
+      "DC Voltmeter: 20V & 200mV (Switch Select)",
+      "Ammeter: 0-200mA",
+      "Resistance: 10-100000 & 1KΩ-10KΩ",
+      "Thermometer: 10-100°C - 2 nos",
+      "Sensitive Galvanometer 30-0-30",
+      "Stand for Thermocouple with base plate"
+    ]
+  },
+  {
+    title: "Calibrate Resistance Temperature Device (RTD) using Null Method",
+    model: "TPSM-010",
+    image: "path_to_image_1.jpg", 
+    specs: [
+      "Meter Bridge",
+      "Galvanometer",
+      "Resistance Box: 10 to 100000",
+      "Resistance Coil-2 nos",
+      "Battery Eliminator: 2V",
+      "RTD: PT 100",
+      "Constant Temperature Arrangement"
+    ]
+  },{
+    title: "Calibrate a Thermocouple to Measure Temperature in a Specified Range using Null Method",
+    model: "TPSM-010",
+    image: "path_to_image_1.jpg", 
+    specs: [
+      "Copper-iron Thermocouple & Potentiometer: 10 wire",
+      "Water containing Beaker: 250ml - 2 Nos",
+      "Heating Arrangement",
+      "DC Voltage: 2V & 4V / 100mA",
+      "DC Voltmeter: 20V & 200mV (Switch Select)",
+      "Ammeter: 0-200mA",
+      "Resistance: 10-100000 & 1KΩ-10KΩ",
+      "Thermometer: 10-100°C - 2 nos",
+      "Sensitive Galvanometer 30-0-30",
+      "Stand for Thermocouple with base plate"
+    ]
+  },
+    ];
+
+    const productList = document.getElementById('productList');
+
+    thermalProducts.forEach(product => {
+  const productCol = document.createElement('div');
+  productCol.className = 'col-md-4 d-flex align-items-stretch'; // 3 per row, full height cards
+
+  const productCard = document.createElement('div');
+  productCard.className = 'product-card w-100 d-flex flex-column';
+
+  productCard.innerHTML = `
+    <img src="${product.image}" alt="${product.title}" class="product-image" />
+    <div class="product-title mt-2">${product.title}</div>
+    <div><strong>Model No:</strong> ${product.model}</div>
+    <div class="mt-auto">
+      <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#specificationModal" onclick='showSpecifications("${product.title}", ${JSON.stringify(product.specs)})'>
+        View Specifications
+      </button>
+    </div>
+  `;
+
+  productCol.appendChild(productCard);
+  productList.appendChild(productCol);
+});
+
+// Function to populate modal with product specs
+function showSpecifications(title, specs) {
+  document.getElementById('modalProductTitle').textContent = title;
+  const modalSpecsList = document.getElementById('modalSpecsList');
+  modalSpecsList.innerHTML = specs.map(spec => `<li>${spec}</li>`).join('');
+}
+  </script>
+    <!-- Background shapes -->
+
+    <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+
+    <script src="/Spanc/spanc/products-page/background.js"></script>
+</body>
+
+</html>
+>>>>>>> b2a6b83c8ffbd60865325a6438f9e8028bc3062c:spanc/products-page/plus3-physics-equipment/thermal-statisticalmechanics-lab.html
