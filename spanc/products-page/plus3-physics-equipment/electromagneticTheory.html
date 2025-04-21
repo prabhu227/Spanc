@@ -1,0 +1,258 @@
+s<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Electromagnetic Theory experiments for verifying the law of Malus, determining the specific rotation of sugar, analyzing elliptically polarized light, and studying radiation patterns."
+    />
+    <meta
+      name="keywords"
+      content="Electromagnetic Theory, Malus Law, Polarimeter, Babinet's Compensator, Dipole Antenna, Ultrasonic Waves"
+    />
+    <meta name="author" content="Physics Lab" />
+    <title>Electromagnetic Theory Lab Equipment</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">Electromagnetic Theory Lab Equipment</h1>
+      <div class="row" id="product-list">
+        <!-- Product Cards will be injected here by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Modal for displaying specifications -->
+    <div class="modal fade" id="specificationModal" tabindex="-1" role="dialog" aria-labelledby="specificationModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="specificationModalLabel">Product Specifications</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="modal-image-container">
+              <img id="modal-image" src="" alt="Product Image" class="img-fluid mb-3">
+            </div>
+            <h5>Specifications:</h5>
+            <ul id="modal-specifications" class="list-group">
+              <!-- Specifications will be dynamically injected here -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JS & jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!-- Full version -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+  </script>
+    <!-- Background shapes -->
+
+    <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+
+    <script src="/Spanc/spanc/products-page/background.js"></script>
+
+    <script>
+      const electromagneticTheoryProducts = [
+        {
+          title: "To Verify the Law of Malus for Plane Polarized Light",
+          model: "EMT-001",
+          image: "path_to_image1.jpg", // Add your image path here
+          specs: [
+            "Optical Bench: Material: Aluminium Coating, Type: Circular section, Scale: 0-150cm, Least count: 1mm, Length: 1mtr",
+            "Polarizer/Analyzer: Adjustable angle (0°-90°), Aperture: 21mm dia., Frame: 130mm dia., Rod: 10mm dia.",
+            "Detector: Terminals: 4mm safety socket, Aperture: 1mm, Rod: 10mm diameter",
+            "Voltmeter: 0-20V",
+          ],
+        },
+        {
+          title:
+            "To Determine the Specific Rotation of Sugar Solution Using Polarimeter",
+          model: "EMT-002",
+          image: "path_to_image1.jpg",
+          specs: [
+            "Polarimeter Tube: Length: 200mm with central bulb, metallic cap & cover glasses, packed in a velvet case",
+            "Laurent's Half Shade: Circular scale: 0°-360°, Least count: 1, Vernier Reading: 6 min, Dimensions: Dia 12mm, Length 200mm",
+            "Optional Essential Accessories: Sodium light source, Starting Voltage: 470 Volts, Input Voltage: 220V, 50Hz, Lamp House: 300x85mm(LxD), Aperture dia 25mm",
+            "Sodium Light Transformer",
+          ],
+        },
+        {
+          title:
+            "To Analyze Elliptically Polarized Light Using a Babinet's Compensator",
+          model: "EMT-003",
+          image: "path_to_image1.jpg",
+          specs: [
+            "Babinet Compensator",
+            "Quarter wave plate",
+            "Polarizer",
+            "Analyzer",
+            "Eye Piece",
+            "White light lamp source",
+          ],
+        },
+        {
+          title:
+            "To Study Dependence of Radiation on Angle for a Simple Dipole Antenna",
+          model: "EMT-004",
+          image: "path_to_image1.jpg",
+          specs: [
+            "Source Type: PLL synthesized with integrated VCO",
+            "Frequency Range: 1600MHz to 3.2GHz Bands",
+            "Transmitted Power: -40dBm",
+            "RF Detector: Frequency range: 3GHz",
+            "Display: 128x64 Graphical Display & Radiation pattern",
+          ],
+        },
+        {
+          title:
+            "To Determine the Wavelength and Velocity of Ultrasonic Waves in a Liquid Using Diffraction Through Ultrasonic Grating",
+          model: "EMT-005",
+          image: "path_to_image1.jpg",
+          specs: [
+            "High Frequency Generator: Frequency of oscillations is of the order of 3MHz.",
+            "The liquid is set into longitudinal vibrations mechanically using a crystal and RF oscillator.",
+            'Spectrometer: Brass scale diameter: 7", Vernier constant: 1 minute.',
+            "Spectrometer provided with 20' long telescope, Magnification using 50mm dia acromatic objective lens.",
+          ],
+        },
+        {
+          title: "To Study the Reflection, Refraction of Microwaves",
+          model: "SM-636",
+          image: "path_to_image1.jpg",
+          specs: [
+            'Collimator tube: 1" diameter achromatic objective and a sharp adjustable slit.',
+            "Telescope: Factory adjusted for parallel rays, cut mark for inner adjustable tube alignment.",
+            "Telescope and collimator tubes: Adjusted by fine & smooth rack and pinion arrangement.",
+            "Conventional prism table replaced by a special rectangular table for glass cell placement.",
+            "Optional Essential Accessories: Sodium light source, Starting Voltage: 470 Volts, Input Voltage: 220V, 50Hz, Lamp House: 300x85mm (LxD), Aperture dia: 25mm, Sodium Light Transformer.",
+          ],
+        },
+        {
+          title:
+            "To Study Polarization and Double Slit Interference in Microwaves",
+          model: "SM-636",
+          image: "path_to_image1.jpg",
+          specs: [
+            "Gunn Diode Power Supply: Voltage Range: 0-12V continuously Variable, Current: 1A Max, Regulation: 0.2% for 10% variation in supply voltage.",
+            "Ripple: 1mV rms, Modulation frequency: 1KHz ±10% (900-1100Hz), Output Connector: BNC (F) for gunn oscillator and TNC (F) for pin modulator.",
+            "Goniometer Scale: Circular scale: 0-360°, Transmitter Arms: 0-50mm, Receiver Arms: 0-100mm.",
+            "Microwave Transmitter: Biasing: DC bias, Bias Voltage: 10Volt (Max), Output Connector: BNC (F), Waveguide: WR-90.",
+            "Microwave Receiver: Band: X, Frequency Range: 8.2-12.4GHz, Waveguide: WR-90, Diode: Crystal diode IN23, Output Connector: BNC (F).",
+            "Polarizing Grill: Size: 300x190mm (L x W), Grill No.: 15 Nos., Aluminium, Angle position: 0° & 45°.",
+          ],
+        },
+        {
+          title:
+            "To Determine the Refractive Index of Glass and Liquid by Total Internal Reflection Using a Gaussian Eyepiece",
+          model: "EMT-006",
+          image: "path_to_image1.jpg",
+          specs: [
+            "Spectrometer: Objective: Achromatic lens, f=178mm, Aperture: 32mm, Scale: Brass, dia. 150mm, Least count: 1 minute, Eyepiece: 10X, Gauss eyepiece.",
+            "Base: 190mm Triangular, Cast iron.",
+            "Prism: Size: 38 x 38 x 38 mm, Height: 38mm, Material: EDF.",
+            "Micrometer Slit: Pitch: 0.5mm, Least Count: 0.005mm, Range: 0-6.5mm, Diameter: 38mm approx.",
+            "Optional Essential Accessories: Sodium light source, Starting Voltage: 470 Volts, Input Voltage: 220V, 50Hz, Lamp House: 300x85mm (LxD), Aperture dia: 25mm, Sodium Light Transformer.",
+          ],
+        },
+        {
+          title:
+            "To Study the Polarization of Light by Reflection and Determine the Polarizing Angle for Air-Glass Interface",
+          model: "EMT-007",
+          image: "path_to_image1.jpg",
+          specs: [
+            "Spectrometer: Scale: Brass, dia. 150mm, Objective: Achromatic lens, f=178mm, Aperture: 32mm, Least count: 1 minute, Eyepiece: 10X, Gauss eyepiece.",
+            "Base: 190mm Triangular, Cast iron.",
+            "Prism: Size: 38 x 38 x 38 mm, Height: 38mm, Material: EDF.",
+            "Incandescent Bulb with House on Stand.",
+            "Reading Lens: 40/50mm diameter with handle.",
+            "Optional Items: Not Supplied with system.",
+          ],
+        },
+        {
+          title:
+            "To Verify Stefan's Law of Radiation and to Determine Stefan's Constant",
+          model: "EMT-008",
+          image: "https://th.bing.com/th/id/OIP.Ul5X4FeKfjyyXOBtANYNdwHaEK?rs=1&pid=ImgDetMain",
+          specs: [
+            "Stefan’s Constant Radiation Apparatus with stand and back & sleeve disc Cu-Cr-Cu thermocouple on a rigid insulated board with two junctions in cotton wool.",
+            "I bath with mustard oil, capacity 100ml.",
+            "Fuel for spr lamp: 2x 100 ml.",
+            "Spint amp on adjustable stand.",
+            "Cotton wool in cylindrical copper enclosure on the stand for junctions of the thermocouple.",
+            "Water bath: Copper.",
+            "Super-sensitive micrometer as galvanometer mounted on the board with plastic tubing.",
+            "Hotplate thermostatically controlled, single phase.",
+            "Mercury thermometer: 110°C for black body ppt, and 360°C for oil both.",
+            "250 ml glass beaker, plastic funnel, and two spiral connecting wires with connectors.",
+            "Steam boiler: 1-liter capacity with plastic tubing and pinch cock.",
+            "Mains Power: 230V/50Hz.",
+          ],
+        },
+        {
+          title:
+            "To Determine the Value of Boltzmann Constant Using V-I Characteristics of PN Diode",
+          model: "EMT-009",
+          image: "https://th.bing.com/th/id/OIP.bunM5UBN8zcbDVAWdA5HwgHaEK?rs=1&pid=ImgDetMain",
+          specs: [
+            "Voltage: 0-2V, variable stabilized power supply.",
+            "Digital Milliammeter to measure forward bias current in the diode.",
+            "Silicon Diode mounted inside the cabinet.",
+            "Temperature-controlled oven: 70°C to heat the diode for different sets of readings.",
+            "Digital temperature indicator to measure temperature directly.",
+          ],
+        },
+      ];
+
+      const productListContainer = document.getElementById("product-list");
+
+electromagneticTheoryProducts.forEach(product => {
+  const productCard = document.createElement("div");
+  productCard.classList.add("col-md-4", "mb-4");
+
+  const productContent = `
+    <div class="card">
+      <img src="${product.image}" class="card-img-top" alt="Product Image">
+      <div class="card-body">
+        <h5 class="card-title">${product.title}</h5>
+        <p class="card-text">Model: ${product.model}</p>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#specificationModal" onclick="openSpecificationModal('${product.image}', ${JSON.stringify(product.specs)})">
+          View Specifications
+        </button>
+      </div>
+    </div>
+  `;
+  productCard.innerHTML = productContent;
+  productListContainer.appendChild(productCard);
+});
+
+function openSpecificationModal(image, specs) {
+  // Set image
+  document.getElementById("modal-image").src = image;
+
+  // Set specifications list
+  const specListContainer = document.getElementById("modal-specifications");
+  specListContainer.innerHTML = ""; // Clear previous items
+  specs.forEach(spec => {
+    const specItem = document.createElement("li");
+    specItem.classList.add("list-group-item");
+    specItem.textContent = spec;
+    specListContainer.appendChild(specItem);
+  });
+
+  // Manually trigger the modal to open
+  $('#specificationModal').modal('show');
+}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Digital Systems and Applications Lab Experiments - Measurements, Logic Gates, and Circuits." />
+  <meta name="author" content="Your Name" />
+  <meta name="keywords" content="Digital Systems, Logic Gates, Transistor Test, Boolean Expression, Adder, Subtractor, CRO, Frequency" />
+  <title>Digital Systems and Applications - Experiments</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    .experiment-card {
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .experiment-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    .experiment-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .btn-specs {
+      margin-top: 10px;
+    }
+
+    .experiment-container {
+      padding: 20px;
+    }
+
+    .experiment-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid experiment-container">
+    <div class="row">
+      <div class="col-12 experiment-header mb-5">
+        <h1>Digital Systems and Applications - Lab Experiments</h1>
+      </div>
+    </div>
+
+    <div class="row px-5" id="experiment-list"></div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="specModal" tabindex="-1" aria-labelledby="specModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="specModalLabel">Specifications</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="specContent">
+          <!-- Specs will load dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery + Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+    });
+  </script>
+  <!-- Dynamic JS -->
+  <script>
+    const experiments = [
+      {
+        title: "To Measure (a) Voltage, and (b) Frequency Using CRO/DSO",
+        model: "OS-20",
+        image: "https://th.bing.com/th/id/OIP.vOJ-9kzPEYon4HU11gQanwHaFj?rs=1&pid=ImgDetMain",
+        specs: [
+          "20/50 MHz Dual Trace Dual Channel 1mv Sensitivity",
+          "CRT: 6-inch rectangular with internal graticule 8x10div",
+          "Bandwidth: 20MHz (-3dB)"
+        ]
+      },
+      {
+        title: "To Test a Diode and Transistor Using a Multimeter",
+        model: "EME - 63A",
+        image: "https://th.bing.com/th/id/OIP.KtfVIYfdUFUIfmSisdoGIQHaHa?rs=1&pid=ImgDetMain",
+        specs: [
+          "DCV: 0.1mV to 1000V, ACV: 0.1mV to 750V",
+          "Transistor: hhFE (NPN or PNP)",
+          "Continuity Buzzer, Diode Test"
+        ]
+      },
+      {
+        title: "To Design a Switch (NOT Gate) Using a Transistor",
+        model: "DSA-001",
+        image: "https://th.bing.com/th/id/OIP.MC3QLRqhdzNZjpo4X62h_wHaE8?rs=1&pid=ImgDetMain",
+        specs: [
+          "Transistor: BC547",
+          "LED Indication: 2nos",
+          "DC Supply: 5V"
+        ]
+      },
+      {
+        title: "To Verify AND, OR, NOT, XOR Using NAND Gates",
+        model: "DSA-002",
+        image: "https://i0.wp.com/projectiot123.com/wp-content/uploads/2019/05/NAND-Gate-truth-table.jpg",
+        specs: [
+          "IC7400: 6nos",
+          "LED Indicators: 4Nos",
+          "Logic Input Switches: 4Nos"
+        ]
+      },
+      {
+        title: "To Design a Combinational Logic System",
+        model: "DSA-003",
+        image: "https://i.ytimg.com/vi/6F-YlVsRH0c/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGkgaShpMA8=&rs=AOn4CLDOGxkCZwqOrOoWmeQ_qNRdCb0tbw",
+        specs: [
+          "IC7408-6nos, IC7432-3nos, IC7404-1no",
+          "LED Indicators: 2 Nos",
+          "Logic Input: 3 Nos"
+        ]
+      },
+      {
+        title: "To Convert Boolean Expression into Logic Circuit",
+        model: "DSA-004",
+        image: "https://th.bing.com/th/id/OIP.FJiMwpOUJnrA4j9OGR-pfwHaDW?rs=1&pid=ImgDetMain",
+        specs: [
+          "IC7408-6nos, IC7432-3nos, IC7404-1no",
+          "Regulated DC Supply: +5V",
+          "Bounce-free switches"
+        ]
+      },
+      {
+        title: "To Design Astable Multivibrator Using 555 Timer",
+        model: "DSA-005",
+        image: "https://via.placeholder.com/400x180?text=Astable+Multivibrator",
+        specs: [
+          "IC: NE555",
+          "Capacitors: 1μF, 0.1μF, 10μF",
+          "Resistors: 100KΩ, 10KΩ"
+        ]
+      },
+      {
+        title: "To Design Monostable Multivibrator Using 555 Timer",
+        model: "DSA-006",
+        image: "https://via.placeholder.com/400x180?text=Monostable+Multivibrator",
+        specs: [
+          "IC: NE555",
+          "Variable Resistor: 5KΩ",
+          "Optional: Analog Oscilloscope"
+        ]
+      },
+      {
+        title: "To Build Flip-Flops (RS, Clocked RS, D-type, JK)",
+        model: "DSA-007",
+        image: "https://via.placeholder.com/400x180?text=Flip+Flops+Using+NAND",
+        specs: [
+          "IC7846: 3nos, IC7404: 2nos",
+          "LED Indication: 2nos",
+          "DC Supply: +5V"
+        ]
+      },
+      {
+        title: "To Build JK Master-Slave Flip-Flop",
+        model: "DSA-008",
+        image: "https://via.placeholder.com/400x180?text=JK+Master+Slave",
+        specs: [
+          "IC7846: 3nos, IC7404: 2nos",
+          "Clock Pulse: High & Low",
+          "LED Indication: 2nos"
+        ]
+      },
+      {
+        title: "To Build 4-Bit Counter and Study Timing Diagram",
+        model: "DSA-009",
+        image: "https://via.placeholder.com/400x180?text=4+Bit+Counter",
+        specs: [
+          "IC74194: 4nos",
+          "Mono Pulsar Clock Generator",
+          "LED Indication: 4nos"
+        ]
+      },
+      {
+        title: "To Make 4-Bit Shift Register (Serial and Parallel)",
+        model: "DSA-010",
+        image: "https://via.placeholder.com/400x180?text=4+Bit+Shift+Register",
+        specs: [
+          "IC74194: 4nos",
+          "Clock Generator on Board",
+          "LED Indication: 4nos"
+        ]
+      }
+    ];
+
+    function renderExperiments() {
+      const list = document.getElementById('experiment-list');
+      experiments.forEach((exp, index) => {
+        const card = document.createElement('div');
+        card.classList.add('col-md-4', 'col-sm-6', 'experiment-card');
+        card.setAttribute('data-aos', 'fade-up');
+
+        card.innerHTML = `
+          <div class="card">
+            <img src="${exp.image}" class="card-img-top experiment-img" alt="${exp.title}">
+            <div class="card-body">
+              <h5 class="card-title experiment-title">${exp.title}</h5>
+              <p><strong>Model:</strong> ${exp.model}</p>
+              <button class="btn btn-primary btn-sm btn-specs" data-toggle="modal" data-target="#specModal" onclick="loadSpecs(${index})">
+                View Specifications
+              </button>
+            </div>
+          </div>
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    function loadSpecs(index) {
+      const experiment = experiments[index];
+      document.getElementById('specModalLabel').innerText = experiment.title + " - Specs";
+      document.getElementById('specContent').innerHTML = `
+        <p><strong>Model:</strong> ${experiment.model}</p>
+        <ul>
+          ${experiment.specs.map(spec => `<li>${spec}</li>`).join('')}
+        </ul>
+      `;
+    }
+
+    renderExperiments();  
+  </script>
+    <!-- Background shapes -->
+
+    <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+
+    <script src="/Spanc/spanc/products-page/background.js"></script>
+</body>
+
+</html>
