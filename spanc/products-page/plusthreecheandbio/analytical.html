@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Analytical Equipment | Spanco Tek</title>
+    <link rel="icon" href="/assets/images/spancotek LOGO[1].png" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -683,86 +684,406 @@ const productData = [
     }
   },
   {
-    name: "Auto Karl Fishers",
-    model: "AL-125",
-    description: "Titrimeter having array of LEDs provided with inbuilt stirrer, auto zero burette, adjustable timer, dual platinum electrodes and other accessories"
+    title: "Auto Karl Fishers",
+    image: "./assets/images/auto-karl-fishers.jpg",
+    description: "Titrimeter having array of LEDs, inbuilt stirrer, auto zero burette, adjustable timer, dual platinum electrodes and other accessories.",
+    specifications: {
+      model: "AL-125",
+      features: [
+        "LED array display",
+        "Inbuilt magnetic stirrer",
+        "Auto zero burette",
+        "Adjustable timer",
+        "Dual platinum electrodes"
+      ]
+    }
   },
   {
-    name: "Digital Flame Photometer",
-    model: null,
-    description: "Auto Karl Fishers"
+    title: "Digital Flame Photometer",
+    image: "./assets/images/digital-flame-photometer.jpg",
+    description: "Dual channel with filter (Na & K), result in ppm, dual LED display, auto ignition, includes compressor and accessories. Ca & Li filter optional.",
+    specifications: {
+      model: "AL-126",
+      features: [
+        "2/2 digit dual LED display",
+        "Measures Na & K",
+        "Optional filters: Ca, Li",
+        "Compressor included",
+        "Auto ignition"
+      ]
+    }
   },
   {
-    name: "Digital Flame Photometer",
-    model: "AL-126",
-    description: "Dual channel with filter (Na & K). Final result in ppm 2/2 digit dual LED display for simultaneous result along with compressor and accessories, auto ignition, Ca & Li filter can be provided on request at extra cost."
+    title: "Touch Screen Microprocessor Flame Photometer",
+    image: "./assets/images/touch-micro-flame-photometer.jpg", // Replace with actual image path
+    description: "Four element measurement (Na, K as standard; Li, Ca & Ba optional), calibration curve fit (1st & 2nd order), data storage >500 results, auto calibration, printer & PC compatible.",
+    specifications: {
+      model: "AL-127",
+      features: [
+        "Touch screen interface",
+        "Automatic filter selection",
+        "Auto calibration",
+        "Supports 5-point calibration curve",
+        "Data storage: 500+ results",
+        "PC & printer compatibility",
+        "Password-protected login",
+        "Stainless steel burner",
+        "Auto gas cut-off on power failure"
+      ]
+    }
   },
   {
-    name: "Touch Screen Microprocessor Flame Photometer",
-    model: "AL-127",
-    description: "Four element measure a single aspiration Na & K as standard, Li, Ca & Ba optional at extra cost. Calibration curve fit routine first & second order. Data displayed in ppm & meq. Automatic filter selection, auto calibration feature. Printer attachment, PC compatibility, data storage for 500+ results, password-protected login, multiple calibration curve saving, stainless steel burner, auto gas cut-off on power failure."
+    title: "Touch Screen Microscope Flame Photometer",
+    image: "./assets/images/touch-microscope-flame-photometer.jpg", // Replace with actual image path
+    description: "Advanced flame photometer with microscope interface and touchscreen control.",
+    specifications: {
+      model: "",
+      features: [
+        "Touchscreen interface",
+        "Microscope view integration",
+        "Auto calibration",
+        "Multiple filter elements"
+      ]
+    }
   },
   {
-    name: "Touch Screen Microscope Flame Photometer",
-    model: null,
-    description: ""
+    title: "Water & Soil Analysis Kit (without D.O.)",
+    image: "./assets/images/water-soil-kit.jpg", // Replace with actual image path
+    description: "Portable kit for field measurement of 5 parameters: pH, conductivity, TDS, ORP & temperature. Battery and mains operated, fitted in a compact briefcase.",
+    specifications: {
+      model: "AI-128",
+      features: [
+        "3½ Digital LCD display",
+        "Measures: pH, Conductivity, TDS, ORP, Temperature",
+        "Battery cum mains operated",
+        "Portable with briefcase",
+        "Complete with accessories"
+      ]
+    }
   },
   {
-    name: "Water & Soil Analysis Kit (without D.O.)",
-    model: "AI-128",
-    description: "3½ digital LCD display covering 5 parameters: pH, conductivity, TDS, ORP & temperature. Battery cum mains operated, complete with accessories, fitted in briefcase."
-  },
-{
-    name: "Water and Soil Analysis Kit",
-    model: "AL-129",
-    description: "3½ Digital LCD display covering 6 parameters: pH, Conductivity, TDS, ORP, DO & Temperature. Battery cum mains operated, complete with accessories, fitted in briefcase."
+    title: "Water and Soil Analysis Kit",
+    image: "./assets/images/water-soil-kit-al129.jpg", // Replace with actual image path
+    description: "3½ Digital LCD display covering 6 parameters: pH, Conductivity, TDS, ORP, DO & Temperature. Battery cum mains operated, complete with accessories, fitted in briefcase.",
+    specifications: {
+      model: "AL-129",
+      features: [
+        "3½ Digital LCD Display",
+        "Measures: pH, Conductivity, TDS, ORP, DO & Temperature",
+        "Battery cum mains operated",
+        "Portable with briefcase",
+        "Complete with accessories"
+      ]
+    }
   },
   {
-    name: "Water and Soil Analysis Kit",
-    model: "AL-130",
-    description: "3½ Digital LCD display covering 7 parameters: pH, Conductivity, TDS, Salinity, Turbidity, DO & Temperature. Rechargeable battery cum mains operated, complete with accessories, fitted in briefcase."
+    title: "Water and Soil Analysis Kit",
+    image: "./assets/images/water-soil-kit-al130.jpg", // Replace with actual image path
+    description: "3½ Digital LCD display covering 7 parameters: pH, Conductivity, TDS, Salinity, Turbidity, DO & Temperature. Rechargeable battery cum mains operated, complete with accessories, fitted in briefcase.",
+    specifications: {
+      model: "AL-130",
+      features: [
+        "3½ Digital LCD Display",
+        "Measures: pH, Conductivity, TDS, Salinity, Turbidity, DO & Temperature",
+        "Rechargeable battery cum mains operated",
+        "Portable with briefcase",
+        "Complete with accessories"
+      ]
+    }
   },
   {
-    name: "Water and Soil Analysis Kit",
-    model: "AL-131",
-    description: "3½ Digital LCD display covering 8 parameters: pH, mV, Conductivity, TDS, Salinity, Turbidity, DO & Temperature. Rechargeable battery cum mains operated, complete with accessories, fitted in briefcase."
+    title: "Water and Soil Analysis Kit",
+    image: "./assets/images/water-soil-kit-al131.jpg", // Replace with actual image path
+    description: "3½ Digital LCD display covering 8 parameters: pH, mV, Conductivity, TDS, Salinity, Turbidity, DO & Temperature. Rechargeable battery cum mains operated, complete with accessories, fitted in briefcase.",
+    specifications: {
+      model: "AL-131",
+      features: [
+        "3½ Digital LCD Display",
+        "Measures: pH, mV, Conductivity, TDS, Salinity, Turbidity, DO & Temperature",
+        "Rechargeable battery cum mains operated",
+        "Portable with briefcase",
+        "Complete with accessories"
+      ]
+    }
   },
   {
-    name: "Microprocessor Water and Soil Analysis Kit",
-    model: "AL-132",
-    description: "For measurement of pH, Conductivity, mV, TDS, Salinity, DO & Temperature. 16x2 alphanumeric LCD display. Battery cum mains operated with all accessories, fitted in briefcase. Data storage facility up to 1000 samples and external printer attachment facility available."
-  },
-{
-    name: "Digital Spectrophotometer (Single Beam Visible)",
-    model: "AL-721",
-    description: "Wavelength Range: 325-1000 nm. Light Source: Tungsten Halogen Lamp 20W/12V. Wavelength Accuracy: ±2 nm. Reproducibility: 1 nm. Bandwidth: 2 nm. Photometric Accuracy: ±0.5% (T). Photometric Reproducibility: 0.2% (T). Stray Light: 0.2% (T). Noise: 0.2% (T). Size: 370×320×190 mm. Power: 220V/110V ±10% 50/60 Hz. Interface: RS232 & Parallel."
+    title: "Microprocessor Water and Soil Analysis Kit",
+    image: "./assets/images/microprocessor-water-soil-kit-al132.jpg", // Replace with actual image path
+    description: "For measurement of pH, Conductivity, mV, TDS, Salinity, DO & Temperature. 16x2 alphanumeric LCD display. Battery cum mains operated with all accessories, fitted in briefcase. Data storage up to 1000 samples and printer attachment available.",
+    specifications: {
+      model: "AL-132",
+      features: [
+        "16x2 Alphanumeric LCD Display",
+        "Measures: pH, Conductivity, mV, TDS, Salinity, DO & Temperature",
+        "Battery cum mains operated",
+        "Portable with briefcase",
+        "Data storage up to 1000 samples",
+        "External printer attachment facility",
+        "Complete with accessories"
+      ]
+    }
   },
   {
-    name: "Single Beam Microprocessor UV-VIS Spectrophotometer with Software",
-    model: "AL-140",
-    description: "Optical System: CT Grating Monochromator. Wavelength Range: 195-1020 nm. Accuracy: ±2 nm. Spectral Bandwidth: 2 nm. Repeatability: 1 nm. Stray Light: 0.3% T @220 nm. Photometric Accuracy: ±0.5% T. Repeatability: 0.2% T. Stability: ±0.004 A/H @500 nm. Work Pattern: T, A, C. Display: 4 LCD. Zero Setting: Automatic."
+    title: "Automatic Bomb Calorimeter",
+    image: "./assets/images/automatic-bomb-calorimeter-al133.jpg", // Replace with actual image path
+    description: "Microprocessor-based bomb calorimeter with graphical LCD, USB interface, inbuilt thermal printer, and memory storage. Provides precise calorific value measurements with automatic temperature rise/fall detection.",
+    specifications: {
+      model: "AL-133",
+      features: [
+        "128x64 graphical LCD display",
+        "Temperature resolution: 0.010°C",
+        "Internal memory: 1000 logs with date and time",
+        "USB interface for PC",
+        "Inbuilt thermal printer with full report printout",
+        "Real time clock with battery backup",
+        "Keypad setup for water equivalent, sensitivity & sample weight",
+        "Audio indication on firing/test completion",
+        "Auto detection of temperature rise and fall",
+        "Power supply: 230±10% AC",
+        "Complete with all accessories"
+      ]
+    }
   },
   {
-    name: "Advanced Single Beam Microprocessor UV-VIS Spectrophotometer With Scanning Software",
-    model: "AL-141",
-    description: "Optical System: Single Beam, Grating. Wavelength Range: 190-1000 nm. Bandwidth: 2 nm. Accuracy: ±1 nm. Repeatability: 0.5 nm. Wavelength Setting: Auto. Photometric Accuracy: ±0.5% T. Repeatability: 0.3% T. Range: -0.3–3A, 0–200%T. Stray Light: <0.3% T. Stability: ±0.002 A/H @500 nm. Display: 128x64 LCD. Detector: Silicon Photodiode. Cell Holder: 4-Position (10–100 mm). Light Source: Tungsten & Deuterium Lamp. Output: USB & Parallel Port. Power: AC 85–250 V. Dimension: 420×280×180 mm."
-  },
-{
-    name: "Automatic Bomb Calorimeter",
-    model: "AL-133",
-    description: "Microprocessor-based with 128x64 graphical LCD. Temperature resolution: 0.010°C. Internal memory: 1000 logs with date and time. USB interface to PC, inbuilt thermal printer, real-time clock with battery backup. Measures calorific value & water equivalent. Full test report printout. Keypad-based input for weight, water equivalent & sensitivity. Audio indications, auto temperature detection, 230±10% AC power supply. Complete with accessories."
+    title: "Digital Bomb Calorimeter",
+    image: "./assets/images/digital-bomb-calorimeter-al134.jpg", // Replace with actual image path
+    description: "LED-based digital calorimeter for measuring calorific values manually with RTD sensor. Ideal for lab-scale energy content evaluation.",
+    specifications: {
+      model: "AL-134",
+      features: [
+        "3-digit LED display",
+        "Temperature resolution: 0.1°C",
+        "Temperature accuracy: ±0.1°C",
+        "RTD temperature sensor",
+        "Range: Room temp to 99.9°C",
+        "Manual calculation for calorific value",
+        "Weight of sample & water equivalent measurement",
+        "Power supply: 230±10% AC",
+        "Complete with all accessories"
+      ]
+    }
   },
   {
-    name: "Digital Bomb Calorimeter",
-    model: "AL-134",
-    description: "Temperature resolution: 0.1°C. Measures calorific value & water equivalent. 3-digit LED display. Temperature accuracy: 0.1°C. RTD temperature detector. Temp range: Room Temp to 99.9°C. Manual calculation. Power: 230±10% AC. Complete with accessories."
+    title: "Digital Automatic Viscometer",
+    image: "./assets/images/digital-automatic-viscometer-al135.jpg", // Replace with actual image path
+    description: "LCD display digital viscometer for viscosity measurement with wide RPM range, RS232 output, and high accuracy for lab-grade fluid analysis.",
+    specifications: {
+      model: "AL-135",
+      features: [
+        "Measuring range: 20–2,000,000 mPa.s",
+        "RPM: 0.3, 0.6, 1.5, 3, 6, 12, 30, 60",
+        "Standard spindles: #1, #2, #3, #4 (optional #0)",
+        "Measurement accuracy: ±1.0% of range",
+        "Repeatability: ±0.5%",
+        "Display: LCD",
+        "Temperature monitoring via RTD sensor",
+        "Output: RS232 interface",
+        "Power supply: AC 220V / 50Hz",
+        "Dimensions: 400x350x360 mm",
+        "Weight: 9 Kg"
+      ]
+    }
   },
   {
-    name: "Digital Automatic Viscometer",
-    model: "AL-135",
-    description: "Measuring range: 20–2,000,000 mPa·s. RPM settings: 0.3 to 60. Includes spindles #1 to #4 (optional #0). Accuracy: ±1.0% of range. Repeatability: ±0.5%. LCD display. RTD temperature monitoring sensor probe. Output: RS232 interface. Power: AC 220V/50Hz. Dimensions: 400×350×360 mm. Weight: 9 kg."
-  },
-
+    title: "Digital Spectrophotometer (Single Beam Visible)",
+    image: "./assets/images/digital-spectrophotometer-al721.jpg", // Replace with actual image path
+    description: "Compact digital visible range spectrophotometer with RS232 & parallel interface, ideal for routine lab testing.",
+    specifications: {
+      model: "AL-721",
+      features: [
+        "Wavelength range: 325–1000 nm",
+        "Light source: Tungsten halogen lamp (20W/12V)",
+        "Wavelength accuracy: ±2 nm",
+        "Wavelength reproducibility: 1 nm",
+        "Bandwidth: 2 nm",
+        "Photometric accuracy: ±0.5% (T)",
+        "Photometric reproducibility: 0.2% (T)",
+        "Stray light: 0.2% (T)",
+        "Noise: 0.2% (T)",
+        "Size: 370×320×190 mm",
+        "Interface: RS232 & parallel",
+        "Power: 220V/110V ±10%, 50/60 Hz"
+      ]
+    }
+  },
+  {
+    title: "Single Beam Microprocessor UV-VIS Spectrophotometer with Software",
+    image: "./assets/images/single-beam-uv-vis-spectrophotometer-al140.jpg", // Replace with actual image path
+    description: "UV-VIS spectrophotometer with microprocessor control and scanning software for high-accuracy analysis.",
+    specifications: {
+      model: "AL-140",
+      features: [
+        "Optical system: CT grating monochromator",
+        "Wavelength range: 195–1020 nm",
+        "Wavelength accuracy: ±2 nm",
+        "Spectral bandwidth: 2 nm",
+        "Wavelength repeatability: 1 nm",
+        "Stray light: 0.3% T @220 nm",
+        "Photometric accuracy: ±0.5% T",
+        "Photometric repeatability: 0.2% T",
+        "Stability: ±0.004 A/h @500 nm",
+        "Work pattern: T, A, C",
+        "Display: 4-digit LCD",
+        "Zero setting: Automatic"
+      ]
+    }
+  },
+  {
+    title: "Advanced Single Beam Microprocessor UV-VIS Spectrophotometer with Scanning Software",
+    image: "https://cpimg.tistatic.com/05414555/b/5/extra-05414555.png", // Replace with actual image path
+    description: "Advanced UV-VIS single beam spectrophotometer with auto wavelength setting, scanning software, and USB/printer support.",
+    specifications: {
+      model: "AL-141",
+      features: [
+        "Optical system: Single beam, grating",
+        "Wavelength range: 190–1000 nm",
+        "Bandwidth: 2 nm",
+        "Wavelength accuracy: ±1 nm",
+        "Wavelength repeatability: 0.5 nm",
+        "Auto wavelength setting",
+        "Photometric accuracy: ±0.5% T",
+        "Photometric repeatability: 0.3% T",
+        "Photometric range: -0.3–3A, 0–200%T",
+        "Stray light: <0.3% T",
+        "Stability: ±0.002 A/h @500 nm",
+        "Display: 128×64 LCD",
+        "Detector: Silicon photodiode",
+        "Cell holder: 4-position (10–100 mm)",
+        "Light source: Tungsten & Deuterium lamps",
+        "Output: USB & parallel port",
+        "Power: AC 85–250V",
+        "Dimension: 420×280×180 mm"
+      ]
+    }
+  },
+  {
+    title: "UV-VIS Double Beam Spectrophotometer with Variable Bandwidth",
+    image: "./assets/images/uv-vis-double-beam-variable-bandwidth-al144.jpg", // Replace with actual image path
+    description: "High-precision double beam UV-VIS spectrophotometer with selectable bandwidth and PC connectivity.",
+    specifications: {
+      model: "AL-144",
+      features: [
+        "Wavelength range: 190–1100 nm",
+        "Spectral bandwidth: 0.5/1/1.5/2/4/5 nm (variable)",
+        "Optical system: Double beam, blazed holographic grating (1200 lines/mm)",
+        "Wavelength accuracy: ±0.5 nm, Resolution: 0.1 nm",
+        "Wavelength repeatability: ≤0.2 nm",
+        "Photometric accuracy: ±0.002A (0-0.5A), ±0.003A (0.5-1A), ±0.3%T (0-100%T)",
+        "Photometric repeatability: ≤0.001A (0-0.5A), ≤0.002A (0.5-1A), ≤0.2%T",
+        "Photometric range: 0–200%T, -4–4A, 0–9999C",
+        "Stray light: <0.05%T (220/360nm)",
+        "Stability: ±0.001A/h (500 nm, 0A)",
+        "Noise: ≤0.2%T at 0%T, ≤0.3%T at 100%T (3 min)",
+        "Display: 320×240 Graphic LCD",
+        "Sample compartment: 10 mm path cuvettes",
+        "Scanning speed: Up to 2000 mm/min",
+        "Keypad: 30-key alphanumeric membrane",
+        "Light source: Pre-aligned Tungsten & Deuterium",
+        "Detector: Silicon photodiode",
+        "Output: USB port, mini serial & PC printer",
+        "Software: PC scanning software",
+        "Power: AC 90–250V, 50/60 Hz",
+        "Dimension: 635×515×255 mm"
+      ]
+    }
+  },
+  {
+    title: "UV-VIS Double Beam Spectrophotometer with Touch Screen",
+    image: "./assets/images/uv-vis-double-beam-touchscreen-al145.jpg", // Replace with actual image path
+    description: "Touchscreen-controlled UV-VIS double beam spectrophotometer with high accuracy, ideal for advanced labs.",
+    specifications: {
+      model: "AL-145",
+      features: [
+        "Photometry: Double beam",
+        "Monochromator type: Czerny-Turner",
+        "Focal length: 160 mm",
+        "Grating: 1200 lines/mm",
+        "Detector: Silicon photocell",
+        "Spectrum bandwidth: 1 nm",
+        "Display: 8-inch color touchscreen",
+        "Wavelength range: 190–1100 nm",
+        "Wavelength accuracy: ±0.5 nm",
+        "Wavelength repeatability: ≤0.2 nm",
+        "Scanning speed: Fast, medium, slow",
+        "Stray light: 0.03%T (220 nm NaI, 360 nm NaNO2)",
+        "Photometric range: 0–200%T, -0.301–4.000A, 0–9999C",
+        "Photometric accuracy: ±0.3%T, ±0.002A (0–0.5A), ±0.004A (0.5–1A)",
+        "Photometric repeatability: ≤0.15%T, ≤0.001A (0–0.5A), 0.002A (0.5–1A)",
+        "Noise: ≤0.1%T at 0%T, 0.15%T at 100%T",
+        "Drifting: ≤0.0009 Abs/30 min after 2h warm-up",
+        "Power: AC 220V ±10%, 50 Hz ±1 Hz, 200W"
+      ]
+    }
+  },
+  {
+    title: "Double Beam UV-VIS Spectrophotometer (Two Cell Holder)",
+    image: "./assets/images/uv-vis-double-beam-2cell-al142.jpg", // Replace with actual image path
+    description: "Double beam spectrophotometer with high-resolution concave grating and two cell holder for precise UV-VIS analysis.",
+    specifications: {
+      model: "AL-142",
+      features: [
+        "Monochromator: High-resolution concave diffraction grating with Seya-Namioka mount",
+        "Optical system: Double beam, 1200 lines/mm grating",
+        "Wavelength range: 190–1100 nm",
+        "Spectral bandwidth: 1 nm",
+        "Wavelength accuracy: ≤ ±0.1 nm (656.1nm D2), ≤ ±0.3 nm (full range)",
+        "Wavelength repeatability: 0.1 nm",
+        "Wavelength resolution: 0.1 nm",
+        "Photometric accuracy: ±0.3% T (0–100%T)",
+        "Photometric repeatability: 0.001 Abs (0–0.5 Abs)",
+        "Photometric range: -0.3 A to 3 A",
+        "Stray light: ≤ 0.02% T (220nm NaI, 340nm NaNO₂)",
+        "Stability: ±0.0004 A/H @500 nm",
+        "Baseline flatness: ±0.001 A",
+        "Noise: 0.0003 A/H",
+        "Photometric modes: A, T, C",
+        "Scanning speed: Fast, Medium, Slow",
+        "Wavelength setting: Auto",
+        "Keyboard: Membrane keypad",
+        "Light source: Deuterium & Tungsten lamp",
+        "Detector: Silicon photodiode",
+        "Interface: USB & Parallel port (printer)",
+        "Drift: ≤ ±0.0004 A BS/H",
+        "Cell holder: 2-position",
+        "Power: AC 220V/50Hz or AC 110V/60Hz",
+        "Dimension: 590×460×220 mm"
+      ]
+    }
+  },
+  {
+    title: "Double Beam UV-VIS Spectrophotometer (Eight Cell Holder)",
+    image: "./assets/images/uv-vis-double-beam-8cell-al143.jpg", // Replace with actual image path
+    description: "Advanced UV-VIS double beam spectrophotometer with eight cell holder and imported silicon photodiode for high-throughput analysis.",
+    specifications: {
+      model: "AL-143",
+      features: [
+        "Optical system: Double beam, grating",
+        "Wavelength range: 190–1100 nm",
+        "Bandwidth: 1 nm",
+        "Wavelength accuracy: ≤ ±0.1 nm (656.1nm D2), ≤ ±0.3 nm (full range)",
+        "Wavelength repeatability: 0.1 nm",
+        "Wavelength resolution: 0.1 nm",
+        "Photometric accuracy: ±0.3% T (0–100%T)",
+        "Photometric repeatability: 0.001 Abs (0–0.5 Abs)",
+        "Photometric range: -3 A to 3 A",
+        "Photometric modes: A, T, C",
+        "Stray light: ≤ 0.02% T (220nm NaI, 340nm NaNO₂)",
+        "Stability: ±0.0004 A/H @500 nm",
+        "Baseline flatness: ±0.001 A",
+        "Noise: 0.0003 A/H",
+        "Scanning speed: Fast, Medium, Slow",
+        "Wavelength setting: Auto",
+        "Keyboard: Membrane keyboard",
+        "Light source: Deuterium & Tungsten lamp",
+        "Detector: Imported silicon photodiode",
+        "Interface: USB & Parallel port (printer)",
+        "Drift: < ±0.0004 A BS/H",
+        "Cell holder: 8-position",
+        "Power: AC 220V/50Hz or AC 110V/60Hz",
+        "Dimension: 590×460×220 mm"
+      ]
+    }
+  },
 
 ];
 
