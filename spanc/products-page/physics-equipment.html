@@ -38,7 +38,6 @@
         align-items: center;
         justify-content: space-between;
         transition: all 0.3s ease;
-        color: rgb(104, 37, 37);
       }
 
       .view-btn .bi {
@@ -63,10 +62,6 @@
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
-      }
-      .card:hover{
-        transform: translateY(-6px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
       }
 
       .card-title {
@@ -169,7 +164,7 @@
             },
             {
               name: "Young's Modulus App",
-              img: "https://m.media-amazon.com/images/I/31b-+pLDMAL._AC_UF1000,1000_QL80_.jpg",
+              img: "https://m.media-amazon.com/images/I/31b-+pLDMAL.AC_UF1000,1000_QL80.jpg",
               desc: "To study variation of time with length for a compound pendulum. A powder coated steel bar 100x2.5cms bored at every 5cms and provided with 2 removable knife edges.",
               link: "Young's-Modulus-App.html",
             },
@@ -331,7 +326,7 @@
             },
             {
               name: "Spectrometer Standard",
-              img: "https://m.media-amazon.com/images/I/316psxYZjhL._AC_UF1000,1000_QL80_.jpg",
+              img: "https://m.media-amazon.com/images/I/316psxYZjhL.AC_UF1000,1000_QL80.jpg",
               desc: "A basic instrument for performing spectroscopy experiments, designed to give best possible results, mounted on stable cast iron base, protracted scale 150mm is divided on precision machine, vernier reading 1 min., telescope is fitted with 25mm dia. and 178mm focal.....",
               link: "spectrometer-standard.html",
             },
@@ -451,7 +446,7 @@
             },
             {
               name: "Double Concave Lens",
-              img: "https://m.media-amazon.com/images/I/616bZSr9VdL._AC_UF1000,1000_QL80_.jpg",
+              img: "https://m.media-amazon.com/images/I/616bZSr9VdL.AC_UF1000,1000_QL80.jpg",
               desc: "Concave lenses for diverging ray experiments and focal length determination.",
               link: "double-concave-lens.html",
             },
@@ -470,28 +465,6 @@
           ];
 
           document.write(
-<<<<<<< HEAD
-            equipment
-              .map(
-                (item) => `
-              <div class="col-md-4 d-flex ">
-                <div class="card hover-shadow w-100" style="cursor: pointer">
-                  <img src="${item.img}" class="card-img-top" alt="${item.name}" />
-                  <div class="card-body">
-                    <div>
-                      <h5 class="card-title">${item.name}</h5>
-                      <p class="card-text">${item.desc}</p>
-                    </div>
-                    <a href="./plus2product/${item.link}" class="btn   mt-3 view-btn fixed-btn">
-                      View Details <i class="bi bi-arrow-right ms-2"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>`
-              )
-              .join("")
-          );
-=======
   equipment
     .map(
       (item) => `
@@ -513,7 +486,6 @@
     .join("")
 );
 
->>>>>>> b2a6b83c8ffbd60865325a6438f9e8028bc3062c
         </script>
       </div>
     </div>
@@ -525,7 +497,7 @@
 
   <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
 
-  <script src="/Spanc/spanc/products-page/background.js"></script>
+  <script src="background.js"></script>
   <!-- AOS JS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
