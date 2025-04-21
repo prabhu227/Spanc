@@ -232,7 +232,7 @@ experiments.forEach((exp, index) => {
       <h5 class="experiment-title">${exp.title}</h5>
       <p><strong>Model No:</strong> ${exp.model}</p>
       <div class="mt-auto">
-        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#specModal" data-index="${index}">
+        <button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#specModal" data-index="${index}">
           View Specifications
         </button>
       </div>
@@ -266,10 +266,11 @@ specModal.addEventListener('show.bs.modal', function (event) {
     <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
 
     <script src="/Spanc/spanc/products-page/background.js"></script>
+    <script src="background.js"></script>
 
 </body>
 </html>
-<!DOCTYPE html>
+ <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -314,7 +315,7 @@ specModal.addEventListener('show.bs.modal', function (event) {
 
 </div>
 
-<!-- Modal -->
+ 
 <div class="modal fade" id="specModal" tabindex="-1" aria-labelledby="specModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -323,14 +324,14 @@ specModal.addEventListener('show.bs.modal', function (event) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" id="modalBody">
-        <!-- Content will be loaded dynamically -->
+      
       </div>
     </div>
   </div>
 </div>
  
 
-  <!-- Bootstrap JS and Popper -->
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
@@ -502,7 +503,7 @@ experiments.forEach((exp, index) => {
       <h5 class="experiment-title">${exp.title}</h5>
       <p><strong>Model No:</strong> ${exp.model}</p>
       <div class="mt-auto">
-        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#specModal" data-index="${index}">
+        <button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#specModal" data-index="${index}">
           View Specifications
         </button>
       </div>
@@ -531,11 +532,12 @@ specModal.addEventListener('show.bs.modal', function (event) {
 });
 
   </script>
-    <!-- Background shapes -->
+   
 
     <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
 
     <script src="/Spanc/spanc/products-page/background.js"></script>
+    <script src="background.js"></script>
 
 </body>
-</html>
+</html>  -->

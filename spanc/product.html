@@ -40,10 +40,49 @@
       .category-card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
+      .category-card::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(
+          45deg,
+          #a23a3a,
+          #f77f7f,
+          #968686,
+          #884c2a,
+          #9f7171
+        );
+        background-size: 400% 400%;
+        z-index: -1;
+        filter: blur(8px);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 14px;
+        animation: glowAnimation 10s ease infinite;
+      }
+      .category-card:hover::before {
+        opacity: 1;
+      }
+
+      @keyframes glowAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
 
       .category-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      
       }
 
       .scroll-wrapper {
@@ -172,7 +211,7 @@
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
         </ul>
-        <a href="get-quote.html?modal=true" class="btn btn-dark">Get Quote</a>
+        <a href="get-quote.html?modal=true" class="btn btn-danger">Get Quote</a>
 
       </div>
     </nav>

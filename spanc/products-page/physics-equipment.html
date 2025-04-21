@@ -8,6 +8,7 @@
       content="Explore essential Physics equipment for +2 students. Learn about laboratory tools and apparatus for physics experiments."
     />
     <link rel="icon" href="../assets/images/spancotek LOGO[1].png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <meta
       name="keywords"
       content="Physics Equipment, Laboratory Tools, Educational Instruments, Science Equipment"
@@ -27,6 +28,12 @@
 
     <link rel="stylesheet" href="../assets/CSS/footer.css" />
     <style>
+           body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
       .card-img-top {
         height: 200px;
         object-fit: contain;
@@ -56,6 +63,10 @@
       .card {
         height: 100%;
       }
+      .card:hover {
+        transform: translateY(-10px);
+      }
+      
 
       .card-body {
         display: flex;
@@ -476,7 +487,7 @@
               <h5 class="card-title">${item.name}</h5>
               <p class="card-text">${item.desc}</p>
             </div>
-            <a href="./plus2product/${item.link}" class="btn btn-primary mt-3 view-btn fixed-btn">
+            <a href="./plus2product/${item.link}" class="btn btn-danger mt-3 view-btn fixed-btn">
               View Details <i class="bi bi-arrow-right ms-2"></i>
             </a>
           </div>
