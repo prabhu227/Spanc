@@ -34,28 +34,44 @@
   overflow-x: hidden;
 }
 
-    .about-subtitle {
+    /* .about-subtitle {
       color: #000;
       font-weight: 700;
-    }
-
-    .about-title {
+    } */
+   
+    /* .about-title {
       font-weight: 800;
       font-size: 2.5rem;
-    }
-
-    .about-text {
+    } */
+    
+    /* .about-text {
       font-size: 1.1rem;
       color: #6c757d;
       max-width: 800px;
       margin: 0 auto;
-    }
+    } */
+    .about-subtitle {
+  font-weight: 800;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.about-title {
+  font-weight: 700;
+  font-size: clamp(1.2rem, 3.5vw, 2rem);
+}
+
+.about-text {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.6;
+}
 
     @media (max-width: 576px) {
       .about-title {
-        font-size: 2rem;
+        /* font-size: 2rem; */
       }
-
+.about-subtitle{
+  font-size: 2rem;
+}
       .about-text {
         font-size: 1rem;
       }
@@ -250,9 +266,10 @@
     }
 
     .cta-text h2 {
-      font-size: 2rem;
-      font-weight: 700;
-    }
+  font-size: clamp(1.25rem, 3.5vw, 2.25rem); /* scales from ~20px to ~36px */
+  font-weight: 700;
+  line-height: 1.4;
+}
 
     .cta-btn {
       padding: 12px 24px;
@@ -312,7 +329,7 @@
 
 <section class="py-5 text-center  my-custom-text">
   <div class="container animated-section">
-    <h2 class="about-subtitlemy-custom-text">About Us</h2>
+    <h2 class="about-subtitle my-custom-text fs-1 fw-bold">About Us</h2>
     <h1 class="about-title mb-4">We Serve Technology</h1>
     <p class="about-text ">
       Pioneering laboratory solutions with cutting-edge technology and unparalleled expertise since 2010.
@@ -336,8 +353,8 @@
       </div>  
 
       <!-- Image Column -->
-      <div class="col-md-6 text-center mission-img">
-        <img src="https://png.pngtree.com/thumb_back/fh260/background/20220312/pngtree-laboratory-utensils-for-scientific-research-image_1061390.jpg" class="img-fluid" alt="Lab Equipment">
+      <div class="col-md-6 text-center mission-img borde">
+        <img src="https://png.pngtree.com/thumb_back/fh260/background/20220312/pngtree-laboratory-utensils-for-scientific-research-image_1061390.jpg" class="img-fluid rounded" alt="Lab Equipment">
         <!-- Replace image URL with your own if needed -->
       </div>
     </div>
@@ -351,42 +368,42 @@
 
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="choose-card h-100 text-center">
+        <div class="choose-card h-100 text-center bg-body-secondary border border-secondary">
           <div class="choose-icon"><i class="bi bi-award-fill"></i></div>
           <div class="choose-heading">Premium Quality</div>
           <p class="choose-text">Industry-leading quality standards ensuring reliable and precise equipment performance.</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="choose-card h-100 text-center">
+        <div class="choose-card h-100 text-center bg-body-secondary border border-secondary">
           <div class="choose-icon"><i class="bi bi-truck"></i></div>
           <div class="choose-heading">Fast Delivery</div>
           <p class="choose-text">Swift and secure delivery services to get your equipment when you need it.</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="choose-card h-100 text-center">
+        <div class="choose-card h-100 text-center bg-body-secondary border border-secondary">
           <div class="choose-icon"><i class="bi bi-clock-history"></i></div>
           <div class="choose-heading">10+ Years Experience</div>
           <p class="choose-text">A decade of expertise in providing cutting-edge laboratory solutions.</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="choose-card h-100 text-center">
+        <div class="choose-card h-100 text-center bg-body-secondary border border-secondary">
           <div class="choose-icon"><i class="bi bi-headset"></i></div>
           <div class="choose-heading">24/7 Support</div>
           <p class="choose-text">Round-the-clock technical support and customer service assistance.</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="choose-card h-100 text-center">
+        <div class="choose-card h-100 text-center bg-body-secondary border border-secondary">
           <div class="choose-icon"><i class="bi bi-patch-check-fill"></i></div>
           <div class="choose-heading">Certified Products</div>
           <p class="choose-text">All equipment meets international quality and safety standards.</p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="choose-card h-100 text-center">
+      <div class="col-md-4 ">
+        <div class="choose-card h-100 text-center bg-body-secondary border border-secondary">
           <div class="choose-icon"><i class="bi bi-tools"></i></div>
           <div class="choose-heading">Maintenance Service</div>
           <p class="choose-text">Professional maintenance and calibration services for optimal performance.</p>
@@ -433,12 +450,16 @@
     <div class="row align-items-center justify-content-between text-center text-md-start">
       <!-- Text -->
       <div class="col-md-6 cta-text">
-        <h2>Ready to see our products?<br>Get in touch with us today.</h2>
+        <!-- <h2 class="">Ready to see our products?<br>Get in touch with us today.</h2> -->
+        <h2 class="fs-1 fs-md-2 ">
+          Ready to see our products?<br>Get in touch with us today.
+        </h2>
+        
       </div>
       
       <!-- Buttons -->
       <div class="col-md-6 text-md-end text-center cta-actions">
-        <a href="product.html" class="btn btn-light cta-btn me-3">Explore Products</a>
+        <a href="product.html" class="btn btn-light cta-btn mb-md-0 mb-3">Explore Products</a>
         <a href="contact.html" class="btn btn-light cta-btn">Contact Us</a>
       </div>
     </div>

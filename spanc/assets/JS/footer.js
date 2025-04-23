@@ -42,7 +42,7 @@ const footerHTML = `
     </div>
 
     <div class="text-center border-top border-secondary pt-3 mt-4 small text-secondary">
-      &copy; 2025 Spanco Tek • Designed by Asterics Compute • All Rights Reserved
+      &copy; 2025 Spanco Tek • Designed by <a href="https://astericscompute.com/"> Asterics Compute</a>  • All Rights Reserved
     </div>
   </div>
 </footer>
