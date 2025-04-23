@@ -119,12 +119,13 @@
       <div class="row g-5">
         <!-- Contact Form -->
         <div class="col-md-6 bg-body-secondary border border-secondary rounded ">
-          <form id="contactForm">
+          <form action="https://formspree.io/f/xnndqglq" method="POST" id="contactForm" class="p-4">
             <div class="mb-3 mt-3">
               <label for="name" class="form-label fs-3 fs-md-3 fw-bold">Name</label>
               <input
                 type="text"
                 id="name"
+                name="name"
                 class="form-control"
                 placeholder="Your name"
                 required
@@ -135,6 +136,7 @@
               <input
                 type="email"
                 id="email"
+                name="email"
                 class="form-control"
                 placeholder="your@email.com"
                 required
@@ -144,6 +146,7 @@
               <label for="subject" class="form-label fs-md-3 fs-3 fw-bold">Subject</label>
               <input
                 type="text"
+                name="subject"
                 id="subject"
                 class="form-control"
                 placeholder="How can we help?"
@@ -155,6 +158,7 @@
               <textarea
                 id="message"
                 rows="5"
+                name="message"
                 class="form-control"
                 placeholder="Your message"
                 required
