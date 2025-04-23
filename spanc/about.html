@@ -11,6 +11,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/CSS/footer.css">
 
+  <canvas id="particles-bg"></canvas>
+
+<style>
+#particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  filter: blur(3px); /* ⬅️ This is the blur layer */
+  pointer-events: none; /* ⬅️ Allows clicks to pass through */
+}
+</style>
+
   <style>
     /* Animation */
     @keyframes fadeInUp {
@@ -66,16 +81,16 @@
 }
 
     @media (max-width: 576px) {
-      .about-title {
+      /* .about-title {
         /* font-size: 2rem; */
-      }
+      } */
 .about-subtitle{
   font-size: 2rem;
 }
       .about-text {
         font-size: 1rem;
       }
-    }
+    
 
     @keyframes slideInLeft {
       0% {
@@ -145,15 +160,17 @@
   right: -2px;
   bottom: -2px;
   border-radius: 18px;
-  background: linear-gradient(
+  background-color: #c2575795;
+
+  /* background: linear-gradient(
     45deg,
     #ff6b6b,
     #ad4824,
     #836a4c,
-    #c8bbb0,
+    #4bc688,
     #97959a,
     #b94747
-  );
+  ); */
   background-size: 400%;
   z-index: -1;
   opacity: 0;
@@ -190,9 +207,11 @@
 }
 
 .choose-card:hover .choose-icon {
-  color: #ff6b6b;
-  animation: pulseGlow 1.5s infinite;
+  color: #7c1f1f;
+  transform: scale(1.2);
+  transition: transform 0.3s ease, color 0.3s ease;
 }
+
 
 @keyframes pulseGlow {
   0% {
@@ -299,6 +318,32 @@
         margin-right: 15px;
       }
     
+      .nav-link {
+  position: relative;
+  display: inline-block;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #9f2929;
+  transition: width 0.4s ease;
+}
+
+.nav-link:hover {
+  color: #1a1a1a; /* darker text on hover */
+}
+
+.nav-link:hover::after {
+  width: 70%;
+}
 
   </style>
 </head>

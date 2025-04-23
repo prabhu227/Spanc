@@ -16,6 +16,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<style>
+  #particles-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    filter: blur(3px); /* ⬅️ This is the blur layer */
+    pointer-events: none; /* ⬅️ Allows clicks to pass through */
+  }
+  </style>
     <style>
        body {
   /* font-family: 'Roboto', sans-serif; */
@@ -81,14 +93,15 @@
         left: -2px;
         right: -2px;
         bottom: -2px;
-        background: linear-gradient(
+        background-color: #c2575795;
+        /* background: linear-gradient(
           45deg,
           #a23a3a,
           #f77f7f,
           #968686,
           #884c2a,
           #9f7171
-        );
+        ); */
         background-size: 400% 400%;
         z-index: -1;
         filter: blur(8px);
@@ -171,6 +184,33 @@
         height: 40px;
         margin-right: 15px;
       }
+      .nav-link {
+  position: relative;
+  display: inline-block;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #9f2929;
+  transition: width 0.4s ease;
+}
+
+.nav-link:hover {
+  color: #1a1a1a; /* darker text on hover */
+}
+
+.nav-link:hover::after {
+  width: 70%;
+}
+
     </style>
   </head>
   <body>

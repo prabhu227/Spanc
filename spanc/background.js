@@ -1,3 +1,4 @@
+
 const canvas = document.getElementById("particles-bg");
 const ctx = canvas.getContext("2d");
 let particles = [];
@@ -33,11 +34,14 @@ function drawShape(p) {
   const { x, y, size, shape } = p;
   const half = size / 2;
 
-  // Left-to-right gradient with transparency
   const gradient = ctx.createLinearGradient(x - half, y, x + half, y);
-  gradient.addColorStop(0, "rgba(62, 31, 15, 0.4)");   // deep brown with 40% opacity
-  gradient.addColorStop(0.5, "rgba(160, 82, 45, 0.4)"); // sienna
-  gradient.addColorStop(1, "rgba(244, 192, 149, 0.4)"); // light tan
+  gradient.addColorStop(0, "rgba(31, 15, 7, 0.25)");
+  gradient.addColorStop(0.5, "rgba(110, 55, 30, 0.25)");
+  gradient.addColorStop(1, "rgba(180, 140, 100, 0.25)");
+  
+  ctx.shadowBlur = 10;
+  ctx.shadowColor = "rgba(100, 50, 30, 0.2)";
+  
 
   if (shape.includes('hollow')) {
     ctx.strokeStyle = gradient;
@@ -81,6 +85,9 @@ function drawShape(p) {
       ctx.strokeRect(x - half, y - half, size, size);
       break;
   }
+
+  ctx.shadowBlur = 0;
+  ctx.shadowColor = "transparent";
 }
 
 function drawParticles() {
