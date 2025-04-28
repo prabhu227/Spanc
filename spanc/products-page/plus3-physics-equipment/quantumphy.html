@@ -42,6 +42,24 @@ font-style: normal;
 </div>
 
 <!-- Modal -->
+<!-- <div class="modal fade" id="specModal" tabindex="-1" aria-labelledby="specModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="specModalLabel">Specifications</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 id="modal-product-title"></h5>
+        <p id="modal-product-model"></p>
+        <ul id="modal-spec-list" class="list-group list-group-flush"></ul>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- Modal -->
 <div class="modal fade" id="specModal" tabindex="-1" aria-labelledby="specModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
@@ -52,6 +70,7 @@ font-style: normal;
         </button>
       </div>
       <div class="modal-body">
+        <img id="modal-product-image" class="img-fluid mb-4" src="" alt="Product Image" />
         <h5 id="modal-product-title"></h5>
         <p id="modal-product-model"></p>
         <ul id="modal-spec-list" class="list-group list-group-flush"></ul>
@@ -196,6 +215,10 @@ function showSpecs(index) {
   const product = quantumMechanicsProducts[index];
   document.getElementById("modal-product-title").innerText = product.title;
   document.getElementById("modal-product-model").innerText = "Model: " + product.model;
+
+  // Set the product image in the modal
+  const productImage = document.getElementById("modal-product-image");
+  productImage.src = product.image;
 
   const specList = document.getElementById("modal-spec-list");
   specList.innerHTML = "";
