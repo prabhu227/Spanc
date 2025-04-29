@@ -10,25 +10,39 @@
     />
     <style>
       body {
-        background-color: #f9f9f9;
-      }
-      .sidebar {
-        min-height: 100vh;
+      background-color: #f9f9f9;
+    }
+    .sidebar {
+      min-height: 100vh;
+      background-color: #fff;
+      padding: 1rem;
+    }
+    .product-card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      height: 100%;
+    }
+    .product-card img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: contain;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    #searchInput {
+        padding: 0.75rem;
         background-color: #fff;
-        padding: 1rem;
-      }
-      .product-card {
-        background-color: white;
+        border-radius: 5px;
         border: 1px solid #ddd;
-        border-radius: 10px;
-        padding: 1rem;
-        text-align: center;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      }
-      .product-card img {
-        max-width: 100%;
-        height: 150px;
-        object-fit: contain;
+        width: 100%;
       }
     </style>
   </head>
@@ -184,66 +198,154 @@
         </nav>
 
         <!-- Main Content -->
-        <main class="col-md-9 py-4">
-          <h2 class="mb-4">Lab Equipment</h2>
-          <div class="row g-4" id="product-container">
-            <!-- Dynamic JS will populate here -->
-          </div>
-        </main>
+        <main class="col-md-9 py-4" id="main-content">
+            <!-- Search Form -->
+            <div class="mb-4">
+              <input
+                id="searchInput"
+                type="text"
+                class="form-control"
+                placeholder="Search by name or model number"
+              />
+            </div>
+  
+            <!-- JavaScript will insert dynamic content here -->
+          </main>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-      // Product data array
-      const products = [
-        {
-          title: "Motorized Digital Holography Microscope",
-          code: "HO-DHM-UT01-FA",
-          image: "https://via.placeholder.com/200x150?text=Microscope+1",
-        },
-        {
-          title: "Digital Holography Microscope",
-          code: "HO-DHM-UT01",
-          image: "https://via.placeholder.com/200x150?text=Microscope+2",
-        },
-        {
-          title: "Digital Holography Microscope - Inverted",
-          code: "HO-DHM-IT01",
-          image: "https://via.placeholder.com/200x150?text=Microscope+3",
-        },
-        {
-          title: "Digital Inline Holography Microscope",
-          code: "HO-DHM-HT01",
-          image: "https://via.placeholder.com/200x150?text=Microscope+4",
-        },
-        {
-          title: "Digital Inline Holography Microscope",
-          code: "HO-DHM-T01",
-          image: "https://via.placeholder.com/200x150?text=Microscope+5",
-        },
-      ];
+        // Section data (multiple sections)
+        const sections = [
+          {
+            title: "Digital Holography Microscopes",
+            viewAllLink: "digital-holography.html",
+            products: [
+              { title: "Motorized DH Microscope", code: "HO-DHM-UT01-FA", image: "https://via.placeholder.com/200x150?text=Microscope+1" },
+              { title: "DH Microscope", code: "HO-DHM-UT01", image: "https://via.placeholder.com/200x150?text=Microscope+2" },
+              { title: "Inverted DH Microscope", code: "HO-DHM-IT01", image: "https://via.placeholder.com/200x150?text=Microscope+3" },
+              { title: "Inline DH Microscope", code: "HO-DHM-HT01", image: "https://via.placeholder.com/200x150?text=Microscope+4" },
+              { title: "Compact Inline DH Microscope", code: "HO-DHM-T01", image: "https://via.placeholder.com/200x150?text=Microscope+5" }
+            ]
+          },
+          {
+            title: "Fluorescence Microscopes",
+            viewAllLink: "fluorescence-microscopes.html",
+            products: [
+              { title: "Inverted Fluorescence 1", code: "FLU-INV-01", image: "https://via.placeholder.com/200x150?text=Microscope+6" },
+              { title: "Inverted Fluorescence 2", code: "FLU-INV-02", image: "https://via.placeholder.com/200x150?text=Microscope+7" },
+              { title: "Routine Fluorescence", code: "FLU-R-03", image: "https://via.placeholder.com/200x150?text=Microscope+8" }
+            ]
+          }
+        ];
+      
+            const mainContent = document.getElementById('main-content');
+            const searchInput = document.getElementById('searchInput');
+        
+            // sections.forEach(section => {
+            // // Section container
+            // const sectionEl = document.createElement('section');
+            // sectionEl.classList.add('mb-5');
+        
+            // // Header with title and view all
+            // const header = document.createElement('div');
+            // header.className = 'section-header';
+        
+            // header.innerHTML = `
+            //     <h4>${section.title}</h4>
+            //     <a href="${section.viewAllLink}" class="btn btn-outline-primary btn-sm">View All</a>
+            // `;
+        
+            // sectionEl.appendChild(header);
+        
+            // // Product grid (only show 4 items max)
+            // const row = document.createElement('div');
+            // row.className = 'row g-4';
+        
+            // section.products.slice(0, 4).forEach(product => {
+            //     const col = document.createElement('div');
+            //     col.className = 'col-md-3';
+        
+            //     col.innerHTML = `
+            //     <div class="product-card h-100">
+            //         <img src="${product.image}" alt="${product.title}" />
+            //         <h6 class="mt-2">${product.title}</h6>
+            //         <small>${product.code}</small>
+            //     </div>
+            //     `;
+        
+            //     row.appendChild(col);
+            // });
+        
+            // sectionEl.appendChild(row);
+            // mainContent.appendChild(sectionEl);
+            // });
+            function renderProducts(filteredSections) {
+          mainContent.innerHTML = '';
 
-      // Reference to container
-      const container = document.getElementById("product-container");
+          filteredSections.forEach(section => {
+            // Section container
+            const sectionEl = document.createElement('section');
+            sectionEl.classList.add('mb-5');
 
-      // Map and render
-      products.map((product) => {
-        const col = document.createElement("div");
-        col.className = "col-md-4";
+            // Header with title and view all
+            const header = document.createElement('div');
+            header.className = 'section-header';
 
-        col.innerHTML = `
-      <div class="product-card">
-        <img src="${product.image}" alt="${product.title}" />
-        <h6 class="mt-2">${product.title}</h6>
-        <small>${product.code}</small>
-      </div>
-    `;
+            header.innerHTML = `
+              <h4>${section.title}</h4>
+              <a href="${section.viewAllLink}" class="btn btn-outline-primary btn-sm">View All</a>
+            `;
 
-        container.appendChild(col);
-      });
-    </script>
+            sectionEl.appendChild(header);
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            // Product grid (only show 4 items max)
+            const row = document.createElement('div');
+            row.className = 'row g-4';
+
+            section.products.slice(0, 4).forEach(product => {
+              const col = document.createElement('div');
+              col.className = 'col-md-3';
+
+              col.innerHTML = `
+                <div class="product-card h-100">
+                  <img src="${product.image}" alt="${product.title}" />
+                  <h6 class="mt-2">${product.title}</h6>
+                  <small>${product.code}</small>
+                </div>
+              `;
+
+              row.appendChild(col);
+            });
+
+            sectionEl.appendChild(row);
+            mainContent.appendChild(sectionEl);
+          });
+        }
+
+        // Filter function for search
+        function filterProducts() {
+          const query = searchInput.value.toLowerCase();
+          const filteredSections = sections.map(section => {
+            const filteredProducts = section.products.filter(product => 
+              product.title.toLowerCase().includes(query) || product.code.toLowerCase().includes(query)
+            );
+
+            return { ...section, products: filteredProducts };
+          }).filter(section => section.products.length > 0); // Remove sections with no products
+
+          renderProducts(filteredSections);
+        }
+
+        // Initial render
+        renderProducts(sections);
+
+        // Event listener for search input
+        searchInput.addEventListener('input', filterProducts);
+      </script>
+      
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
   </body>
 </html>
