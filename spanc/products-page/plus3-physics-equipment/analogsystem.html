@@ -92,6 +92,7 @@
         </div>
         
         <div class="modal-body">
+          <img id="modal-product-image" class="img-fluid mb-4" src="" alt="Product Image" />
           <h4 id="modalTitle"></h4>
           <p><strong>Model:</strong> <span id="modalModel"></span></p>
           <ul id="modalSpecs" class="ms-3"></ul>
@@ -399,6 +400,9 @@ experiments.forEach((exp, index) => {
 
         document.getElementById("modalTitle").textContent = experiment.title;
         document.getElementById("modalModel").textContent = experiment.model;
+
+        const modalImage = document.getElementById("modal-product-image");
+        modalImage.src = experiment.image;  // Set the image source
 
         const specsList = document.getElementById("modalSpecs");
         specsList.innerHTML = experiment.specs.map(spec => `<li>${spec}</li>`).join("");

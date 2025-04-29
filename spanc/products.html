@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab Equipment Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f9f9f9;
+    }
+    .sidebar {
+      min-height: 100vh;
+      background-color: #fff;
+      padding: 1rem;
+      
+    }
+    .product-card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .product-card img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-3 sidebar">
+      <h5>Courses</h5>
+      <div class="accordion" id="courseAccordion">
+
+        <!-- +2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingPlus2">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePlus2">
+              +2
+            </button>
+          </h2>
+          <div id="collapsePlus2" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <!-- Physics -->
+              <div class="accordion" id="plus2PhysicsAccordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingPhys2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePhys2">
+                      Physics
+                    </button>
+                  </h2>
+                  <div id="collapsePhys2" class="accordion-collapse collapse">
+                    <div class="accordion-body ps-3">
+                      <ul class="list-unstyled">
+                        <li><a href="#">Optics</a></li>
+                        <li><a href="#">Mechanics</a></li>
+                        <li><a href="#">Thermodynamics</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Chemistry -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingChem2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseChem2">
+                      Chemistry
+                    </button>
+                  </h2>
+                  <div id="collapseChem2" class="accordion-collapse collapse">
+                    <div class="accordion-body ps-3">
+                      <ul class="list-unstyled">
+                        <li><a href="#">Organic</a></li>
+                        <li><a href="#">Inorganic</a></li>
+                        <li><a href="#">Physical</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- +3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingPlus3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePlus3">
+              +3
+            </button>
+          </h2>
+          <div id="collapsePlus3" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <!-- Physics -->
+              <div class="accordion" id="plus3PhysicsAccordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingPhys3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePhys3">
+                      Physics
+                    </button>
+                  </h2>
+                  <div id="collapsePhys3" class="accordion-collapse collapse">
+                    <div class="accordion-body ps-3">
+                      <ul class="list-unstyled">
+                        <li><a href="#">Quantum</a></li>
+                        <li><a href="#">Electronics</a></li>
+                        <li><a href="#">EM Theory</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Chemistry -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingChem3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseChem3">
+                      Chemistry
+                    </button>
+                  </h2>
+                  <div id="collapseChem3" class="accordion-collapse collapse">
+                    <div class="accordion-body ps-3">
+                      <ul class="list-unstyled">
+                        <li><a href="#">Biochemistry</a></li>
+                        <li><a href="#">Analytical</a></li>
+                        <li><a href="#">Polymer</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="col-md-9 py-4">
+        <h1 class="mb-5">All Products</h1>
+      <div class="row g-4">
+        <!-- Product Card 1 -->
+        <div class="col-md-4">
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200x150?text=Microscope+1" alt="Microscope 1" />
+            <h6 class="mt-2">Motorized Digital Holography Microscope</h6>
+            <small>HO-DHM-UT01-FA</small>
+          </div>
+        </div>
+        <!-- Product Card 2 -->
+        <div class="col-md-4">
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200x150?text=Microscope+2" alt="Microscope 2" />
+            <h6 class="mt-2">Digital Holography Microscope</h6>
+            <small>HO-DHM-UT01</small>
+          </div>
+        </div>
+        <!-- Product Card 3 -->
+        <div class="col-md-4">
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200x150?text=Microscope+3" alt="Microscope 3" />
+            <h6 class="mt-2">Inverted Holography Microscope</h6>
+            <small>HO-DHM-IT01</small>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

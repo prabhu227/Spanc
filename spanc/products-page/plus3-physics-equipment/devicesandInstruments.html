@@ -53,6 +53,7 @@
         </button>
       </div>
       <div class="modal-body" id="modal-specs-body">
+        <img id="modal-product-image" class="img-fluid mb-4" src="" alt="Product Image" />
         <!-- Dynamic specs will be inserted here -->
       </div>
     </div>
@@ -305,15 +306,24 @@ function openSpecsModal(index) {
   const modalBody = document.getElementById("modal-specs-body");
   const modalTitle = document.getElementById("specsModalLabel");
 
+  // Update the modal title with the product name and model
   modalTitle.textContent = `${product.title} - ${product.model}`;
-  modalBody.innerHTML = `
+
+  // Update the modal image
+  const modalImage = document.getElementById("modal-product-image");
+  modalImage.src = product.image;  // Set the image source to the product's image
+
+  // Update the specifications list
+  modalBody.innerHTML += `  <!-- Insert the specs dynamically -->
     <ul class="list-group">
       ${product.specs.map(spec => `<li class="list-group-item">${spec}</li>`).join("")}
     </ul>
   `;
 
+  // Show the modal
   $('#specsModal').modal('show');
 }
+
   </script>
     <!-- Background shapes -->
 

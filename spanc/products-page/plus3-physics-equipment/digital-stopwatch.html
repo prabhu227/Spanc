@@ -39,7 +39,7 @@
 <body>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-5">Electricity, Magnetism & EMT Experiments</h1>
+        <h1 class="text-center mb-5">Digital Stop Watch</h1>
 
         <div id="experiment-list" class="row">
             <!-- Dynamic content will be injected here by JS -->
@@ -304,30 +304,51 @@
         ];
 
         // Function to generate and display experiment cards dynamically
-        function displayExperiments() {
-            const experimentList = document.getElementById('experiment-list');
-            experiments.forEach(experiment => {
-                const card = document.createElement('div');
-                card.classList.add('col-md-6', 'col-lg-4');
+     // Function to generate and display experiment cards dynamically
+function displayExperiments() {
+    const experimentList = document.getElementById('experiment-list');
+    experiments.forEach(experiment => {
+        const card = document.createElement('div');
+        card.classList.add('col-md-6', 'col-lg-4');
 
-                card.innerHTML = `
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">${experiment.title}</h3>
-                            <p class="card-subtitle text-muted">Model: ${experiment.model}</p>
+        card.innerHTML = `
+            <div class="card" data-bs-toggle="modal" data-bs-target="#experimentModal-${experiment.model}">
+                <div class="card-header">
+                    <h3 class="card-title">${experiment.title}</h3>
+                    <p class="card-subtitle text-muted">Model: ${experiment.model}</p>
+                </div>
+                <div class="card-body">
+                    <h5>Specifications:</h5>
+                    <ul class="specs-list">
+                        ${experiment.specs.map(spec => `<li>${spec}</li>`).join('')}
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="experimentModal-${experiment.model}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">${experiment.title} - ${experiment.model}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="card-body">
+                        <div class="modal-body">
+                            <img src="${experiment.image}" alt="${experiment.title}" class="img-fluid mb-3">
                             <h5>Specifications:</h5>
                             <ul class="specs-list">
                                 ${experiment.specs.map(spec => `<li>${spec}</li>`).join('')}
                             </ul>
                         </div>
                     </div>
-                `;
+                </div>
+            </div>
+        `;
 
-                experimentList.appendChild(card);
-            });
-        }
+        experimentList.appendChild(card);
+    });
+}
+
 
         // Initialize the display of experiments on page load
         window.onload = displayExperiments;

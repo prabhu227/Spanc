@@ -88,6 +88,7 @@
           </button>
         </div>
         <div class="modal-body" id="specContent">
+          <img id="modal-product-image" class="img-fluid mb-4" src="" alt="Product Image" />
           <!-- Specs will load dynamically -->
         </div>
       </div>
@@ -254,15 +255,18 @@
     }
 
     function loadSpecs(index) {
-      const experiment = experiments[index];
-      document.getElementById('specModalLabel').innerText = experiment.title + " - Specs";
-      document.getElementById('specContent').innerHTML = `
-        <p><strong>Model:</strong> ${experiment.model}</p>
-        <ul>
-          ${experiment.specs.map(spec => `<li>${spec}</li>`).join('')}
-        </ul>
-      `;
-    }
+    const experiment = experiments[index];
+    document.getElementById('specModalLabel').innerText = experiment.title + " - Specs";
+    document.getElementById('specContent').innerHTML = `
+      <div class="text-center mb-3">
+        <img src="${experiment.image}" class="img-fluid" alt="${experiment.title}">
+      </div>
+      <p><strong>Model:</strong> ${experiment.model}</p>
+      <ul>
+        ${experiment.specs.map(spec => `<li>${spec}</li>`).join('')}
+      </ul>
+    `;
+  }
 
     renderExperiments();  
   </script>
