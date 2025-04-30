@@ -279,39 +279,112 @@ items.forEach(item => {
 
 
               <!-- +2 Chemistry -->
-              <li onclick="toggleDropdown('plus2Chemistry')" class="sidebar-item">
-                <span class="chevron sidebar-item">▶</span> Chemistry
-              </li>
-              <ul id="plus2Chemistry" class="dropdown list-unstyled ms-3"></ul>
+              <div>
+                <li onclick="toggleDropdown('plus2Chemistry')" class="sidebar-item">
+                  <span class="chevron sidebar-item">▶</span> Chemistry
+                </li>
+                <ul id="plus2Chemistry" class="dropdown list-unstyled ms-3"></ul>
+              </div>
               <script>
                 const plus2Chemistry = document.getElementById('plus2Chemistry');
                 
                 const chemistryItems = [
-                  { title: "Digital pH Meter", link: "./products-page/plustwo-che-products/Digitalphmeter.html" },
-                  { title: "Digital Conductivity/TDS Meter", link: "./products-page/plustwo-che-products/digital-conductivemeter.html" },
-                  { title: "Digital Photo Colorimeter", link: "./products-page/plustwo-che-products/digital-colorimeter.html" },
-                  { title: "Digital Melting Point Apparatus", link: "./products-page/plustwo-che-products/digital-melting-point-apparatus.html" },
-                  { title: "HOT Air Oven", link: "./products-page/plustwo-che-products/hot-air-oven.html" },
-                  { title: "Incubator", link: "./products-page/plustwo-che-products/incubator.html" },
-                  { title: "Water Bath Rectangular", link: "./products-page/plustwo-che-products/water-bath.html" },
-                  { title: "Heating Mental", link: "./products-page/plustwo-che-products/heating-mental.html" },
-                  { title: "Hot Plate Round", link: "./products-page/plustwo-che-products/hot-plate.html" },
-                  { title: "Clinical Centrifuge", link: "./products-page/plustwo-che-products/clinical-centrifuge.html" },
-                  { title: "Spirit Lamp Aluminium", link: "./products-page/plustwo-che-products/spirit-lamp-aluminium.html" },
-                  {title:"Spirit Lamp Brass", link:"./products-page/plustwo-che-products/spirit-lamp-brass.html"},
-                  {title:"Spirit Lamp Stainless Steel", link:"./products-page/plustwo-che-products/spirit-lamp-stainless-steel.html"},
-                  {title:"Blow Pipe Brass", link:"./products-page/plustwo-che-products/blow-pipe-brass.html"},
-                  {title:"Defflagrating Spoon", link:"./products-page/plustwo-che-products/defflagrating-spoon.html"},
-                  {title:"Test Tube Holder", link:"./products-page/plustwo-che-products/test-tube-holder.html"},
-                  {title:"Test Tube Holder Cross Pattern", link:"./products-page/plustwo-che-products/test-tube-holder-cross-pattern.html"},
-                  {title:"Test Tube Holder Stainless Steel", link:"./products-page/plustwo-che-products/test-tube-holder-stainless-steel.html"},
-                  {title:"ESR Stand", link:"./products-page/plustwo-che-products/esr-stand.html"},
-                  {title:"Crucible Tong", link:"./products-page/plustwo-che-products/crucible-tong.html"},
-                  {title:"Wire Gauge", link:"./products-page/plustwo-che-products/wire-gauge.html"},
-                  {title:"Spatula Stainless Steel", link:"./products-page/plustwo-che-products/spatula-stainless-steel.html"},
-                  {title:"Water Glass", link:"./products-page/plustwo-che-products/water-glass.html"},
-                  {title:"Water Bath", link:"./products-page/plustwo-che-products/water-bath.html"},
+                  // { title: "Digital pH Meter", link: "./products-page/plustwo-che-products/Digitalphmeter.html" },
+                  // { title: "Digital Conductivity/TDS Meter", link: "./products-page/plustwo-che-products/digital-conductivemeter.html" },
+                  // { title: "Digital Photo Colorimeter", link: "./products-page/plustwo-che-products/digital-colorimeter.html" },
+                  // { title: "Digital Melting Point Apparatus", link: "./products-page/plustwo-che-products/digital-melting-point-apparatus.html" },
+                  // { title: "HOT Air Oven", link: "./products-page/plustwo-che-products/hot-air-oven.html" },
+                  // { title: "Incubator", link: "./products-page/plustwo-che-products/incubator.html" },
+                  // { title: "Water Bath Rectangular", link: "./products-page/plustwo-che-products/water-bath.html" },
+                  // { title: "Heating Mental", link: "./products-page/plustwo-che-products/heating-mental.html" },
+                  // { title: "Hot Plate Round", link: "./products-page/plustwo-che-products/hot-plate.html" },
+                  // { title: "Clinical Centrifuge", link: "./products-page/plustwo-che-products/clinical-centrifuge.html" },
+                  // { title: "Spirit Lamp Aluminium", link: "./products-page/plustwo-che-products/spirit-lamp-aluminium.html" },
+                  // {title:"Spirit Lamp Brass", link:"./products-page/plustwo-che-products/spirit-lamp-brass.html"},
+                  // {title:"Spirit Lamp Stainless Steel", link:"./products-page/plustwo-che-products/spirit-lamp-stainless-steel.html"},
+                  // {title:"Blow Pipe Brass", link:"./products-page/plustwo-che-products/blow-pipe-brass.html"},
+                  // {title:"Defflagrating Spoon", link:"./products-page/plustwo-che-products/defflagrating-spoon.html"},
+                  // {title:"Test Tube Holder", link:"./products-page/plustwo-che-products/test-tube-holder.html"},
+                  // {title:"Test Tube Holder Cross Pattern", link:"./products-page/plustwo-che-products/test-tube-holder-cross-pattern.html"},
+                  // {title:"Test Tube Holder Stainless Steel", link:"./products-page/plustwo-che-products/test-tube-holder-stainless-steel.html"},
+                  // {title:"ESR Stand", link:"./products-page/plustwo-che-products/esr-stand.html"},
+                  // {title:"Crucible Tong", link:"./products-page/plustwo-che-products/crucible-tong.html"},
+                  // {title:"Wire Gauge", link:"./products-page/plustwo-che-products/wire-gauge.html"},
+                  // {title:"Spatula Stainless Steel", link:"./products-page/plustwo-che-products/spatula-stainless-steel.html"},
+                  // {title:"Water Glass", link:"./products-page/plustwo-che-products/water-glass.html"},
+                  // {title:"Water Bath", link:"./products-page/plustwo-che-products/water-bath.html"},
+                  // {title:""}
                   
+                  
+  {title: "Black Phosphorus Model", link: "./products-page/plustwo-che-products/black-phosphorus-model.html"},
+  {title: "Blow Pipe Brass", link: "./products-page/plustwo-che-products/blow-pipe-brass.html"},
+  {title: "Boss Head", link: "./products-page/plustwo-che-products/boss-head.html"},
+  {title: "Bottle Brush", link: "./products-page/plustwo-che-products/bottle-brush.html"},
+  {title: "Bunsen Burner Stopcock", link: "./products-page/plustwo-che-products/bunsen-burner-stopcock.html"},
+  {title: "Burette Brush", link: "./products-page/plustwo-che-products/burette-brush.html"},
+  {title: "Burette Clamp Brass", link: "./products-page/plustwo-che-products/burette-clamp-brass.html"},
+  {title: "Burette Clamp Fisher", link: "./products-page/plustwo-che-products/burette-clamp-fisher.html"},
+  {title: "Burette Stand Wood", link: "./products-page/plustwo-che-products/burette-stand-wood.html"},
+  {title: "Clinical Centrifuge", link: "./products-page/plustwo-che-products/clinical-centrifuge.html"},
+  {title: "Copper Turning", link: "./products-page/plustwo-che-products/copper-turning.html"},
+  {title: "Crucible Tong", link: "./products-page/plustwo-che-products/crucible-tong.html"},
+  {title: "Defflagrating Spoon", link: "./products-page/plustwo-che-products/defflagrating-spoon.html"},
+  {title: "Diamond Crystal Model", link: "./products-page/plustwo-che-products/diamond-crystal-model.html"},
+  {title: "Digital Colorimeter", link: "./products-page/plustwo-che-products/digital-colorimeter.html"},
+  {title: "Digital Conductivemeter", link: "./products-page/plustwo-che-products/digital-conductivemeter.html"},
+  {title: "Digital Melting Point Apparatus", link: "./products-page/plustwo-che-products/digital-melting-point-appara..."},
+  {title: "Digital Ph Meter", link: "./products-page/plustwo-che-products/Digitalphmeter.html"},
+  {title: "ESR Stand", link: "./products-page/plustwo-che-products/esr-stand.html"},
+  {title: "Filter Paper Round", link: "./products-page/plustwo-che-products/filter-paper-round.html"},
+  {title: "Funnel Stand Wood", link: "./products-page/plustwo-che-products/funnel-stand-wood.html"},
+  {title: "Gooch Crucible", link: "./products-page/plustwo-che-products/gooch-crucible.html"},
+  {title: "Graphite Crystal Model", link: "./products-page/plustwo-che-products/graphite-crystal-model.html"},
+  {title: "Heating Mental", link: "./products-page/plustwo-che-products/heating-mental.html"},
+  {title: "Hoffman Screw Clip", link: "./products-page/plustwo-che-products/hoffman-screw-clip.html"},
+  {title: "Hot Air Oven", link: "./products-page/plustwo-che-products/hot-air-oven.html"},
+  {title: "Hot Plate", link: "./products-page/plustwo-che-products/hot-plate.html"},
+  {title: "Incubator", link: "./products-page/plustwo-che-products/incubator.html"},
+  {title: "Isotopes Of Hydrogen", link: "./products-page/plustwo-che-products/isotopes-of-hydrogen.html"},
+  {title: "Jaw Clamp", link: "./products-page/plustwo-che-products/jaw-clamp.html"},
+  {title: "Lead Shots", link: "./products-page/plustwo-che-products/lead-shots.html"},
+  {title: "Litmus Paper", link: "./products-page/plustwo-che-products/litmus-paper.html"},
+  {title: "Magnesium Metal Ribbon", link: "./products-page/plustwo-che-products/magnesium-metal-ribbon.html"},
+  {title: "Magnesium Ribbon", link: "./products-page/plustwo-che-products/magnesium-ribbon.html"},
+  {title: "Orbit Of Atom", link: "./products-page/plustwo-che-products/orbit-of-atom.html"},
+  {title: "Ph Paper", link: "./products-page/plustwo-che-products/ph-paper.html"},
+  {title: "Pinch Clip", link: "./products-page/plustwo-che-products/pinch-clip.html"},
+  {title: "Pipette Bulb", link: "./products-page/plustwo-che-products/pipette-bulb.html"},
+  {title: "Platinum Loop Holder", link: "./products-page/plustwo-che-products/platinum-loop-holder.html"},
+  {title: "Platinum Loop", link: "./products-page/plustwo-che-products/platinum-loop.html"},
+  {title: "Platinum Wire", link: "./products-page/plustwo-che-products/platinum-wire.html"},
+  {title: "Retort Stand Cast", link: "./products-page/plustwo-che-products/retort-stand-cast.html"},
+  {title: "Retort Stand Sheet", link: "./products-page/plustwo-che-products/retort-stand-sheet.html"},
+  {title: "Retort Stand Ss", link: "./products-page/plustwo-che-products/retort-stand-ss.html"},
+  {title: "Rubber Corks", link: "./products-page/plustwo-che-products/rubber-corks.html"},
+  {title: "Silica Crucible", link: "./products-page/plustwo-che-products/silica-crucible.html"},
+  {title: "Silicacrucible", link: "./products-page/plustwo-che-products/silicacrucible.html"},
+  {title: "Silicon Electronic Configuration", link: "./products-page/plustwo-che-products/silicon-electronic-configuration.html"},
+  {title: "Sodium Chloride Hydrocarbon Model", link: "./products-page/plustwo-che-products/sodium-chloride-hydrocarbon-model.html"},
+  {title: "Spatula Ss", link: "./products-page/plustwo-che-products/spatula-ss.html"},
+  {title: "Spirit Lamp Aluminium", link: "./products-page/plustwo-che-products/spirit-lamp-aluminium.html"},
+  {title: "Spirit Lamp Brass", link: "./products-page/plustwo-che-products/spirit-lamp-brass.html"},
+  {title: "Spirit Lamp Stainless Steel", link: "./products-page/plustwo-che-products/spirit-lamp-stainless-steel.html"},
+  {title: "Spirit Level Aluminium", link: "./products-page/plustwo-che-products/spirit-level-aluminium.html"},
+  {title: "Spirit Level Wood", link: "./products-page/plustwo-che-products/spirit-level-wood.html"},
+  {title: "Structure Of Atom", link: "./products-page/plustwo-che-products/structure-of-atom.html"},
+  {title: "Sulphur Atomic Model", link: "./products-page/plustwo-che-products/sulphur-atomic-model.html"},
+  {title: "Test Tube Brush", link: "./products-page/plustwo-che-products/test-tube-brush.html"},
+  {title: "Test Tube Holder", link: "./products-page/plustwo-che-products/test-tube-holder.html"},
+  {title: "Test Tube Stand", link: "./products-page/plustwo-che-products/test-tube-stand.html"},
+  {title: "Three Finger Clamp", link: "./products-page/plustwo-che-products/three-finger-clamp.html"},
+  {title: "Tripod Stand", link: "./products-page/plustwo-che-products/tripod-stand.html"},
+  {title: "Universal Condenser Clamp", link: "./products-page/plustwo-che-products/universal-condenser-clamp.html"},
+  {title: "Watch Glass", link: "./products-page/plustwo-che-products/watch-glass.html"},
+  {title: "Water Bath", link: "./products-page/plustwo-che-products/water-bath.html"},
+  {title: "Waterbath", link: "./products-page/plustwo-che-products/waterbath.html"},
+  {title: "Wire Gauge", link: "./products-page/plustwo-che-products/wire-gauge.html"},
+  {title: "Yellow Phosphorus Model", link: "./products-page/plustwo-che-products/yellow-phosphorus-model.html"},
+  {title: "Zinc Granules", link: "./products-page/plustwo-che-products/zinc-granules.html"}
 
     
                 ];
@@ -321,15 +394,11 @@ items.forEach(item => {
                   li.innerHTML = `<a href="${item.link}" class="text-white">${item.title}</a>`;
                   plus2Chemistry.appendChild(li);
                 });
+                
                 </script>
                 
 
-              <!-- <ul id="plus2Chemistry" class="dropdown list-unstyled ms-3">
-                <li><a href="atomic_structure.html" class="text-white">Atomic Structure</a></li>
-                <li><a href="periodic_table.html" class="text-white">Periodic Table</a></li>
-                <li><a href="chemical_bonding.html" class="text-white">Chemical Bonding</a></li>
-                <li><a href="acid_base.html" class="text-white">Acids & Bases</a></li>
-              </ul> -->
+             
             </ul>
       
             <!-- +3 Section -->
@@ -530,5 +599,7 @@ const container = document.getElementById('product-sections');
     container.insertAdjacentHTML('beforeend', sectionHTML);
   });
   </script>
+
+  
 </body>
 </html>
