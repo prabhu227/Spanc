@@ -12,15 +12,79 @@
     body {
       font-family: Arial, sans-serif;
     }
-    .sidebar {
-      min-height: 100vh;
-    }
+   /* Sidebar fixed height and scrollable */
+#sidebar {
+  height: 100vh;            /* Full viewport height */
+  overflow-y: auto;         /* Enable vertical scroll */
+  position: fixed;          /* Fix to the left side */
+  top: 0;
+  left: 0;
+  width: 250px;             /* Adjust as needed */
+  background-color: #212529; /* Dark background */
+}
+
+/* Add padding/margin to main content so it doesn't go under sidebar */
+#main-content {
+  margin-left: 250px;       /* Same as sidebar width */
+  padding: 1rem;
+}
+
+.sidebar-item {
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.sidebar-item:hover {
+  background-color: #495057;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
     .sidebar .nav-link {
       color: #fff;
     }
     .sidebar .nav-link:hover {
-      background-color: #495057;
+      background-color: #5a91c8;
     }
+    .dropdown {
+    display: none;
+  }
+  .dropdown.show {
+    display: block;
+  }
+  .sidebar-item {
+  cursor: pointer;
+}
+#plus2Physics li,
+#plus2Chemistry li,
+#plus3Physics li,
+#plus3Chemistry li,
+#engineeringDropdown li {
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Common sidebar link styling */
+#plus2Physics li a,
+#plus2Chemistry li a,
+#plus3Physics li a,
+#plus3Chemistry li a ,
+#engineeringDropdown li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+#plus2Physics li a:hover,
+#plus2Chemistry li a:hover,
+#plus3Physics li a:hover,
+#plus3Chemistry li a:hover ,
+#engineeringDropdown li a:hover {
+  background-color: #495057;
+  color: #fff;
+}
     @media (max-width: 992px) {
       .sidebar {
         position: fixed;
@@ -49,6 +113,40 @@
         display: block;
       }
     }
+    .card {
+    /* width: 100%; Ensures responsive width */
+    max-height: 300px; /* Fixed height for uniformity */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 260px;
+  }
+
+  .card-img-top {
+    height: 120px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical centering */
+    align-items: center;     /* horizontal centering */
+    text-align: center;
+    padding: 0.75rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .card-text {
+    font-size: 0.875rem;
+    margin-bottom: 0;
+  }
+  
   </style>
 </head>
 <body>
@@ -86,34 +184,196 @@
     <div class="row">
       <!-- Sidebar -->
       <nav class="col-lg-2 bg-dark sidebar d-lg-block" id="sidebar">
-        <div class="p-3">
-          <h5 class="text-white">Explore Products</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#plus2Menu" role="button" aria-expanded="false" aria-controls="plus2Menu">
-                Plus 2 <i class="fas fa-chevron-down float-end"></i>
-              </a>
-              <div class="collapse" id="plus2Menu">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="#" class="nav-link">Physics</a></li>
-                  <li><a href="#" class="nav-link">Chemistry</a></li>
-                </ul>
-              </div>
+        <div class="p-3 text-white">
+          <h5 class="mt-5">Explore Products</h5>
+      
+          <!-- Science Section -->
+          <div class="sidebar-item" onclick="toggleDropdown('scienceDropdown')">
+            <span class="chevron">▶</span> Science
+          </div>
+          <ul id="scienceDropdown" class="dropdown list-unstyled ms-3">
+            
+            <!-- +2 Section -->
+            <li onclick="toggleDropdown('sciencePlus2')" class="sidebar-item">
+              <span class="chevron">▶</span> +2
             </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#plus3Menu" role="button" aria-expanded="false" aria-controls="plus3Menu">
-                Plus 3 <i class="fas fa-chevron-down float-end"></i>
-              </a>
-              <div class="collapse" id="plus3Menu">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="#" class="nav-link">+3 Physics</a></li>
-                  <li><a href="#" class="nav-link">+3 Chemistry & Biology</a></li>
-                </ul>
-              </div>
+            <ul id="sciencePlus2" class="dropdown list-unstyled ms-3">
+              
+              <!-- +2 Physics -->
+              <li onclick="toggleDropdown('plus2Physics')" class="sidebar-item">
+                <span class="chevron sidebar-item">▶</span> Physics
+              </li>
+             
+              <ul id="plus2Physics" class="dropdown list-unstyled ms-3"></ul>
+<script>
+
+const plus2Physics = document.getElementById('plus2Physics');
+
+const items = [
+  { title: 'Inclined Plane 3', link: './products-page/plus2product/InclinedPlane3.html' },
+  { title: 'Inertia Table', link: './products-page/plus2product/Inertia-Table.html' },
+  { title: 'Torsion Pendulum', link: './products-page/plus2product/torsion-pendulum.html' },
+  { title: "Kater's Reversible Pendulum", link: './products-page/plus2product/KatertsReversible-Pendulum.html' },
+  { title: "Simple Pendulum Stand", link: './products-page/plus2product/Simple-Pendulum-Stand.html' },
+  { title: "Kater's Reversible Pendulum", link: './products-page/plus2product/KatertsReversible-Pendulum.html' },
+  { title: "Compound Bar Pendulum", link: './products-page/plus2product/Compound-Bar-Pendulum.html' },
+  { title: "Young's Modulus App(Searl's)", link: './products-page/plus2product/Youngs-Modulus-App.html' },
+  { title: "Parallelogram of Forces App", link: './products-page/plus2product/parallelogram.html' },
+  {title:"Rising Table Apparatus(SLow Motion Stand)", link:"./products-page/plus2product/rising-table.html"},
+  {title:"Jaeger's Surface Tension Apparatus", link:"./products-page/plus2product/jaeger-surface.html"},
+  {title:"Viscosity Apparatus Stoke's Method", link:"./products-page/plus2product/viscosity.html"},
+  {title:"Sonometer", link:"./products-page/plus2product/snometer.html"},
+  {title:"Wave Motion Apparatus", link:"./products-page/plus2product/wave-motion.html"},
+  {title:"Tuning Fork Welch Type Medium", link:"./products-page/plus2product/tuning-fork-medium.html"},
+  {title:"Resonance  Apparatus", link:"./products-page/plus2product/resonance.html"},
+  {title:"Resistance in Series or Parallel Kit", link:"./products-page/plus2product/resistance-in-series.html"},
+  {title:"Triode Valve Characteristic Apparatus", link:"./products-page/plus2product/triod-value.html"},
+  {title:"Ohm's Law Apparatus", link:"./products-page/plus2product/ohms-law.html"},
+  {title:"PN Junction Diode Characteristic Apparatus", link:"./products-page/plus2product/pn-junction.html"},
+  {title:"Zener  Diode  Characteristic Apparatus", link:"./products-page/plus2product/zener-diode.html"},
+  {title:"Transistor Characteristic Apparatus", link:"./products-page/plus2product/transistor.html"},
+  {title:"Half Wave/Full Wave & bridge Rectifier", link:"./products-page/plus2product/half-wave-rectifier.html"},
+  {title:"Leclanche Cell Apparatus", link:"./products-page/plus2product/leclanche-cell.html"},
+  {title:"Verification  Of KCL and KVL", link:"./products-page/plus2product/verify-kcl-kvl.html"},
+  {title:"Solar Cell Characteristic Apparatus", link:"./products-page/plus2product/solar-cell.html"},
+  {title:"Daniel Cell Apparatus", link:"./products-page/plus2product/daniel-cell.html"},
+  {title:"IC  Regulated  Battery Eliminator", link:"./products-page/plus2product/ic-regulatorbattery.html"},
+  {title:"Micro-Ammeter", link:"./products-page/plus2product/micro-ammeter.html"},
+  {title:"Voltmeter", link:"./products-page/plus2product/voltmeter.html"},
+  {title:"Galvanometer", link:"./products-page/plus2product/galvanometer.html"},
+  {title:"Rheostat 4.4 cm Dia Porcelain Tube", link:"./products-page/plus2product/rheostat-tube.html"},
+  {title:"Tangent Galvanometer", link:"./products-page/plus2product/tangent-galvanometer.html"},
+  {title:"Tangent Galvanometer Export Quality", link:"./products-page/plus2product/tangentgalvanometer.html"},
+  {title:"Spectrometer  Standrad", link:"./products-page/plus2product/spectrometer-standard.html"},
+  {title:"Optical Bench Double Rod", link:"./products-page/plus2product/optical-bench.html"},
+  {title:"Travelling Microscope SSA-41", link:"./products-page/plus2product/travelling-microscope.html"},
+  {title:"Glass Slab", link:"./products-page/plus2product/glass-slab.html"},
+  {title:"Glass Prism", link:"./products-page/plus2product/glass-prism.html"},
+  {title:"Spectrometer Prism", link:"./products-page/plus2product/spectrometer-prism.html"},
+  {title:"Physical Balance", link:"./products-page/plus2product/physical-balance.html"},
+  {title:"Analytical Balance", link:"./products-page/plus2product/analytical-balance.html"},
+  {title:"Potentiometer 10 wire", link:"./products-page/plus2product/potentiometer.html"},
+  {title:"Meter Bridge", link:"./products-page/plus2product/meter-bridge.html"},
+  {title:"Resistance Box", link:"./products-page/plus2product/resistance-box.html"},
+  {title:"Resistance Coil", link:"./products-page/plus2product/resistance-coil.html"},
+  {title:"Resistance Box Plug Type(High Value)", link:"./products-page/plus2product/resistance-box-high.html"},
+  {title:"Vernier  Calipers", link:"./products-page/plus2product/vernier-calipers.html"},
+  {title:"Micrometer Screw Gauge", link:"./products-page/plus2product/micrometer.html"},
+  {title:"Shperometer Pye Type Double Disc", link:"./products-page/plus2product/spectrometer-standard.html"},
+  {title:"Concave and Convex Mirror", link:"./products-page/plus2product/concave-convex-mirror.html"},
+  {title:"Double Convex Lens", link:"./products-page/plus2product/double-convex-lens.html"},
+  {title:"Magnifiers", link:"./products-page/plus2product/magnifiers.html"},
+  {title:"Double Concave Lens", link:"./products-page/plus2product/double-concave-lens.html"},
+  {title:"Digital Multimeter", link:"./products-page/plus2product/digital-multimeter.html"},
+
+];
+
+
+// Render all items
+items.forEach(item => {
+    const li = document.createElement('li');
+    li.innerHTML = `<a href="${item.link}" class="text-white">${item.title}</a>`;
+    plus2Physics.appendChild(li);
+  });
+</script>
+
+
+              <!-- +2 Chemistry -->
+              <li onclick="toggleDropdown('plus2Chemistry')" class="sidebar-item">
+                <span class="chevron sidebar-item">▶</span> Chemistry
+              </li>
+              <ul id="plus2Chemistry" class="dropdown list-unstyled ms-3"></ul>
+              <script>
+                const plus2Chemistry = document.getElementById('plus2Chemistry');
+                
+                const chemistryItems = [
+                  { title: "Digital pH Meter", link: "./products-page/plustwo-che-products/Digitalphmeter.html" },
+                  { title: "Digital Conductivity/TDS Meter", link: "./products-page/plustwo-che-products/digital-conductivemeter.html" },
+                  { title: "Digital Photo Colorimeter", link: "./products-page/plustwo-che-products/digital-colorimeter.html" },
+                  { title: "Digital Melting Point Apparatus", link: "./products-page/plustwo-che-products/digital-melting-point-apparatus.html" },
+                  { title: "HOT Air Oven", link: "./products-page/plustwo-che-products/hot-air-oven.html" },
+                  { title: "Incubator", link: "./products-page/plustwo-che-products/incubator.html" },
+                  { title: "Water Bath Rectangular", link: "./products-page/plustwo-che-products/water-bath.html" },
+                  { title: "Heating Mental", link: "./products-page/plustwo-che-products/heating-mental.html" },
+                  { title: "Hot Plate Round", link: "./products-page/plustwo-che-products/hot-plate.html" },
+                  { title: "Clinical Centrifuge", link: "./products-page/plustwo-che-products/clinical-centrifuge.html" },
+                  { title: "Spirit Lamp Aluminium", link: "./products-page/plustwo-che-products/spirit-lamp-aluminium.html" },
+                  {title:"Spirit Lamp Brass", link:"./products-page/plustwo-che-products/spirit-lamp-brass.html"},
+                  {title:"Spirit Lamp Stainless Steel", link:"./products-page/plustwo-che-products/spirit-lamp-stainless-steel.html"},
+                  {title:"Blow Pipe Brass", link:"./products-page/plustwo-che-products/blow-pipe-brass.html"},
+                  {title:"Defflagrating Spoon", link:"./products-page/plustwo-che-products/defflagrating-spoon.html"},
+                  {title:"Test Tube Holder", link:"./products-page/plustwo-che-products/test-tube-holder.html"},
+                  {title:"Test Tube Holder Cross Pattern", link:"./products-page/plustwo-che-products/test-tube-holder-cross-pattern.html"},
+                  {title:"Test Tube Holder Stainless Steel", link:"./products-page/plustwo-che-products/test-tube-holder-stainless-steel.html"},
+                  {title:"ESR Stand", link:"./products-page/plustwo-che-products/esr-stand.html"},
+                  {title:"Crucible Tong", link:"./products-page/plustwo-che-products/crucible-tong.html"},
+                  {title:"Wire Gauge", link:"./products-page/plustwo-che-products/wire-gauge.html"},
+                  {title:"Spatula Stainless Steel", link:"./products-page/plustwo-che-products/spatula-stainless-steel.html"},
+                  {title:"Water Glass", link:"./products-page/plustwo-che-products/water-glass.html"},
+                  {title:"Water Bath", link:"./products-page/plustwo-che-products/water-bath.html"},
+                  
+
+    
+                ];
+                
+                chemistryItems.forEach(item => {
+                  const li = document.createElement('li');
+                  li.innerHTML = `<a href="${item.link}" class="text-white">${item.title}</a>`;
+                  plus2Chemistry.appendChild(li);
+                });
+                </script>
+                
+
+              <!-- <ul id="plus2Chemistry" class="dropdown list-unstyled ms-3">
+                <li><a href="atomic_structure.html" class="text-white">Atomic Structure</a></li>
+                <li><a href="periodic_table.html" class="text-white">Periodic Table</a></li>
+                <li><a href="chemical_bonding.html" class="text-white">Chemical Bonding</a></li>
+                <li><a href="acid_base.html" class="text-white">Acids & Bases</a></li>
+              </ul> -->
+            </ul>
+      
+            <!-- +3 Section -->
+            <li onclick="toggleDropdown('sciencePlus3')" class="sidebar-item">
+              <span class="chevron sidebar-item">▶</span> +3
             </li>
+            <ul id="sciencePlus3" class="dropdown list-unstyled ms-3">
+              <!-- +3 Physics -->
+              <li onclick="toggleDropdown('plus3Physics')" class="sidebar-item">
+                <span class="chevron">▶</span> Physics
+              </li>
+              <ul id="plus3Physics" class="dropdown list-unstyled ms-3">
+                <li><a href="quantum.html" class="text-white">Quantum Physics</a></li>
+                <li><a href="nuclear.html" class="text-white">Nuclear Physics</a></li>
+                <li><a href="electrodynamics.html" class="text-white">Electrodynamics</a></li>
+                <li><a href="solid_state.html" class="text-white">Solid State Physics</a></li>
+              </ul>
+      
+              <!-- +3 Chemistry -->
+              <li onclick="toggleDropdown('plus3Chemistry')" class="sidebar-item">
+                <span class="chevron">▶</span> Chemistry
+              </li>
+              <ul id="plus3Chemistry" class="dropdown list-unstyled ms-3">
+                <li><a href="organic.html" class="text-white">Organic Chemistry</a></li>
+                <li><a href="inorganic.html" class="text-white">Inorganic Chemistry</a></li>
+                <li><a href="physical.html" class="text-white">Physical Chemistry</a></li>
+                <li><a href="biochemistry.html" class="text-white">Biochemistry</a></li>
+              </ul>
+            </ul>
+          </ul>
+      
+          <!-- Engineering Section -->
+          <div class="sidebar-item" onclick="toggleDropdown('engineeringDropdown')">
+            <span class="chevron sidebar-item {
+              cursor: pointer;
+            }">▶</span> Engineering
+          </div>
+          <ul id="engineeringDropdown" class="dropdown list-unstyled ms-3 sidebar-item">
+            <li><a href="#" class="text-white sidebar-item">Mechanical</a></li>
+            <li><a href="#" class="text-white sidebar-item">Electrical</a></li>
           </ul>
         </div>
       </nav>
+      
 
       <!-- Main Content -->
       <main class="col-lg-10 ms-auto px-4 py-4">
@@ -130,10 +390,14 @@
 
 
         <!-- Products Section -->
-        <h2>Digital Holography Microscopes</h2>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+<!-- Products will be rendered here -->
+<div id="product-sections"></div>
+
+
+        <!-- <h2>Digital Holography Microscopes</h2> -->
+        <!-- <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> -->
           <!-- Repeat this card for each product -->
-          <div class="col">
+          <!-- <div class="col">
             <div class="card h-100">
               <img src="https://th.bing.com/th/id/OIP.tNPLLhL_Tc-2GDFnXbOSyQHaFF?w=286&h=197&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="card-img-top" alt="Product">
               <div class="card-body">
@@ -159,18 +423,18 @@
                 <p class="card-text">Model X123</p>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- Add more product cards as needed -->
         </div>
-        <div class="d-flex justify-content-end mt-3">
+        <!-- <div class="d-flex justify-content-end mt-3">
           <button class="btn btn-secondary">View More</button>
-        </div>
+        </div> -->
 
         <!-- Another Product Section -->
-        <h2 class="mt-5">Fluorescence Microscopes</h2>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <!-- <h2 class="mt-5">Fluorescence Microscopes</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> -->
           <!-- Repeat this card for each product -->
-          <div class="col">
+          <!-- <div class="col">
             <div class="card h-100">
               <img src="https://th.bing.com/th/id/OIP.tNPLLhL_Tc-2GDFnXbOSyQHaFF?w=286&h=197&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="card-img-top" alt="Product">
               <div class="card-body">
@@ -178,12 +442,12 @@
                 <p class="card-text">Model Y456</p>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- Add more product cards as needed -->
         </div>
-        <div class="d-flex justify-content-end mt-3">
+        <!-- <div class="d-flex justify-content-end mt-3">
           <button class="btn btn-secondary">View More</button>
-        </div>
+        </div> -->
       </main>
     </div>
   </div>
@@ -205,6 +469,66 @@
       sidebar.classList.remove('show');
       overlay.classList.remove('show');
     });
+
+    function toggleDropdown(id) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.classList.toggle('show');
+    }
+  }
+
+
+    const productData = [
+  {
+    sectionTitle: "Digital Holography Microscopes",
+    viewMoreLink: "digital-holography.html",
+    products: [
+      {
+        title: "Product 1",
+        model: "Model X123",
+        image: "https://th.bing.com/th/id/OIP.tNPLLhL_Tc-2GDFnXbOSyQHaFF?w=286&h=197"
+      },
+      // more products
+    ]
+  },
+  {
+    sectionTitle: "Fluorescence Microscopes",
+    viewMoreLink: "fluorescence-microscopes.html",
+    products: [
+      {
+        title: "Product A",
+        model: "Model Y456",
+        image: "https://th.bing.com/th/id/OIP.tNPLLhL_Tc-2GDFnXbOSyQHaFF?w=286&h=197"
+      },
+      // more products
+    ]
+  }
+];
+
+const container = document.getElementById('product-sections');
+
+  productData.forEach(section => {
+    const sectionHTML = `
+      <h2 class="mt-5">${section.sectionTitle}</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        ${section.products.map(product => `
+          <div class="col">
+            <div class="card h-100">
+              <img src="${product.image}" class="card-img-top" alt="${product.title}">
+              <div class="card-body">
+                <h5 class="card-title">${product.title}</h5>
+                <p class="card-text">${product.model}</p>
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    <div class="d-flex justify-content-end mt-3">
+  <a href="${section.viewMoreLink}" class="btn btn-secondary">View More</a>
+</div>
+    `;
+    container.insertAdjacentHTML('beforeend', sectionHTML);
+  });
   </script>
 </body>
 </html>
