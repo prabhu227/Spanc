@@ -184,7 +184,7 @@
     <div class="row">
       <!-- Sidebar -->
       <nav class="col-lg-2 bg-dark sidebar d-lg-block" id="sidebar">
-        <div class="p-3 text-white">
+        <div class="p-3 text-white mt-5">
           <h5 class="mt-5">Explore Products</h5>
       
           <!-- Science Section -->
@@ -289,32 +289,6 @@ items.forEach(item => {
                 const plus2Chemistry = document.getElementById('plus2Chemistry');
                 
                 const chemistryItems = [
-                  // { title: "Digital pH Meter", link: "./products-page/plustwo-che-products/Digitalphmeter.html" },
-                  // { title: "Digital Conductivity/TDS Meter", link: "./products-page/plustwo-che-products/digital-conductivemeter.html" },
-                  // { title: "Digital Photo Colorimeter", link: "./products-page/plustwo-che-products/digital-colorimeter.html" },
-                  // { title: "Digital Melting Point Apparatus", link: "./products-page/plustwo-che-products/digital-melting-point-apparatus.html" },
-                  // { title: "HOT Air Oven", link: "./products-page/plustwo-che-products/hot-air-oven.html" },
-                  // { title: "Incubator", link: "./products-page/plustwo-che-products/incubator.html" },
-                  // { title: "Water Bath Rectangular", link: "./products-page/plustwo-che-products/water-bath.html" },
-                  // { title: "Heating Mental", link: "./products-page/plustwo-che-products/heating-mental.html" },
-                  // { title: "Hot Plate Round", link: "./products-page/plustwo-che-products/hot-plate.html" },
-                  // { title: "Clinical Centrifuge", link: "./products-page/plustwo-che-products/clinical-centrifuge.html" },
-                  // { title: "Spirit Lamp Aluminium", link: "./products-page/plustwo-che-products/spirit-lamp-aluminium.html" },
-                  // {title:"Spirit Lamp Brass", link:"./products-page/plustwo-che-products/spirit-lamp-brass.html"},
-                  // {title:"Spirit Lamp Stainless Steel", link:"./products-page/plustwo-che-products/spirit-lamp-stainless-steel.html"},
-                  // {title:"Blow Pipe Brass", link:"./products-page/plustwo-che-products/blow-pipe-brass.html"},
-                  // {title:"Defflagrating Spoon", link:"./products-page/plustwo-che-products/defflagrating-spoon.html"},
-                  // {title:"Test Tube Holder", link:"./products-page/plustwo-che-products/test-tube-holder.html"},
-                  // {title:"Test Tube Holder Cross Pattern", link:"./products-page/plustwo-che-products/test-tube-holder-cross-pattern.html"},
-                  // {title:"Test Tube Holder Stainless Steel", link:"./products-page/plustwo-che-products/test-tube-holder-stainless-steel.html"},
-                  // {title:"ESR Stand", link:"./products-page/plustwo-che-products/esr-stand.html"},
-                  // {title:"Crucible Tong", link:"./products-page/plustwo-che-products/crucible-tong.html"},
-                  // {title:"Wire Gauge", link:"./products-page/plustwo-che-products/wire-gauge.html"},
-                  // {title:"Spatula Stainless Steel", link:"./products-page/plustwo-che-products/spatula-stainless-steel.html"},
-                  // {title:"Water Glass", link:"./products-page/plustwo-che-products/water-glass.html"},
-                  // {title:"Water Bath", link:"./products-page/plustwo-che-products/water-bath.html"},
-                  // {title:""}
-                  
                   
   {title: "Black Phosphorus Model", link: "./products-page/plustwo-che-products/black-phosphorus-model.html"},
   {title: "Blow Pipe Brass", link: "./products-page/plustwo-che-products/blow-pipe-brass.html"},
@@ -411,10 +385,162 @@ items.forEach(item => {
                 <span class="chevron">▶</span> Physics
               </li>
               <ul id="plus3Physics" class="dropdown list-unstyled ms-3">
-                <li><a href="quantum.html" class="text-white">Quantum Physics</a></li>
+                <!-- <li><a href="quantum.html" class="text-white">Quantum Physics</a></li>
                 <li><a href="nuclear.html" class="text-white">Nuclear Physics</a></li>
                 <li><a href="electrodynamics.html" class="text-white">Electrodynamics</a></li>
-                <li><a href="solid_state.html" class="text-white">Solid State Physics</a></li>
+                <li><a href="solid_state.html" class="text-white">Solid State Physics</a></li> -->
+               
+    <!-- Mechanics Lab
+                <li onclick="toggleDropdown('mechanicsLab')" class="sidebar-item">
+                  <span class="chevron">▶</span> Mechanics Lab
+                </li>
+                <ul id="mechanicsLab" class="dropdown list-unstyled ms-3">
+                  <li><a href="labs/mechanics/projectile.html" class="text-white">Projectile Motion</a></li>
+                  <li><a href="labs/mechanics/pendulum.html" class="text-white">Simple Pendulum</a></li>
+                  <li><a href="labs/mechanics/friction.html" class="text-white">Friction</a></li>
+                </ul> -->
+<!-- Mechanics Lab -->
+<li onclick="toggleDropdown('mechanicsLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Mechanics Lab
+</li>
+<ul id="mechanicsLab" class="dropdown list-unstyled ms-3"></ul>
+<script>
+  const mechanicsLabItems = [
+  { title: "MECHANICS LAB INdotek ", link: "./products-page/plus3-physics-equipment/mechanics-lab.html" },
+  { title: "Capillary Rise Apparatus", link: "./products-page/plus3-physics-equipment/capillary-rise-apparatus.html" },
+  { title: "Sextant Apparatus", link: "./products-page/plus3-physics-equipment/sextant-apparatus.html" },
+  { title: "Fly Wheel Apparatus", link: "./labs/mechanics/SPML-003-fly-wheel-apparatus.docx" },
+  { title: "Optical Lever Apparatus", link: "./labs/mechanics/SPML-004-optical-lever-apparatus.docx" },
+  { title: "Maxwell Needle", link: "./labs/mechanics/SPML-005-maxwell-needle.docx" },
+  { title: "Searle's Method (Elastic Constants)", link: "./labs/mechanics/SPML-006-searles-method.docx" },
+  { title: "Searle's Method A", link: "./labs/mechanics/SPML-006A-searles-method-a.docx" },
+  { title: "Bar Pendulum (Advance)", link: "./labs/mechanics/SPML-007A-bar-pendulum-advance.docx" },
+  { title: "Bar Pendulum (Basic)", link: "./labs/mechanics/SPML-007B-bar-pendulum-basic.docx" },
+  { title: "Bar Pendulum (Digital Counter)", link: "./labs/mechanics/WSPML-007DC-bar-pendulum-digital-counter.docx" },
+  { title: "Kater's Pendulum (Advance)", link: "./labs/mechanics/SPML-008A-katers-pendulum-advance.docx" },
+  { title: "Kater's Pendulum (Basic)", link: "./labs/mechanics/SPML-008B-katers-pendulum-basic.docx" },
+  { title: "Kater's Pendulum (Digital)", link: "./labs/mechanics/SPML-008D-katers-pendulum-digital.docx" },
+  { title: "Spring Constant Apparatus", link: "./labs/mechanics/SPML-009-spring-constant-apparatus.docx" },
+  { title: "Poiseuille's Method", link: "./labs/mechanics/SPML-010-poiseuilles-method.docx" },
+  { title: "Barton Apparatus (Horizontal)", link: "./labs/mechanics/SPML-011H-barton-apparatus-horizontal.docx" },
+  { title: "Barton Apparatus (Vertical)", link: "./labs/mechanics/SPML-011V-barton-apparatus-vertical.docx" },
+  { title: "Bending of Beam (Double)", link: "./labs/mechanics/SPML-012-bending-of-beam-double.docx" },
+  { title: "Bending of Beam (Single)", link: "./labs/mechanics/SPML-012-bending-of-beam-single.docx" },
+  { title: "Sonometer (Basic)", link: "./labs/mechanics/SPML-013B-sonometer-basic.docx" },
+  { title: "Sonometer (Electric)", link: "./labs/mechanics/SPML-013E-sonometer-electric.docx" },
+  { title: "Young's Modulus of Rubber", link: "./labs/mechanics/SPML-014-youngs-modulus-rubber.docx" },
+  { title: "Magnifying Power of Telescope", link: "./labs/mechanics/SPML-015-magnifying-power-telescope.docx" },
+  { title: "Radius of Curvature of Concave/Convex Mirror", link: "./labs/mechanics/SPML-016-radius-of-curvature-mirror.docx" },
+  { title: "Simple Pendulum", link: "./labs/mechanics/SPML-017-simple-pendulum.docx" },
+  { title: "Lami's Theorem", link: "./labs/mechanics/SPML-018-lamis-theorem.docx" },
+  { title: "Stoke's Apparatus", link: "./labs/mechanics/SPML-019-stokes-apparatus.docx" },
+  { title: "Optical Bench", link: "./labs/mechanics/SPML-020-optical-bench.docx" },
+  { title: "Half Deflection Method & Figure of Merit", link: "./labs/mechanics/SPML-021-half-deflection-method.docx" },
+];
+
+const mechanicsLabElement = document.getElementById('mechanicsLab');
+mechanicsLabItems.forEach(item => {
+  const li = document.createElement('li');
+  li.innerHTML = `<a href="${item.link}" class="text-white">${item.title}</a>`;  // Removed target="_blank"
+  mechanicsLabElement.appendChild(li);
+});
+
+
+</script>
+                 <!-- Electricity & Magnetism & EMT Lab -->
+    <li onclick="toggleDropdown('emLab')" class="sidebar-item">
+      <span class="chevron">▶</span> Electricity & Magnetism Lab
+    </li>
+    <ul id="emLab" class="dropdown list-unstyled ms-3">
+      <li><a href="labs/emlab/ohms-law.html" class="text-white">Ohm's Law</a></li>
+      <li><a href="labs/emlab/rc-circuit.html" class="text-white">RC Circuit</a></li>
+    </ul>
+    <!-- Thermal physics & statiical Mechanisum -->
+
+    <li onclick="toggleDropdown('thermalLab')" class="sidebar-item">
+      <span class="chevron">▶</span> Thermal Physics Lab
+    </li>
+    <ul id="thermalLab" class="dropdown list-unstyled ms-3">
+      <li><a href="labs/thermal/heat-transfer.html" class="text-white">Heat Transfer</a></li>
+      <li><a href="labs/thermal/thermodynamics.html" class="text-white">Thermodynamics</a></li>
+      <li><a href="labs/thermal/heat-engine.html" class="text-white">Heat Engine</a></li>
+      </ul>
+<!-- Wave Optics -->
+
+<li onclick="toggleDropdown('waveOpticsLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Wave Optics Lab
+</li>
+<ul id="waveOpticsLab" class="dropdown list-unstyled ms-3">
+  <li><a href="labs/wave/youngs-experiment.html" class="text-white
+">Young's Experiment</a></li>
+  <li><a href="labs/wave/interference.html" class="text-white
+">Interference</a></li>
+</ul>
+
+<!-- Digital Syatem & Application -->
+<li onclick="toggleDropdown('digitalSystemLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Digital System Lab
+</li>
+<ul id="digitalSystemLab" class="dropdown list-unstyled ms-3">
+  <li><a href="labs/digital/logic-gates.html" class="text-white">Logic Gates</a></li>
+  <li><a href="labs/digital/flip-flops.html" class="text-white">Flip Flops</a></li>
+  </ul>
+  <!-- Elements of Mordern Physics -->
+<li onclick="toggleDropdown('modernPhysicsLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Modern Physics Lab
+</li>
+<ul id="modernPhysicsLab" class="dropdown list-unstyled ms-3">
+  <li><a href="labs/modern/photoelectric.html" class="text-white
+">Photoelectric Effect</a></li>
+  <li><a href="labs/modern/atomic-spectra.html" class="text-white">Atomic Spectra</a></li>
+  <li><a href="labs/modern/nuclear-decay.html" class="text-white">Nuclear Decay</a></li>
+</ul>
+<!-- Analog System & Application -->
+<li onclick="toggleDropdown('analogSystemLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Analog System Lab
+</li>
+<ul id="analogSystemLab" class="dropdown list-unstyled ms-3">
+  <li><a href="labs/analog/rc-circuit.html" class="text-white">RC Circuit</a></li>
+  <li><a href="labs/analog/rcl-circuit.html" class="text-white">RCL Circuit</a></li>
+  <li><a href="labs/analog/oscilloscope.html" class="text-white">Oscilloscope</a></li>
+  </ul>
+  <!-- Solid State Physics -->
+<li onclick="toggleDropdown('solidStateLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Solid State Physics Lab
+</li>
+<ul id="solidStateLab" class="dropdown list-unstyled ms-3">
+  <li><a href="labs/solid-state/crystal-structure.html" class="text-white">Crystal Structure</a></li>
+  <li><a href="labs/solid-state/semiconductors.html" class="text-white">Semiconductors</a></li>
+  <li><a href="labs/solid-state/magnetic-materials.html" class="text-white">Magnetic Materials</a></li>
+  </ul>
+
+<!-- Quantum Mechanics -->
+<li onclick="toggleDropdown('quantumLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Quantum Mechanics
+</li>
+<ul id="quantumLab" class="dropdown list-unstyled ms-3">
+  <li><a href="labs/quantum/photoelectric.html" class="text-white">Photoelectric Effect</a></li>
+  <li><a href="labs/quantum/double-slit.html" class="text-white">Double Slit Experiment</a></li>
+</ul>
+<!-- Electromagnetic Theory -->
+<li onclick="toggleDropdown('electromagneticLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Electromagnetic Theory
+</li>
+<ul id="electromagneticLab" class="dropdown list-unstyled ms-3">
+  <li><a href="labs/electromagnetic/magnetic-field.html" class="text-white">Magnetic Field</a></li>
+  <li><a href="labs/electromagnetic/electric-field.html" class="text-white">Electric Field</a></li>
+  <li><a href="labs/electromagnetic/induction.html" class="text-white">Electromagnetic Induction</a></li>
+</ul>
+<!-- Physics Device & Instruments Lab -->
+<li onclick="toggleDropdown('physicsDeviceLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Physics Device & Instruments Lab
+</li>
+<ul id="physicsDeviceLab" class="dropdown list-unstyled ms-3">
+  <li><a href="labs/physics-device/oscilloscope.html" class="text-white">Oscilloscope</a></li>
+  <li><a href="labs/physics-device/multimeter.html" class="text-white">Multimeter</a></li>
+  <li><a href="labs/physics-device/signal-generator.html" class="text-white">Signal Generator</a></li>
+</ul>
+
               </ul>
       
               <!-- +3 Chemistry -->
@@ -429,7 +555,10 @@ items.forEach(item => {
               </ul>
             </ul>
           </ul>
-      
+      <script>function toggleDropdown(id) {
+        const el = document.getElementById(id);
+        if (el) el.classList.toggle('d-none');
+      }</script>
           <!-- Engineering Section -->
           <div class="sidebar-item" onclick="toggleDropdown('engineeringDropdown')">
             <span class="chevron sidebar-item {

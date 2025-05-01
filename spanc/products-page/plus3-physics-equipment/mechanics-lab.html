@@ -2,17 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore Physics Mechanics Lab experiments with model numbers and specifications. Ideal for +3 Science and educational labs." />
-  <meta name="keywords" content="Physics Lab, Mechanics Lab, Experiments, Science Equipment, Educational Lab Tools, Model Numbers" />
-  <meta name="author" content="Your Name or Company" />
-  <title>Physics Mechanics Lab Experiments</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Physics lab experiments in Mechanics and Quantum Physics.">
+  <meta name="keywords" content="Mechanics Lab, Quantum Mechanics, Physics Experiments, Lab Equipment">
+  <meta name="author" content="Physics Lab">
+  <title>Mechanics Lab</title>
   <link rel="icon" href="../assets/images/spancotek LOGO[1].png" type="image/x-icon" />
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     #particles-bg {
       position: fixed;
@@ -21,270 +20,223 @@
       z-index: -1;
       width: 100%;
       height: 100%;
-      filter: blur(3px); /* ⬅️ This is the blur layer */
-      pointer-events: none; /* ⬅️ Allows clicks to pass through */
-    }
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #f4f8fa;
-      
+      filter: blur(3px);
+      pointer-events: none;
     }
     .ubuntu-medium {
       font-family: "Ubuntu", sans-serif;
       font-weight: 500;
-      font-style: normal;
-    }
-    .experiment-card {
-      border-radius: 15px;
-      background-color: #fff;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s;
-    }
-
-    .experiment-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .model-no {
-      font-weight: bold;
-      color: #0d6efd;
-    }
-
-    .optional {
-      font-style: italic;
-      color: #555;
-    }
-    .modal-content{
-      background-color: #0d6efd;
-      position: relative;
-      z-index: 100;
     }
   </style>
 </head>
 <body>
 
-  <div class="container py-5">
-    <div class="text-center mb-5" data-aos="fade-down">
-      <h1 class="display-5 fw-bold">Physics: Mechanics Lab Experiments</h1>
-      <p class="lead">Explore detailed specifications and model numbers of key mechanics lab apparatus.</p>
-    </div>
-
-    <div class="row" id="experiment-list"></div>
-  </div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="specificationModal" tabindex="-1" aria-labelledby="specificationModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 500px;">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="specificationModalLabel">Experiment Specifications</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="specificationDetails">
-          <!-- Specifications will be dynamically inserted here -->
-        </div>
-      </div>
-    </div>
-  </div>  
-  <!-- Bootstrap + AOS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
-
-  <!-- JavaScript Mapping -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-  const experiments = [
-  {
-    title: "To study surface tension by capillary rise method",
-    model: "SPML-001",
-    
-    optional: ["Travelling Microscope"],
-    image: "https://img.brainkart.com/imagebk37/5UJm5N2.jpg"
-  },
-  {
-    title: "To determine the Height of a Building using a Sextant",
-    model: "SPML-002",
-    
-    optional: ["Measuring Tape"],
-    image: "https://i.ytimg.com/vi/Urg_hRrdts0/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGHIgWig-MA8=&rs=AOn4CLB2YuwhRfCXbwelNJE-h9VAlOSpWg"
-  },
-  {
-    title: "To determine the Moment of Inertia of a Flywheel",
-    model: "SPML-003",
-    
-    optional: ["Slotted Weights", "Meter Scale", "Digital Stopwatch"],
-    image: "https://th.bing.com/th/id/OIP.ATvAXVHQ-8DVkkEOcvsc1QHaHa?rs=1&pid=ImgDetMain"
-  },
-  {
-    title: "To determine Young's Modulus using Optical Lever Method",
-    model: "SPML-004",
-   
-    optional: ["Cylindrical base, Telescope", "Screw Gauge", "Meter Scale"],
-    image: "https://th.bing.com/th/id/OIP.mcip0FUrBtp4-zz5VQcrgQHaEn?rs=1&pid=ImgDetMain"
-  },
-  {
-    title: "To determine Modulus of Rigidity by Maxwell's Needle",
-    model: "SPML-005",
-   
-    optional: ["Screw Gauge", "Meter Scale", "Digital Balance", "Stopwatch"],
-    image: "https://vashishatlabs.com/public/images/uploads/product/vl-product-0.16320700%201720182173.png"
-  },
-  {
-    title: "To determine Elastic Constants using Searle's Method",
-    model: "SPML-006",
-    
-    optional: ["Stand for Searle’s Apparatus", "Vernier Caliper", "Screw Gauge"],
-    image: "https://th.bing.com/th/id/OIP.i20QCspgc8ntYPPUOG8C-wHaG6?rs=1&pid=ImgDetMain"
-  },
-  {
-    title: "To study surface tension by capillary rise method",
-    model: "SPML-001",
-    
-    optional: ["Travelling Microscope"],
-    image: "path/to/image/SPML-001.jpg"
-  },
-  {
-    title: "To determine the Height of a Building using a Sextant",
-    model: "SPML-002",
-    
-    optional: ["Measuring Tape"],
-    image: "path/to/image/SPML-002.jpg"
-  },
-  {
-    title: "To determine the Moment of Inertia of a Flywheel",
-    model: "SPML-003",
-    
-    optional: ["Slotted Weights", "Meter Scale", "Digital Stopwatch"],
-    image: "path/to/image/SPML-003.jpg"
-  },
-  {
-    title: "To determine Young's Modulus using Optical Lever Method",
-    model: "SPML-004",
-    
-    optional: ["Cylindrical base, Telescope", "Screw Gauge", "Meter Scale"],
-    image: "path/to/image/SPML-004.jpg"
-  },
-  {
-    title: "To determine Modulus of Rigidity by Maxwell's Needle",
-    model: "SPML-005",
-   
-    optional: ["Screw Gauge", "Meter Scale", "Digital Balance", "Stopwatch"],
-    image: "path/to/image/SPML-005.jpg"
-  },
-  {
-    title: "To determine Elastic Constants using Searle's Method",
-    model: "SPML-006",
-    
-    optional: ["Stand for Searle’s Apparatus", "Vernier Caliper", "Screw Gauge"],
-    image: "path/to/image/SPML-006.jpg"
-  },
-  {
-    title: "To determine g by Bar Pendulum",
-    model: "SPML-007",
-   
-    optional: ["Meter Scale (100cm)"],
-    image: "path/to/image/SPML-007.jpg"
-  },
-  {
-    title: "To determine g by Kater's Pendulum",
-    model: "SPML-008",
-   
-    optional: ["Stopwatch"],
-    image: "path/to/image/SPML-008.jpg"
-  },
-  {
-    title: "To study the Motion of a Spring and calculate Spring Constant",
-    model: "SPML-009",
-   
-    optional: ["Weights", "Stopwatch"],
-    image: "path/to/image/SPML-009.jpg"
-  },
-  {
-    title: "To determine Coefficient of Viscosity by Capillary Flow Method",
-    model: "SPML-010",
-    
-    optional: ["Stopwatch", "Rubber Tube (1m)", "Thermometer"],
-    image: "path/to/image/SPML-010.jpg"
-  },
-  {
-    title: "To determine g and velocity for free fall using Digital Timer",
-    model: "SPML-011",
-  
-    optional: [],
-    image: "path/to/image/SPML-011.jpg"
-  },
-  {
-    title: "To determine Young's Modulus by Double Cantilever",
-    model: "SPML-012",
-    
-    optional: [],
-    image: "path/to/image/SPML-012.jpg"
-  },
-  {
-    title: "To determine Rigidity Modulus by Static Method",
-    model: "SPML-013",
-  
-    optional: [],
-    image: "path/to/image/SPML-013.jpg"
-  }
-];
-
-const listContainer = document.getElementById("experiment-list");
-
-  experiments.forEach((exp, index) => {
-    const card = document.createElement("div");
-    card.className = "col-12 col-md-6 col-lg-4 mb-4";
-    card.setAttribute("data-aos", "fade-up");
-    card.setAttribute("data-aos-delay", `${index * 100}`);
-
-    card.innerHTML = `
-      <div class="p-4 experiment-card h-100">
-  <img src="${exp.image}" alt="Experiment Image" class="img-fluid mb-3 rounded" style="max-height: 200px; object-fit: cover;">
-  <h5>${index + 1}. ${exp.title}</h5>
-  <p class="model-no">Model No: ${exp.model}</p>
-  <p class="optional">Optional Items: ${exp.optional.join(", ") || "None"}</p>
-  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#specsModal${index}">View Specifications</button>
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Mechanics Lab Equipment</h1>
+  <div class="row" id="product-list"></div>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="specsModal${index}" tabindex="-1" aria-labelledby="specsModalLabel${index}" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 500px;">
+<div class="modal fade" id="specModal" tabindex="-1" aria-labelledby="specModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="specsModalLabel${index}">${exp.title}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="specModalLabel">Specifications</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
-        <img src="${exp.image}" class="img-fluid mb-3" alt="Experiment Image" style="object-fit: contain; max-height: 300px; width: 100%;">
-        <h6>Model No: ${exp.model}</h6>
-        <h6>Optional Items:</h6>
-        <p>${exp.optional.join(", ") || "None"}</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <img id="modal-product-image" class="img-fluid mb-4" src="" alt="Product Image" />
+        <h5 id="modal-product-title"></h5>
+        <p id="modal-product-model"></p>
+        <ul id="modal-spec-list" class="list-group list-group-flush"></ul>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Bootstrap JS & jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  const labProducts = [
+    {
+      title: "To study surface tension by capillary rise method",
+      model: "SPML-001",
+      image: "https://example.com/images/capillary-rise.jpg",
+      specs: [
+        "Rising Table: Cast Aluminium 10cm dia with 12cm stem",
+        "Capillary Tube Clamp: 10cm long, with different internal diameter",
+        "9mm Rod attached to Metal Frame",
+        "Beaker included",
+        "Optional: Travelling Microscope"
+      ]
+    },
+    {
+      title: "To determine the Height of a Building using a Sextant with its Stand",
+      model: "SPML-002",
+      image: "https://example.com/images/sextant.jpg",
+      specs: [
+        "Graduated: -5° to 125° into 1° on arc",
+        "Micrometer: 1-minute division on black drum",
+        "Index Mirror: 33x49mm aluminum",
+        "Horizon Mirror: 50mm, half transparent/aluminum",
+        "Shade Glasses: For direct and reflected rays",
+        "Telescope: 4x40mm Galilean monocle",
+        "Includes: Illuminator, 2 dry cells, 2 bulbs, Case",
+        "Tripod Stand (6 ft)",
+        "Optional: Measuring Tape"
+      ]
+    },
+    {
+      title: "To determine the Moment of Inertia of a Flywheel",
+      model: "SPML-003",
+      image: "https://example.com/images/flywheel.jpg",
+      specs: [
+        "Flywheel: Steel disc, 250mm dia x 30mm wide",
+        "Runs on ball bearings",
+        "Engraved mark on periphery",
+        "Bracket for wall mounting",
+        "Supports 10+ revolutions",
+        "Optional: Slotted Weights, Meter Scale, Stopwatch"
+      ]
+    },
+    {
+    title: "Young's Modulus of a Wire by Optical Lever Method",
+    model: "SPML-004",
+    image: "https://via.placeholder.com/400x300?text=Young's+Modulus+Image",  // Add a valid image URL here
+    specs: [
+      "Brass Rod: 1 meter",
+      "G clamps with sharp knife",
+      "2 sets of mirror and holder",
+      "Slotted weight: (4*500g-2kg)",
+      "Optional essential accessories: Cylindrical base with telescope, Screw Gauge, Meter Scale"
+    ]
+  },
+  {
+    title: "Modulus of Rigidity of a Wire by Maxwell's Needle",
+    model: "SPML-005",
+    image: "https://via.placeholder.com/400x300?text=Maxwell's+Needle+Image",  // Add a valid image URL here
+    specs: [
+      "Hollow cylindrical brass tube of length 40cm",
+      "Maxwell's needle, Wall Bracket, Wire",
+      "Optional essential accessories: Screw gauge (Range:0-25 mm), Finish: Metallic, Meter scale (1 meter), Digital Weighing balance, Digital Stopwatch"
+    ]
+  },
+  {
+    title: "Elastic Constants of a Wire by Searle's Method",
+    model: "SPML-006",
+    image: "https://via.placeholder.com/400x300?text=Elastic+Constant+Image",  // Add a valid image URL here
+    specs: [
+      "SS rectangular bars each of length 30cm - 2 nos",
+      "Optional essential accessories: Stand for Searle's Apparatus, Vernier caliper, Screw gauge"
+    ]
+  },
+  {
+    title: "To Determine g by Bar Pendulum",
+    model: "SPML-007",
+    image: "https://via.placeholder.com/400x300?text=Bar+Pendulum+Image",  // Add a valid image URL here
+    specs: [
+      "Brass Bar: 100 x 3.75 x 0.5 cm³ (Drilled with 19 holes at equal distances of 5 cm)",
+      "Wall bracket: Iron",
+      "Optional essential accessories: Meter scale (100cm)"
+    ]
+  },
+
+  {
+    title: "To Determine g by Kater's Pendulum",
+    model: "SPML-008",
+    image: "https://via.placeholder.com/400x300?text=Kater's+Pendulum+Image",  // Add a valid image URL here
+    specs: [
+      "Steel rod: 100 cm in length, 1.2 cm diameter",
+      "SS adjustable masses: 600g & 300g (each)",
+      "Meter scale: length 1m",
+      "Removable sharp knife edges - 2 nos",
+      "Adjustable wooden light masses - 2 nos",
+      "Wall bracket - 1 no",
+      "Optional essential accessories: Stopwatch"
+    ]
+  },
+  {
+    title: "To Study the Motion of a Spring and Calculate Spring Constant",
+    model: "SPML-009",
+    image: "https://via.placeholder.com/400x300?text=Spring+Constant+Image",  // Add a valid image URL here
+    specs: [
+      "Adjustable scale on a stand of 37.5 cm",
+      "Helical spring with pointer",
+      "Weights",
+      "Optional essential accessories: Stopwatch"
+    ]
+  },
+  {
+    title: "To Determine Coefficient of Viscosity of Water by Capillary Flow Method",
+    model: "SPML-010",
+    image: "https://via.placeholder.com/400x300?text=Viscosity+Image",  // Add a valid image URL here
+    specs: [
+      "Constant water level reservoir adjustable on MS chrome plated rod on tripod stand",
+      "Pinch cock, Graduated cylinder 100ml",
+      "Manometer on wooden stand",
+      "Glass capillary tube of length 38 cm on stand",
+      "Optional essential accessories: Stopwatch, Rubber tube of length 1 meter, Thermometer"
+    ]
+  },
+  {
+    title: "To Determine g and Velocity for a Freely Falling Body Using Digital Timing Technique",
+    model: "SPML-011",  // Update the model number as needed
+    image: "https://via.placeholder.com/400x300?text=Freely+Falling+Body+Image",  // Add a valid image URL here
+    specs: [
+      "Electronic Timer: Socket for Gate - 2 nos, Socket for Solenoid - 2 nos",
+      "Toggle switch: 1 no",
+      "Base",
+      "Base rod",
+      "Solenoid Base holding size: 144 x 97 x 113 mm",
+      "Ball dropped having base size: 115 x 16 x 2 mm",
+      "Steel ball size: 12 mm & 18 mm"
+    ]
+  },
+  ];
+
+  const productListContainer = document.getElementById("product-list");
+
+  labProducts.forEach((product, index) => {
+    const productCard = document.createElement("div");
+    productCard.classList.add("col-md-4", "mb-4");
+
+    productCard.innerHTML = `
+      <div class="card h-100">
+        <img src="${product.image}" class="card-img-top" alt="${product.title}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">${product.title}</h5>
+          <p class="card-text">Model: ${product.model}</p>
+          <button class="btn btn-primary mt-auto" data-toggle="modal" data-target="#specModal" onclick="showSpecs(${index})">View Specifications</button>
+        </div>
+      </div>
     `;
-
-    listContainer.appendChild(card);
+    productListContainer.appendChild(productCard);
   });
-});
 
+  function showSpecs(index) {
+    const product = labProducts[index];
+    document.getElementById("modal-product-title").innerText = product.title;
+    document.getElementById("modal-product-model").innerText = "Model: " + product.model;
+    document.getElementById("modal-product-image").src = product.image;
 
+    const specList = document.getElementById("modal-spec-list");
+    specList.innerHTML = "";
+    product.specs.forEach(spec => {
+      const li = document.createElement("li");
+      li.classList.add("list-group-item");
+      li.textContent = spec;
+      specList.appendChild(li);
+    });
+  }
+</script>
 
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+<canvas id="particles-bg"></canvas>
+<script src="/background.js"></script>
 
-    <!-- Background shapes -->
-
-    <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
-
-    <script src="/background.js"></script>
 </body>
 </html>
