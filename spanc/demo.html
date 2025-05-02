@@ -410,11 +410,14 @@ const items = [
                   <li><a href="labs/mechanics/friction.html" class="text-white">Friction</a></li>
                 </ul> -->
 <!-- Mechanics Lab -->
-<li onclick="toggleDropdown('mechanicsLab')" class="sidebar-item">
+<li onclick="renderProductsByCategory('mechanicsLab')" class="sidebar-item">
   <span class="chevron">▶</span> Mechanics Lab
 </li>
-<ul id="mechanicsLab" class="dropdown list-unstyled ms-3"></ul>
-<script>
+<!-- <li onclick="toggleDropdown('mechanicsLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Mechanics Lab
+</li>
+<ul id="mechanicsLab" class="dropdown list-unstyled ms-3"></ul> -->
+<!-- <script>
   const mechanicsLabItems = [
   { title: "MECHANICS LAB INdotek ", link: "./products-page/plus3-physics-equipment/mechanics-lab.html" },
   { title: "Capillary Rise Apparatus", link: "./products-page/plus3-physics-equipment/capillary-rise-apparatus.html" },
@@ -456,7 +459,7 @@ mechanicsLabItems.forEach(item => {
 });
 
 
-</script>
+</script> -->
                  <!-- Electricity & Magnetism & EMT Lab -->
     <li onclick="toggleDropdown('emLab')" class="sidebar-item">
       <span class="chevron">▶</span> Electricity & Magnetism Lab
@@ -558,10 +561,10 @@ mechanicsLabItems.forEach(item => {
                 <span class="chevron">▶</span> Chemistry
               </li>
               <ul id="plus3Chemistry" class="dropdown list-unstyled ms-3">
-                <li><a href="organic.html" class="text-white">Organic Chemistry</a></li>
-                <li><a href="inorganic.html" class="text-white">Inorganic Chemistry</a></li>
-                <li><a href="physical.html" class="text-white">Physical Chemistry</a></li>
-                <li><a href="biochemistry.html" class="text-white">Biochemistry</a></li>
+                <li><a href="./products-page/plusthreecheandbio/analytical.html" class="text-white">Organic Chemistry</a></li>
+                <li><a href="./products-page/plusthreecheandbio/heating-cooling.html" class="text-white">Inorganic Chemistry</a></li>
+                <li><a href="./products-page/plusthreecheandbio/microscope.html" class="text-white">Physical Chemistry</a></li>
+                <li><a href="./products-page/plusthreecheandbio/plant-physiology.html" class="text-white">Biochemistry</a></li>
               </ul>
             </ul>
           </ul>
@@ -826,7 +829,55 @@ mechanicsLabItems.forEach(item => {
   { title: "Zinc Granules", model: "112", image: "./assets/images/products/chemistry-placeholder.jpg", link: "plustwo-che-products/zinc-granules.html" }
 ]
   
-      }
+      },
+  {
+    sectionTitle: "Mechanical Lab Equipment",
+    category: "mechanicsLab",
+    viewMoreLink: "./products-page/plus3-physics-equipment/",
+    products: [
+    { title: "MECHANICS LAB INdotek ", link: "./products-page/plus3-physics-equipment/mechanics-lab.html" ,model:""},
+  { title: "Capillary Rise Apparatus", link: "./products-page/plus3-physics-equipment/capillary-rise-apparatus.html" },
+  { title: "Sextant Apparatus", link: "./products-page/plus3-physics-equipment/sextant-apparatus.html" },
+  { title: "Fly Wheel Apparatus", link: "./products-page/plus3-physics-equipment/fly-wheel-apparatus.html",model:"SPML-003" },
+  { title: "Optical Lever Apparatus", link: "./products-page/plus3-physics-equipment/optical-lever-apparatus.html" ,model:"SPML-004"},
+  { title: "Maxwell Needle", link: "./products-page/plus3-physics-equipment/maxwell-needel.html", model:"SPML-005" },
+  // { title: "Searle's Method (Basic)", link: "./products-page/plus3-physics-equipment/searle-basic-method.html",model:"SPML-006" },
+  { title: "Searle's Method (Elastic Constants)", link: "./products-page/plus3-physics-equipment/searle-digital-method.html",model:"SPML-006" },
+  { title: "Searle's Method (Elastic Constants)", link: "./products-page/plus3-physics-equipment/searle-elastic-method.html",model:"SPML-006A" },
+  // { title: "Searle's Method A", link: "./products-page/plus3-physics-equipment" },
+  { title: "Bar Pendulum (Advance)", link: "./products-page/plus3-physics-equipment/bar-pendulum-advance.html",model:"SPML-007A" },
+  { title: "Bar Pendulum (Basic)", link: "./products-page/plus3-physics-equipment/bar-pendulum-basic.html" ,model:"SPML-007B"},
+  { title: "Bar Pendulum (Digital Counter)", link: "./products-page/plus3-physics-equipment/bar-pendulum-digital.html" ,model:"SPML-007D"},
+  { title: "Kater's Pendulum (Advance)", link: "./products-page/plus3-physics-equipment/kater-pendulum-advance.html",model:"SPML-008A" },
+  { title: "Kater's Pendulum (Basic)", link: "./products-page/plus3-physics-equipment/kater-pendulum-basic.html",model:"SPML-008B" },
+  { title: "Kater's Pendulum (Digital)", link: "./products-page/plus3-physics-equipment/kater-pendulum-digital.html" ,model:"SPML-008D"},
+  { title: "Spring Constant Apparatus", link: "./products-page/plus3-physics-equipment/spring-constant.html" ,model:"SPML-009"},
+  { title: "Poiseuille's Method", link: "./products-page/plus3-physics-equipment/poiseille-method.html",model:"SPML-010" },
+  { title: "Barton Apparatus (Horizontal)", link: "./products-page/plus3-physics-equipment/bartonapp-horizontal.html",model:"SPML-011H" },
+  { title: "Barton Apparatus (Vertical)", link: "./products-page/plus3-physics-equipment/bartonapp-vertical.html" ,model:"SPML-011V"},
+  { title: "Bending of Beam (Double)", link: "./products-page/plus3-physics-equipment/bendingofbeam-double.html",model:"SPML-012" },
+  { title: "Bending of Beam (Single)", link: "./products-page/plus3-physics-equipment/bendingofbeam-single.html" ,model:"SPML-012"},
+  { title: "Sonometer (Basic)", link: "./products-page/plus3-physics-equipment/sonometer-basic.html" ,model:"SPML-013B"},
+  { title: "Sonometer (Electric)", link: "./products-page/plus3-physics-equipment/sonometer-electric.html",model:"SPML-013E" },
+  { title: "Young's Modulus of Rubber", link: "./products-page/plus3-physics-equipment/youngmodulus.html",model:"SPML-014" },
+  { title: "Magnifying Power of Telescope", link: "./products-page/plus3-physics-equipment/magnifyingpower.html" ,model:"SPML-015"},
+  { title: "Radius of Curvature of Concave/Convex Mirror", link: "./products-page/plus3-physics-equipment/radiusofconcave-convex.html",model:"SPML-016" },
+  { title: "Simple Pendulum", link: "./products-page/plus3-physics-equipment/simple-pendulum.html" ,model:"SPML-017"},
+  { title: "Lami's Theorem", link: "./products-page/plus3-physics-equipment/lami-theorem.html" ,model:"SPML-018"},
+  { title: "Stoke's Apparatus", link: "./products-page/plus3-physics-equipment/stokeapp.html" ,model:"SPML-019"},
+  { title: "Optical Bench", link: "./products-page/plus3-physics-equipment/opticalbench.html" ,model:"SPML-020"},
+  { title: "Half Deflection Method & Figure of Merit", link: "./products-page/plus3-physics-equipment/half-deflectionmethod.html",model:"SPML-021" },
+    ]
+  },
+  {
+    sectionTitle: "Mechanical Lab Equipment",
+    category: "mechanicsLab",
+    viewMoreLink: "./products-page/plusthreecheandbio/",
+    products: [
+
+    ],
+     
+  },
     ];
 
     // Function to load and display all products by default
@@ -897,10 +948,58 @@ function filterProducts(category) {
   });
 }
 
+function renderProductsByCategory(category) {
+  const container = document.getElementById("product-sections"); // or your correct container ID
+  container.innerHTML = ""; // Clear previous content
+
+  const section = productData.find(sec => sec.category === category);
+  if (!section) return;
+
+  // Create the section title
+  const heading = document.createElement("h2");
+  heading.className = "mt-5";
+  heading.textContent = section.sectionTitle;
+  container.appendChild(heading);
+
+  // Create the row
+  const row = document.createElement("div");
+  row.className = "row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4";
+
+  // Loop through products and add each one as a column
+  section.products.forEach(product => {
+    const col = document.createElement("div");
+    col.className = "col";
+
+    col.innerHTML = `
+      <div class="card h-100 shadow-sm">
+        <img src="${product.image || 'default.jpg'}" class="card-img-top" alt="${product.title}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">${product.title}</h5>
+          <p class="card-text"><strong>Model:</strong> ${product.model || 'N/A'}</p>
+          <a href="${product.link}" class="btn btn-primary mt-auto" >View Specification</a>
+        </div>
+      </div>
+    `;
+
+    row.appendChild(col);
+  });
+
+  // Append the row and optional "View More" button
+  container.appendChild(row);
+
+  const viewMoreDiv = document.createElement("div");
+  viewMoreDiv.className = "d-flex justify-content-end mt-3";
+  // viewMoreDiv.innerHTML = `<a href="${section.viewMoreLink}" class="btn btn-secondary">View More</a>`;
+  container.appendChild(viewMoreDiv);
+}
+
+
     // Add event listeners for sidebar items
     document.getElementById('all-products').addEventListener('click', () => filterProducts('all'));
     document.getElementById('physics').addEventListener('click', () => filterProducts('Physics'));
     document.getElementById('chemistry').addEventListener('click', () => filterProducts('Chemistry'));
+    document.getElementById('mechanics').addEventListener('click', () => filterProducts('mechanicsLab'));
+
 
     // Load all products initially when the page loads
     document.addEventListener('DOMContentLoaded', loadAllProducts);
