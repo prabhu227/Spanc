@@ -461,16 +461,14 @@ mechanicsLabItems.forEach(item => {
 
 </script> -->
                  <!-- Electricity & Magnetism & EMT Lab -->
-                 <li onclick="renderProductsByCategory('emLab')" class="sidebar-item">
-                  <span class="chevron">▶</span> Electricity & Magnetism Lab
-                </li>
-    <!-- <li onclick="toggleDropdown('emLab')" class="sidebar-item">
+                  
+    <li onclick="toggleDropdown('emLab')" class="sidebar-item">
       <span class="chevron">▶</span> Electricity & Magnetism Lab
-    </li> -->
-    <!-- <ul id="emLab" class="dropdown list-unstyled ms-3">
+    </li>
+    <ul id="emLab" class="dropdown list-unstyled ms-3">
       <li><a href="labs/emlab/ohms-law.html" class="text-white">Ohm's Law</a></li>
       <li><a href="labs/emlab/rc-circuit.html" class="text-white">RC Circuit</a></li>
-    </ul> -->
+    </ul>
     <!-- Thermal physics & statiical Mechanisum -->
 
     <li onclick="toggleDropdown('thermalLab')" class="sidebar-item">
@@ -873,16 +871,11 @@ mechanicsLabItems.forEach(item => {
     ]
   },
   {
-    sectionTitle: "Electricity & Magnetism Lab",
-    category: "Electricity & Magnetism Lab",
-    viewMoreLink: "./products-page/plus3-physics-equipment/",
+    sectionTitle: "Mechanical Lab Equipment",
+    category: "mechanicsLab",
+    viewMoreLink: "./products-page/plusthreecheandbio/",
     products: [
-    {
-    title: "Ballistic Galvanometer",
-    link: "plusthreecheandbio/ballistic-galvanometer.html",
-    model: "EML-001",
-    image: "./images/electricity/ballistic-galvanometer.jpg"
-  },
+
     ],
      
   },
@@ -1001,43 +994,12 @@ function renderProductsByCategory(category) {
   container.appendChild(viewMoreDiv);
 }
 
-function renderProductsByCategory(category) {
-  const container = document.getElementById('productContainer');
-  container.innerHTML = '';
-
-  productData.forEach(section => {
-    if (section.category === category) {
-      const sectionHTML = `
-        <h2 class="mt-5">${section.sectionTitle}</h2>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-          ${section.products.map(product => `
-            <div class="col">
-              <div class="card h-100">
-                <img src="${product.image}" class="card-img-top" alt="${product.title}">
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">${product.title}</h5>
-                  ${product.model ? `<p class="card-text"><strong>Model:</strong> ${product.model}</p>` : ''}
-                  <a href="${product.link}" class="btn btn-primary mt-auto">View Specification</a>
-                </div>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-        <div class="d-flex justify-content-end mt-3">
-          <a href="${section.viewMoreLink}" class="btn btn-secondary">View More</a>
-        </div>
-      `;
-      container.insertAdjacentHTML('beforeend', sectionHTML);
-    }
-  });
-}
 
     // Add event listeners for sidebar items
     document.getElementById('all-products').addEventListener('click', () => filterProducts('all'));
     document.getElementById('physics').addEventListener('click', () => filterProducts('Physics'));
     document.getElementById('chemistry').addEventListener('click', () => filterProducts('Chemistry'));
     document.getElementById('mechanics').addEventListener('click', () => filterProducts('mechanicsLab'));
-    document.getElementById('emLab').addEventListener('click', () => filterProducts('emLab'));
 
 
     // Load all products initially when the page loads
