@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thevenin and Norton Theorem Trainer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h1, h2 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
+
+    .image-box {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .image-box img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #7f8c8d;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Thevenin and Norton Theorem Trainer</h1>
+    
+    <div class="image-box">
+      <img src="https://via.placeholder.com/600x400?text=Thevenin+Norton+Trainer" alt="Thevenin Norton Trainer">
+    </div>
+
+    <section class="specs">
+      <h2>Technical Specifications</h2>
+      <ul id="specList"></ul>
+    </section>
+
+    <section class="experiment">
+      <h2>Experiment</h2>
+      <p>To Verify the Thevenin and Norton Theorems</p>
+    </section>
+
+    <section class="scope">
+      <h2>Scope of Supply</h2>
+      <ul id="supplyList"></ul>
+    </section>
+
+    <p class="note">
+      *Design & Aesthetics are subject to change without prior notice due to continuous product improvement.
+    </p>
+  </div>
+
+  <script>
+    const specs = [
+      "DC Regulated Variable Power Supply: 12V / 150 mA",
+      "Fixed Resistors: 500Ω, 200Ω & 1KΩ",
+      "Variable Resistor: 500Ω / 1W",
+      "Interconnection: 4mm",
+      "Voltmeter - Range: 0–12V, Display: Analog (Moving Coil), Panel Size: 70mm x 60mm",
+      "Ammeter - Range: 0–20mA, Display: Analog (Moving Coil), Panel Size: 70mm x 60mm",
+      "Mains Supply: 230V / 50Hz AC"
+    ];
+
+    const supplies = [
+      "Trainer Kit: 1 No",
+      "Patch Cord: 1 No",
+      "Instruction Manual: 1 No"
+    ];
+
+    const specList = document.getElementById("specList");
+    specs.forEach(spec => {
+      const li = document.createElement("li");
+      li.textContent = spec;
+      specList.appendChild(li);
+    });
+
+    const supplyList = document.getElementById("supplyList");
+    supplies.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      supplyList.appendChild(li);
+    });
+  </script>
+</body>
+</html>

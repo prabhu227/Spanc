@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Electricity & Magnetism Lab Equipment</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .card-img-top {
+      object-fit: cover;
+      height: 200px;
+    }
+    .card {
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Electricity & Magnetism Lab Equipment</h1>
+    <div id="productContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+  </div>
+
+  <script>
+    const productData = [
+      {
+        title: "Digital Multimeter",
+        model: "EME-064",
+        link: "#",
+        image: "https://via.placeholder.com/400x200?text=Multimeter"
+      },
+      {
+        title: "Ballistic Galvanometer",
+        model: "EME-002",
+        link: "#",
+        image: "https://via.placeholder.com/400x200?text=Ballistic+Galvanometer"
+      },
+      {
+        title: "Leakage Method - Ballistic Galvanometer",
+        model: "EME-003",
+        link: "#",
+        image: "https://via.placeholder.com/400x200?text=Leakage+Method"
+      },
+      {
+        title: "Rayleigh’s Bridge Method",
+        model: "EME-004",
+        link: "#",
+        image: "https://via.placeholder.com/400x200?text=Rayleigh+Bridge"
+      },
+      {
+        title: "De’Sauty’s Bridge",
+        model: "EME-005",
+        link: "#",
+        image: "https://via.placeholder.com/400x200?text=Desauty+Bridge"
+      },
+      {
+        title: "Solenoid Magnetic Field Measurement",
+        model: "SED-1001",
+        link: "#",
+        image: "https://via.placeholder.com/400x200?text=Solenoid+Field"
+      },
+      {
+        title: "Series RC Circuit",
+        model: "EME-006",
+        link: "#",
+        image: "https://via.placeholder.com/400x200?text=Series+RC"
+      },
+      {
+        title: "LCR Series Circuit",
+        model: "EME-007",
+        link: "#",
+        image: "https://via.placeholder.com/400x200?text=LCR+Series"
+      },
+      {
+        title: "LCR Parallel Circuit",
+        model: "EME-008",
+        link: "#",
+        image: "https://via.placeholder.com/400x200?text=LCR+Parallel"
+      },
+      {
+        title: "Carey Foster’s Bridge",
+        model: "EME-009",
+        link: "#",
+        image: "https://via.placeholder.com/400x200?text=Carey+Foster"
+      },
+      {
+        title: "Potentiometer - Low Resistance",
+        model: "EME-010",
+        link: "#",
+        image: "https://via.placeholder.com/400x200?text=Potentiometer"
+      },
+      {
+        title: "Thevenin & Norton Theorems",
+        model: "EME-011",
+        link: "#",
+        image: "https://via.placeholder.com/400x200?text=Thevenin+Norton"
+      },
+      {
+        title: "Superposition Theorem",
+        model: "EME-012",
+        link: "#",
+        image: "https://via.placeholder.com/400x200?text=Superposition"
+      },
+      {
+        title: "Max Power Transfer Theorem",
+        model: "EME-013",
+        link: "#",
+        image: "https://via.placeholder.com/400x200?text=Max+Power+Transfer"
+      },
+      {
+        title: "Anderson’s Bridge",
+        model: "EME-014",
+        link: "#",
+        image: "https://via.placeholder.com/400x200?text=Anderson+Bridge"
+      }
+    ];
+
+    const container = document.getElementById("productContainer");
+
+    productData.forEach((product) => {
+      const cardHTML = `
+        <div class="col">
+          <div class="card h-100">
+            <img src="${product.image}" class="card-img-top" alt="${product.title}">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">${product.title}</h5>
+              ${product.model ? `<p class="card-text"><strong>Model:</strong> ${product.model}</p>` : ""}
+              <a href="${product.link}" class="btn btn-primary mt-auto">View Specification</a>
+            </div>
+          </div>
+        </div>
+      `;
+      container.insertAdjacentHTML("beforeend", cardHTML);
+    });
+  </script>
+</body>
+</html>

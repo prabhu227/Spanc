@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Callander Barnes Apparatus (Basic)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fc;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
+
+    .image-box {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .image-box img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    section {
+      margin-bottom: 25px;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #7f8c8d;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Callander Barnes Apparatus (Basic)</h1>
+
+    <div class="image-box">
+      <img src="https://via.placeholder.com/600x400?text=Callander+Barnes+Apparatus" alt="Callander Barnes Apparatus">
+    </div>
+
+    <section class="experiment">
+      <h2>Experiment</h2>
+      <p>To determine the mechanical equivalent of heat by the Callander and Barnes' constant flow method.</p>
+    </section>
+
+    <section class="scope">
+      <h2>Scope of Supply</h2>
+      <ul id="supplyList"></ul>
+    </section>
+
+    <section class="optional-accessories">
+      <h2>Optional Accessories (Not Supplied)</h2>
+      <ul id="optionalAccessoriesList"></ul>
+    </section>
+
+   
+  </div>
+
+  <script>
+    const supplies = [
+      "Callander & Barnes Apparatus: 1 No",
+      "Battery Eliminator: 1 No",
+      "DC Voltmeter: 1 No",
+      "DC Ammeter: 1 No",
+      "Thermometer: 2 Nos",
+      "Rubber Tube: 1 No",
+      "Constant Level Tank with Stand: 1 No",
+      "Connecting Wire: 1 No",
+      "Instruction Manual: 1 No"
+    ];
+
+    const optionalAccessories = [
+      "Measuring Cylinder: 1 No",
+      "Digital Stopwatch: 1 No",
+      "Digital Balance: 1 No"
+    ];
+
+    supplies.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("supplyList").appendChild(li);
+    });
+
+    optionalAccessories.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("optionalAccessoriesList").appendChild(li);
+    });
+  </script>
+</body>
+</html>

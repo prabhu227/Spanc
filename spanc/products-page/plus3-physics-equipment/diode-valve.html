@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diode Valve Characteristics Trainer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fc;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
+
+    .image-box {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .image-box img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    section {
+      margin-bottom: 25px;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #7f8c8d;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Diode Valve Characteristics Trainer</h1>
+
+    <div class="image-box">
+      <img src="https://via.placeholder.com/600x400?text=Diode+Valve+Trainer" alt="Diode Valve Characteristics Trainer">
+    </div>
+
+    <section class="specs">
+      <h2>Technical Specifications</h2>
+      <ul id="specList"></ul>
+    </section>
+
+    <section class="experiment">
+      <h2>Experiment</h2>
+      <p>To draw the static and mutual characteristics of the diode valve and determine the amplification factor.</p>
+    </section>
+
+    <section class="scope">
+      <h2>Scope of Supply</h2>
+      <ul id="supplyList"></ul>
+    </section>
+
+    <p class="note">
+      *Design & aesthetics are subject to change without prior notice due to continuous product improvement.
+    </p>
+  </div>
+
+  <script>
+    const specs = [
+      "DC Regulated Power Supply: Range 0–300V / 30mA",
+      "DC Regulated Power Supply: Range 0–6.3V / AC",
+      "Voltmeter: Range 0–300V, Analog (Moving Coil)",
+      "Ammeter: Range 0–30mA, Analog (Moving Coil)",
+      "Diode Valve: 6H6 (Octal Code)",
+      "Connecting Wire"
+    ];
+
+    const supplies = [
+      "Trainer Kit: 1 No",
+      "Diode Valve: 1 No",
+      "Connecting Patch Cord: 10 Nos",
+      "Instruction Manual: 1 No"
+    ];
+
+    specs.forEach(spec => {
+      const li = document.createElement("li");
+      li.textContent = spec;
+      document.getElementById("specList").appendChild(li);
+    });
+
+    supplies.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("supplyList").appendChild(li);
+    });
+  </script>
+</body>
+</html>

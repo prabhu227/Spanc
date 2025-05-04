@@ -203,19 +203,280 @@
     ]
   },
   {
-    sectionTitle: "Electricity & Magnetism Lab",
-    category: "Electricity & Magnetism Lab",
+    category: 'emLab',
+    sectionTitle: 'Electromagnetism Lab Equipment',
     viewMoreLink: "./products-page/plus3-physics-equipment/",
     products: [
-    {
-    title: "Ballistic Galvanometer",
-    link: "plusthreecheandbio/ballistic-galvanometer.html",
-    model: "EML-001",
-    image: "./images/electricity/ballistic-galvanometer.jpg"
-  },
+      // {title: "Electricity & Magnetism Lab", link: "./products-page/plus3-physics-equipment/electricity-magnetism-lab.html" ,model:""},
+      { title: "Digital Multimeter", link: "./products-page/plus3-physics-equipment/digital-multimeter.html", model: "EME-001" },
+      { title: "Sensitivity Using Ballistic Galvanometer", link: "./products-page/plus3-physics-equipment/sensitivity-ballistic-galvanometer.html", model: "EME-002" },
+      { title: "Leakage Method Using Ballistic Galvanometer", link: "./products-page/plus3-physics-equipment/leakage-ballistic-galvanometer.html", model: "EME-003" },
+      { title: "Rayleigh's Bridge Method", link: "./products-page/plus3-physics-equipment/rayleigh-bridge-method.html", model: "EME-004" },
+      { title: "Desauty's Bridge", link: "./products-page/plus3-physics-equipment/desauty-bridge.html", model: "EME-005" },
+      { title: "Series RC Circuit", link: "./products-page/plus3-physics-equipment/series-rc-circuit.html", model: "EME-006" },
+      { title: "LCR Series & Parallel", link: "./products-page/plus3-physics-equipment/lcr-series-parallel.html", model: "EME-007" },
+      { title: "Low Resistance by Carey Foster's Bridge (Advance)", link: "./products-page/plus3-physics-equipment/carey-foster-advance.html", model: "EME-008-A" },
+      { title: "Low Resistance by Carey Foster's Bridge (Basic)", link: "./products-page/plus3-physics-equipment/carey-foster-basic.html", model: "EME-008-B" },
+      { title: "Low Resistance using Potentiometer Trainer Kit", link: "./products-page/plus3-physics-equipment/potentiometer-trainer-kit.html", model: "EME-010" },
+      { title: "Thevenin and Norton Theorem Trainer", link: "./products-page/plus3-physics-equipment/thevenin-norton-trainer.html", model: "EME-011" },
+      { title: "Superposition Theorem Trainer", link: "./products-page/plus3-physics-equipment/superposition-theorem.html", model: "EME-012" },
+      { title: "Maximum Power Transfer Theorem Trainer", link: "./products-page/plus3-physics-equipment/maximum-power-transfer.html", model: "EME-013" },
+      { title: "Anderson Bridge Trainer", link: "./products-page/plus3-physics-equipment/anderson-bridge.html", model: "EME-014" },
+      { title: "Unknown Resistance Using Meter Bridge", link: "./products-page/plus3-physics-equipment/meter-bridge.html", model: "EME-015" },
+      { title: "Triode Valve Characteristics", link: "./products-page/plus3-physics-equipment/triode-valve.html", model: "EME-016" },
+      { title: "Diode Valve Characteristics", link: "./products-page/plus3-physics-equipment/diode-valve.html", model: "EME-017" },
+      { title: "Compare EMF of Two Cells Using Potentiometer", link: "./products-page/plus3-physics-equipment/compare-emf.html", model: "EME-019" },
+      { title: "Earth Magnetic Field by Tangent Galvanometer", link: "./products-page/plus3-physics-equipment/earth-magnetic-field.html", model: "EME-020" },
+      { title: "Reduction Factor of a Galvanometer", link: "./products-page/plus3-physics-equipment/reduction-factor.html", model: "EME-021" },
+      { title: "Variation of Magnetic Field Along the Axis of Circular Coil", link: "./products-page/plus3-physics-equipment/magnetic-field-circular-coil.html", model: "EME-022" },
+      { title: "Field Strength B Variation in a Solenoid", link: "./products-page/plus3-physics-equipment/solenoid-field-variation.html", model: "EME-022A" }
     ],
+    
      
   },
+  {
+    category: 'thermalLab',
+    sectionTitle: 'Thermal Physics & Statistical Mechanics Lab Equipment',
+    viewMoreLink: "./products-page/plus3-physics-equipment/",
+    products: [
+      { title: "Callander Barnes Apparatus (Advanced)", link: "./products-page/plus3-physics-equipment/callander-barnes-advanced.html", model: "TPSM-001A" },
+      { title: "Callander Barnes Apparatus (Basic)", link: "./products-page/plus3-physics-equipment/callander-barnes-basic.html", model: "TPSM-001B" },
+      { title: "Planck's Constant Using LED", link: "./products-page/plus3-physics-equipment/plancks-constant-led.html", model: "TPSM-002" },
+      { title: "Stefan Constant Using Bulb", link: "./products-page/plus3-physics-equipment/stefan-constant-bulb.html", model: "TPSM-003" },
+      { title: "Thermal Conductivity of Cu by Searle's Apparatus", link: "./products-page/plus3-physics-equipment/searles-apparatus-cu.html", model: "TPSM-004" },
+      { title: "Lee's Disc", link: "./products-page/plus3-physics-equipment/lees-disc.html", model: "TPSM-005" },
+      { title: "PRT (Platinum Resistance Thermometer)", link: "./products-page/plus3-physics-equipment/prt-platinum-thermometer.html", model: "TPSM-006" },
+      { title: "Method of Cooling", link: "./products-page/plus3-physics-equipment/method-of-cooling.html", model: "TPSM-007" },
+      { title: "Thermo EMF Across Two Junctions", link: "./products-page/plus3-physics-equipment/thermo-emf-junctions.html", model: "TPSM-008" },
+      { title: "Electrochemical Equivalent (ECE) of Copper", link: "./products-page/plus3-physics-equipment/ece-of-copper.html", model: "TPSM-011" }
+    ]
+  },
+  {
+    category: 'waveOpticsLab',
+    sectionTitle: 'Wave & Optics Lab Equipment',
+    viewMoreLink: "./products-page/plus3-physics-equipment/",
+    products: [
+      { title: "Coupled Oscillation", link: "./products-page/plus3-physics-equipment/coupled-oscillation.html", model: "FE-111" },
+      { title: "Melde's Apparatus", link: "./products-page/plus3-physics-equipment/meldes-apparatus.html", model: "WO-001" },
+      { title: "Lissajous Figures", link: "./products-page/plus3-physics-equipment/lissajous-figures.html", model: "WO-002" },
+      { title: "Wedge Shaped Film", link: "./products-page/plus3-physics-equipment/wedge-shaped-film.html", model: "WO-003" },
+      { title: "He-Ne Laser Experiment", link: "./products-page/plus3-physics-equipment/he-ne-laser.html", model: "WO-004" },
+      { title: "Cauchy's Constant", link: "./products-page/plus3-physics-equipment/cauchy-constant.html", model: "WO-005" },
+      { title: "Newton's Rings (Basic)", link: "./products-page/plus3-physics-equipment/newtons-rings-basic.html", model: "WO-006B" },
+      { title: "Newton's Rings (Digital)", link: "./products-page/plus3-physics-equipment/newtons-rings-digital.html", model: "WO-006D" },
+      { title: "Fresnel Biprism", link: "./products-page/plus3-physics-equipment/fresnel-biprism.html", model: "WO-007" },
+      { title: "Michelson Interferometer with Sodium Light", link: "./products-page/plus3-physics-equipment/michelson-interferometer-sodium.html", model: "WO-010" },
+      {title:"Travelling Microscope", link:"./products-page/plus3-physics-equipment/travelling-microscope.html", model:"WO-011"},
+      {}
+    ]
+  },
+  {
+    category: 'digitalLab',
+    sectionTitle: 'Digital System & Applications Lab Equipment',
+    viewMoreLink: "./products-page/plus3-physics-equipment/",
+    products: [
+      { title: "NOT Gate Using Transistor", link: "./products-page/plus3-physics-equipment/not-gate-transistor.html", model: "DSA-001" },
+      { title: "Basic Logic Gate", link: "./products-page/plus3-physics-equipment/basic-logic-gate.html", model: "DSA-001B" },
+      { title: "Universal Gate - NAND Gate", link: "./products-page/plus3-physics-equipment/universal-gate-nand.html", model: "DSA-002" },
+      { title: "Convert Boolean Expression into Logic Circuit", link: "./products-page/plus3-physics-equipment/boolean-expression-to-logic-circuit.html", model: "DSA-003" },
+      { title: "Adder & Subtractor Using Logic Gates", link: "./products-page/plus3-physics-equipment/adder-subtractor-logic-gates.html", model: "DSA-004" },
+      { title: "Astable & Monostable Multivibrator Using 555 Timer", link: "./products-page/plus3-physics-equipment/multivibrator-555-timer.html", model: "DSA-005" },
+      { title: "Flip-Flop Circuits (RS, Clocked RS, D-type, JK) Using NAND Gates", link: "./products-page/plus3-physics-equipment/flip-flop-nand-gates.html", model: "DSA-006" },
+      { title: "JK Master Slave Flip-Flop Using Flip-Flop IC", link: "./products-page/plus3-physics-equipment/jk-master-slave-flip-flop.html", model: "DSA-007" },
+      { title: "4-Bit Counter Using D-Type, JK Flip-Flop IC", link: "./products-page/plus3-physics-equipment/4bit-counter-flip-flop.html", model: "DSA-008A" },
+      { title: "4-Bit Shift Register Using D-Type Flip-Flop", link: "./products-page/plus3-physics-equipment/4bit-shift-register.html", model: "DSA-008B" },
+      { title: "Analog & Digital Trainer Kit", link: "./products-page/plus3-physics-equipment/analog-digital-trainer-kit.html", model: "DSA-009" }
+    ]
+  },
+  {
+    category: 'modernPhysicsLab',
+    sectionTitle: 'Elements of Modern Physics Lab Equipment',
+    viewMoreLink: "./products-page/plus3-physics-equipment/",
+    products: [
+      { title: "Vacuum Diode", link: "./products-page/plus3-physics-equipment/vacuum-diode.html", model: "EMP-001" },
+      { title: "Planck's Constant Using LED", link: "./products-page/plus3-physics-equipment/plancks-constant-led.html", model: "EMP-002" },
+      { title: "H-Alpha Emission Line of Hydrogen Atom", link: "./products-page/plus3-physics-equipment/h-alpha-hydrogen.html", model: "EMP-003" },
+      { title: "Ionization Potential of Mercury", link: "./products-page/plus3-physics-equipment/ionization-potential-mercury.html", model: "EMP-004" },
+      { title: "Iodine Vapour Spectrum", link: "./products-page/plus3-physics-equipment/iodine-vapour.html", model: "EMP-005" },
+      { title: "e/m by Magnetic Focusing", link: "./products-page/plus3-physics-equipment/em-magnetic-focusing.html", model: "EMP-006" },
+      { title: "e/m by Bar Magnet", link: "./products-page/plus3-physics-equipment/em-bar-magnet.html", model: "EMP-007" },
+      { title: "Millikan Oil Drop Apparatus", link: "./products-page/plus3-physics-equipment/millikan-oil-drop.html", model: "EMP-008" },
+      { title: "Tunnel Diode Apparatus", link: "./products-page/plus3-physics-equipment/tunnel-diode.html", model: "EMP-009" },
+      { title: "Diode Laser: Grating", link: "./products-page/plus3-physics-equipment/diode-laser-grating.html", model: "EMP-010A" },
+      { title: "Diode Laser: Single & Double Slit", link: "./products-page/plus3-physics-equipment/diode-laser-slits.html", model: "EMP-010B" },
+      { title: "He-Ne Laser: Single & Double Slit", link: "./products-page/plus3-physics-equipment/he-ne-laser-slits.html", model: "EMP-010HN" },
+      { title: "Photoelectric Effect", link: "./products-page/plus3-physics-equipment/photoelectric-effect.html", model: "EMP-012" }
+    ]
+  },
+  {
+    category: 'analogLab',
+    sectionTitle: 'Analog System & Applications Lab Equipment',
+    viewMoreLink: "./products-page/plus3-physics-equipment/",
+    products: [
+      { title: "PN Junction Diode - Forward & Reverse Bias", link: "./products-page/plus3-physics-equipment/pn-junction-forward-reverse.html", model: "ASP-001A" },
+      { title: "PN Junction - Boltzmann Constant Determination", link: "./products-page/plus3-physics-equipment/pn-junction-boltzmann-constant.html", model: "ASP-001D" },
+      { title: "Zener Diode as Voltage Regulator", link: "./products-page/plus3-physics-equipment/zener-diode-voltage-regulator.html", model: "ASP-002" },
+      { title: "Zener Diode Characteristics", link: "./products-page/plus3-physics-equipment/zener-diode-characteristics.html", model: "ASP-002B" },
+      { title: "Solar Cell Characteristics", link: "./products-page/plus3-physics-equipment/solar-cell.html", model: "ASP-003" },
+      { title: "Solar Cell (Alternate Version)", link: "./products-page/plus3-physics-equipment/solar-cell-detailed.html", model: "ASP-003D" },
+      { title: "Transistor Characteristics - PNP & NPN", link: "./products-page/plus3-physics-equipment/transistor-pnp-npn.html", model: "ASP-004" },
+      { title: "RC Coupled Amplifier", link: "./products-page/plus3-physics-equipment/rc-coupled-amplifier.html", model: "ASP-006" },
+      { title: "Wein Bridge Oscillator using Op-Amp", link: "./products-page/plus3-physics-equipment/wein-bridge-oscillator.html", model: "ASP-007" },
+      { title: "LED - Forward & Reverse Bias", link: "./products-page/plus3-physics-equipment/led-forward-reverse.html", model: "ASP-008" },
+      { title: "Colpitt's Oscillator", link: "./products-page/plus3-physics-equipment/colpitts-oscillator.html", model: "ASP-009" },
+      { title: "Op-Amp - Inverting & Non-Inverting", link: "./products-page/plus3-physics-equipment/opamp-inverting-noninverting.html", model: "ASP-012" },
+      { title: "Op-Amp - Integrator & Differentiator", link: "./products-page/plus3-physics-equipment/opamp-integrator-differentiator.html", model: "ASP-017" },
+      { title: "Ohm's Law Experiment", link: "./products-page/plus3-physics-equipment/ohms-law.html", model: "ASP-018" }
+    ]
+  },
+  {
+    category: 'solidStateLab',
+    sectionTitle: 'Solid State Physics Lab Equipment',
+    viewMoreLink: "./products-page/plus3-physics-equipment/",
+    products: [
+      { title: "Dielectric Constant Using Frequency", link: "./products-page/plus3-physics-equipment/dielectric-constant-frequency.html", model: "SSP-000" },
+      { title: "Dielectric Constant (SCS Method)", link: "./products-page/plus3-physics-equipment/dielectric-constant-scs.html", model: "SSP-000B" },
+      { title: "Quincke's Tube", link: "./products-page/plus3-physics-equipment/quinckes-tube.html", model: "SSP-001" },
+      { title: "Gouy's Method", link: "./products-page/plus3-physics-equipment/gouys-method.html", model: "SSP-002" },
+      { title: "Dielectric Constant (Solid State)", link: "./products-page/plus3-physics-equipment/dielectric-constant-solid.html", model: "SSP-004" },
+      { title: "B-H Curve Setup", link: "./products-page/plus3-physics-equipment/bh-curve.html", model: "SSP-006" },
+      { title: "Four Probe Method", link: "./products-page/plus3-physics-equipment/four-probe-method.html", model: "SSP-007" },
+      { title: "Hall Effect", link: "./products-page/plus3-physics-equipment/hall-effect.html", model: "SSP-008" },
+      { title: "Solid State Physics Overview", link: "./products-page/plus3-physics-equipment/solid-state-physics-overview.html", model: "SSP-INFO" }
+    ]
+  },
+  // Quantum Mechanics Lab Equipment Data
+{
+  category: 'qmLab',
+  sectionTitle: 'Quantum Mechanics Lab Equipment',
+  viewMoreLink: './products-page/plus3-physics-equipment/',
+  products: [
+    {
+      title: 'Electron Spin Resonance Experiment',
+      link: './products-page/plus3-physics-equipment/electron-spin-resonance.html',
+      model: 'QMP-005'
+    },
+    {
+      title: 'Study of Zeeman Effect with Hyperfine Splitting',
+      link: './products-page/plus3-physics-equipment/zeeman-effect-hyperfine.html',
+      model: 'SK-075'
+    },
+    {
+      title: 'Tunneling Effect in Tunnel Diode Using I-V Characteristics',
+      link: './products-page/plus3-physics-equipment/tunneling-effect-tunnel-diode.html',
+      model: 'QMP-001'
+    },
+    {
+      title: 'Determine the Diameter of Narrow Wire',
+      link: './products-page/plus3-physics-equipment/diameter-narrow-wire.html',
+      model: 'SA-006'
+    },
+    {
+      title: 'Verification of Brewster’s Law',
+      link: './products-page/plus3-physics-equipment/brewsters-law.html',
+      model: 'SK-045'
+    },
+    {
+      title: 'Calibration of Meter Bridge',
+      link: './products-page/plus3-physics-equipment/meter-bridge-calibration.html',
+      model: 'QMP-002'
+    },
+    {
+      title: 'Determine Viscosity by Searle’s Viscometer',
+      link: './products-page/plus3-physics-equipment/searles-viscometer.html',
+      model: 'QMP-003'
+    },
+    {
+      title: 'Determination of G Factor by ESR Spectrometer',
+      link: './products-page/plus3-physics-equipment/g-factor-esr-spectrometer.html',
+      model: 'QMP-004'
+    }
+  ]
+},
+{
+  category: 'emtLab',
+  sectionTitle: 'Electromagnetic Theory Lab Equipment',
+  viewMoreLink: './products-page/plus3-physics-equipment/',
+  products: [
+    {
+      title: 'Malus Law using Diode Laser',
+      link: './products-page/plus3-physics-equipment/malus-law-diode-laser.html',
+      model: 'EMT-001'
+    },
+    {
+      title: 'Malus Law',
+      link: './products-page/plus3-physics-equipment/malus-law.html',
+      model: 'EMT-001'
+    },
+    {
+      title: 'Malus Law using He-Ne Laser',
+      link: './products-page/plus3-physics-equipment/malus-law-hene.html',
+      model: 'EMT-001A'
+    },
+    {
+      title: 'Polarimeter',
+      link: './products-page/plus3-physics-equipment/polarimeter.html',
+      model: 'EMT-002'
+    },
+    {
+      title: 'Babinet Compensator',
+      link: './products-page/plus3-physics-equipment/babinet-compensator.html',
+      model: 'EMT-003'
+    },
+    {
+      title: 'Ultrasonic Apparatus',
+      link: './products-page/plus3-physics-equipment/ultrasonic.html',
+      model: 'EMT-005'
+    },
+    {
+      title: 'Gaussian Eyepiece',
+      link: './products-page/plus3-physics-equipment/gaussian-eyepiece.html',
+      model: 'EMT-006'
+    },
+    {
+      title: 'Stefan’s Constant Apparatus',
+      link: './products-page/plus3-physics-equipment/stefan-constant.html',
+      model: 'EMT-007'
+    },
+    {
+      title: 'Boltzmann Constant Apparatus',
+      link: './products-page/plus3-physics-equipment/boltzmann-constant.html',
+      model: 'EMT-008'
+    }
+  ]
+},
+// Physics of Devices & Instruments Lab Equipment Data
+{
+  category: 'devicesLab',
+  sectionTitle: 'Physics of Devices & Instruments Lab Equipment',
+  viewMoreLink: './products-page/plus3-physics-equipment/',
+  products: [
+    {
+      title: 'Bridge Rectifier',
+      link: './products-page/plus3-physics-equipment/bridge-rectifier.html',
+      model: 'DIL-001'
+    },
+    {
+      title: 'Filter Trainer',
+      link: './products-page/plus3-physics-equipment/filter-trainer.html',
+      model: 'DIL-002'
+    },
+    {
+      title: 'Clipper & Clamper Circuit',
+      link: './products-page/plus3-physics-equipment/clipper-clamper.html',
+      model: 'DIL-018'
+    }
+  ]
+},
+
+
+
+  
+  
+  
+
+  
+  
     ];
 
     // Function to load and display all products by default
@@ -362,14 +623,27 @@ function renderProductsByCategory(category) {
 //   });
 // }
 
-    // Add event listeners for sidebar items
-    document.getElementById('all-products').addEventListener('click', () => filterProducts('all'));
-    document.getElementById('physics').addEventListener('click', () => filterProducts('Physics'));
-    document.getElementById('chemistry').addEventListener('click', () => filterProducts('Chemistry'));
-    document.getElementById('mechanics').addEventListener('click', () => filterProducts('mechanicsLab'));
-    document.getElementById('emLab').addEventListener('click', () => filterProducts('emLab'));
+    // // Add event listeners for sidebar items
+    // document.getElementById('all-products').addEventListener('click', () => filterProducts('all'));
+    // document.getElementById('physics').addEventListener('click', () => filterProducts('Physics'));
+    // document.getElementById('chemistry').addEventListener('click', () => filterProducts('Chemistry'));
+    // document.getElementById('mechanics').addEventListener('click', () => filterProducts('mechanicsLab'));
+    // document.getElementById('emLab').addEventListener('click', () => filterProducts('emLab'));
 
 
-    // Load all products initially when the page loads
-    document.addEventListener('DOMContentLoaded', loadAllProducts);
+     // Load all products initially when the page loads
+    // document.addEventListener('DOMContentLoaded', loadAllProducts);
+    document.addEventListener('DOMContentLoaded', function () {
+      // Add event listeners for sidebar items
+      document.getElementById('all-products')?.addEventListener('click', () => filterProducts('all'));
+      document.getElementById('physics')?.addEventListener('click', () => filterProducts('Physics'));
+      document.getElementById('chemistry')?.addEventListener('click', () => filterProducts('Chemistry'));
+      document.getElementById('mechanics')?.addEventListener('click', () => filterProducts('mechanicsLab'));
+      document.getElementById('emLab')?.addEventListener('click', () => filterProducts('emLab'));
+      document.getElementById('thermalLab')?.addEventListener('click', () => filterProducts('thermalLab'));
+  
+      // Load all products initially
+      loadAllProducts();
+  });
+  
 

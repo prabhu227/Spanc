@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EMF of Two Cells Using Potentiometer Trainer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fc;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
+
+    .image-box {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .image-box img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    section {
+      margin-bottom: 25px;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #7f8c8d;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>EMF of Two Cells Using Potentiometer Trainer</h1>
+
+    <div class="image-box">
+      <img src="https://via.placeholder.com/600x400?text=EMF+of+Two+Cells+Using+Potentiometer" alt="EMF of Two Cells Using Potentiometer Trainer">
+    </div>
+
+    <section class="specs">
+      <h2>Technical Specifications</h2>
+      <ul id="specList"></ul>
+    </section>
+
+    <section class="experiment">
+      <h2>Experiment</h2>
+      <p>To determine the EMF of two cells using a potentiometer and understand their characteristics.</p>
+    </section>
+
+    <section class="scope">
+      <h2>Scope of Supply</h2>
+      <ul id="supplyList"></ul>
+    </section>
+
+    <p class="note">
+      *Design & aesthetics are subject to change without prior notice due to continuous product improvement.
+    </p>
+  </div>
+
+  <script>
+    const specs = [
+      "DC Regulated Power Supply: Range 0–12V / 150mA DC",
+      "Galvanometer: Range 30-0-30 µA, Analog (Moving Coil), Panel Size: Square 70 mm x 60 mm (L x W)",
+      "Ammeter: Range 0–100mA, Analog (Moving Coil), Panel Size: Square 70 mm x 60 mm (L x W)",
+      "Potentiometer with jockey: Wooden base with brass blocks, 4 mm socket terminals, 100 cm wooden scale with knife edge jockey",
+      "Leclanche Cell",
+      "Daniel Cell",
+      "Rheostat",
+      "Resistance Box: 1000Ω"
+    ];
+
+    const supplies = [
+      "Battery Eliminator: 1 No",
+      "Leclanche Cell: 1 No",
+      "Rheostat: 1 No",
+      "Daniel Cell: 1 No",
+      "Resistance Box: 1 No",
+      "Ammeter: 1 No",
+      "Potentiometer (10 Wire): 1 No",
+      "Galvanometer: 1 No",
+      "Connecting Wire: 1 No",
+      "Instruction Manual: 1 No"
+    ];
+
+    specs.forEach(spec => {
+      const li = document.createElement("li");
+      li.textContent = spec;
+      document.getElementById("specList").appendChild(li);
+    });
+
+    supplies.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("supplyList").appendChild(li);
+    });
+  </script>
+</body>
+</html>
