@@ -628,6 +628,12 @@ function renderProductsByCategory(category) {
       document.getElementById('thermalLab')?.addEventListener('click', () => filterProducts('thermalLab'));
       document.getElementById('waveOpticsLab')?.addEventListener('click', () => filterProducts('waveOpticsLab'));
       document.getElementById('digitalLab')?.addEventListener('click', () => filterProducts('digitalLab'));
+      document.getElementById('modernPhysicsLab')?.addEventListener('click', () => filterProducts('modernPhysicsLab'));
+      document.getElementById('analogLab')?.addEventListener('click', () => filterProducts('analogLab'));
+      document.getElementById('solidStateLab')?.addEventListener('click', () => filterProducts('solidStateLab'));
+      document.getElementById('qmLab')?.addEventListener('click', () => filterProducts('qmLab'));
+      document.getElementById('emtLab')?.addEventListener('click', () => filterProducts('emtLab'));
+      document.getElementById('devicesLab')?.addEventListener('click', () => filterProducts('devicesLab'));
   
       // Load all products initially
       loadAllProducts();
