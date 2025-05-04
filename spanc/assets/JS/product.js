@@ -471,7 +471,6 @@ function loadAllProducts() {
 
   productData.forEach(section => {
     const sectionHTML = `
-    // Inside the loadAllProducts() and filterProducts() functions 
 <h2 class="mt-5">${section.sectionTitle}</h2>
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 g-lg-2">  <!-- Adjusted grid -->
   ${section.products.map(product => `
