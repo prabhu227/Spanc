@@ -620,8 +620,8 @@ function renderProductsByCategory(category) {
     document.addEventListener('DOMContentLoaded', function () {
       // Add event listeners for sidebar items
       document.getElementById('all-products')?.addEventListener('click', () => filterProducts('all'));
-      document.getElementById('physics')?.addEventListener('click', () => filterProducts('Physics'));
-      document.getElementById('chemistry')?.addEventListener('click', () => filterProducts('Chemistry'));
+      document.getElementById('physics')?.addEventListener('click', () => filterProducts('plustwoPhysics'));
+      document.getElementById('chemistry')?.addEventListener('click', () => filterProducts('plustwoChemistry'));
       document.getElementById('mechanics')?.addEventListener('click', () => filterProducts('mechanicsLab'));
       document.getElementById('emLab')?.addEventListener('click', () => filterProducts('emLab'));
       document.getElementById('thermalLab')?.addEventListener('click', () => filterProducts('thermalLab'));
