@@ -1,19 +1,3 @@
-
-    // Toggle sidebar on small screens
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-
-    sidebarToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('show');
-      overlay.classList.toggle('show');
-    });
-
-    overlay.addEventListener('click', () => {
-      sidebar.classList.remove('show');
-      overlay.classList.remove('show');
-    });
-
     function toggleDropdown(id) {
     const element = document.getElementById(id);
     if (element) {
@@ -275,13 +259,14 @@
     sectionTitle: 'Digital System & Applications Lab Equipment',
     viewMoreLink: "./products-page/plus3-physics-equipment/",
     products: [
-      { title: "NOT Gate Using Transistor", link: "./products-page/plus3-physics-equipment/not-gate-transistor.html", model: "DSA-001" },
+      {title:"DIgital", link:"./products-page/plus3-physics-equipment/digital.html", model:""},
+      { title: "NOT Gate Using Transistor", link: "./products-page/plus3-physics-equipment/not-gate-transistor.html", model: "DAS-001" },
       { title: "Basic Logic Gate", link: "./products-page/plus3-physics-equipment/basic-logic-gate.html", model: "DSA-001B" },
-      { title: "Universal Gate - NAND Gate", link: "./products-page/plus3-physics-equipment/universal-gate-nand.html", model: "DSA-002" },
-      { title: "Convert Boolean Expression into Logic Circuit", link: "./products-page/plus3-physics-equipment/boolean-expression-to-logic-circuit.html", model: "DSA-003" },
-      { title: "Adder & Subtractor Using Logic Gates", link: "./products-page/plus3-physics-equipment/adder-subtractor-logic-gates.html", model: "DSA-004" },
-      { title: "Astable & Monostable Multivibrator Using 555 Timer", link: "./products-page/plus3-physics-equipment/multivibrator-555-timer.html", model: "DSA-005" },
-      { title: "Flip-Flop Circuits (RS, Clocked RS, D-type, JK) Using NAND Gates", link: "./products-page/plus3-physics-equipment/flip-flop-nand-gates.html", model: "DSA-006" },
+      { title: "Universal Gate - NAND Gate", link: "./products-page/plus3-physics-equipment/universal-gate-nand.html", model: "DAS-002" },
+      { title: "Convert Boolean Expression into Logic Circuit", link: "./products-page/plus3-physics-equipment/boolean-expression-to-logic-circuit.html", model: "DAS-003" },
+      { title: "Adder & Subtractor Using Logic Gates", link: "./products-page/plus3-physics-equipment/adder-subtractor-logic-gates.html", model: "DIL-004" },
+      { title: "Astable & Monostable Multivibrator Using 555 Timer", link: "./products-page/plus3-physics-equipment/multivibrator-555-timer.html", model: "DIL-005" },
+      { title: "Flip-Flop Circuits (RS, Clocked RS, D-type, JK) Using NAND Gates", link: "./products-page/plus3-physics-equipment/flip-flop-nand-gates.html", model: "DAS-006" },
       { title: "JK Master Slave Flip-Flop Using Flip-Flop IC", link: "./products-page/plus3-physics-equipment/jk-master-slave-flip-flop.html", model: "DSA-007" },
       { title: "4-Bit Counter Using D-Type, JK Flip-Flop IC", link: "./products-page/plus3-physics-equipment/4bit-counter-flip-flop.html", model: "DSA-008A" },
       { title: "4-Bit Shift Register Using D-Type Flip-Flop", link: "./products-page/plus3-physics-equipment/4bit-shift-register.html", model: "DSA-008B" },
@@ -304,7 +289,7 @@
       { title: "Tunnel Diode Apparatus", link: "./products-page/plus3-physics-equipment/tunnel-diode.html", model: "EMP-009" },
       { title: "Diode Laser: Grating", link: "./products-page/plus3-physics-equipment/diode-laser-grating.html", model: "EMP-010A" },
       { title: "Diode Laser: Single & Double Slit", link: "./products-page/plus3-physics-equipment/diode-laser-slits.html", model: "EMP-010B" },
-      { title: "He-Ne Laser: Single & Double Slit", link: "./products-page/plus3-physics-equipment/he-ne-laser-slits.html", model: "EMP-010HN" },
+      // { title: "He-Ne Laser: Single & Double Slit", link: "./products-page/plus3-physics-equipment/he-ne-laser-slits.html", model: "EMP-010HN" },
       { title: "Photoelectric Effect", link: "./products-page/plus3-physics-equipment/photoelectric-effect.html", model: "EMP-012" }
     ]
   },
@@ -342,7 +327,7 @@
       { title: "B-H Curve Setup", link: "./products-page/plus3-physics-equipment/bh-curve.html", model: "SSP-006" },
       { title: "Four Probe Method", link: "./products-page/plus3-physics-equipment/four-probe-method.html", model: "SSP-007" },
       { title: "Hall Effect", link: "./products-page/plus3-physics-equipment/hall-effect.html", model: "SSP-008" },
-      { title: "Solid State Physics Overview", link: "./products-page/plus3-physics-equipment/solid-state-physics-overview.html", model: "SSP-INFO" }
+      // { title: "Solid State Physics Overview", link: "./products-page/plus3-physics-equipment/solid-state-physics-overview.html", model: "SSP-INFO" }
     ]
   },
   // Quantum Mechanics Lab Equipment Data
@@ -351,11 +336,11 @@
   sectionTitle: 'Quantum Mechanics Lab Equipment',
   viewMoreLink: './products-page/plus3-physics-equipment/',
   products: [
-    {
-      title: 'Electron Spin Resonance Experiment',
-      link: './products-page/plus3-physics-equipment/electron-spin-resonance.html',
-      model: 'QMP-005'
-    },
+    // {
+    //   title: 'Electron Spin Resonance Experiment',
+    //   link: './products-page/plus3-physics-equipment/electron-spin-resonance.html',
+    //   model: 'QMP-005'
+    // },
     {
       title: 'Study of Zeeman Effect with Hyperfine Splitting',
       link: './products-page/plus3-physics-equipment/zeeman-effect-hyperfine.html',
@@ -386,11 +371,11 @@
       link: './products-page/plus3-physics-equipment/searles-viscometer.html',
       model: 'QMP-003'
     },
-    {
-      title: 'Determination of G Factor by ESR Spectrometer',
-      link: './products-page/plus3-physics-equipment/g-factor-esr-spectrometer.html',
-      model: 'QMP-004'
-    }
+    // {
+    //   title: 'Determination of G Factor by ESR Spectrometer',
+    //   link: './products-page/plus3-physics-equipment/g-factor-esr-spectrometer.html',
+    //   model: 'QMP-004'
+    // }
   ]
 },
 {
@@ -641,6 +626,8 @@ function renderProductsByCategory(category) {
       document.getElementById('mechanics')?.addEventListener('click', () => filterProducts('mechanicsLab'));
       document.getElementById('emLab')?.addEventListener('click', () => filterProducts('emLab'));
       document.getElementById('thermalLab')?.addEventListener('click', () => filterProducts('thermalLab'));
+      document.getElementById('waveOpticsLab')?.addEventListener('click', () => filterProducts('waveOpticsLab'));
+      document.getElementById('digitalLab')?.addEventListener('click', () => filterProducts('digitalLab'));
   
       // Load all products initially
       loadAllProducts();
