@@ -473,14 +473,14 @@ function loadAllProducts() {
     const sectionHTML = `
 <h2 class="mt-5">${section.sectionTitle}</h2>
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 g-lg-2">  <!-- Adjusted grid -->
-  ${section.products.map(product => `
+  ${section.products.slice(0, 4).map(product => `
     <div class="col">
       <div class="card h-100">
         <img src="${product.image}" class="card-img-top" alt="${product.title}">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">${product.title}</h5>
           ${product.model ? `<p class="card-text"><strong>Model:</strong> ${product.model}</p>` : ''}
-          <a href="./products-page/plus2product/${product.link}" class="btn btn-primary mt-auto">View Specification</a>
+          <a href="./products-page/${product.link}" class="btn btn-primary mt-auto">View Specification</a>
         </div>
       </div>
     </div>
@@ -635,7 +635,7 @@ function renderProductsByCategory(category) {
       document.getElementById('devicesLab')?.addEventListener('click', () => filterProducts('devicesLab'));
   
       // Load all products initially
-      loadAllProducts();
+      loadAllProducts(); 
   });
   
 
