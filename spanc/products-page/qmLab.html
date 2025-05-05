@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Quantum Mechanics Lab Equipment for +3 Physics with experiment details and models." />
+  <meta name="keywords" content="Quantum Mechanics Lab, Physics Equipment, Zeeman Effect, Tunnel Diode, Brewster's Law" />
+  <meta name="author" content="Spanco Tek" />
+  <title>Quantum Mechanics Lab - +3 Physics Equipment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+    }
+    .card-img-top {
+      height: 180px;
+      object-fit: contain;
+      background-color: #f9f9f9;
+    }
+    .card-title {
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container py-5">
+    <h1 class="mb-4 text-center">Quantum Mechanics Lab Equipment</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" id="productContainer"></div>
+  </div>
+
+  <script>
+    const qmLabProducts = [
+      {
+        title: "Study of Zeeman Effect with Hyperfine Splitting",
+        link: "./plus3-physics-equipment/zeeman-effect-hyperfine.html",
+        model: "SK-075",
+        image: "./assets/images/+3image/SK-075.png",
+      },
+      {
+        title: "Tunneling Effect in Tunnel Diode Using I-V Characteristics",
+        link: "./plus3-physics-equipment/tunneling-effect-tunnel-diode.html",
+        model: "QMP-001",
+        image: "./assets/images/+3image/QMP-001.png",
+      },
+      {
+        title: "Determine the Diameter of Narrow Wire",
+        link: "./plus3-physics-equipment/diameter-narrow-wire.html",
+        model: "SA-006",
+        image: "./assets/images/+3image/SA-006.png",
+      },
+      {
+        title: "Verification of Brewster’s Law",
+        link: "./plus3-physics-equipment/brewsters-law.html",
+        model: "SK-045",
+        image: "./assets/images/+3image/SK-045.png",
+      },
+      {
+        title: "Calibration of Meter Bridge",
+        link: "./plus3-physics-equipment/meter-bridge-calibration.html",
+        model: "QMP-002",
+        image: "./assets/images/+3image/QMP-002.png",
+      },
+      {
+        title: "Determine Viscosity by Searle’s Viscometer",
+        link: "./plus3-physics-equipment/searles-viscometer.html",
+        model: "QMP-003",
+        image: "./assets/images/+3image/QMP-003.png",
+      }
+    ];
+
+    const container = document.getElementById("productContainer");
+    qmLabProducts.forEach(product => {
+      const card = `
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <img src="${product.image}" class="card-img-top" alt="${product.title}" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">${product.title}</h5>
+              ${product.model ? `<p class="card-text"><strong>Model:</strong> ${product.model}</p>` : ''}
+              <a href="${product.link}" class="btn btn-primary mt-auto">View Specification</a>
+            </div>
+          </div>
+        </div>
+      `;
+      container.insertAdjacentHTML("beforeend", card);
+    });
+  </script>
+</body>
+
+</html>

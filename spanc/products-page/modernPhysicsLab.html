@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore +3 Modern Physics Lab Equipment like Vacuum Diode, Planck's Constant LED, and Millikan Oil Drop Apparatus. Responsive layout with model numbers and specification links." />
+  <title>+3 Modern Physics Lab Equipment | Spanco Tek</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+    }
+    .card-img-top {
+      height: 180px;
+      object-fit: contain;
+      padding: 10px;
+    }
+    .card-title {
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container py-4">
+    <h1 class="mb-4 text-center">+3 Modern Physics Lab Equipment</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" id="modernPhysicsContainer"></div>
+  </div>
+
+  <script>
+    const modernPhysicsProducts = [
+      {
+        title: "Vacuum Diode",
+        link: "./plus3-physics-equipment/vacuum-diode.html",
+        model: "EMP-001",
+        image: "./assets/images/+3image/EME-001.png",
+      },
+      {
+        title: "Planck's Constant Using LED",
+        link: "./plus3-physics-equipment/plancks-constant-led.html",
+        model: "EMP-002",
+        image: "./assets/images/+3image/EME-002.png",
+      },
+      {
+        title: "H-Alpha Emission Line of Hydrogen Atom",
+        link: "./plus3-physics-equipment/h-alpha-hydrogen.html",
+        model: "EMP-003",
+        image: "./assets/images/+3image/EME-003.png",
+      },
+      {
+        title: "Ionization Potential of Mercury",
+        link: "./plus3-physics-equipment/ionization-potential-mercury.html",
+        model: "EMP-004",
+        image: "./assets/images/+3image/EME-004.png",
+      },
+      {
+        title: "Iodine Vapour Spectrum",
+        link: "./plus3-physics-equipment/iodine-vapour.html",
+        model: "EMP-005",
+        image: "./assets/images/+3image/EME-005.png",
+      },
+      {
+        title: "e/m by Magnetic Focusing",
+        link: "./plus3-physics-equipment/em-magnetic-focusing.html",
+        model: "EMP-006",
+        image: "./assets/images/+3image/EME-006.png",
+      },
+      {
+        title: "e/m by Bar Magnet",
+        link: "./plus3-physics-equipment/em-bar-magnet.html",
+        model: "EMP-007",
+        image: "./assets/images/+3image/EMP-007.png",
+      },
+      {
+        title: "Millikan Oil Drop Apparatus",
+        link: "./plus3-physics-equipment/millikan-oil-drop.html",
+        model: "EMP-008",
+        image: "./assets/images/+3image/EME-008.png",
+      },
+      {
+        title: "Tunnel Diode Apparatus",
+        link: "./plus3-physics-equipment/tunnel-diode.html",
+        model: "EMP-009",
+        image: "./assets/images/+3image/EME-009.png",
+      },
+      {
+        title: "Diode Laser: Grating",
+        link: "./plus3-physics-equipment/diode-laser-grating.html",
+        model: "EMP-010A",
+        image: "./assets/images/+3image/EME-010A.png",
+      },
+      {
+        title: "Diode Laser: Single & Double Slit",
+        link: "./plus3-physics-equipment/diode-laser-slits.html",
+        model: "EMP-010B",
+        image: "./assets/images/+3image/EME-010B.png",
+      },
+      {
+        title: "Photoelectric Effect",
+        link: "./plus3-physics-equipment/photoelectric-effect.html",
+        model: "EMP-012",
+        image: "./assets/images/+3image/EME-012.png",
+      },
+    ];
+
+    const container = document.getElementById("modernPhysicsContainer");
+    modernPhysicsProducts.forEach((product) => {
+      const card = `
+        <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="${product.image}" class="card-img-top img-fluid" alt="${product.title}" style="max-height: 180px; object-fit: contain;">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">${product.title}</h5>
+          ${product.model ? `<p class="card-text"><strong>Model:</strong> ${product.model}</p>` : ''}
+          <a href="${product.link}" class="btn btn-primary mt-auto">View Specification</a>
+        </div>
+      </div>
+    </div>
+      `;
+      container.insertAdjacentHTML("beforeend", card);
+    });
+  </script>
+</body>
+
+</html>

@@ -30,6 +30,12 @@
     .description {
       margin-top: 1rem;
     }
+    /* Ensure the image is responsive */
+    .img-fluid {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1rem;
+    }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
@@ -37,6 +43,9 @@
   <div class="container">
     <h1 class="mb-4">Physics ▸▸ Renewable Energy</h1>
     <h2>V-I Characteristics of Solar Cell</h2>
+
+    <!-- Add Image -->
+    <img src="./assets/images/+3image/ASP-003.png" alt="Solar Cell Trainer" class="img-fluid">
 
     <h4 class="section-title">Technical Specification</h4>
     <ul class="spec-list">
@@ -67,5 +76,8 @@
       Photovoltaic solar cells convert the sun’s radiant light directly into electricity. With the increasing demand for clean energy and the sun’s potential as a free energy source, solar energy conversion is increasingly part of renewable energy solutions. As a result, the demand for efficient solar cells that directly convert sunlight into electricity is growing faster than ever before.
     </p>
   </div>
+  <canvas id="particles-bg"></canvas>
+  <script src="/background.js"></script> <!-- Ensure background.js is correctly linked -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

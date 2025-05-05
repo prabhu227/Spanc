@@ -30,12 +30,22 @@
     .description {
       margin-top: 1rem;
     }
+    .product-image {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      display: block;
+      margin-top: 1rem;
+    }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <h1 class="mb-4">Physics ▸▸ Electronics</h1>
+    <!-- Image added here -->
+    <img src="./assets/images/+3image/ASP-008.png" alt="V-I Characteristics of LED" class="product-image">
+
     <h2>V-I Characteristics of LED</h2>
 
     <h4 class="section-title">Technical Specification</h4>
@@ -61,5 +71,8 @@
       <li>Connecting Patch Cord: 6 Nos</li>
     </ul>
   </div>
+   <!-- Background shapes -->
+   <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+   <script src="/background.js"></script>
 </body>
 </html>

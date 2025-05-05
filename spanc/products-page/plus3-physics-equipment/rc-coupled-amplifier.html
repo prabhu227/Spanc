@@ -30,6 +30,12 @@
     .description {
       margin-top: 1rem;
     }
+    /* Ensure the image is responsive */
+    .img-fluid {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1rem;
+    }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
@@ -37,6 +43,9 @@
   <div class="container">
     <h1 class="mb-4">Physics ▸▸ Electronics</h1>
     <h2>RC Coupled Transistor Amplifier</h2>
+
+    <!-- Add Image -->
+    <img src="./assets/images/+3image/ASP-006.png" alt="RC Coupled Transistor Amplifier" class="img-fluid">
 
     <h4 class="section-title">Technical Specification</h4>
     <ul class="spec-list">
@@ -65,5 +74,8 @@
       <li>Signal Generator</li>
     </ul>
   </div>
+  <canvas id="particles-bg"></canvas>
+  <script src="/background.js"></script> <!-- Ensure background.js is correctly linked -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
