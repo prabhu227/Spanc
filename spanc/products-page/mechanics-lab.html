@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mechanics Lab Equipment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* No Ubuntu */
+      background-color: #f9f9f9;
+    }
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .section-title {
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Mechanics Lab Equipment</h1>
+    <div id="product-sections" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+  </div>
+
+  <script>
+    // Data for Mechanics Lab Equipment
+    const mechanicsProducts = [
+    { title: "Capillary Rise Apparatus", link: "./plus3-physics-equipment/capillary-rise-apparatus.html",image:"./assets/images/+3image/mechanics1.png",model:"SPML-001" },
+  { title: "Sextant Apparatus", link: "/plus3-physics-equipment/sextant-apparatus.html",image:"./assets/images/+3image/sexant.png",model:"SPML-002"  },
+  { title: "Fly Wheel Apparatus", link: "./products-page/plus3-physics-equipment/fly-wheel-apparatus.html",model:"SPML-003" ,image:"./assets/images/+3image/flywheel.png"},
+  { title: "Optical Lever Apparatus", link: "./products-page/plus3-physics-equipment/optical-lever-apparatus.html" ,model:"SPML-004",image:"./assets/images/+3image/opticalbeach.png"},
+  { title: "Maxwell Needle", link: "./products-page/plus3-physics-equipment/maxwell-needel.html", model:"SPML-005" ,image:"./assets/images/+3image/maxwell.png"},
+  // { title: "Searle's Method (Basic)", link: "./products-page/plus3-physics-equipment/searle-basic-method.html",model:"SPML-006" },
+  { title: "Searle's Method (Elastic Constants)", link: "./products-page/plus3-physics-equipment/searle-digital-method.html",model:"SPML-006" ,image:"./assets/images/+3image/searls1.png"},
+  { title: "Searle's Method (Elastic Constants)", link: "./products-page/plus3-physics-equipment/searle-elastic-method.html",model:"SPML-006A" ,image:"./assets/images/+3image/searls2.png"},
+  // { title: "Searle's Method A", link: "./products-page/plus3-physics-equipment" },
+  { title: "Bar Pendulum (Advance)", link: "./products-page/plus3-physics-equipment/bar-pendulum-advance.html",model:"SPML-007A",image:"./assets/images/+3image/barpendulumk.png" },
+  { title: "Bar Pendulum (Basic)", link: "./products-page/plus3-physics-equipment/bar-pendulum-basic.html" ,model:"SPML-007B",image:"./assets/images/+3image/barpendulunbasic.png"},
+  { title: "Bar Pendulum (Digital Counter)", link: "./products-page/plus3-physics-equipment/bar-pendulum-digital.html" ,model:"SPML-007D",image:"./assets/images/+3image/bardigital.png"},
+  { title: "Kater's Pendulum (Advance)", link: "./products-page/plus3-physics-equipment/kater-pendulum-advance.html",model:"SPML-008A",image:"./assets/images/+3image/katerpendulum.png" },
+  { title: "Kater's Pendulum (Basic)", link: "./products-page/plus3-physics-equipment/kater-pendulum-basic.html",model:"SPML-008B" ,image:"./assets/images/+3image/katerbasic.png"},
+  { title: "Kater's Pendulum (Digital)", link: "./products-page/plus3-physics-equipment/kater-pendulum-digital.html" ,model:"SPML-008D",image:"./assets/images/+3image/katerdigital.png"},
+  { title: "Spring Constant Apparatus", link: "./products-page/plus3-physics-equipment/spring-constant.html" ,model:"SPML-009",image:"./assets/images/+3image/spring.png"},
+  { title: "Poiseuille's Method", link: "./products-page/plus3-physics-equipment/poiseille-method.html",model:"SPML-010" ,image:"./assets/images/+3image/stock.png"},
+  { title: "Barton Apparatus (Horizontal)", link: "./products-page/plus3-physics-equipment/bartonapp-horizontal.html",model:"SPML-011H",image:"./assets/images/+3image/rigity.png" },
+  { title: "Barton Apparatus (Vertical)", link: "./products-page/plus3-physics-equipment/bartonapp-vertical.html" ,model:"SPML-011V",image:"./assets/images/+3image/rigitvertical.png"},
+  { title: "Bending of Beam (Double)", link: "./products-page/plus3-physics-equipment/bendingofbeam-double.html",model:"SPML-012",image:"./assets/images/+3image/bendingbean.png" },
+  { title: "Bending of Beam (Single)", link: "./products-page/plus3-physics-equipment/bendingofbeam-single.html" ,model:"SPML-012",image:"./assets/images/+3image/bendingbeansingle.png"},
+  { title: "Sonometer (Basic)", link: "./products-page/plus3-physics-equipment/sonometer-basic.html" ,model:"SPML-013B",image:"./assets/images/+3image/sonometerbasic.png"},
+  { title: "Sonometer (Electric)", link: "./products-page/plus3-physics-equipment/sonometer-electric.html",model:"SPML-013E",image:"./assets/images/+3image/sonometerelectric.png" },
+  { title: "Young's Modulus of Rubber", link: "./products-page/plus3-physics-equipment/youngmodulus.html",model:"SPML-014" ,image:"./assets/images/+3image/youngmodulesrubber.png"},
+  { title: "Magnifying Power of Telescope", link: "./products-page/plus3-physics-equipment/magnifyingpower.html" ,model:"SPML-015",image:"./assets/images/+3image/magnifying.png"},
+  { title: "Radius of Curvature of Concave/Convex Mirror", link: "./products-page/plus3-physics-equipment/radiusofconcave-convex.html",model:"SPML-016" ,image:"./assets/images/+3image/convec.png"},
+  { title: "Simple Pendulum", link: "./products-page/plus3-physics-equipment/simple-pendulum.html" ,model:"SPML-017",image:"./assets/images/+3image/simple.png"},
+  { title: "Lami's Theorem", link: "./products-page/plus3-physics-equipment/lami-theorem.html" ,model:"SPML-018",image:"./assets/images/+3image/limstheorum.png"},
+  { title: "Stoke's Apparatus", link: "./products-page/plus3-physics-equipment/stokeapp.html" ,model:"SPML-019",image:"./assets/images/+3image/stock.png"},
+  { title: "Optical Bench", link: "./products-page/plus3-physics-equipment/opticalbench.html" ,model:"SPML-020",image:"./assets/images/+3image/opticalbeach.png"},
+  { title: "Half Deflection Method & Figure of Merit", link: "./products-page/plus3-physics-equipment/half-deflectionmethod.html",model:"SPML-021" ,image:"./assets/images/+3image/halfdeflaction.png"},
+    ];
+
+    const container = document.getElementById('product-sections');
+
+    mechanicsProducts.forEach(product => {
+      const card = `
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <img src="${product.image}" class="card-img-top" alt="${product.title}">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">${product.title}</h5>
+              ${product.model ? `<p class="card-text"><strong>Model:</strong> ${product.model}</p>` : ''}
+              <a href="${product.link}" class="btn btn-primary mt-auto">View Specification</a>
+            </div>
+          </div>
+        </div>
+      `;
+      container.insertAdjacentHTML('beforeend', card);
+    });
+  </script>
+  <!-- Background shapes -->
+
+  <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+
+  <script src="/Spanc/spanc/products-page/background.js"></script>
+  
+  <script src="background.js"></script>
+</body>
+</html>

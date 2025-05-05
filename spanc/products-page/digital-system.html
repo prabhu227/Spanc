@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore +3 Physics Digital Lab Equipment including logic gates, flip-flops, multivibrators, and more. Perfect for advanced electronics experiments.">
+  <meta name="keywords" content="Digital Physics Lab, Logic Gates, Flip-Flop, 555 Timer, Physics Experiments, +3 Physics">
+  <meta name="author" content="Spanco Tek">
+  <title>+3 Physics Digital Lab Equipment | Spanco Tek</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .product-card {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+    .product-card img {
+      max-height: 150px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+    .product-card h5 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container py-4">
+    <h2 class="mb-4 text-center">+3 Physics Digital Lab Equipment</h2>
+    <div class="row" id="digital-products"></div>
+  </div>
+
+  <script>
+    const digitalProducts = [
+      {
+        title: "Digital",
+        link: "./products-page/plus3-physics-equipment/digital.html",
+        model: "",
+        image: "./assets/images/+3image/DAS-001.png"
+      },
+      {
+        title: "NOT Gate Using Transistor",
+        link: "./products-page/plus3-physics-equipment/not-gate-transistor.html",
+        model: "DAS-001",
+        image: "./assets/images/+3image/DAS-001.png"
+      },
+      {
+        title: "Basic Logic Gate",
+        link: "./products-page/plus3-physics-equipment/basic-logic-gate.html",
+        model: "DIL-001B",
+        image: "./assets/images/+3image/DIL-001B.png"
+      },
+      {
+        title: "Universal Gate - NAND Gate",
+        link: "./products-page/plus3-physics-equipment/universal-gate-nand.html",
+        model: "DAS-002",
+        image: "./assets/images/+3image/DAS-002.png"
+      },
+      {
+        title: "Convert Boolean Expression into Logic Circuit",
+        link: "./products-page/plus3-physics-equipment/boolean-expression-to-logic-circuit.html",
+        model: "DIL-003",
+        image: "./assets/images/+3image/DIL-003.png"
+      },
+      {
+        title: "Adder & Subtractor Using Logic Gates",
+        link: "./products-page/plus3-physics-equipment/adder-subtractor-logic-gates.html",
+        model: "DIL-004",
+        image: "./assets/images/+3image/DIL-004.png"
+      },
+      {
+        title: "Astable & Monostable Multivibrator Using 555 Timer",
+        link: "./products-page/plus3-physics-equipment/multivibrator-555-timer.html",
+        model: "DIL-005",
+        image: "./assets/images/+3image/DIL-005.png"
+      },
+      {
+        title: "Flip-Flop Circuits (RS, Clocked RS, D-type, JK) Using NAND Gates",
+        link: "./products-page/plus3-physics-equipment/flip-flop-nand-gates.html",
+        model: "DAS-006",
+        image: "./assets/images/+3image/DAS-006.png"
+      },
+      {
+        title: "JK Master Slave Flip-Flop Using Flip-Flop IC",
+        link: "./products-page/plus3-physics-equipment/jk-master-slave-flip-flop.html",
+        model: "DSA-007",
+        image: "./assets/images/+3image/DSA-007.png"
+      },
+      {
+        title: "4-Bit Counter Using D-Type, JK Flip-Flop IC",
+        link: "./products-page/plus3-physics-equipment/4bit-counter-flip-flop.html",
+        model: "DSA-008A",
+        image: "./assets/images/+3image/DSA-008A.png"
+      },
+      {
+        title: "4-Bit Shift Register Using D-Type Flip-Flop",
+        link: "./products-page/plus3-physics-equipment/4bit-shift-register.html",
+        model: "DSA-008B",
+        image: "./assets/images/+3image/DSA-008B.png"
+      },
+      {
+        title: "Analog & Digital Trainer Kit",
+        link: "./products-page/plus3-physics-equipment/analog-digital-trainer-kit.html",
+        model: "DSA-009",
+        image: "./assets/images/+3image/DSA-009.png"
+      }
+    ];
+
+    const container = document.getElementById("digital-products");
+
+    digitalProducts.forEach(product => {
+      const col = document.createElement("div");
+      col.className = "col-md-4";
+      col.innerHTML = `
+        <div class="product-card">
+          <img src="${product.image}" alt="${product.title}" class="img-fluid">
+          <h5>${product.title}</h5>
+          <p><strong>Model:</strong> ${product.model || 'N/A'}</p>
+          <a href="${product.link}" class="btn btn-outline-primary btn-sm">View Details</a>
+        </div>
+      `;
+      container.appendChild(col);
+    });
+  </script>
+</body>
+
+</html>
