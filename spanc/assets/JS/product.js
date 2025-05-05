@@ -152,8 +152,8 @@
     category: "mechanicsLab",
     viewMoreLink: "./products-page/plus3-physics-equipment/",
     products: [
-    { title: "MECHANICS LAB INdotek ", link: "./products-page/plus3-physics-equipment/mechanics-lab.html" ,model:""},
-  { title: "Capillary Rise Apparatus", link: "./products-page/plus3-physics-equipment/capillary-rise-apparatus.html" },
+    // { title: "MECHANICS LAB INdotek ", link: "./products-page/plus3-physics-equipment/mechanics-lab.html" ,model:""},
+  { title: "Capillary Rise Apparatus", link: "./products-page/plus3-physics-equipment/capillary-rise-apparatus.html",image:"/assets/images/+3image/mechanics1.png" },
   { title: "Sextant Apparatus", link: "./products-page/plus3-physics-equipment/sextant-apparatus.html" },
   { title: "Fly Wheel Apparatus", link: "./products-page/plus3-physics-equipment/fly-wheel-apparatus.html",model:"SPML-003" },
   { title: "Optical Lever Apparatus", link: "./products-page/plus3-physics-equipment/optical-lever-apparatus.html" ,model:"SPML-004"},
@@ -576,47 +576,69 @@ function renderProductsByCategory(category) {
   container.appendChild(viewMoreDiv);
 }
 
-// function renderProductsByCategory(category) {
-//     const container = document.getElementById('product-sections');
-//     container.innerHTML = '';
 
-//   productData.forEach(section => {
-//     if (section.category === category) {
-//       const sectionHTML = `
-//         <h2 class="mt-5">${section.sectionTitle}</h2>
-//         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-//           ${section.products.map(product => `
-//             <div class="col">
-//               <div class="card h-100">
-//                 <img src="${product.image}" class="card-img-top" alt="${product.title}">
-//                 <div class="card-body d-flex flex-column">
-//                   <h5 class="card-title">${product.title}</h5>
-//                   ${product.model ? `<p class="card-text"><strong>Model:</strong> ${product.model}</p>` : ''}
-//                   <a href="${product.link}" class="btn btn-primary mt-auto">View Specification</a>
-//                 </div>
-//               </div>
-//             </div>
-//           `).join('')}
-//         </div>
-//         <div class="d-flex justify-content-end mt-3">
-//           <a href="${section.viewMoreLink}" class="btn btn-secondary">View More</a>
-//         </div>
-//       `;
-//       container.insertAdjacentHTML('beforeend', sectionHTML);
-//     }
-//   });
-// }
+document.addEventListener('DOMContentLoaded', function () {
+  const searchInput = document.getElementById('product-search');
+  const container = document.getElementById('product-sections');
 
-    // // Add event listeners for sidebar items
-    // document.getElementById('all-products').addEventListener('click', () => filterProducts('all'));
-    // document.getElementById('physics').addEventListener('click', () => filterProducts('Physics'));
-    // document.getElementById('chemistry').addEventListener('click', () => filterProducts('Chemistry'));
-    // document.getElementById('mechanics').addEventListener('click', () => filterProducts('mechanicsLab'));
-    // document.getElementById('emLab').addEventListener('click', () => filterProducts('emLab'));
+  function renderProducts(query = '') {
+    container.innerHTML = '';
+    const searchTerm = query.trim().toLowerCase();
+
+    if (!searchTerm) {
+      loadAllProducts();
+      return;
+    }
+
+    let resultsFound = false;
+
+    productData.forEach(section => {
+      const matchedProducts = section.products.filter(product => {
+        const title = product.title?.toLowerCase() || '';
+        const model = product.model?.toLowerCase() || '';
+        return title.includes(searchTerm) || model.includes(searchTerm);
+      });
+
+      if (matchedProducts.length > 0) {
+        resultsFound = true;
+
+        const sectionHTML = `
+          <h2 class="mt-5">${section.sectionTitle}</h2>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            ${matchedProducts.map(product => `
+              <div class="col">
+                <div class="card h-100">
+                  <img src="${product.image}" class="card-img-top" alt="${product.title}">
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">${product.title}</h5>
+                    ${product.model ? `<p class="card-text"><strong>Model:</strong> ${product.model}</p>` : ''}
+                    <a href="${product.link}" class="btn btn-primary mt-auto">View Specification</a>
+                  </div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        container.insertAdjacentHTML('beforeend', sectionHTML);
+      }
+    });
+
+    if (!resultsFound) {
+      container.innerHTML = `<div class="text-center mt-5"><h4>No products found for "<strong>${searchTerm}</strong>"</h4></div>`;
+    }
+  }
+
+  // Listen for real-time input
+  searchInput.addEventListener('input', function () {
+    renderProducts(this.value);
+  });
+
+  // Load all on initial page load
+  loadAllProducts();
+});
 
 
-     // Load all products initially when the page loads
-    // document.addEventListener('DOMContentLoaded', loadAllProducts);
+  
     document.addEventListener('DOMContentLoaded', function () {
       // Add event listeners for sidebar items
       document.getElementById('all-products')?.addEventListener('click', () => filterProducts('all'));
