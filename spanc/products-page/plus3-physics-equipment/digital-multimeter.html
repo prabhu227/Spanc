@@ -1,84 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EEETECH-DT362 - Product Specifications</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .specifications {
-            margin-top: 30px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="EEETECH-DT362 Digital Multimeter specifications, features, and technical data. Accurate and efficient for voltage, current, and resistance measurements.">
+  <meta name="keywords" content="EEETECH-DT362, digital multimeter, electrical measurement, voltage, current, resistance, capacitance, temperature">
+  <meta name="author" content="Spanco Tek">
+  <link rel="icon" href="../assets/images/spancotek%20LOGO[1].png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <title>EEETECH-DT362 - Product Specifications</title>
 
-        .specifications h3 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      background-color: #f4f7fc;
+      margin: 0;
+      padding: 0;
+    }
 
-        .spec-list {
-            list-style: none;
-            padding-left: 0;
-        }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .spec-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
+    h1, h2 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
 
-        .spec-list li:last-child {
-            border-bottom: none;
-        }
+    .image-box {
+      text-align: center;
+      margin-bottom: 25px;
+    }
 
-        .product-image {
-            width: 100%;
-            max-width: 500px;
-            display: block;
-            margin: 0 auto 30px;
-        }
-    </style>
+    .image-box img {
+      width: 100%;
+      max-width: 400px;
+      height: 500px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    section {
+      margin-bottom: 25px;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #7f8c8d;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Title: DIGITAL MULTIMETER -->
-        <h1 class="text-center mt-5">DIGITAL MULTIMETER</h1>
+  <div class="container">
+    <h1 class="text-center mt-5">DIGITAL MULTIMETER</h1>
 
-        <!-- Product Image -->
-        <div class="text-center">
-            <img src="path-to-your-image.jpg" alt="EEETECH-DT362" class="product-image">
-        </div>
-
-        <div class="specifications">
-            <h3>EEETECH-DT362 Product Specifications</h3>
-            <ul class="spec-list">
-                <li>3-1/2 digits 1999 Counts Backlit LCD Display</li>
-                <li>T-RMS AC Measurements of Voltage & Current</li>
-                <li>Auto Power Off</li>
-                <li>Low Battery Indication</li>
-                <li>Data Hold Facility</li>
-                <li>Non-Contact Voltage Detector</li>
-                <li>DC Voltage: 0 - 200mV/2/20/200/1000V</li>
-                <li>AC Voltage (T-RMS): 0 - 200mV /2/20/200/750V</li>
-                <li>DC Current: 0 - 20mA/200m/10A</li>
-                <li>AC Current (T-RMS): 0 - 2mA /20m/200m/10A</li>
-                <li>Resistance: 0 - 200/2k / 20k / 200k / 2M / 20M.Ohms</li>
-                <li>Capacitance: 0 - 2n/20n/200n/2u/200uF</li>
-                <li>Frequency: 0 - 200/20kHz</li>
-                <li>Temperature: -40 to 1000°C</li>
-                <li>Diode Test</li>
-                <li>Audible Continuity Test</li>
-            </ul>
-
-            
-        </div>
+    <!-- Product Image -->
+    <div class="image-box">
+      <img src="/spanc/assets/images/+3image/EME-001.png" alt="EEETECH-DT362" class="product-image">
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-       <!-- Background shapes -->
+    <!-- Experiment Section -->
+    <section class="experiment">
+      <h2>Experiment</h2>
+      <p>The EEETECH-DT362 is a versatile digital multimeter designed for accurate measurement of voltage, current, resistance, and more.</p>
+    </section>
 
-       <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
-       <script src="/background.js"></script>
+    <!-- Scope of Supply Section -->
+    <section class="scope">
+      <h2>Scope of Supply</h2>
+      <ul id="supplyList"></ul>
+    </section>
+
+    <!-- Optional Accessories Section -->
+    <section class="optional-accessories">
+      <h2>Optional Accessories (Not Supplied)</h2>
+      <ul id="optionalAccessoriesList"></ul>
+    </section>
+
+  </div>
+
+  <script>
+    const supplies = [
+      "3-1/2 digits 1999 Counts Backlit LCD Display: 1 No",
+      "T-RMS AC Measurements of Voltage & Current: 1 No",
+      "Auto Power Off: 1 No",
+      "Low Battery Indication: 1 No",
+      "Data Hold Facility: 1 No",
+      "Non-Contact Voltage Detector: 1 No",
+      "Instruction Manual: 1 No"
+    ];
+
+    const optionalAccessories = [
+      "Digital Balance: 1 No",
+      "Digital Stop Watch: 1 No"
+    ];
+
+    supplies.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("supplyList").appendChild(li);
+    });
+
+    optionalAccessories.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("optionalAccessoriesList").appendChild(li);
+    });
+  </script>
+
+  <canvas id="particles-bg"></canvas>
+  <script src="/spanc/background.js"></script>
+
 </body>
 </html>

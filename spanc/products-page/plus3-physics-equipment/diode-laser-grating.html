@@ -14,16 +14,17 @@
     body {
       font-family: 'Ubuntu', sans-serif;
       background-color: #f8f9fa;
-      padding: 20px;
+      padding-top: 2rem;
     }
-    .specs-container {
+    .container {
       background: #fff;
-      border-radius: 12px;
-      padding: 30px;
-      max-width: 960px;
-      margin: auto;
-      box-shadow: 0 0 16px rgba(0,0,0,0.1);
-      text-align: center;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+      color: #000; /* All headings are black */
+      font-weight: bold;
     }
     .product-img {
       max-width: 100%;
@@ -31,42 +32,41 @@
       object-fit: contain;
       margin-bottom: 20px;
     }
-    .spec-title {
-      font-size: 1.75rem;
-      font-weight: 600;
-      color: #0d6efd;
-      margin-bottom: 25px;
-      border-bottom: 2px solid #0d6efd;
-      display: inline-block;
-      padding-bottom: 6px;
-    }
-    ul.spec-list {
-      list-style: none;
-      padding-left: 0;
-      text-align: left;
-      margin: 0 auto 2rem auto;
-      max-width: 800px;
-    }
-    ul.spec-list li::before {
-      content: "✔ ";
-      color: #198754;
-    }
-    h4 {
+    .section-title {
       margin-top: 2rem;
-      color: #0d6efd;
+      font-weight: 600;
+      color: #34495e;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+    /* Additional styling for the background canvas */
+    #particles-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
   </style>
 </head>
 
 <body>
-  <div class="specs-container">
-    <img src="./images/laser-diffraction.jpg" alt="Laser Source Diffraction Trainer" class="product-img" />
 
-    <h2 class="text-primary">Laser Source Using Diffraction (Single & Double Slit)</h2>
-    <p><strong class="text-secondary">Model Number:</strong> EMP-010</p>
+  <div class="container">
+    <h1 class="text-center">Physics ▸▸ Optics</h1>
+    <h2 class="text-center mt-3">Laser Source Using Diffraction (Single & Double Slit)</h2>
 
-    <h3 class="spec-title">Technical Specifications</h3>
-    <ul class="spec-list">
+    <!-- Product Image -->
+    <div class="text-center">
+      <img src="./images/laser-diffraction.jpg" alt="Laser Source Diffraction Trainer" class="product-img" />
+    </div>
+
+    <!-- Technical Specifications -->
+    <h3 class="section-title">Technical Specifications</h3>
+    <ul>
       <li><strong>Optical Bench:</strong> Aluminium alloy, circular section, 0–100 cm scale, 1 mm least count</li>
       <li><strong>Diode Laser:</strong> 635 nm, 5V DC, 250 mA, 0.4–0.8 mW, Class II, 0–40°C</li>
       <li><strong>Slit Frame Size:</strong> 50 mm × 50 mm</li>
@@ -76,13 +76,15 @@
       <li><strong>Screen:</strong> 1 No</li>
     </ul>
 
-    <h4>Experiment</h4>
-    <ul class="spec-list">
+    <!-- Experiment -->
+    <h3 class="section-title">Experiment</h3>
+    <ul>
       <li>To determine the wavelength of a laser source using diffraction of single slit.</li>
     </ul>
 
-    <h4>Scope of Supply</h4>
-    <ul class="spec-list">
+    <!-- Scope of Supply -->
+    <h3 class="section-title">Scope of Supply</h3>
+    <ul>
       <li>Optical Bench: 1 No</li>
       <li>Diode Laser: 1 No</li>
       <li>Single Slit: 1 No</li>
@@ -92,9 +94,10 @@
     </ul>
   </div>
 
+  <!-- Background shapes -->
+  <canvas id="particles-bg"></canvas>
+  <script src="/spanc/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Background shapes -->
-    <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
-    <script src="/background.js"></script>
+
 </body>
 </html>

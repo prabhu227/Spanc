@@ -1,116 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lab Equipment Gallery | Spanco Tek</title>
-  <meta name="description" content="Gallery of Physics Lab Equipment including Flip-Flop Circuits, 555 Timer Multivibrator, Stefan’s Law Apparatus, Digital Multimeter, NOT Gate, and Basic Logic Gate Trainer." />
-  <meta name="keywords" content="Physics Lab Equipment, Flip-Flop Circuit, 555 Timer, Stefan's Law, Digital Multimeter, NOT Gate, Logic Gate Trainer" />
-  <meta name="author" content="Spanco Tek" />
-  <link rel="icon" href="../assets/images/spancotek LOGO[1].png" type="image/x-icon" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f5f5f5;
-      padding: 20px;
-    }
-    .specs-container {
-      background: #fff;
-      border-radius: 12px;
-      padding: 30px;
-      max-width: 1000px;
-      margin: 40px auto;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    }
-    .carousel-item img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: contain;
-      margin-bottom: 20px;
-    }
-    .spec-title {
-      font-weight: bold;
-      font-size: 2rem;
-      border-bottom: 2px solid #007bff;
-      display: inline-block;
-      padding-bottom: 8px;
-      margin-bottom: 30px;
-    }
-    ul.spec-list {
-      list-style: none;
-      padding-left: 0;
-      text-align: left;
-      max-width: 800px;
-      margin: 0 auto 2rem auto;
-    }
-    h4, h5 {
-      margin-top: 2rem;
-      color: #198754;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <!-- NOT Gate Trainer -->
-    <div class="specs-container">
-      <div id="notGateCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./images/not-gate.jpg" alt="NOT Gate using Transistor" />
-          </div>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Logic Gate Trainer - SPML-LOGIC</title>
+    <meta
+      name="description"
+      content="Study digital logic gates with the SPML-LOGIC Basic Logic Gate Trainer. Includes AND, OR, NOT, NAND, NOR, XOR, and XNOR gates, LED indicators, data switches, and patch cord setup."
+    />
+    <meta
+      name="keywords"
+      content="logic gate trainer, digital electronics lab kit, AND gate, OR gate, NOT gate, NAND, NOR, XOR, SPML-LOGIC, Spanco Tek"
+    />
+    <meta name="author" content="Spanco Tek" />
+    <link
+      rel="icon"
+      href="../assets/images/spancotek LOGO[1].png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Ubuntu", sans-serif;
+        background-color: #f9f9f9;
+        padding-top: 2rem;
+      }
+      .container {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 900px;
+        margin: auto;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #000;
+        font-weight: bold;
+      }
+      .product-img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        margin-bottom: 20px;
+        border-radius: 8px;
+      }
+      .section-title {
+        margin-top: 2rem;
+        font-weight: 600;
+        color: #34495e;
+      }
+      ul {
+        padding-left: 1.5rem;
+      }
+      ul li {
+        margin-bottom: 0.5rem;
+      }
+      #particles-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="text-center">Physics ▸▸ Digital Electronics</h1>
+      <h2 class="text-center mt-3">Basic Logic Gate Trainer</h2>
+      <p class="text-center text-muted">
+        <strong>Model Number:</strong> SPML-LOGIC
+      </p>
+
+      <!-- Product Image -->
+      <div class="text-center">
+        <img
+          src="/spanc/assets/images/+3image/ASP-002.png"
+          alt="Basic Logic Gate Trainer"
+          class="product-img"
+        />
       </div>
-      <h2 class="text-primary">NOT Gate using Transistor Trainer</h2>
-      <p><strong class="text-secondary">Model Number:</strong> SPML-NOT</p>
 
-      <h2 class="spec-title">Technical Specifications</h2>
-      <ul class="spec-list">
-        <li>DC Supply: 0–5V DC, 150mA</li>
-        <li>Input Data Switch</li>
-        <li>Type: Through Hole</li>
-        <li>Pin Count: 3-Pin</li>
-        <li>LED: Through Hole, Size: 5mm</li>
-        <li>Transistor: BC547</li>
-        <li>Resistor: 10KΩ</li>
-        <li>Interconnection: 4mm Patch Cord</li>
-        <li>Circuit & Symbol Diagram: Printed on front panel</li>
-        <li>Mains Power: 230V / 50Hz</li>
-      </ul>
-
-      <h4>Experiment</h4>
-      <ul class="spec-list">
-        <li>To design a switch (NOT gate) using a transistor</li>
-      </ul>
-
-      <h4>Scope of Supply</h4>
-      <ul class="spec-list">
-        <li>Trainer Kit: 1 No</li>
-        <li>Instruction Manual: 1 No</li>
-        <li>Connecting Patch Cord: 2 Nos</li>
-      </ul>
-    </div>
-
-    <!-- Basic Logic Gate Trainer -->
-    <div class="specs-container">
-      <div id="logicGateCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/assets/images/+3image/digital6.png" alt="Basic Logic Gate Trainer" />
-          </div>
-        </div>
-      </div>
-      <h2 class="text-primary">Basic Logic Gate Trainer</h2>
-      <p><strong class="text-secondary">Model Number:</strong> SPML-LOGIC</p>
-
-      <h2 class="spec-title">Technical Specifications</h2>
-      <ul class="spec-list">
-        <li>DC Supply: 0–5V DC, 150mA</li>
-        <li>Input Data Switch</li>
-        <li>Type: Through Hole</li>
-        <li>Pin Count: 3-Pin</li>
-        <li>LED: Through Hole, Size: 5mm</li>
-        <li>Gates Included:
+      <!-- Technical Specifications -->
+      <h3 class="section-title">Technical Specifications</h3>
+      <ul>
+        <li><strong>DC Supply:</strong> 0–5V DC, 150mA</li>
+        <li><strong>Input:</strong> Data Switch</li>
+        <li><strong>Component Type:</strong> Through Hole</li>
+        <li><strong>Pin Count:</strong> 3-Pin</li>
+        <li><strong>LED:</strong> 5mm, Through Hole</li>
+        <li>
+          <strong>Logic Gates Included:</strong>
           <ul>
             <li>AND Gate</li>
             <li>OR Gate</li>
@@ -120,28 +111,31 @@
             <li>EX-NOR Gate</li>
           </ul>
         </li>
-        <li>Interconnection: 4mm Patch Cord</li>
-        <li>Circuit & Symbol Diagram: Printed on front panel</li>
-        <li>Mains Power: 230V / 50Hz</li>
+        <li><strong>Interconnection:</strong> 4mm Patch Cord</li>
+        <li>
+          <strong>Panel Details:</strong> Circuit & Symbol Diagram Printed
+        </li>
+        <li><strong>Mains Power:</strong> 230V / 50Hz</li>
       </ul>
 
-      <h4>Experiment</h4>
-      <ul class="spec-list">
-        <li>To study different logic gates</li>
+      <!-- Experiment -->
+      <h3 class="section-title">Experiment</h3>
+      <ul>
+        <li>To study the behavior of different digital logic gates</li>
       </ul>
 
-      <h4>Scope of Supply</h4>
-      <ul class="spec-list">
+      <!-- Scope of Supply -->
+      <h3 class="section-title">Scope of Supply</h3>
+      <ul>
         <li>Trainer Kit: 1 No</li>
         <li>Instruction Manual: 1 No</li>
         <li>Connecting Patch Cord: 3 Nos</li>
       </ul>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-     <!-- Background shapes -->
 
-     <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
-     <script src="/background.js"></script>
-</body>
+    <!-- Background effect -->
+    <canvas id="particles-bg"></canvas>
+    <script src="/spanc/background.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

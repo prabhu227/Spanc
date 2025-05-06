@@ -1,72 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Series RC Circuit - Product Specifications</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .specifications {
-            margin-top: 30px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Series RC Circuit specifications, features, and technical data.">
+  <meta name="keywords" content="RC Circuit, electrical experiment, lab equipment, scientific instrument">
+  <meta name="author" content="Spanco Tek">
+  <link rel="icon" href="../assets/images/spancotek%20LOGO[1].png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <title>Series RC Circuit - Product Specifications</title>
 
-        .specifications h3 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      background-color: #f4f7fc;
+      margin: 0;
+      padding: 0;
+    }
 
-        .spec-list {
-            list-style: none;
-            padding-left: 0;
-        }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .spec-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
+    h1, h2 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
 
-        .spec-list li:last-child {
-            border-bottom: none;
-        }
+    .image-box {
+      text-align: center;
+      margin-bottom: 25px;
+    }
 
-        .product-image {
-            width: 100%;
-            max-width: 500px;
-            display: block;
-            margin: 0 auto 30px;
-        }
-    </style>
+    .image-box img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    section {
+      margin-bottom: 25px;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #7f8c8d;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Title: SERIES RC CIRCUIT -->
-        <h1 class="text-center mt-5">SERIES RC CIRCUIT</h1>
+  <div class="container">
+    <h1 class="text-center mt-5">SERIES RC CIRCUIT</h1>
 
-        <!-- Product Image -->
-        <div class="text-center">
-            <img src="path-to-your-image.jpg" alt="Series RC Circuit" class="product-image">
-        </div>
-
-        <div class="specifications">
-            <h3>Product Specifications</h3>
-            <ul class="spec-list">
-                <li>Power Supply: Range 0-12V (Variable) DC Regulated Inbuilt</li>
-                <li>Voltmeter: Range 0-12V, Display: Analog (Moving Coil), Panel Size: Square 70 mm x 60 mm (Lx W)</li>
-                <li>Galvanometer: Range 1-0-1µA, Display: Analog (Moving Coil), Panel Size: Square 70 mm x 60 mm (Lx W)</li>
-                <li>Resistances: 10KΩ, 15KΩ & 18KΩ</li>
-                <li>Capacitors: 1000 µf, 2200 µf & 4700 µf</li>
-                <li>Toggle Switch: 2way</li>
-                <li>Dump Switch: 1no</li>
-                <li>Mains Power: 230V/50Hz</li>
-            </ul>
-
-            
-        </div>
+    <!-- Product Image -->
+    <div class="image-box">
+      <img src="/spanc/assets/images/+3image/EME-006.png" alt="Series RC Circuit">
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Experiment Section -->
+    <section class="experiment">
+      <h2>Experiment</h2>
+      <p>This experiment demonstrates the behavior of a series RC circuit, including its charging and discharging characteristics.</p>
+    </section>
+
+    <!-- Scope of Supply Section -->
+    <section class="scope">
+      <h2>Scope of Supply</h2>
+      <ul id="supplyList"></ul>
+    </section>
+
+    <!-- Optional Accessories Section -->
+    <section class="optional-accessories">
+      <h2>Optional Accessories (Not Supplied)</h2>
+      <ul id="optionalAccessoriesList"></ul>
+    </section>
+
+
+  </div>
+
+  <script>
+    const supplies = [
+      "Power Supply: Range 0-12V (Variable) DC Regulated Inbuilt",
+      "Voltmeter: Range 0-12V, Display: Analog (Moving Coil), Panel Size: Square 70 mm x 60 mm (Lx W)",
+      "Galvanometer: Range 1-0-1µA, Display: Analog (Moving Coil), Panel Size: Square 70 mm x 60 mm (Lx W)",
+      "Resistances: 10KΩ, 15KΩ & 18KΩ",
+      "Capacitors: 1000 µf, 2200 µf & 4700 µf",
+      "Toggle Switch: 2way",
+      "Dump Switch: 1no",
+      "Mains Power: 230V/50Hz"
+    ];
+
+    const optionalAccessories = [
+      "Digital Oscilloscope: 1 No",
+      "Function Generator: 1 No"
+    ];
+
+    supplies.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("supplyList").appendChild(li);
+    });
+
+    optionalAccessories.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("optionalAccessoriesList").appendChild(li);
+    });
+  </script>
+
+  <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+  <script src="/spanc/background.js"></script>
+
 </body>
 </html>

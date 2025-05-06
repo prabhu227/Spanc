@@ -9,83 +9,47 @@
   <meta name="author" content="Spanco Tek" />
   <title>Glass Slab | Product Code 1051</title>
   <link rel="icon" href="../assets/images/spancotek LOGO[1].png" type="image/x-icon" />
-  <style>
-    #particles-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      filter: blur(3px); /* ⬅️ This is the blur layer */
-      pointer-events: none; /* ⬅️ Allows clicks to pass through */
-    }
-    </style>
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- AOS Animation CSS -->
+  <!-- AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f5f5;
-      padding: 20px;
+      font-family: 'Ubuntu', sans-serif;
+      background-color: #f8f9fa;
+      padding: 30px 15px;
     }
-    .ubuntu-medium {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-    .specs-container {
+    .product-card {
+      max-width: 1000px;
+      margin: auto;
       background: #fff;
       border-radius: 12px;
       padding: 30px;
-      max-width: 1000px;
-      margin: auto;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
-
-    .spec-title {
-      font-weight: bold;
-      font-size: 2rem;
-      border-bottom: 2px solid #007bff;
-      display: inline-block;
-      padding-bottom: 8px;
-      margin-bottom: 30px;
-    }
-
-    .spec-key {
-      color: #6c757d;
-      font-weight: 500;
-    }
-
-    .read-more-btn {
-      background-color: transparent;
-      border: none;
-      color: #007bff;
-      font-weight: 500;
-      margin-top: 20px;
-      padding-left: 0;
-    }
-
     .product-img {
       width: 100%;
       max-height: 300px;
       object-fit: contain;
       margin-bottom: 20px;
     }
-
-    @media (max-width: 768px) {
-      .spec-title {
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: bold;
+      border-left: 4px solid #007bff;
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+    .spec-key {
+      font-weight: 500;
+      color: #6c757d;
+    }
+    @media (max-width: 576px) {
+      .section-title {
         font-size: 1.5rem;
       }
-    }
-
-    @media (max-width: 576px) {
-      .specs-container {
+      .product-card {
         padding: 20px;
       }
     }
@@ -93,82 +57,62 @@
 </head>
 <body>
 
-<div class="specs-container" data-aos="zoom-in">
+<div class="product-card" data-aos="zoom-in">
+
+  <h1 class="text-center mb-4">Glass Slab</h1>
+  <p class="text-center text-muted mb-4">Product Code: <strong>1051</strong></p>
+
   <img src="https://5.imimg.com/data5/SELLER/Default/2025/4/500615091/TZ/QV/IN/54841566/rectangular-glass-slab-size-100x60x20mm.png" alt="Glass Slab" class="product-img" data-aos="fade-up" />
 
-  <div class="my-4 lh-sm">
-    The Glass Slab is a key optical component used in physics laboratories to demonstrate light refraction, lateral displacement, and other optical principles. It is widely used in educational institutions for hands-on experiments in geometrical optics.
-  </div>
+  <p data-aos="fade-up">
+    The Glass Slab is an essential optical tool used to demonstrate light refraction, lateral displacement, and optical path deviation in physics experiments. Commonly found in school and college physics labs, it helps illustrate key principles in geometrical optics.
+  </p>
 
-  <h2 class="spec-title">Glass Slab Specifications</h2>
-
-  <h5 class="mb-4" data-aos="fade-right">General</h5>
+  <div class="section-title" data-aos="fade-right">Specifications</div>
 
   <div class="row mb-3">
     <div class="col-md-4 spec-key">Product Name</div>
     <div class="col-md-8">Glass Slab</div>
   </div>
-
   <div class="row mb-3">
     <div class="col-md-4 spec-key">Product Code</div>
     <div class="col-md-8">1051</div>
   </div>
-
   <div class="row mb-3">
     <div class="col-md-4 spec-key">Material</div>
     <div class="col-md-8">Optical-grade glass</div>
   </div>
-
   <div class="row mb-3">
     <div class="col-md-4 spec-key">Shape</div>
     <div class="col-md-8">Rectangular block</div>
   </div>
-
   <div class="row mb-3">
     <div class="col-md-4 spec-key">Size</div>
     <div class="col-md-8">Approx. 100 mm x 60 mm x 20 mm (varies)</div>
   </div>
-
-  <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
-
-  <div id="readMoreSection" class="mt-4" style="display: none;" data-aos="fade-in">
-    <div class="row mb-3">
-      <div class="col-md-4 spec-key">Usage</div>
-      <div class="col-md-8">Demonstrating light refraction, lateral displacement, and optical path deviation</div>
-    </div>
-
-    <div class="row mb-3">
-      <div class="col-md-4 spec-key">Edges</div>
-      <div class="col-md-8">Ground and polished for safety and clarity</div>
-    </div>
-
-    <div class="row mb-3">
-      <div class="col-md-4 spec-key">Educational Level</div>
-      <div class="col-md-8">High School and College Physics Labs</div>
-    </div>
-
-    <div class="row mb-3">
-      <div class="col-md-4 spec-key">Finish</div>
-      <div class="col-md-8">Clear transparent surface for accurate results</div>
-    </div>
+  <div class="row mb-3">
+    <div class="col-md-4 spec-key">Usage</div>
+    <div class="col-md-8">Refraction, lateral displacement, and optical path deviation</div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-4 spec-key">Edges</div>
+    <div class="col-md-8">Ground and polished for clarity and safety</div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-4 spec-key">Educational Level</div>
+    <div class="col-md-8">High School and College</div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-4 spec-key">Finish</div>
+    <div class="col-md-8">Clear transparent surface</div>
   </div>
 </div>
 
-<!-- AOS Animation JS -->
+<!-- AOS JS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-
-  function toggleReadMore() {
-    const readMore = document.getElementById("readMoreSection");
-    readMore.style.display = readMore.style.display === "none" ? "block" : "none";
-  }
-</script>
-  <!-- Background shapes -->
-
-  <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
-
-  <script src="/Spanc/spanc/products-page/background.js"></script>
+<script>AOS.init();</script>
+<canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+<script src="/spanc/background.js"></script>
 
 </body>
 </html>

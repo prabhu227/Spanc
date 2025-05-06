@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="title" content="Blow Pipe Brass - Spanco Tek" />
   <meta name="description" content="Detailed technical specifications of the Blow Pipe Brass used for laboratory applications, featuring brass construction and suitable for heating and combustion experiments." />
   <meta name="keywords" content="Blow Pipe Brass, Laboratory Heating, Brass Blow Pipe, Laboratory Equipment, Heating Tools" />
   <meta name="author" content="Spanco Tek" />
@@ -11,7 +12,42 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  
   <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      background-color: #f8f9fa;
+      padding-top: 2rem;
+    }
+    .container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      color: #000;
+      font-weight: bold;
+    }
+    .section-title {
+      margin-top: 2rem;
+      font-weight: 600;
+      color: #34495e;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+    .product-img {
+      max-width: 100%;
+      height: 300px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
     #particles-bg {
       position: fixed;
       top: 0;
@@ -19,73 +55,58 @@
       z-index: -1;
       width: 100%;
       height: 100%;
-      filter: blur(3px); /* ⬅️ This is the blur layer */
-      pointer-events: none; /* ⬅️ Allows clicks to pass through */
-    }
-    </style>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
-    }
-    .ubuntu-medium {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-    .card {
-      border-radius: 1rem;
-    }
-    .card-title {
-      color: #0d6efd;
-    }
-    ul.list-group li {
-      font-size: 1rem;
-      padding: 0.75rem 1rem;
-    }
-    @media (max-width: 576px) {
-      h1.display-5 {
-        font-size: 1.8rem;
-      }
+      filter: blur(3px); /* Blur background effect */
+      pointer-events: none;
     }
   </style>
 </head>
+
 <body>
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-5 fw-bold">Blow Pipe Brass</h1>
-      <p class="lead">Laboratory blow pipe made of high-quality brass for heating and combustion experiments</p>
+
+  <div class="container">
+    <h1 class="text-center">Blow Pipe Brass</h1>
+    <h2 class="text-center mt-3">Laboratory Equipment for Heating & Combustion</h2>
+
+    <!-- Product Image -->
+    <div class="text-center">
+      <img src="../assets/images/black-phosphorus-model.jpg" alt="Blow Pipe Brass" class="product-img" />
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-         <!-- Image Section -->
-    <div class="text-center mb-4">
-      <img src="../assets/images/black-phosphorus-model.jpg" alt="Black Phosphorus Atomic Model" class="img-fluid rounded shadow-sm" style="max-height: 300px;" />
-    </div>
-        <div class="card shadow-sm p-4">
-          <h2 class="card-title mb-4 text-center">Technical Specifications</h2>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Material: Brass</li>
-            <li class="list-group-item">Length: 8", 10", 12"</li>
-            <li class="list-group-item">Design: Die-Pressed</li>
-            <li class="list-group-item">Uses: Heating, Combustion</li>
-            <li class="list-group-item">Ideal for: Laboratory applications</li>
-          </ul>
-        </div>
+    <!-- Description -->
+    <p>
+      The Blow Pipe Brass is an essential laboratory tool made from high-quality brass, designed for heating and combustion experiments. Its sturdy construction makes it ideal for direct flame applications in various laboratory settings.
+    </p>
 
-        <div class="text-center mt-4">
-          <a href="../chemistry-biology-equipment.html" class="btn btn-outline-primary">← Back to Equipment List</a>
-        </div>
-      </div>
-    </div>
+    <!-- Technical Specifications -->
+    <h3 class="section-title">Technical Specifications</h3>
+    <ul>
+      <li><strong>Material:</strong> Brass</li>
+      <li><strong>Length:</strong> Available in 8", 10", 12"</li>
+      <li><strong>Design:</strong> Die-Pressed</li>
+      <li><strong>Uses:</strong> Heating, Combustion</li>
+      <li><strong>Ideal for:</strong> Laboratory applications</li>
+    </ul>
+
+    <!-- Additional Details -->
+    <h3 class="section-title">Additional Details</h3>
+    <ul>
+      <li><strong>Durability:</strong> Designed for high-temperature applications</li>
+      <li><strong>Compatibility:</strong> Compatible with standard laboratory flame sources</li>
+      <li><strong>Maintenance:</strong> Easy to clean and maintain for long-term use</li>
+    </ul>
+
+    <!-- Applications and Experiment Usage -->
+    <h3 class="section-title">Applications and Experiment Usage</h3>
+    <ul>
+      <li>Used for creating controlled flames for heating and combustion experiments.</li>
+      <li>Ideal for heating materials, conducting combustion tests, and laboratory demonstrations.</li>
+    </ul>
   </div>
 
+  <!-- Background effect -->
+  <canvas id="particles-bg"></canvas>
+  <script src="/Spanc/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Background shapes -->
 
-    <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
-
-    <script src="/Spanc/spanc/products-page/background.js"></script>
 </body>
 </html>

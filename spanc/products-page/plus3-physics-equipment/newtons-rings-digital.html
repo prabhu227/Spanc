@@ -3,79 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Newton's Ring Apparatus</title>
+  <title>Newton's Ring Apparatus – Interference Experiment</title>
+  <meta name="description" content="Determine the wavelength of monochromatic light using Newton's Ring Apparatus. A core interference optics experiment for physics laboratories." />
+  <meta name="keywords" content="Newton's rings, wavelength determination, interference pattern, optics experiment, physics lab equipment, Spanco Tek" />
+  <meta name="author" content="Spanco Tek" />
+  <link rel="icon" href="../assets/images/spancotek%20LOGO[1].png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f7fc;
-      margin: 0;
-      padding: 0;
+      font-family: 'Ubuntu', sans-serif;
+      background-color: #f8f9fa;
+      padding-top: 2rem;
     }
 
     .container {
-      max-width: 900px;
-      margin: 30px auto;
       background: #ffffff;
-      padding: 25px;
+      padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin: auto;
     }
 
     h1, h2 {
+      font-weight: bold;
       color: #2c3e50;
-      margin-top: 0;
     }
 
-    .image-box {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    .image-box img {
-      width: 100%;
-      max-width: 600px;
+    .product-img {
+      display: block;
+      margin: 0 auto 30px auto;
+      max-width: 100%;
       height: auto;
-      border-radius: 10px;
+      border-radius: 8px;
       border: 1px solid #ccc;
     }
 
     ul {
-      list-style-type: disc;
-      padding-left: 20px;
-      line-height: 1.6;
+      padding-left: 1.2rem;
     }
 
-    section {
-      margin-bottom: 25px;
-    }
-
-    .note {
-      font-size: 0.9rem;
-      font-style: italic;
-      color: #7f8c8d;
-      margin-top: 30px;
+    ul li {
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Newton's Ring Apparatus</h1>
 
-    <div class="image-box">
-      <img src="https://via.placeholder.com/600x400?text=Newton%27s+Ring+Apparatus" alt="Newton's Ring Apparatus">
+  <div class="container">
+    <h1 class="text-center">Newton's Ring Apparatus</h1>
+
+    <div class="text-center">
+      <img src="/spanc/assets/images/+3image/WO-006D.png" alt="Newton's Ring Apparatus" class="product-img" />
     </div>
 
-    <section class="experiment">
-      <h2>Experiment</h2>
-      <p>Determination of wavelength of light by Newton’s ring apparatus.</p>
-    </section>
+    <h2>Experiment</h2>
+    <ul>
+      <li>Determination of wavelength of monochromatic light by Newton’s Ring Apparatus.</li>
+    </ul>
 
-    <section class="scope">
-      <h2>Scope of Supply</h2>
-      <ul id="supplyList"></ul>
-    </section>
-
-  
+    <h2>Scope of Supply</h2>
+    <ul id="supplyList"></ul>
   </div>
 
   <script>
@@ -90,5 +79,8 @@
       document.getElementById("supplyList").appendChild(li);
     });
   </script>
+ <canvas id="particles-bg"></canvas>
+ <script src="/spanc/background.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

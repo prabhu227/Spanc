@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Characteristics of a Bipolar Junction Transistor (NPN/PNP) Trainer</title>
+
+  <!-- Fonts & Bootstrap -->
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
     body {
       font-family: 'Ubuntu', sans-serif;
@@ -36,17 +40,28 @@
       height: auto;
       margin-top: 1rem;
     }
+    /* Style for the background canvas */
+    #particles-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Keep it behind the content */
+    }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 <body>
+  <canvas id="particles-bg"></canvas> <!-- Background Canvas -->
+
   <div class="container">
     <h1 class="mb-4">Physics ▸▸ Electronics</h1>
     <h2>Characteristics of a Bipolar Junction Transistor (NPN/PNP) Trainer</h2>
 
-    <!-- Add Image -->
+    <!-- Display Image -->
     <img src="./assets/images/+3image/ASP-004.png" alt="Bipolar Junction Transistor Trainer" class="img-fluid">
 
+    <!-- Technical Specifications -->
     <h4 class="section-title">Technical Specification</h4>
     <ul class="spec-list">
       <li><strong>Inbuilt Variable DC Power Supply:</strong> Range: 0-1V/100mA & 10V/100mA (Variable)</li>
@@ -58,19 +73,22 @@
       <li><strong>Mains Supply:</strong> 230V/50Hz</li>
     </ul>
 
+    <!-- Experiment -->
     <h4 class="section-title">Experiment</h4>
     <ul>
       <li>To study the characteristics of a Bipolar Junction Transistor in CE configuration</li>
     </ul>
 
+    <!-- Scope of Supply -->
     <h4 class="section-title">Scope of Supply</h4>
     <ul>
       <li>Trainer Kit: 1 No</li>
       <li>Instruction Manual: 1 No</li>
     </ul>
   </div>
-  <canvas id="particles-bg"></canvas>
-  <script src="/background.js"></script> <!-- Ensure background.js is correctly linked -->
+
+  <!-- Link to background.js for the particle effects -->
+  <script src="/spanc/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -12,11 +12,42 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- AOS Animation CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
   <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      background-color: #f8f9fa;
+      padding-top: 2rem;
+    }
+    .container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      color: #000;
+      font-weight: bold;
+    }
+    .section-title {
+      margin-top: 2rem;
+      font-weight: 600;
+      color: #34495e;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+    .product-img {
+      max-width: 100%;
+      height: 300px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
     #particles-bg {
       position: fixed;
       top: 0;
@@ -24,153 +55,57 @@
       z-index: -1;
       width: 100%;
       height: 100%;
-      filter: blur(3px); /* ⬅️ This is the blur layer */
-      pointer-events: none; /* ⬅️ Allows clicks to pass through */
-    }
-    </style>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f5f5;
-      padding: 20px;
-    }
-    .ubuntu-medium {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-    .specs-container {
-      background: #fff;
-      border-radius: 12px;
-      padding: 30px;
-      max-width: 1000px;
-      margin: auto;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    }
-
-    .spec-title {
-      font-weight: bold;
-      font-size: 2rem;
-      border-bottom: 2px solid #007bff;
-      display: inline-block;
-      padding-bottom: 8px;
-      margin-bottom: 30px;
-    }
-
-    .spec-key {
-      color: #6c757d;
-      font-weight: 500;
-    }
-
-    .read-more-btn {
-      background-color: transparent;
-      border: none;
-      color: #007bff;
-      font-weight: 500;
-      margin-top: 20px;
-      padding-left: 0;
-    }
-
-    .product-img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: contain;
-      margin-bottom: 20px;
-    }
-
-    @media (max-width: 768px) {
-      .spec-title {
-        font-size: 1.5rem;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .specs-container {
-        padding: 20px;
-      }
     }
   </style>
 </head>
+
 <body>
 
-<div class="specs-container" data-aos="zoom-in">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj5OLBpuVhF7zzy1xAqvwHJWQvROIH8GT3tQ&s" alt="Voltmeter" class="product-img" data-aos="fade-up" />
+  <div class="container">
+    <h1 class="text-center">Voltmeter</h1>
+    <h2 class="text-center mt-3">Product Code: 1226</h2>
 
-  <div class="my-4 lh-sm">
-    The Voltmeter is a fundamental instrument used for measuring the electrical potential difference between two points in an electric circuit. Ideal for classroom demonstrations, laboratory experiments, and technical training setups, it offers clear readings with high accuracy.
-    DC mounted in beautiful ABS-Plastic stand accuracy +2.0% F.S.D. with lock type terminals. All common ranges 3V, 5V, 10V available
-  </div>
-
-  <h2 class="spec-title">Voltmeter Specifications</h2>
-
-  <h5 class="mb-4" data-aos="fade-right">General</h5>
-
-  <div class="row mb-3">
-    <div class="col-md-4 spec-key">Product Name</div>
-    <div class="col-md-8">Voltmeter</div>
-  </div>
-
-  <div class="row mb-3">
-    <div class="col-md-4 spec-key">Product Code</div>
-    <div class="col-md-8">1226</div>
-  </div>
-
-  <div class="row mb-3">
-    <div class="col-md-4 spec-key">Voltage Range</div>
-    <div class="col-md-8">0–5V / 0–10V / 0–15V (varies by model)</div>
-  </div>
-
-  <div class="row mb-3">
-    <div class="col-md-4 spec-key">Display Type</div>
-    <div class="col-md-8">Analog needle deflection</div>
-  </div>
-
-  <div class="row mb-3">
-    <div class="col-md-4 spec-key">Accuracy</div>
-    <div class="col-md-8">±2% of full scale</div>
-  </div>
-
-  <div class="row mb-3">
-    <div class="col-md-4 spec-key">Application</div>
-    <div class="col-md-8">Measures potential difference in electric circuits</div>
-  </div>
-
-  <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
-
-  <div id="readMoreSection" class="mt-4" style="display: none;" data-aos="fade-in">
-    <div class="row mb-3">
-      <div class="col-md-4 spec-key">Build Quality</div>
-      <div class="col-md-8">Durable plastic/metal casing with clear acrylic cover</div>
+    <!-- Product Image -->
+    <div class="text-center">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj5OLBpuVhF7zzy1xAqvwHJWQvROIH8GT3tQ&s" alt="Voltmeter" class="product-img" />
     </div>
 
-    <div class="row mb-3">
-      <div class="col-md-4 spec-key">Terminals</div>
-      <div class="col-md-8">Screw terminals for secure connections</div>
-    </div>
+    <!-- Description -->
+    <p>
+      The Voltmeter is a fundamental instrument used for measuring the electrical potential difference between two points in an electric circuit. Ideal for classroom demonstrations, laboratory experiments, and technical training setups, it offers clear readings with high accuracy. DC mounted in beautiful ABS-Plastic stand, accuracy ±2.0% F.S.D., with lock type terminals. All common ranges 3V, 5V, 10V available.
+    </p>
 
-    <div class="row mb-3">
-      <div class="col-md-4 spec-key">Educational Level</div>
-      <div class="col-md-8">Schools, Colleges, Technical Institutes</div>
-    </div>
+    <!-- Technical Specifications -->
+    <h3 class="section-title">Technical Specifications</h3>
+    <ul>
+      <li><strong>Product Name:</strong> Voltmeter</li>
+      <li><strong>Product Code:</strong> 1226</li>
+      <li><strong>Voltage Range:</strong> 0–5V / 0–10V / 0–15V (varies by model)</li>
+      <li><strong>Display Type:</strong> Analog needle deflection</li>
+      <li><strong>Accuracy:</strong> ±2% of full scale</li>
+      <li><strong>Application:</strong> Measures potential difference in electric circuits</li>
+    </ul>
+
+    <!-- Additional Details -->
+    <h3 class="section-title">Additional Details</h3>
+    <ul>
+      <li><strong>Build Quality:</strong> Durable plastic/metal casing with clear acrylic cover</li>
+      <li><strong>Terminals:</strong> Screw terminals for secure connections</li>
+      <li><strong>Educational Level:</strong> Schools, Colleges, Technical Institutes</li>
+    </ul>
+
+    <!-- Applications and Experiment Usage -->
+    <h3 class="section-title">Applications and Experiment Usage</h3>
+    <ul>
+      <li>Ideal for demonstrating electrical measurements in educational physics labs.</li>
+      <li>Useful for experiments involving Ohm’s law, series/parallel circuits, and voltage-current relationships.</li>
+    </ul>
   </div>
-</div>
 
-<!-- AOS Animation JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-
-  function toggleReadMore() {
-    const readMore = document.getElementById("readMoreSection");
-    readMore.style.display = readMore.style.display === "none" ? "block" : "none";
-  }
-</script>
-  <!-- Background shapes -->
-
+  <!-- Background effect -->
   <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
-
-  <script src="/Spanc/spanc/products-page/background.js"></script>
+  <script src="/Spanc/background.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

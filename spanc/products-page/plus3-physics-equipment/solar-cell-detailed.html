@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>V-I of Solar Cell Digital</title>
+
+  <!-- Fonts & Bootstrap -->
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
     body {
       font-family: 'Ubuntu', sans-serif;
@@ -38,7 +42,6 @@
       z-index: -1; /* Keep it behind the content */
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 <body>
   <canvas id="particles-bg"></canvas> <!-- Background Canvas -->
@@ -50,21 +53,24 @@
     <!-- Display Image -->
     <img src="./assets/images/+3image/ASP-003D.png" alt="Solar Cell Digital Trainer" class="img-fluid">
 
+    <!-- Technical Specifications -->
     <h4 class="section-title">Technical Specification</h4>
     <ul class="spec-list">
-      <li><strong>DC Ammeter:</strong> Range: 0-200mA, Display: 3½ Digit 7 Segment LED</li>
-      <li><strong>DC Voltmeter:</strong> Range: 0-20V, Display: 3½ Digit 7 Segment LED</li>
+      <li><strong>DC Ammeter:</strong> Range: 0–200mA, Display: 3½ Digit 7 Segment LED</li>
+      <li><strong>DC Voltmeter:</strong> Range: 0–20V, Display: 3½ Digit 7 Segment LED</li>
       <li><strong>Solar Cell (PV):</strong> 1 No</li>
       <li><strong>Light Source:</strong> 100W Bulb with intensity control</li>
       <li><strong>Range Selector Resistive Load:</strong> 1KΩ, 220Ω, 150Ω, 100Ω, 82Ω, 47Ω, 33Ω, 22Ω, 10Ω</li>
       <li><strong>Mains Power:</strong> 230V, 50Hz +10%</li>
     </ul>
 
+    <!-- Experiment -->
     <h4 class="section-title">Experiment</h4>
     <ul>
       <li>Study of V-I & power curves of solar cells, and find maximum power point & efficiency</li>
     </ul>
 
+    <!-- Scope of Supply -->
     <h4 class="section-title">Scope of Supply</h4>
     <ul>
       <li>Trainer Kit: 1 No</li>
@@ -73,6 +79,7 @@
       <li>Instruction Manual: 1 No</li>
     </ul>
 
+    <!-- Optional Accessories -->
     <h4 class="section-title">Optional Accessories (Not Supplied)</h4>
     <ul>
       <li>Light Source: 1 No</li>
@@ -80,7 +87,7 @@
   </div>
 
   <!-- Link to background.js for the particle effects -->
-  <script src="/background.js"></script> <!-- Ensure the background.js is linked correctly -->
+  <script src="/spanc/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

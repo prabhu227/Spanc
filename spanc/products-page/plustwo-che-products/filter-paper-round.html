@@ -10,7 +10,44 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+
   <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      background-color: #f8f9fa;
+      padding-top: 2rem;
+    }
+    .container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      color: #000;
+      font-weight: bold;
+    }
+    .section-title {
+      margin-top: 2rem;
+      font-weight: 600;
+      color: #34495e;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+    .product-img {
+      max-width: 100%;
+      height: 300px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
     #particles-bg {
       position: fixed;
       top: 0;
@@ -18,77 +55,64 @@
       z-index: -1;
       width: 100%;
       height: 100%;
-      filter: blur(3px); /* ⬅️ This is the blur layer */
-      pointer-events: none; /* ⬅️ Allows clicks to pass through */
-    }
-    </style>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-      background-color: #f9f9f9;
-    }
-    .ubuntu-medium {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-    .card {
-      border-radius: 1rem;
-    }
-    .card-title {
-      color: #0d6efd;
-    }
-    ul.list-group li {
-      font-size: 1rem;
-      padding: 0.75rem 1rem;
-    }
-    @media (max-width: 576px) {
-      h1.display-5 {
-        font-size: 1.8rem;
-      }
     }
   </style>
 </head>
+
 <body>
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-5 fw-bold">Filter Paper Round (2031)</h1>
-      <p class="lead">Essential for laboratory filtration procedures in chemistry and biology experiments</p>
+
+  <div class="container">
+    <h1 class="text-center">Filter Paper Round (2031)</h1>
+    <h2 class="text-center mt-3">Product Code: 2031</h2>
+
+    <!-- Product Image -->
+    <div class="text-center">
+      <img src="../assets/images/black-phosphorus-model.jpg" alt="Filter Paper Round" class="product-img" />
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-         <!-- Image Section -->
-    <div class="text-center mb-4">
-      <img src="../assets/images/black-phosphorus-model.jpg" alt="Black Phosphorus Atomic Model" class="img-fluid rounded shadow-sm" style="max-height: 300px;" />
-    </div>
-        <div class="card shadow-sm p-4">
-          <h2 class="card-title mb-4 text-center">Technical Specifications</h2>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Product Code: 2031</li>
-            <li class="list-group-item">Type: Round Filter Paper</li>
-            <li class="list-group-item">Material: High-quality cellulose fibers</li>
-            <li class="list-group-item">Diameter: Available in various sizes (e.g., 11cm, 12.5cm, etc.)</li>
-            <li class="list-group-item">Grade: General purpose lab filtration</li>
-            <li class="list-group-item">Filtration Speed: Medium</li>
-            <li class="list-group-item">Applications: Used in chemistry, biology, and environmental science labs</li>
-            <li class="list-group-item">Packaging: Packed in moisture-proof cartons</li>
-          </ul>
-        </div>
+    <!-- Description -->
+    <p>
+      Filter Paper Round (2031) is ideal for laboratory filtration applications in chemistry and biology experiments. It ensures efficient and reliable filtration with high-quality cellulose fibers, offering medium filtration speed for general lab use.
+    </p>
 
-        <div class="text-center mt-4">
-          <a href="../chemistry-biology-equipment.html" class="btn btn-outline-primary">← Back to Equipment List</a>
-        </div>
-      </div>
+    <!-- Technical Specifications -->
+    <h3 class="section-title">Technical Specifications</h3>
+    <ul>
+      <li><strong>Product Code:</strong> 2031</li>
+      <li><strong>Type:</strong> Round Filter Paper</li>
+      <li><strong>Material:</strong> High-quality cellulose fibers</li>
+      <li><strong>Diameter:</strong> Available in various sizes (e.g., 11cm, 12.5cm, etc.)</li>
+      <li><strong>Grade:</strong> General purpose lab filtration</li>
+      <li><strong>Filtration Speed:</strong> Medium</li>
+      <li><strong>Applications:</strong> Used in chemistry, biology, and environmental science labs</li>
+      <li><strong>Packaging:</strong> Packed in moisture-proof cartons</li>
+    </ul>
+
+    <!-- Additional Details -->
+    <h3 class="section-title">Additional Details</h3>
+    <ul>
+      <li><strong>Educational Level:</strong> Suitable for high school and college labs</li>
+      <li><strong>Packaging:</strong> Moisture-proof cartons for optimal preservation</li>
+    </ul>
+
+    <!-- Applications and Experiment Usage -->
+    <h3 class="section-title">Applications and Experiment Usage</h3>
+    <ul>
+      <li>Used for filtration in laboratory experiments requiring medium filtration speed.</li>
+      <li>Commonly used in chemistry, biology, and environmental science labs for general filtration tasks.</li>
+    </ul>
+
+    <!-- Back Button -->
+    <div class="text-center mt-4">
+      <a href="../chemistry-biology-equipment.html" class="btn btn-outline-primary">← Back to Equipment List</a>
     </div>
+
   </div>
 
+  <!-- Background effect -->
+  <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+  <script src="/Spanc/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Background shapes -->
 
-    <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
-
-    <script src="/Spanc/spanc/products-page/background.js"></script>
 </body>
 </html>

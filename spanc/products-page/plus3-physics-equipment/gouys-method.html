@@ -1,96 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gouy’s Method</title>
-    <!-- Google Fonts for Ubuntu -->
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Ubuntu', sans-serif;
-            background-color: #f8f9fa;
-        }
-        .section-header {
-            margin-top: 30px;
-            color: #0056b3;
-        }
-        .content-section {
-            margin-bottom: 30px;
-        }
-        .list-group-item {
-            font-size: 1.1em;
-        }
-        .content-section ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        .content-section h4 {
-            margin-top: 15px;
-        }
-        .image-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .image-container img {
-            width: 80%;
-            max-width: 500px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gouy’s Method</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .container {
+      background: #ffffff;
+      padding: 2rem;
+      margin-top: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3, h4 {
+      color: #2c3e50;
+      font-weight: bold;
+    }
+    .section-title {
+      margin-top: 2rem;
+      color: #444;
+      font-weight: 600;
+    }
+    .lab-image {
+      max-width: 100%;
+      height: auto;
+      margin: 1rem 0;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">Gouy’s Method</h1>
 
-        <!-- Image Field -->
-        <div class="image-container">
-            <img src="./assets/images/+3image/SSP-002.png" alt="Gouy’s Method Setup">
-            <p class="mt-2">This image shows the experimental setup for measuring the magnetic susceptibility of solids using Gouy’s Method.</p>
-        </div>
+  <div class="container">
+    <h1 class="text-center">Gouy’s Method</h1>
 
-        <div class="content-section">
-            <h3 class="section-header">Technical Specifications</h3>
-            <ul class="list-group">
-                <li class="list-group-item">ELECTROMAGNET: Made of soft iron, mounted on a wooden base, pole pieces: 75mm dia. Magnetic Field: 20KG at 6mm air gap. Two energizing coils, 13W each (approx.).</li>
-                <li class="list-group-item">DIGITAL POWER SUPPLY FOR ELECTROMAGNET: 0-6 Amp, 30V digital display, constant current power supply with long-time operation and continuously variable current.</li>
-                <li class="list-group-item">DIGITAL GAUSS METER: Range 0-2 K Gauss & 0-20 K Gauss. Resolution: 1 Gauss at 0-2 K Gauss Range. Accuracy: ± 0.5%. Display: 3 1⁄2 Digit, 7 Segment LED. Power: 220V, 50Hz. Special Feature: Indicates the direction of the magnetic field.</li>
-                <li class="list-group-item">DIGITAL BALANCE: Capacity 200g, Least Count: 0.001g, Display Type: LCD with Back-Light, Calibration Type: External, Pan Diameter: 80 mm.</li>
-            </ul>
-        </div>
-
-        <div class="content-section">
-            <h3 class="section-header">Experiment</h3>
-            <p>To measure the Magnetic Susceptibility of Solids using Gouy’s Method.</p>
-        </div>
-
-        <div class="content-section">
-            <h4 class="section-header">Scope of Supply</h4>
-            <ul class="list-group">
-                <li class="list-group-item">Electromagnet with wooden stand</li>
-                <li class="list-group-item">Power Supply for Electromagnet</li>
-                <li class="list-group-item">Digital Gauss Meter</li>
-                <li class="list-group-item">Instruction Manual</li>
-            </ul>
-        </div>
-
-        <div class="content-section">
-            <h4 class="section-header">Optional Items Not Supplied with this Setup</h4>
-            <ul class="list-group">
-                <li class="list-group-item">Digital Balance</li>
-            </ul>
-        </div>
-
+    <div class="text-center">
+      <img src="./assets/images/+3image/SSP-002.png" alt="Gouy’s Method Setup" class="lab-image" />
+      <p class="text-muted">Experimental setup to measure the magnetic susceptibility of solids using Gouy’s Method.</p>
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <h4 class="section-title">Technical Specifications</h4>
+    <ul>
+      <li><strong>Electromagnet:</strong> Soft iron, 75mm dia. pole pieces. Magnetic Field: 20KG at 6mm gap. Coils: 13W each (approx.).</li>
+      <li><strong>Digital Power Supply:</strong> 0–6A, 30V with digital display. Stable constant current for long operations.</li>
+      <li><strong>Digital Gauss Meter:</strong> 0–2K & 0–20K Gauss ranges. Resolution: 1 Gauss. Accuracy: ±0.5%. 3½-digit LED display. 220V, 50Hz. Field direction indicator.</li>
+      <li><strong>Digital Balance:</strong> 200g capacity, 0.001g least count, LCD back-lit display, external calibration, 80mm pan diameter.</li>
+    </ul>
+
+    <h4 class="section-title">Experiment</h4>
+    <p>To measure the magnetic susceptibility of solid materials using Gouy’s Method. The force acting on the sample in a magnetic field is determined by precise mass changes.</p>
+
+    <h4 class="section-title">Scope of Supply</h4>
+    <ul>
+      <li>Electromagnet with wooden stand</li>
+      <li>Digital power supply</li>
+      <li>Digital Gauss Meter</li>
+      <li>Instruction manual</li>
+    </ul>
+
+    <h4 class="section-title">Optional (Not Included)</h4>
+    <ul>
+      <li>Digital Balance</li>
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
