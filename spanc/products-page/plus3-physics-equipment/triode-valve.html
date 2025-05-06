@@ -3,116 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Triode Valve Characteristics Trainer</title>
+  <title>Triode Valve Characteristics Trainer | Product Details</title>
+  <meta name="description" content="Trainer to demonstrate static and mutual characteristics of a triode valve and determine amplification factor. Includes triode 6C5 and regulated power supplies." />
+  <meta name="keywords" content="Triode Valve, Amplification Factor, Valve Characteristics, Electronics Trainer Kit" />
+  <meta name="author" content="Spanco Tek" />
+  <link rel="icon" href="/spanc/assets/images/spancotek LOGO[1].png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       background-color: #f4f7fc;
-      margin: 0;
-      padding: 0;
+      padding: 20px;
     }
-
     .container {
-      max-width: 900px;
-      margin: 30px auto;
-      background: #ffffff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+      max-width: 1000px;
+      margin: auto;
     }
-
-    h1, h2 {
-      color: #2c3e50;
-      margin-top: 0;
-    }
-
-    .image-box {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    .image-box img {
+    .product-img {
       width: 100%;
-      max-width: 600px;
-      height: auto;
+      max-height: 350px;
+      object-fit: contain;
       border-radius: 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #ddd;
+      margin-bottom: 20px;
     }
-
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-      line-height: 1.6;
-    }
-
-    section {
-      margin-bottom: 25px;
-    }
-
-    .note {
-      font-size: 0.9rem;
-      font-style: italic;
-      color: #7f8c8d;
+    h2 {
+      color: #0d6efd;
       margin-top: 30px;
+      border-bottom: 2px solid #0d6efd;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    ul.spec-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul.spec-list li::before {
+      content: "• ";
+      color: #0d6efd;
+      font-weight: bold;
+      margin-right: 5px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Triode Valve Characteristics Trainer</h1>
 
-    <div class="image-box">
-      <img src="https://via.placeholder.com/600x400?text=Triode+Valve+Trainer" alt="Triode Valve Characteristics Trainer">
-    </div>
+  <div class="container text-center">
+    <img src="https://via.placeholder.com/600x400?text=Triode+Valve+Trainer" alt="Triode Valve Characteristics Trainer" class="product-img"/>
+    <h1 class="text-dark">TRIODE VALVE CHARACTERISTICS TRAINER</h1>
+    <p class="text-muted mb-4"><strong>Model Number:</strong> SPEL-029</p>
 
-    <section class="specs">
-      <h2>Technical Specifications</h2>
-      <ul id="specList"></ul>
-    </section>
+    <h2>Technical Specifications</h2>
+    <ul class="spec-list text-start mx-auto" style="max-width: 800px;">
+      <li>DC Regulated Power Supply: Range 0–300V</li>
+      <li>DC Regulated Power Supply: Range 0–10V</li>
+      <li>Voltmeter: Range 0–300V & 0–10V, Analog (Moving Coil)</li>
+      <li>Ammeter: Range 0–30mA, Analog (Moving Coil)</li>
+      <li>Triode Valve: 6C5</li>
+      <li>Mains Supply: 230V / 50Hz AC</li>
+    </ul>
 
-    <section class="experiment">
-      <h2>Experiment</h2>
-      <p>To draw the static and mutual characteristics of the triode valve and determine the amplification factor.</p>
-    </section>
+    <h2>Experiment</h2>
+    <ul class="spec-list text-start mx-auto" style="max-width: 800px;">
+      <li>To draw the static and mutual characteristics of the triode valve and determine the amplification factor.</li>
+    </ul>
 
-    <section class="scope">
-      <h2>Scope of Supply</h2>
-      <ul id="supplyList"></ul>
-    </section>
-
-    <p class="note">
-      *Design & aesthetics are subject to change without prior notice due to continuous product improvement.
-    </p>
+    <h2>Scope of Supply</h2>
+    <ul class="spec-list text-start mx-auto" style="max-width: 800px;">
+      <li>Trainer Kit – 1 No</li>
+      <li>Triode Valve – 1 No</li>
+      <li>Connecting Patch Cord – 10 Nos</li>
+      <li>Instruction Manual – 1 No</li>
+    </ul>
   </div>
 
-  <script>
-    const specs = [
-      "DC Regulated Power Supply: Range 0–300V",
-      "DC Regulated Power Supply: Range 0–10V",
-      "Voltmeter: Range 0–300V & 0–10V, Analog (Moving Coil)",
-      "Ammeter: Range 0–30mA, Analog (Moving Coil)",
-      "Triode Valve: 6C5",
-      "Mains Supply: 230V / 50Hz AC"
-    ];
-
-    const supplies = [
-      "Trainer Kit: 1 No",
-      "Triode Valve: 1 No",
-      "Connecting Patch Cord: 10 Nos",
-      "Instruction Manual: 1 No"
-    ];
-
-    specs.forEach(spec => {
-      const li = document.createElement("li");
-      li.textContent = spec;
-      document.getElementById("specList").appendChild(li);
-    });
-
-    supplies.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      document.getElementById("supplyList").appendChild(li);
-    });
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -3,123 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Anderson Bridge Trainer</title>
+  <title>ANDERSON BRIDGE TRAINER | Product Specifications</title>
+  <meta name="description" content="Anderson Bridge Trainer for determining self-inductance of a coil using a digital null detector. Includes precision resistors and standard capacitors." />
+  <meta name="keywords" content="Anderson Bridge, Electrical Trainer Kit, Self Inductance Measurement, Digital Null Detector, Electrical Circuit Lab" />
+  <meta name="author" content="Spanco Tek" />
+  <link rel="icon" href="/spanc/assets/images/spancotek LOGO[1].png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f7f9;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      background: #fff;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
       padding: 20px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
     }
-
-    h1, h2 {
-      color: #2c3e50;
-      margin-top: 0;
-    }
-
-    .image-box {
+    .specs-container {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       text-align: center;
-      margin-bottom: 20px;
     }
-
-    .image-box img {
+    .product-img {
       width: 100%;
-      max-width: 600px;
-      height: auto;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-
-    section {
+      max-height: 300px;
+      object-fit: contain;
       margin-bottom: 20px;
     }
-
-    .note {
-      font-size: 0.9rem;
-      font-style: italic;
-      color: #7f8c8d;
-      margin-top: 30px;
+    .spec-title {
+      font-weight: bold;
+      font-size: 2rem;
+      border-bottom: 2px solid #007bff;
+      display: inline-block;
+      padding-bottom: 8px;
+      margin-bottom: 30px;
+    }
+    ul.spec-list {
+      list-style: none;
+      padding-left: 0;
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+    }
+    h4 {
+      margin-top: 2rem;
+      color: #198754;
+    }
+    canvas#particles-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Anderson Bridge Trainer</h1>
-    
-    <div class="image-box">
-      <img src="https://via.placeholder.com/600x400?text=Anderson+Bridge+Trainer" alt="Anderson Bridge Trainer">
-    </div>
 
-    <section class="specs">
-      <h2>Technical Specifications</h2>
-      <ul id="specList"></ul>
-    </section>
+  <div class="specs-container">
+    <img src="https://via.placeholder.com/600x400?text=Anderson+Bridge+Trainer" alt="Anderson Bridge Trainer" class="product-img" />
 
-    <section class="experiment">
-      <h2>Experiment</h2>
-      <p>To determine self-inductance of a coil by Anderson’s bridge with Null detector.</p>
-    </section>
+    <h2 class="text-primary">ANDERSON BRIDGE TRAINER</h2>
+    <p><strong class="text-secondary">Model Number:</strong> SPML-041</p>
 
-    <section class="scope">
-      <h2>Scope of Supply</h2>
-      <ul id="supplyList"></ul>
-    </section>
+    <h2 class="spec-title">Technical Specifications</h2>
+    <ul class="spec-list">
+      <li>DC Regulated Fixed Power Supply: 3V / 150 mA</li>
+      <li>Standard Capacitor: 0.1µF & 0.2µF</li>
+      <li>Standard Resistance: 1000Ω</li>
+      <li>Fixed Resistance: 0.1Ω to 1Ω</li>
+      <li>Decade Resistance (1Ω to 1KΩ): 3 nos</li>
+      <li>Decade Resistance (10Ω to 10KΩ): 3 nos</li>
+      <li>AC Supply of Frequency: 1KHz</li>
+      <li>Digital Null Detector: Display 3½ Digit, 7 Segment LED</li>
+      <li>Interconnection: 4mm Banana Sockets</li>
+    </ul>
 
-    <p class="note">
-      *Design & Aesthetics are subject to change without prior notice due to continuous product improvement.
-    </p>
+    <h4>Experiment</h4>
+    <ul class="spec-list">
+      <li>To determine self-inductance of a coil by Anderson’s bridge with Null detector</li>
+    </ul>
+
+    <h4>Scope of Supply</h4>
+    <ul class="spec-list">
+      <li>Trainer Kit – 1 No</li>
+      <li>Instruction Manual – 1 No</li>
+      <li>Patch Cord – 2 Nos</li>
+    </ul>
   </div>
 
-  <script>
-    const specs = [
-      "DC Regulated Fixed Power Supply: 3V / 150 mA",
-      "Standard Capacitor: 0.1µF & 0.2µF",
-      "Standard Resistance: 1000Ω",
-      "Fixed Resistance: 0.1Ω to 1Ω",
-      "Decade Resistance (1Ω to 1KΩ): 3 nos",
-      "Decade Resistance (10Ω to 10KΩ): 3 nos",
-      "AC Supply of Frequency: 1KHz",
-      "Digital Null Detector: Display 3½ Digit, 7 Segment LED",
-      "Interconnection: 4mm"
-    ];
-
-    const supplies = [
-      "Trainer Kit: 1 No",
-      "Instruction Manual: 1 No",
-      "Patch Cord: 2 Nos"
-    ];
-
-    const specList = document.getElementById("specList");
-    specs.forEach(spec => {
-      const li = document.createElement("li");
-      li.textContent = spec;
-      specList.appendChild(li);
-    });
-
-    const supplyList = document.getElementById("supplyList");
-    supplies.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      supplyList.appendChild(li);
-    });
-  </script>
-     <!-- Background shapes -->
-
-     <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
-     <script src="/background.js"></script>
+  <!-- Background animation -->
+  <canvas id="particles-bg"></canvas>
+  <script src="/background.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -3,50 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Measurement of Field Strength B and Its Variation in a Solenoid Trainer</title>
+  <title>Measurement of Field Strength B | Solenoid Trainer</title>
+  <meta name="description" content="Study the measurement of magnetic field strength B and its variation using a solenoid trainer." />
+  <meta name="keywords" content="Magnetic Field, Solenoid, Gauss Meter, Physics Lab, Magnetic Induction" />
+  <meta name="author" content="Spanco Tek" />
+  <link rel="icon" href="/spanc/assets/images/spancotek LOGO[1].png" type="image/x-icon" />
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f7fc;
-      margin: 0;
-      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      background: #ffffff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1, h2 {
-      color: #2c3e50;
-      margin-top: 0;
-    }
-
-    .image-box {
+    .specs-container {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       text-align: center;
-      margin-bottom: 25px;
     }
 
-    .image-box img {
+    .product-img {
       width: 100%;
-      max-width: 600px;
-      height: auto;
-      border-radius: 10px;
-      border: 1px solid #ccc;
+      max-height: 300px;
+      object-fit: contain;
+      margin-bottom: 20px;
     }
 
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-      line-height: 1.6;
+    .spec-title {
+      font-weight: bold;
+      font-size: 2rem;
+      border-bottom: 2px solid #007bff;
+      display: inline-block;
+      padding-bottom: 8px;
+      margin-bottom: 30px;
     }
 
-    section {
-      margin-bottom: 25px;
+    ul.spec-list {
+      list-style: none;
+      padding-left: 0;
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+    }
+
+    h4 {
+      margin-top: 2rem;
+      color: #198754;
     }
 
     .note {
@@ -57,23 +64,23 @@
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Measurement of Field Strength B and Its Variation in a Solenoid Trainer</h1>
+  <div class="specs-container">
+    <img src="https://via.placeholder.com/600x400?text=Measurement+of+Field+Strength+B+in+Solenoid" alt="Measurement of Field Strength B and Its Variation in a Solenoid" class="product-img" />
 
-    <div class="image-box">
-      <img src="https://via.placeholder.com/600x400?text=Measurement+of+Field+Strength+B+in+Solenoid" alt="Measurement of Field Strength B and Its Variation in a Solenoid">
-    </div>
+    <h2 class="text-primary">MEASUREMENT OF FIELD STRENGTH B</h2>
+    <p><strong class="text-secondary">Model Number:</strong> EME-XXX</p>
 
-    <section class="experiment">
-      <h2>Experiment</h2>
-      <p>To study the measurement of a field strength B and its variation in a solenoid.</p>
-    </section>
+    <h2 class="spec-title">Experiment</h2>
+    <ul class="spec-list">
+      <li>To study the measurement of magnetic field strength B and its variation in a solenoid.</li>
+    </ul>
 
-    <section class="scope">
-      <h2>Scope of Supply</h2>
-      <ul id="supplyList"></ul>
-    </section>
+    <h4>Scope of Supply</h4>
+    <ul class="spec-list" id="supplyList">
+      <!-- JavaScript will populate this list -->
+    </ul>
 
     <p class="note">
       *Design & aesthetics are subject to change without prior notice due to continuous product improvement.
@@ -88,13 +95,14 @@
       "Instruction Manual: 1 No"
     ];
 
+    const supplyList = document.getElementById("supplyList");
     supplies.forEach(item => {
       const li = document.createElement("li");
       li.textContent = item;
-      document.getElementById("supplyList").appendChild(li);
+      supplyList.appendChild(li);
     });
   </script>
-    <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
-    <script src="/spanc/background.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -9,7 +9,15 @@
   <title>Zinc Granules - Spanco Tek</title>
   <link rel="icon" href="/assets/images/spancotek LOGO[1].png" type="image/x-icon" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
+    body {
+      font-family: "Ubuntu", sans-serif;
+      background-color: #f9f9f9;
+    }
+
     #particles-bg {
       position: fixed;
       top: 0;
@@ -17,25 +25,28 @@
       z-index: -1;
       width: 100%;
       height: 100%;
-      filter: blur(3px); /* ⬅️ This is the blur layer */
-      pointer-events: none; /* ⬅️ Allows clicks to pass through */
+      filter: blur(3px);
+      pointer-events: none;
     }
-    </style>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
+
+    .product-image {
+      max-height: 300px;
     }
-    .card {
-      border-radius: 1rem;
-    }
+
     .card-title {
       color: #0d6efd;
     }
-    ul.list-group li {
-      font-size: 1rem;
-      padding: 0.75rem 1rem;
+
+    ul.custom-specs {
+      list-style: none;
+      padding: 0;
     }
+
+    ul.custom-specs li {
+      font-size: 1rem;
+      padding: 0.5rem 0;
+    }
+
     @media (max-width: 576px) {
       h1.display-5 {
         font-size: 1.8rem;
@@ -52,37 +63,33 @@
 
     <div class="row justify-content-center">
       <div class="col-lg-8 col-md-10">
-         <!-- Image Section -->
-    <div class="text-center mb-4">
-      <img src="../assets/images/black-phosphorus-model.jpg" alt="Black Phosphorus Atomic Model" class="img-fluid rounded shadow-sm" style="max-height: 300px;" />
-    </div>
-        <div class="card shadow-sm p-4">
+        <!-- Image Section -->
+        <div class="text-center mb-4">
+          <img src="../assets/images/zinc-granules.jpg" alt="Zinc Granules" class="img-fluid rounded shadow-sm product-image" />
+        </div>
+
+        <!-- Technical Specifications -->
+        <div class="p-4 bg-white rounded shadow-sm">
           <h2 class="card-title mb-4 text-center">Technical Specifications</h2>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Material: Zinc (Zn)</li>
-            <li class="list-group-item">Form: Granules</li>
-            <li class="list-group-item">Size: Available in various granule sizes</li>
-            <li class="list-group-item">Color: Silvery-white, metallic appearance</li>
-            <li class="list-group-item">Purity: 99.9% pure Zinc</li>
-            <li class="list-group-item">Packaging: Typically sold in 500g packets or small jars</li>
-            <li class="list-group-item">Applications: Used in reduction reactions, electroplating, and as a catalyst in certain chemical reactions</li>
-            <li class="list-group-item">Safety Note: Handle with care, as zinc granules can react with acids and water to release hydrogen gas</li>
+          <ul class="custom-specs">
+            <li>Material: Zinc (Zn)</li>
+            <li>Form: Granules</li>
+            <li>Size: Available in various granule sizes</li>
+            <li>Color: Silvery-white, metallic appearance</li>
+            <li>Purity: 99.9% pure Zinc</li>
+            <li>Packaging: Typically sold in 500g packets or small jars</li>
+            <li>Applications: Used in reduction reactions, electroplating, and as a catalyst in certain chemical reactions</li>
+            <li>Safety Note: Handle with care, as zinc granules can react with acids and water to release hydrogen gas</li>
           </ul>
         </div>
 
-        <div class="text-center mt-4">
-          <a href="../chemistry-biology-equipment.html" class="btn btn-outline-primary">← Back to Equipment List</a>
-        </div>
+
       </div>
     </div>
   </div>
 
+  <canvas id="particles-bg"></canvas>
+  <script src="./products-page/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Background shapes -->
-
-  <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
-
-  <script src="/Spanc/spanc/products-page/background.js"></script>
-  
 </body>
 </html>

@@ -15,6 +15,19 @@
 />
 <link rel="icon" href="./assets/images/spancotek LOGO[1].png" type="image/x-icon" />
 
+<style>
+  #particles-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    filter: blur(3px); /* ⬅️ This is the blur layer */
+    pointer-events: none; /* ⬅️ Allows clicks to pass through */
+  }
+  </style>
+
   <style>
     body {
       font-family: 'Ubuntu', sans-serif;
@@ -148,17 +161,22 @@
   background-color: #495057;
   color: #fff;
 }
-@media (max-width: 992px) {
-      .sidebar {
-        position: fixed;
-        z-index: 1045;
-        top: 0;
-        left: -250px;
-        width: 250px;
-        height: 100%;
-        background-color: #343a40;
-        transition: left 0.3s ease;
-      }
+@media (min-width: 992px) {
+  #sidebar {
+    left: 0 !important;
+    position: fixed; /* ✅ Keep it fixed on desktop too */
+    top: 85px; /* ⬅️ Pushes sidebar down */
+    height: calc(100vh - 70px); /* ⬅️ Adjusts height */
+    z-index: 1050;
+  }
+
+  #main-content {
+  margin-left: 250px;  /* Ensure content doesn't go under the sidebar */
+  padding: 1rem;
+}
+
+}
+
       .sidebar.show {
         left: 0;
       }
@@ -175,7 +193,7 @@
       .overlay.show {
         display: block;
       }
-    }
+    
     .card {
     /* width: 100%; Ensures responsive width */
     max-height: 300px; /* Fixed height for uniformity */
@@ -242,7 +260,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="./assets/images/spanco-logo-R2.png" alt="Logo" height="50">
+      <img src="./assets/images/spanco-logo-R2.png" alt="Logo" height="60">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
       aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
