@@ -1,703 +1,467 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spanco Tek | Science & Engineering Products</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spanco Tek</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Optional: Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+/>
+<link rel="icon" href="./assets/images/spancotek LOGO[1].png" type="image/x-icon" />
 
-    <meta
-      name="description"
-      content="Explore high-quality Physics, Chemistry, and Biology lab kits and Engineering tools from Spanco Tek. Trusted for academic and industrial labs."
-    />
-    <meta
-      name="keywords"
-      content="Physics Lab, Chemistry Kit, Biology Equipment, Engineering Tools, Science Kits, Educational Equipment"
-    />
-    <meta name="author" content="Spanco Tek" />
-    <link rel="icon" href="./assets/images/spancotek LOGO[1].png" type="image/x-icon" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./assets/CSS/footer.css">
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+    }
+/* Sidebar default hidden on small screens */
+/* Default: sidebar hidden for small screens */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #343a40;
+  overflow-y: auto;
+  transition: left 0.3s ease;
+  z-index: 1050;
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <style>
-      #particles-bg {
+/* Show sidebar when toggled (mobile only) */
+#sidebar.show {
+  left: 0;
+}
+.card-img-top {
+  height: 200px;          /* Adjust as needed */
+  object-fit: contain;    /* Prevent cropping */
+  padding: 10px;          /* Optional: adds spacing around the image */
+  background-color: #f8f9fa; /* Optional: subtle background for empty areas */
+}
+
+/* Overlay for mobile */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1040;
+}
+
+#overlay.show {
+  display: block;
+}
+
+/* 👇 FOR DESKTOP: show sidebar always, no overlay */
+@media (min-width: 992px) {
+  #sidebar {
+    left: 0 !important;
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+  }
+
+  #overlay {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+  #main-content {
+    margin-left: 250px;
+  }
+}
+
+
+
+/* Add padding/margin to main content so it doesn't go under sidebar */
+#main-content {
+  margin-left: 250px;       /* Same as sidebar width */
+  padding: 1rem;
+}
+
+.sidebar-item {
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.sidebar-item:hover {
+  background-color: #495057;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+    .sidebar .nav-link {
+      color: #fff;
+    }
+    .sidebar .nav-link:hover {
+      background-color: #5a91c8;
+    }
+    .dropdown {
+    display: none;
+  }
+  .dropdown.show {
+    display: block;
+  }
+  .sidebar-item {
+  cursor: pointer;
+}
+#plus2Physics li,
+#plus2Chemistry li,
+#plus3Physics li,
+#plus3Chemistry li,
+#engineeringDropdown li {
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Common sidebar link styling */
+#plus2Physics li a,
+#plus2Chemistry li a,
+#plus3Physics li a,
+#plus3Chemistry li a ,
+#engineeringDropdown li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+.btn-dark-custom {
+        background-color: #641717;
+        border: none;
+        color: #f8f9fa;
+      }
+#plus2Physics li a:hover,
+#plus2Chemistry li a:hover,
+#plus3Physics li a:hover,
+#plus3Chemistry li a:hover ,
+#engineeringDropdown li a:hover {
+  background-color: #495057;
+  color: #fff;
+}
+@media (max-width: 992px) {
+      .sidebar {
+        position: fixed;
+        z-index: 1045;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #343a40;
+        transition: left 0.3s ease;
+      }
+      .sidebar.show {
+        left: 0;
+      }
+      .overlay {
+        display: none;
         position: fixed;
         top: 0;
         left: 0;
-        z-index: -1;
         width: 100%;
         height: 100%;
-        filter: blur(3px); /* ⬅️ This is the blur layer */
-        pointer-events: none; /* ⬅️ Allows clicks to pass through */
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1040;
       }
-      </style>
-    <style>
-       body {
-        font-family: 'Ubuntu', sans-serif;
-        margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+      .overlay.show {
+        display: block;
+      }
+    }
+    .card {
+    /* width: 100%; Ensures responsive width */
+    max-height: 300px; /* Fixed height for uniformity */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* max-width: 260px; */
+  }
+
+  .card-img-top {
+    height: 120px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical centering */
+    align-items: center;     /* horizontal centering */
+    text-align: center;
+    padding: 0.75rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .card-text {
+    font-size: 0.875rem;
+    margin-bottom: 0;
+  }
+
+  .social-icons i {
+  font-size: 20px; /* Smaller than normal icons */
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .social-icons {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+/* socialmedia icons */
+.social-icon {
+  font-size: 20px;
+  opacity: 0.7;
+  transition: 0.3s ease;
+}
+
+.social-icon:hover {
+  opacity: 1;
+  color: #9f2929; /* Dark red shade on hover */
+}
   
-}
-.ubuntu-regular {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+  </style>
+</head>
+<body>
 
-      .category-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .category-card::before {
-        content: "";
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        background-color: #c2575795;
-        /* background: linear-gradient(
-          45deg,
-          #a23a3a,
-          #f77f7f,
-          #968686,
-          #884c2a,
-          #9f7171
-        ); */
-        background-size: 400% 400%;
-        z-index: -1;
-        /* filter: blur(8px); */
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        border-radius: 14px;
-        animation: glowAnimation 10s ease infinite;
-      }
-      .category-card:hover::before {
-        opacity: 1;
-      }
-
-      @keyframes glowAnimation {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-
-      .category-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="./assets/images/spanco-logo-R2.png" alt="Logo" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="demo.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
       
-      }
-
-      .scroll-wrapper {
-        overflow: hidden;
-        position: relative;
-      }
-
-      .product-cards-container {
-  display: flex;
-  gap: 1rem;
-  animation: scroll 15s linear infinite;
-  width: max-content;
-}
+      <a href="get-quote.html?modal=true" class="btn btn-dark-custom">Get Quote</a>
+      <div class="d-flex align-items-center gap-3 ms-3">
+        <a href="https://www.linkedin.com/" target="_blank" class="text-dark social-icon"><i class="bi bi-linkedin"></i></a>
+        <a href="https://facebook.com/" target="_blank" class="text-dark social-icon"><i class="bi bi-facebook"></i></a>
+        <a href="https://instagram.com/" target="_blank" class="text-dark social-icon"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
 
 
-      .product-card {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        min-width: 250px;
-        max-width: 250px;
-        overflow: hidden;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-      }
+  <!-- Overlay for sidebar on small screens -->
+  <div class="overlay" id="overlay"></div>
 
-      .product-card:hover {
-        transform: scale(1.05);
-      }
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav class="col-lg-2 bg-dark sidebar d-lg-block" id="sidebar">
+        <div class="p-3 text-white mt-2 ">
+          <h5 class="mt-2">Explore Products</h5>
+      
+          <!-- Science Section -->
+          <div class="sidebar-item" onclick="toggleDropdown('scienceDropdown')">
+            <span class="chevron">▶</span> Science
+          </div>
+          <ul id="scienceDropdown" class="dropdown list-unstyled ms-3">
+            
+            <!-- +2 Section -->
+            <li onclick="toggleDropdown('sciencePlus2')" class="sidebar-item">
+              <span class="chevron">▶</span> +2
+            </li>
+            <ul id="sciencePlus2" class="dropdown list-unstyled ms-3">
+              
+              <div class="sidebar-item" id="physics" onclick="filterProducts('plustwoPhysics')">
+                <span class="chevron sidebar-item">▶</span> Physics
+              </div>
+              <!-- +2 Chemistry -->
 
-      .product-card img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-      }
+              <div class="sidebar-item" id="chemistry" onclick="filterProducts('plustwoChemistry')">
+                <span class="chevron sidebar-item">▶</span> Chemistry
+              </div>             
+            </ul>
+      
+            <!-- +3 Section -->
+            <li onclick="toggleDropdown('sciencePlus3')" class="sidebar-item">
+              <span class="chevron">▶</span> +3
+            </li>
+            <ul id="sciencePlus3" class="dropdown list-unstyled ms-3">
+              <!-- +3 Physics -->
+              <li onclick="toggleDropdown('plus3Physics')" class="sidebar-item">
+                <span class="chevron">▶</span> Physics
+              </li>
+              <ul id="plus3Physics" class="dropdown list-unstyled ms-3">
+<!-- Mechanics Lab -->
+<li onclick="renderProductsByCategory('mechanicsLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Mechanics Lab
+</li>
 
-      .badge-new {
-        position: absolute;
-        background: #dc3545;
-        color: white;
-        font-size: 0.75rem;
-        padding: 2px 6px;
-        top: 10px;
-        left: 10px;
-        border-radius: 5px;
-        z-index: 2;
-      }
 
-      .product-card-link {
-        text-decoration: none;
-        color: inherit;
-      }
+</script>
+                 <!-- Electricity & Magnetism & EMT Lab -->
+                 <li onclick="renderProductsByCategory('emLab')" class="sidebar-item">
+                  <span class="chevron">▶</span> Electricity & Magnetism Lab
+                </li>
 
-      @keyframes scroll {
-        0% {
-          transform: translateX(0%);
-        }
+    <li onclick="renderProductsByCategory('thermalLab')" class="sidebar-item">
+      <span class="chevron">▶</span> Thermal Physics Lab
+    </li>
 
-        100% {
-          transform: translateX(-50%);
-        }
-      }
+<!-- Wave Optics -->
 
-      @media (max-width: 768px) {
-  .product-cards-container {
-    animation: scroll 30s linear infinite;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 1rem;
-    width: max-content;
-  }
+<li onclick="renderProductsByCategory('waveOpticsLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Wave Optics Lab
+</li>
 
-  .product-card {
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    margin-right: 1rem;
-  }
-}
-.navbar img {
-        height: 40px;
-        margin-right: 15px;
-      }
 
-      .nav-link {
-  position: relative;
-  display: inline-block;
-  color: #333;
-  transition: color 0.3s ease;
-}
+<!-- Digital Syatem & Application -->
+<li onclick="renderProductsByCategory('digitalLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Digital System Lab
+</li>
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -4px;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background-color: #9f2929;
-  transition: width 0.4s ease;
-}
+  <!-- Elements of Mordern Physics -->
+<li onclick="renderProductsByCategory('modernPhysicsLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Modern Physics Lab
+</li>
 
-.nav-link:hover {
-  color: #1a1a1a; /* darker text on hover */
-}
+<!-- Analog System & Application -->
+<li onclick="renderProductsByCategory('analogLab')" class="sidebar-item"> 
+  <span class="chevron">▶</span> Analog System Lab
+</li>
 
-.nav-link:hover::after {
-  width: 70%;
-}
+  <!-- Solid State Physics -->
+<li onclick="renderProductsByCategory('solidStateLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Solid State Physics Lab
+</li>
 
-    </style>
-  
-  
-  
-  
-  </head>
 
-  <body>
-    <!-- Navbar -->
-   
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3"
-    >
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <span style="font-weight: bold; font-size: 5px">
-          <img src="./assets/images/spanco-logo-R2.png" alt="Logo" />
-        </span>
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-      >
-        <span class="navbar-toggler-icon"></span>
+<!-- Quantum Mechanics -->
+<li onclick="renderProductsByCategory('qmLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Quantum Mechanics
+</li>
+
+<!-- Electromagnetic Theory -->
+<li onclick="renderProductsByCategory('emtLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Electromagnetic Theory
+</li>
+
+<!-- Physics Device & Instruments Lab -->
+<li onclick="renderProductsByCategory('devicesLab')" class="sidebar-item">
+  <span class="chevron">▶</span> Physics Device & Instruments Lab
+</li>
+
+
+              </ul>
+      
+              <!-- +3 Chemistry -->
+              <li onclick="toggleDropdown('plus3Chemistry')" class="sidebar-item">
+                <span class="chevron">▶</span> Chemistry
+              </li>
+              <ul id="plus3Chemistry" class="dropdown list-unstyled ms-3">
+                <li><a href="./products-page/plusthreecheandbio/analytical.html" class="text-white">Organic Chemistry</a></li>
+                <li><a href="./products-page/plusthreecheandbio/heating-cooling.html" class="text-white">Inorganic Chemistry</a></li>
+                <li><a href="./products-page/plusthreecheandbio/microscope.html" class="text-white">Physical Chemistry</a></li>
+                <li><a href="./products-page/plusthreecheandbio/plant-physiology.html" class="text-white">Biochemistry</a></li>
+              </ul>
+            </ul>
+          </ul>
+      <script>function toggleDropdown(id) {
+        const el = document.getElementById(id);
+        if (el) el.classList.toggle('d-none');
+      }</script>
+          <!-- Engineering Section -->
+          <div class="sidebar-item" onclick="toggleDropdown('engineeringDropdown')">
+            <span class="chevron">▶</span> Engineering
+          </div>
+          <ul id="engineeringDropdown" class="dropdown list-unstyled ms-3 sidebar-item">
+            <li><a href="#" class="text-white sidebar-item">Mechanical</a></li>
+            <li><a href="#" class="text-white sidebar-item">Electrical</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+
+      <!-- Main Content -->
+      <main class="col-lg-10 ms-auto px-4 py-4">
+     <!-- Search Section with Sidebar Toggle -->
+     <div class="d-flex justify-content-between align-items-center mb-4">
+      <button class="btn btn-outline-secondary d-lg-none me-2" type="button" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav me-3">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="product.html">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="testimonials.html">Testimonials</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-        <a href="get-quote.html?modal=true" class="btn btn-danger">Get Quote</a>
-
-      </div>
-    </nav>
+       <div class="d-flex w-100 justify-content-end">
+         <!-- <input type="text" class="form-control w-50 me-2" placeholder="Search products...">
+         <button class="btn btn-danger" type="button">Search</button> -->
+         <input type="text" class="form-control  w-50 me-2" placeholder="Search products..." id="product-search">
+         <button class="btn btn-dark-custom" type="button" id="search-button">Search</button>
+       </div>
+     </div>
 
 
-    <div class="container mt-5">
-      <!-- Heading -->
-      <div class="mb-4 text-center" data-aos="fade-down">
-        <h1 class="display-5 fw-bold">Our Products</h1>
-        <p class="lead text-muted">
-          High-quality equipment for Science & Engineering education
-        </p>
-      </div>
-
-      <div class="row g-4" data-aos="fade-up">
-        <!-- Science -->
-        <div class="col-12 col-md-6">
-          <a
-            href="./products-page/sciencepage.html"
-            class="text-decoration-none"
-          >
-            <div
-              class="category-card border rounded p-4 text-center shadow-sm bg-white h-100"
-            >
-              <i class="bi bi-lightbulb display-6 mb-3 text-primary"></i>
-              <h5 class="fw-semibold text-primary">Science Lab Kits</h5>
-              <p class="text-muted mb-0">
-                Physics, Chemistry, and Biology equipment for all academic
-                levels.
-              </p>
-            </div>
-          </a>
+<!-- Products will be rendered here -->
+<div id="product-sections"></div>
         </div>
 
-        <!-- Engineering -->
-        <div class="col-12 col-md-6">
-          <a href="./products-page/engineeringlabequipment.html" class="text-decoration-none">
-            <div
-              class="category-card border rounded p-4 text-center shadow-sm bg-white h-100"
-            >
-              <i class="bi bi-gear-fill display-6 mb-3 text-success"></i>
-              <h5 class="fw-semibold text-success">Engineering Tools</h5>
-              <p class="text-muted mb-0">
-                Precision instruments for electronics, mechanics, and automation
-                labs.
-              </p>
-            </div>
-          </a>
         </div>
-      </div>
-
-      <div class="row mt-5 align-items-center">
-        <div class="col-12 col-md-6">
-          <img
-            src="https://www.spanco.com/wp-content/uploads/2023/12/Motrzd-Trolley_cropped-1024x739.jpg"
-            class="img-fluid rounded shadow"
-            alt="Motorized Trolley Equipment by Spanco Tek"
-          />
-        </div>
-        <div class="col-12 col-md-6">
-          <h4 class="fw-bold">Precision in Every Piece</h4>
-          <p>
-            Every Spanco Tek product is designed with a focus on durability,
-            performance, and educational impact. Whether you're building lab
-            infrastructure or equipping students, we’ve got the right tools.
-          </p>
-        </div>
-      </div>
-
-      <!-- Testimonials -->
-      <section class="mt-5 bg-light p-4 rounded shadow-sm" data-aos="fade-up">
-        <h4 class="mb-3">Trusted by Institutions Nationwide</h4>
-        <blockquote class="blockquote">
-          <p>
-            "Spanco Tek’s lab kits are reliable, well-designed, and perfect for
-            our senior secondary curriculum!"
-          </p>
-          <footer class="blockquote-footer">
-            Dr. Meena Rao, <cite>National Science High School</cite>
-          </footer>
-        </blockquote>
-      </section>
-
-      <!-- Product Slider -->
-      <div class="scroll-wrapper mt-5" data-aos="fade-up">
-        <h2>Physics Equipment</h2>
-      
-        <!-- Swiper Container -->
-        <div class="swiper mySwiper mb-5">
-          <div class="swiper-wrapper mb-4">
-            <!-- Torsion Pendulum -->
-            <div class="swiper-slide">
-              <a
-                href="./products-page/plus2product/torsion-pendulum.html"
-                class="product-card-link"
-              >
-                <div class="product-card position-relative">
-                  <span class="badge-new">New</span>
-                  <img
-                    src="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-3-030-95596-0_2/MediaObjects/514724_1_En_2_Fig2_HTML.png"
-                    alt="Torsion Pendulum"
-                  />
-                  <div class="p-3">
-                    <h6 class="mt-2">Torsion Pendulum</h6>
-                  </div>
-                </div>
-              </a>
-            </div>
-      
-            <!-- Kater's Reversible Pendulum -->
-            <div class="swiper-slide">
-              <a
-                href="./products-page/plus2product/KatertsReversible-Pendulum.html"
-                class="product-card-link"
-              >
-                <div class="product-card position-relative">
-                  <span class="badge-new">New</span>
-                  <img
-                    src="assets/images/kater-s-reversible-pendulum-removebg-preview.png"
-                    alt="Kater's Reversible Pendulum"
-                  />
-                  <div class="p-3">
-                    <h6 class="mt-2">Kater's Reversible Pendulum</h6>
-                  </div>
-                </div>
-              </a>
-            </div>
-      
-            <!-- Compound Bar Pendulum -->
-            <div class="swiper-slide">
-              <a
-                href="./products-page/plus2product/Compound-Bar-Pendulum.html"
-                class="product-card-link"
-              >
-                <div class="product-card position-relative">
-                  <span class="badge-new">New</span>
-                  <img
-                    src="https://5.imimg.com/data5/SELLER/Default/2024/9/448645912/UK/BU/YR/593063/bar-pendulum-compound-pendulum-for-physics-laboratory-1000x1000.png"
-                    alt="Compound Bar Pendulum"
-                  />
-                  <div class="p-3">
-                    <h6 class="mt-2">Compound Bar Pendulum</h6>
-                  </div>
-                </div>
-              </a>
-            </div>
-      
-            <!-- Jaeger's Surface Tension App -->
-            <div class="swiper-slide">
-              <a
-                href="./products-page/plus2product/jaeger-surface.html"
-                class="product-card-link"
-              >
-                <div class="product-card position-relative">
-                  <span class="badge-new">New</span>
-                  <img
-                    src="https://5.imimg.com/data5/SELLER/Default/2024/12/473202636/NO/WU/HI/593063/jaeger-s-surface-tension-apparatus-500x500.png"
-                    alt="Jaeger's Surface Tension App"
-                  />
-                  <div class="p-3">
-                    <h6 class="mt-2">Jaeger's Surface Tension App</h6>
-                  </div>
-                </div>
-              </a>
-            </div>
-      
-            <!-- Sonometer -->
-            <div class="swiper-slide">
-              <a
-                href="./products-page/plus2product/snometer.html"
-                class="product-card-link"
-              >
-                <div class="product-card position-relative">
-                  <span class="badge-new">New</span>
-                  <img
-                    src="https://5.imimg.com/data5/UZ/AR/ZU/SELLER-76817807/sonometer-wooden-500x500.PNG"
-                    alt="Sonometer"
-                  />
-                  <div class="p-3">
-                    <h6 class="mt-2">Sonometer</h6>
-                  </div>
-                </div>
-              </a>
-            </div>
-      
-            <!-- Tuning Fork Welch Type -->
-            <div class="swiper-slide">
-              <a
-                href="./products-page/plus2product/tuning-fork-medium.html"
-                class="product-card-link"
-              >
-                <div class="product-card position-relative">
-                  <span class="badge-new">New</span>
-                  <img
-                    src="https://5.imimg.com/data5/SELLER/Default/2024/8/447093517/AF/TU/OI/136978674/tuning-fork-welch-type-set-of-8.jpg"
-                    alt="Tuning Fork Welch Type Medium"
-                  />
-                  <div class="p-3">
-                    <h6 class="mt-2">Tuning Fork Welch Type Medium</h6>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-      
-          <!-- Swiper Pagination (Dots) -->
-          <div class="swiper-pagination"></div>
-      
-          <!-- Swiper Navigation Arrows -->
-          <!-- <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div> -->
-        </div>
-      </div>
-      
-
-      <!-- Section Start -->
-<div class="scroll-wrapper mt-5" data-aos="fade-up">
-  <h2 class=" mb-4">Chemistry Equipment</h2>
-
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper mb-5">
-
-      <!-- Chemistry Slide 1 -->
-      <div class="swiper-slide">
-        <a href="./products-page/plus2product/organic-kit.html" class="product-card-link">
-          <div class="product-card position-relative">
-            <span class="badge-new">New</span>
-            <img src="https://cdn11.bigcommerce.com/s-ufhcuzfxw9/images/stencil/1280x1280/products/12079/14368/CE-MODELXL__61651.1503517910.jpg?c=2&imbypass=on" alt="Organic Chemistry Kit" />
-            <div class="p-3">
-              <h6 class="mt-2">Organic Chemistry Kit</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Chemistry Slide 2 -->
-      <div class="swiper-slide">
-        <a href="./products-page/plus2product/test-tube-set.html" class="product-card-link">
-          <div class="product-card position-relative">
-            <span class="badge-new">New</span>
-            <img src="https://images-na.ssl-images-amazon.com/images/I/61hlENUZAZL._SL1100_.jpg" alt="Test Tube Stand" />
-            <div class="p-3">
-              <h6 class="mt-2">Test Tube Stand</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Chemistry Slide 3 -->
-      <div class="swiper-slide">
-        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
-          <div class="product-card position-relative">
-            <span class="badge-new">New</span>
-            <img src="https://cdn.images.fecom-media.com/FE00014752/images/HE1786447_1424503-PHE-LEQ-P01.jpg" alt="Burette Setup" />
-            <div class="p-3">
-              <h6 class="mt-2">Burette Setup</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="swiper-slide">
-        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
-          <div class="product-card position-relative">
-            <span class="badge-new">New</span>
-            <img src="https://th.bing.com/th/id/OIP.-V0B456ep7Ogug9VnX3SoAHaHa?w=1920&h=1920&rs=1&pid=ImgDetMain" alt="Burette Setup" />
-            <div class="p-3">
-              <h6 class="mt-2">Beaker Set</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="swiper-slide">
-        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
-          <div class="product-card position-relative">
-            <span class="badge-new">New</span>
-            <img src="https://th.bing.com/th/id/OIP.sPfvVGESK3Lfs__8fTr68AAAAA?w=370&h=370&rs=1&pid=ImgDetMain" alt="Burette Setup" />
-            <div class="p-3">
-              <h6 class="mt-2">Test Tube Brush</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="swiper-slide">
-        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
-          <div class="product-card position-relative">
-            <span class="badge-new">New</span>
-            <img src="https://th.bing.com/th/id/OIP.uPirB7SbjU2GEiUMnKk0UgHaHa?w=750&h=750&rs=1&pid=ImgDetMain" alt="Burette Setup" />
-            <div class="p-3">
-              <h6 class="mt-2">Measuring Cylinder</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-
+        <!-- <div class="d-flex justify-content-end mt-3">
+          <button class="btn btn-secondary">View More</button>
+        </div> -->
+      </main>
     </div>
-    <div class="swiper-pagination"></div>
   </div>
-</div>
-<!-- 
-biology -->
-<div class="scroll-wrapper mt-5" data-aos="fade-up">
-  <h2 class=" mb-4">Biology Equipment</h2>
 
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper mb-5">
-
-      <!-- Biology Slide 1 -->
-      <div class="swiper-slide">
-        <a href="./products-page/plus2product/organic-kit.html" class="product-card-link">
-          <div class="product-card position-relative">
-            <span class="badge-new">New</span>
-            <img src="https://cdn11.bigcommerce.com/s-w9bdixgj/images/stencil/500x659/products/5958/12427/Motic_SMZ-TLED_Digital_Imaging_Ready_Stereo_Microscope_With_45x_Power_Magnification_And_3W_Incident_and_Transmitted_LED_Illumination_-_Microscopy_Supplies_-_Stellar_Scientific__61208.1687093511.jpg?c=2" alt="Dissecting Microscope" />
-            <div class="p-3">
-              <h6 class="mt-2">Dissecting Microscope</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Biology Slide 2 -->
-      <div class="swiper-slide">
-        <a href="./products-page/plus2product/test-tube-set.html" class="product-card-link">
-          <div class="product-card position-relative">
-            <span class="badge-new">New</span>
-            <img src="https://img.freepik.com/free-vector/human-anatomy-model-with-different-systems_1308-29439.jpg?w=360" alt="THuman Modal" />
-            <div class="p-3">
-              <h6 class="mt-2">Human Anatomy Model</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Biology Slide 3 -->
-      <div class="swiper-slide">
-        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
-          <div class="product-card position-relative">
-            <span class="badge-new">New</span>
-            <img src="https://cdn.britannica.com/71/203271-050-8006A1ED/Bunsen-burner-laboratory.jpg" alt="Bunsen Burner" />
-            <div class="p-3">
-              <h6 class="mt-2">Bunsen Burner</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="swiper-slide">
-        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
-          <div class="product-card position-relative">
-            <span class="badge-new">New</span>
-            <img src="https://m.media-amazon.com/images/I/619+lxONqaS.jpg" alt="Beaker Set" />
-            <div class="p-3">
-              <h6 class="mt-2">Beaker Set</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="swiper-slide">
-        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
-          <div class="product-card position-relative">
-            <span class="badge-new">New</span>
-            <img src="https://m.media-amazon.com/images/I/515zYxjch3L._AC_UF1000,1000_QL80_.jpg" alt="Autoclave" />
-            <div class="p-3">
-              <h6 class="mt-2">Autoclave</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="swiper-slide">
-        <a href="./products-page/plus2product/burette-setup.html" class="product-card-link">
-          <div class="product-card position-relative">
-            <span class="badge-new">New</span>
-            <img src="https://m.media-amazon.com/images/I/61mWd98UAgL._AC_UF1000,1000_QL80_.jpg" alt="Petri Dish (Sterile)" />
-            <div class="p-3">
-              <h6 class="mt-2">Petri Dish (Sterile)</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
-</div>
-    </div>
-
-
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/JS/product.js"></script>
+  <script>
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+  
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('show');
+      overlay.classList.toggle('show');
+    });
+  
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('show');
+      overlay.classList.remove('show');
+    });
+  </script>
+  
 
     <div id="footer-container"></div>
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/JS/footer.js"></script>
 
-    <script>
-      AOS.init();
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-          576: {
-            slidesPerView: 2,
-          },
-          768: {
-            slidesPerView: 3,
-          },
-          992: {
-            slidesPerView: 4,
-          },
-        },
-      });
-    </script>
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/JS/product.js"></script>
 
-    <!-- Background shapes -->
-    <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+      <!-- Background shapes -->
 
-    <script src="background.js"></script>
+      <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
 
-    
-    
-  </body>
+      <script src="background.js"></script>
+  
+</body>
 </html>

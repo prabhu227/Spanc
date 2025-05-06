@@ -1793,7 +1793,11 @@ function loadAllProducts() {
         .join("")}
     </div>
     <div class="d-flex justify-content-end mt-3">
-      <a href="${section.viewMoreLink}" class="btn btn-danger">View More</a>
+     <a href="${section.viewMoreLink}" 
+   style="background-color: #641717; border: none; color: #f8f9fa; padding: 8px 16px; border-radius: 8px; text-decoration: none;"
+>
+   View More
+</a>
     </div>
   `;
     container.insertAdjacentHTML("beforeend", sectionHTML);
@@ -1841,9 +1845,11 @@ function filterProducts(category) {
           .join("")}
       </div>
       <div class="d-flex justify-content-end mt-3">
-        <a href="${
-          section.viewMoreLink
-        }" class="btn btn-danger">View More</a>
+       <a href="${section.viewMoreLink}" 
+   style="background-color: #641717; border: none; color: #f8f9fa; padding: 8px 16px; border-radius: 4px; text-decoration: none;"
+>
+   View More
+</a>
       </div>
     `;
       container.insertAdjacentHTML("beforeend", sectionHTML);
@@ -1949,7 +1955,11 @@ document.addEventListener("DOMContentLoaded", function () {
           section.category !== "plustwoPhysics" &&
           section.category !== "plustwoChemistry"
             ? `<div class="d-flex justify-content-end mt-3">
-                 <a href="${section.viewMoreLink}" class="btn btn-danger">View More</a>
+               <a href="${section.viewMoreLink}" 
+   style="background-color: #641717; border: none; color: #f8f9fa; padding: 8px 16px; border-radius: 4px; text-decoration: none;"
+>
+   View More
+</a>
                </div>`
             : ""
         }
