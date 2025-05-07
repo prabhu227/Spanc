@@ -18,6 +18,47 @@
       background-color: #f9f9f9;
     }
 
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-weight: bold;
+      color: #000;
+    }
+
+    .product-image {
+      max-height: 300px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      margin-top: 2rem;
+      color: #34495e;
+    }
+
+    ul.custom-specs {
+      padding-left: 1.5rem;
+    }
+
+    ul.custom-specs li {
+      margin-bottom: 0.5rem;
+    }
+
+    ul.custom-specs li ul {
+      padding-left: 1.2rem;
+      margin-top: 0.25rem;
+    }
+
     #particles-bg {
       position: fixed;
       top: 0;
@@ -29,24 +70,6 @@
       pointer-events: none;
     }
 
-    .product-image {
-      max-height: 300px;
-    }
-
-    .card-title {
-      color: #0d6efd;
-    }
-
-    ul.custom-specs {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul.custom-specs li {
-      font-size: 1rem;
-      padding: 0.5rem 0;
-    }
-
     @media (max-width: 576px) {
       h1.display-5 {
         font-size: 1.8rem;
@@ -55,44 +78,42 @@
   </style>
 </head>
 <body>
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-5 fw-bold">Yellow Phosphorus Atomic Model</h1>
-      <p class="lead">Educational model to demonstrate the atomic structure of Yellow Phosphorus (P) for chemistry students.</p>
+
+  <div class="container">
+    <h1 class="text-center">Yellow Phosphorus Atomic Model</h1>
+    <h2 class="text-center mt-3">Educational model to demonstrate the atomic structure of Yellow Phosphorus (P) for chemistry students</h2>
+
+    <!-- Product Image -->
+    <div class="text-center">
+      <img src="../assets/images/yellow-phosphorus-model.jpg" alt="Yellow Phosphorus Atomic Model" class="img-fluid rounded shadow-sm product-image" />
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-        <!-- Image Section -->
-        <div class="text-center mb-4">
-          <img src="../assets/images/yellow-phosphorus-model.jpg" alt="Yellow Phosphorus Atomic Model" class="img-fluid rounded shadow-sm product-image" />
-        </div>
+    <!-- Product Description -->
+    <p class="text-center">
+      This educational model visually demonstrates the atomic structure of Yellow Phosphorus (P), ideal for chemistry classrooms and laboratories. It helps students understand the electron configuration and atomic theory.
+    </p>
 
-        <!-- Technical Specifications -->
-        <div class="p-4 bg-white rounded shadow-sm">
-          <h2 class="card-title mb-4 text-center">Technical Specifications</h2>
-          <ul class="custom-specs">
-            <li>Product Code: 2107</li>
-            <li>Atomic Structure: Demonstrates the electron arrangement of Yellow Phosphorus (P)</li>
-            <li>Number of Electrons: 15 (2 in the first shell, 8 in the second shell, 5 in the third shell)</li>
-            <li>Electron Configuration: 1s² 2s² 2p⁶ 3s² 3p³</li>
-            <li>Material: High-quality, durable plastic or acrylic</li>
-            <li>Size: Typically 6 to 10 inches in height</li>
-            <li>Function: Used for visualizing the atomic structure of Yellow Phosphorus and understanding electron shell configuration</li>
-            <li>Application: Ideal for chemistry classrooms and labs for illustrating atomic theory and electron arrangement</li>
-            <li>Color: Bright and clear color-coded rings to represent electron shells</li>
-            <li>Educational Purpose: Helps students grasp the concept of electron shells and atomic structure</li>
-            <li>Additional Information: Includes instructional materials for explaining the atomic structure of Yellow Phosphorus</li>
-          </ul>
-        </div>
-
-
-      </div>
-    </div>
+    <!-- Technical Specifications -->
+    <h3 class="section-title">Technical Specifications</h3>
+    <ul class="custom-specs">
+      <li><strong>Product Code:</strong> 2107</li>
+      <li><strong>Atomic Structure:</strong> Demonstrates the electron arrangement of Yellow Phosphorus (P)</li>
+      <li><strong>Number of Electrons:</strong> 15 (2 in the first shell, 8 in the second shell, 5 in the third shell)</li>
+      <li><strong>Electron Configuration:</strong> 1s² 2s² 2p⁶ 3s² 3p³</li>
+      <li><strong>Material:</strong> High-quality, durable plastic or acrylic</li>
+      <li><strong>Size:</strong> Typically 6 to 10 inches in height</li>
+      <li><strong>Function:</strong> Used for visualizing the atomic structure of Yellow Phosphorus and understanding electron shell configuration</li>
+      <li><strong>Application:</strong> Ideal for chemistry classrooms and labs for illustrating atomic theory and electron arrangement</li>
+      <li><strong>Color:</strong> Bright and clear color-coded rings to represent electron shells</li>
+      <li><strong>Educational Purpose:</strong> Helps students grasp the concept of electron shells and atomic structure</li>
+      <li><strong>Additional Information:</strong> Includes instructional materials for explaining the atomic structure of Yellow Phosphorus</li>
+    </ul>
   </div>
 
+  <!-- Background Particles -->
   <canvas id="particles-bg"></canvas>
   <script src="./products-page/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

@@ -18,6 +18,44 @@
       background-color: #f9f9f9;
     }
 
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-weight: bold;
+      color: #000;
+    }
+
+    .product-img {
+      max-width: 100%;
+      height: 300px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      margin-top: 2rem;
+      color: #34495e;
+    }
+
+    ul.custom-specs {
+      padding-left: 1.5rem;
+    }
+
+    ul.custom-specs li {
+      margin-bottom: 0.5rem;
+    }
+
     #particles-bg {
       position: fixed;
       top: 0;
@@ -28,74 +66,46 @@
       filter: blur(3px);
       pointer-events: none;
     }
-
-    .product-image {
-      max-height: 300px;
-    }
-
-    .card-title {
-      color: #0d6efd;
-    }
-
-    ul.custom-specs {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul.custom-specs li {
-      font-size: 1rem;
-      padding: 0.5rem 0;
-    }
-
-    ul.custom-specs li ul {
-      padding-left: 1.5rem;
-    }
-
-    @media (max-width: 576px) {
-      h1.display-5 {
-        font-size: 1.8rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-5 fw-bold">Spatula Stainless Steel</h1>
-      <p class="lead">High-quality stainless steel spatula for laboratory applications</p>
+
+  <div class="container">
+    <h1 class="text-center">Spatula Stainless Steel</h1>
+    <h2 class="text-center mt-3">High-quality stainless steel spatula for laboratory applications</h2>
+
+    <!-- Product Image -->
+    <div class="text-center">
+      <img src="../assets/images/black-phosphorus-model.jpg" alt="Stainless Steel Spatula" class="product-img" />
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-        <!-- Image Section -->
-        <div class="text-center mb-4">
-          <img src="../assets/images/black-phosphorus-model.jpg" alt="Stainless Steel Spatula" class="img-fluid rounded shadow-sm product-image" />
-        </div>
+    <!-- Description -->
+    <p>
+      The Spatula Stainless Steel is designed for precision laboratory work. It is perfect for transferring solid chemicals, mixing substances, and various other applications. Available in multiple sizes to meet different needs in a lab environment.
+    </p>
 
-        <!-- Technical Specifications -->
-        <div class="p-4 bg-white rounded shadow-sm">
-          <h2 class="card-title mb-4 text-center">Technical Specifications</h2>
-          <ul class="custom-specs">
-            <li>Material: Stainless Steel</li>
-            <li>Length: Available in sizes - 4", 6", 8"</li>
-            <li>Design: Flat at one end, spoon-shaped at the other</li>
-            <li>Usage: Ideal for transferring solids, mixing chemicals, and laboratory experiments</li>
-            <li>Finish: Polished finish for durability and easy cleaning</li>
-            <li>Size Variants:
-              <ul>
-                <li>No. 1: 4" (Flat)</li>
-                <li>No. 2: 6" (Flat)</li>
-                <li>No. 3: 8" (Flat)</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <!-- Technical Specifications -->
+    <h3 class="section-title">Technical Specifications</h3>
+    <ul class="custom-specs">
+      <li><strong>Material:</strong> Stainless Steel</li>
+      <li><strong>Length:</strong> Available in sizes - 4", 6", 8"</li>
+      <li><strong>Design:</strong> Flat at one end, spoon-shaped at the other</li>
+      <li><strong>Usage:</strong> Ideal for transferring solids, mixing chemicals, and laboratory experiments</li>
+      <li><strong>Finish:</strong> Polished finish for durability and easy cleaning</li>
+      <li><strong>Size Variants:</strong>
+        <ul>
+          <li>No. 1: 4" (Flat)</li>
+          <li>No. 2: 6" (Flat)</li>
+          <li>No. 3: 8" (Flat)</li>
+        </ul>
+      </li>
+    </ul>
   </div>
 
+  <!-- Background Particles -->
   <canvas id="particles-bg"></canvas>
   <script src="./products-page/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

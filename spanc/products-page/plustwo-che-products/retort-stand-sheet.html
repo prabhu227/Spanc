@@ -11,14 +11,42 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
   <style>
     body {
-      font-family: "Ubuntu", sans-serif;
-      background-color: #f9f9f9;
+      font-family: 'Ubuntu', sans-serif;
+      background-color: #f8f9fa;
+      padding-top: 2rem;
     }
-
+    .container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
+      font-weight: bold;
+      color: #000;
+    }
+    .section-title {
+      margin-top: 2rem;
+      color: #34495e;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+    .product-img {
+      max-width: 100%;
+      height: 300px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
     #particles-bg {
       position: fixed;
       top: 0;
@@ -29,64 +57,43 @@
       filter: blur(3px);
       pointer-events: none;
     }
-
-    .product-image {
-      max-height: 300px;
-    }
-
-    .card-title {
-      color: #0d6efd;
-    }
-
-    ul.custom-specs li {
-      font-size: 1rem;
-      padding: 0.5rem 0;
-    }
-
-    @media (max-width: 576px) {
-      h1.display-5 {
-        font-size: 1.8rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-5 fw-bold">Retort Stand - Sheet Metal (2072)</h1>
-      <p class="lead">Sturdy and durable sheet metal retort stand designed for secure and versatile laboratory setups.</p>
+
+  <div class="container">
+    <h1 class="text-center">Retort Stand - Sheet Metal (2072)</h1>
+    <h2 class="text-center mt-3">High-quality laboratory stand with pressed metal base and powder-coated finish for long-term use</h2>
+
+    <!-- Product Image -->
+    <div class="text-center">
+      <img src="../assets/images/black-phosphorus-model.jpg" alt="Retort Stand Sheet Metal" class="product-img" />
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-        <!-- Image Section -->
-        <div class="text-center mb-4">
-          <img src="../assets/images/black-phosphorus-model.jpg" alt="Retort Stand Sheet Metal" class="img-fluid rounded shadow-sm product-image" />
-        </div>
+    <!-- Description -->
+    <p>
+      The Retort Stand - Sheet Metal (2072) is a robust and versatile laboratory stand crafted from thick sheet metal. It offers dependable support for a range of lab equipment and glassware. The powder-coated finish enhances its resistance to wear, while the die-pressed base ensures high stability and longevity in demanding environments.
+    </p>
 
-        <!-- Technical Specifications -->
-        <div class="p-4 bg-white rounded shadow-sm">
-          <h2 class="card-title mb-4 text-center">Technical Specifications</h2>
-          <ul class="custom-specs">
-            <li>Product Code: 2072</li>
-            <li>Material: Made of thick iron sheet for enhanced durability</li>
-            <li>Base: Die-pressed base for maximum stability</li>
-            <li>Rod: Thick rod for secure mounting of laboratory apparatus</li>
-            <li>Color: Powder-coated in a staple color for added resistance to wear</li>
-            <li>Size Options: Available in multiple sizes - A: 6"x4"x18", B: 75"x24", C: 8x5x24", D: 9x6x30"</li>
-            <li>Design: Features a wire for extra tightening of the rod</li>
-            <li>Usage: Ideal for holding glassware, equipment, and other laboratory instruments securely</li>
-            <li>Durability: Built to last with a high-quality finish, resistant to rust and wear</li>
-          </ul>
-        </div>
-
-
-      </div>
-    </div>
+    <!-- Technical Specifications -->
+    <h3 class="section-title">Technical Specifications</h3>
+    <ul>
+      <li><strong>Product Code:</strong> 2072</li>
+      <li><strong>Material:</strong> Thick iron sheet for enhanced durability</li>
+      <li><strong>Base:</strong> Die-pressed metal base for high stability</li>
+      <li><strong>Rod:</strong> Thick rod, designed to hold various apparatus securely</li>
+      <li><strong>Finish:</strong> Powder-coated to resist rust and wear</li>
+      <li><strong>Size Options:</strong> A: 6"x4"x18" | B: 7.5"x5"x24" | C: 8"x5"x24" | D: 9"x6"x30"</li>
+      <li><strong>Extra Features:</strong> Includes tightening wire for added rod stability</li>
+      <li><strong>Use Case:</strong> Perfect for holding flasks, clamps, beakers, and other lab tools</li>
+      <li><strong>Durability:</strong> Built to last in academic, research, or industrial lab environments</li>
+    </ul>
   </div>
 
+  <!-- Background Canvas -->
   <canvas id="particles-bg"></canvas>
   <script src="./products-page/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

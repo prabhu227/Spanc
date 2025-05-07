@@ -16,6 +16,49 @@
       background-color: #f9f9f9;
     }
 
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-weight: bold;
+      color: #000;
+    }
+
+    .product-img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      margin-top: 2rem;
+      color: #34495e;
+    }
+
+    ul.custom-specs {
+      padding-left: 1.5rem;
+    }
+
+    ul.custom-specs li {
+      margin-bottom: 0.5rem;
+    }
+
+    ul.custom-specs ul {
+      padding-left: 1.5rem;
+      list-style-type: disc;
+    }
+
     #particles-bg {
       position: fixed;
       top: 0;
@@ -27,29 +70,6 @@
       pointer-events: none;
     }
 
-    .product-image {
-      max-height: 300px;
-    }
-
-    .card-title {
-      color: #0d6efd;
-    }
-
-    ul.custom-specs {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul.custom-specs li {
-      font-size: 1rem;
-      padding: 0.5rem 0;
-    }
-
-    ul.custom-specs ul {
-      padding-left: 1.25rem;
-      list-style-type: disc;
-    }
-
     @media (max-width: 576px) {
       h1.display-5 {
         font-size: 1.8rem;
@@ -58,47 +78,45 @@
   </style>
 </head>
 <body>
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-5 fw-bold">Test Tube Stand</h1>
-      <p class="lead">Reliable and stable stand for holding test tubes securely during experiments and procedures.</p>
+
+  <div class="container">
+    <h1 class="text-center">Test Tube Stand</h1>
+    <h2 class="text-center mt-3">Reliable and stable stand for holding test tubes securely during experiments and procedures.</h2>
+
+    <!-- Product Image -->
+    <div class="text-center">
+      <img src="../assets/images/black-phosphorus-model.jpg" alt="Test Tube Stand" class="product-img" />
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-        <!-- Image Section -->
-        <div class="text-center mb-4">
-          <img src="../assets/images/black-phosphorus-model.jpg" alt="Test Tube Stand" class="img-fluid rounded shadow-sm product-image" />
-        </div>
+    <!-- Description -->
+    <p>
+      The Test Tube Stand is an essential laboratory tool designed to hold test tubes securely during various experiments. It is available in durable plastic or stainless steel, ensuring long-lasting use in demanding lab environments.
+    </p>
 
-        <!-- Technical Specifications -->
-        <div class="p-4 bg-white rounded shadow-sm">
-          <h2 class="card-title mb-4 text-center">Technical Specifications</h2>
-          <ul class="custom-specs">
-            <li><strong>Product Code:</strong> 2214</li>
-            <li><strong>Material:</strong> Durable plastic or stainless steel</li>
-            <li><strong>Design:</strong> Fixed configuration for six test tubes</li>
-            <li><strong>Tube Compatibility:</strong>
-              <ul>
-                <li>Holds 2 tubes of 25 mm diameter</li>
-                <li>Holds 4 tubes of 15 mm diameter</li>
-              </ul>
-            </li>
-            <li><strong>Function:</strong> Supports test tubes during experiments or post-use drainage</li>
-            <li><strong>Size:</strong> Standard six-tube capacity</li>
-            <li><strong>Stability:</strong> Designed for safe, stable usage on lab benches</li>
-            <li><strong>Design Features:</strong> Mountable in acrylic showcases; packaged in durable corrugated boxes</li>
-            <li><strong>Customization:</strong> Additional holes available upon request (extra charges may apply)</li>
-          </ul>
-        </div>
-
-
-      </div>
-    </div>
+    <!-- Technical Specifications -->
+    <h3 class="section-title">Technical Specifications</h3>
+    <ul class="custom-specs">
+      <li><strong>Product Code:</strong> 2214</li>
+      <li><strong>Material:</strong> Durable plastic or stainless steel</li>
+      <li><strong>Design:</strong> Fixed configuration for six test tubes</li>
+      <li><strong>Tube Compatibility:</strong>
+        <ul>
+          <li>Holds 2 tubes of 25 mm diameter</li>
+          <li>Holds 4 tubes of 15 mm diameter</li>
+        </ul>
+      </li>
+      <li><strong>Function:</strong> Supports test tubes during experiments or post-use drainage</li>
+      <li><strong>Size:</strong> Standard six-tube capacity</li>
+      <li><strong>Stability:</strong> Designed for safe, stable usage on lab benches</li>
+      <li><strong>Design Features:</strong> Mountable in acrylic showcases; packaged in durable corrugated boxes</li>
+      <li><strong>Customization:</strong> Additional holes available upon request (extra charges may apply)</li>
+    </ul>
   </div>
 
+  <!-- Background Particles -->
   <canvas id="particles-bg"></canvas>
   <script src="./products-page/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

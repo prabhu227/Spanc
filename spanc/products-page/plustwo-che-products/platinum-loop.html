@@ -11,14 +11,42 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
   <style>
     body {
       font-family: 'Ubuntu', sans-serif;
-      background-color: #f9f9f9;
+      background-color: #f8f9fa;
+      padding-top: 2rem;
     }
-
+    .container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      font-weight: bold;
+      color: #000;
+    }
+    .section-title {
+      margin-top: 2rem;
+      color: #34495e;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+    .product-img {
+      max-width: 100%;
+      height: 300px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
     #particles-bg {
       position: fixed;
       top: 0;
@@ -29,64 +57,41 @@
       filter: blur(3px);
       pointer-events: none;
     }
-
-    .product-image {
-      max-height: 300px;
-    }
-
-    .card-title {
-      color: #0d6efd;
-    }
-
-    ul.custom-specs li {
-      font-size: 1rem;
-      padding: 0.5rem 0;
-      border: none;
-    }
-
-    @media (max-width: 576px) {
-      h1.display-5 {
-        font-size: 1.8rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-5 fw-bold">Platinum Loop</h1>
-      <p class="lead">High-quality platinum loop for laboratory use, ideal for precise and high-temperature applications</p>
+
+  <div class="container">
+    <h1 class="text-center">Platinum Loop</h1>
+    <h2 class="text-center mt-3">High-quality platinum loop for precise laboratory sampling and high-temperature applications</h2>
+
+    <!-- Product Image -->
+    <div class="text-center">
+      <img src="../assets/images/black-phosphorus-model.jpg" alt="Platinum Loop" class="product-img" />
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-        <!-- Image Section -->
-        <div class="text-center mb-4">
-          <img src="../assets/images/black-phosphorus-model.jpg" alt="Platinum Loop" class="img-fluid rounded shadow-sm product-image" />
-        </div>
+    <!-- Description -->
+    <p>
+      The Platinum Loop is a precision laboratory tool crafted from high-purity platinum, designed for durability and high-temperature resistance. Used commonly in microbiological flame tests and chemical analysis, the loop ensures clean, consistent sampling in demanding environments.
+    </p>
 
-        <!-- Technical Specifications -->
-        <div class="p-4 bg-white rounded shadow-sm">
-          <h2 class="card-title mb-4 text-center">Technical Specifications</h2>
-          <ul class="custom-specs">
-            <li>Material: Platinum</li>
-            <li>Shape: Loop (Round)</li>
-            <li>Loop Size: 5 mm, 10 mm, 15 mm (Custom sizes available upon request)</li>
-            <li>Length: 200 mm (customizable length upon request)</li>
-            <li>Usage: Ideal for flame tests, sampling, and laboratory heating tasks</li>
-            <li>Temperature Resistance: Can withstand up to 1700°C</li>
-            <li>Purity: 99.95% Platinum</li>
-            <li>Finish: Smooth, polished finish for durability and precision handling</li>
-          </ul>
-        </div>
-
-
-      </div>
-    </div>
+    <!-- Technical Specifications -->
+    <h3 class="section-title">Technical Specifications</h3>
+    <ul>
+      <li><strong>Material:</strong> 99.95% Pure Platinum</li>
+      <li><strong>Shape:</strong> Loop (Round)</li>
+      <li><strong>Loop Size:</strong> 5 mm, 10 mm, 15 mm (Custom sizes available)</li>
+      <li><strong>Length:</strong> 200 mm (Custom lengths available upon request)</li>
+      <li><strong>Usage:</strong> Ideal for flame tests, sampling, inoculation, and heat transfer tasks</li>
+      <li><strong>Temperature Resistance:</strong> Up to 1700°C</li>
+      <li><strong>Finish:</strong> Smooth, polished surface for precise and safe handling</li>
+    </ul>
   </div>
 
+  <!-- Background Particles -->
   <canvas id="particles-bg"></canvas>
   <script src="./products-page/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

@@ -18,6 +18,44 @@
       background-color: #f9f9f9;
     }
 
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-weight: bold;
+      color: #000;
+    }
+
+    .product-img {
+      max-width: 100%;
+      height: 300px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      margin-top: 2rem;
+      color: #34495e;
+    }
+
+    ul.custom-specs {
+      padding-left: 1.5rem;
+    }
+
+    ul.custom-specs li {
+      margin-bottom: 0.5rem;
+    }
+
     #particles-bg {
       position: fixed;
       top: 0;
@@ -28,63 +66,39 @@
       filter: blur(3px);
       pointer-events: none;
     }
-
-    .product-image {
-      max-height: 300px;
-    }
-
-    .card-title {
-      color: #0d6efd;
-    }
-
-    ul.custom-specs {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul.custom-specs li {
-      font-size: 1rem;
-      padding: 0.5rem 0;
-    }
-
-    @media (max-width: 576px) {
-      h1.display-5 {
-        font-size: 1.8rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-5 fw-bold">Spirit Lamp Brass</h1>
-      <p class="lead">Die-pressed, jointless and jointed design for laboratory heating applications</p>
+
+  <div class="container">
+    <h1 class="text-center">Spirit Lamp Brass</h1>
+    <h2 class="text-center mt-3">Die-pressed, jointless, and jointed designs for laboratory heating applications</h2>
+
+    <!-- Product Image -->
+    <div class="text-center">
+      <img src="../assets/images/black-phosphorus-model.jpg" alt="Brass Spirit Lamp" class="product-img" />
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-        <!-- Image Section -->
-        <div class="text-center mb-4">
-          <img src="../assets/images/black-phosphorus-model.jpg" alt="Brass Spirit Lamp" class="img-fluid rounded shadow-sm product-image" />
-        </div>
+    <!-- Description -->
+    <p>
+      The Spirit Lamp Brass is designed for laboratory heating applications, offering both die-pressed and jointed styles. Available in a compact 4 oz size, it is ideal for heating small amounts of substances in laboratory settings.
+    </p>
 
-        <!-- Technical Specifications -->
-        <div class="p-4 bg-white rounded shadow-sm">
-          <h2 class="card-title mb-4 text-center">Technical Specifications</h2>
-          <ul class="custom-specs">
-            <li>Material: Brass</li>
-            <li>Size: 4 oz</li>
-            <li>Type: Die Pressed</li>
-            <li>Styles: Jointless, Jointed</li>
-            <li>Uses: Laboratory heating</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <!-- Technical Specifications -->
+    <h3 class="section-title">Technical Specifications</h3>
+    <ul class="custom-specs">
+      <li><strong>Material:</strong> Brass</li>
+      <li><strong>Size:</strong> 4 oz</li>
+      <li><strong>Type:</strong> Die Pressed</li>
+      <li><strong>Styles:</strong> Jointless, Jointed</li>
+      <li><strong>Uses:</strong> Laboratory heating</li>
+    </ul>
   </div>
 
+  <!-- Background Particles -->
   <canvas id="particles-bg"></canvas>
   <script src="./products-page/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

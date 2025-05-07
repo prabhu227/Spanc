@@ -18,6 +18,44 @@
       background-color: #f9f9f9;
     }
 
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-weight: bold;
+      color: #000;
+    }
+
+    .product-img {
+      max-width: 100%;
+      height: 300px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      margin-top: 2rem;
+      color: #34495e;
+    }
+
+    ul.custom-specs {
+      padding-left: 1.5rem;
+    }
+
+    ul.custom-specs li {
+      margin-bottom: 0.5rem;
+    }
+
     #particles-bg {
       position: fixed;
       top: 0;
@@ -28,79 +66,55 @@
       filter: blur(3px);
       pointer-events: none;
     }
-
-    .product-image {
-      max-height: 300px;
-    }
-
-    .card-title {
-      color: #0d6efd;
-    }
-
-    ul.custom-specs {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul.custom-specs li {
-      font-size: 1rem;
-      padding: 0.5rem 0;
-    }
-
-    @media (max-width: 576px) {
-      h1.display-5 {
-        font-size: 1.8rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-5 fw-bold">Sodium Chloride / Hydrocarbon Model</h1>
-      <p class="lead">Educational models designed to demonstrate the molecular structures of sodium chloride and various hydrocarbons.</p>
+
+  <div class="container">
+    <h1 class="text-center">Sodium Chloride / Hydrocarbon Model</h1>
+    <h2 class="text-center mt-3">Educational models designed to demonstrate the molecular structures of sodium chloride and various hydrocarbons.</h2>
+
+    <!-- Product Image -->
+    <div class="text-center">
+      <img src="../assets/images/sodium-hydrocarbon-model.jpg" alt="Sodium Chloride and Hydrocarbon Model" class="product-img" />
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-        <!-- Image Section -->
-        <div class="text-center mb-4">
-          <img src="../assets/images/sodium-hydrocarbon-model.jpg" alt="Sodium Chloride and Hydrocarbon Model" class="img-fluid rounded shadow-sm product-image" />
-        </div>
+    <!-- Description -->
+    <p>
+      The Sodium Chloride and Hydrocarbon Models offer a comprehensive visual representation of the atomic arrangements and molecular bonding found in salts and hydrocarbons. Ideal for chemistry education and laboratory demonstrations.
+    </p>
 
-        <!-- Technical Specifications -->
-        <div class="p-4 bg-white rounded shadow-sm">
-          <h2 class="card-title mb-4 text-center">Technical Specifications</h2>
-          <ul class="custom-specs">
-            <li>Product Code: 2113</li>
-            <li>Model Types: Sodium Chloride and Hydrocarbon Models</li>
-            <li>Hydrocarbon Types:
-              <ul>
-                <li>Methane</li>
-                <li>Ethane</li>
-                <li>Butane</li>
-                <li>Propane</li>
-                <li>Iso-butane</li>
-                <li>N-pentane</li>
-                <li>Iso-pentane</li>
-                <li>Neo-pentane</li>
-                <li>Ethene</li>
-              </ul>
-            </li>
-            <li>Structure: 3D representations showing atomic arrangements and molecular bonding</li>
-            <li>Material: High-quality, durable plastic or acrylic</li>
-            <li>Function: Visual aid for understanding molecular structures of salts and hydrocarbons</li>
-            <li>Application: Ideal for chemistry education in classrooms and laboratories</li>
-            <li>Size: Varies by model, typically ranging from 6 to 12 inches in height</li>
-            <li>Additional Information: Comes with instructional materials for enhanced learning</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <!-- Technical Specifications -->
+    <h3 class="section-title">Technical Specifications</h3>
+    <ul class="custom-specs">
+      <li><strong>Product Code:</strong> 2113</li>
+      <li><strong>Model Types:</strong> Sodium Chloride and Hydrocarbon Models</li>
+      <li><strong>Hydrocarbon Types:</strong>
+        <ul>
+          <li>Methane</li>
+          <li>Ethane</li>
+          <li>Butane</li>
+          <li>Propane</li>
+          <li>Iso-butane</li>
+          <li>N-pentane</li>
+          <li>Iso-pentane</li>
+          <li>Neo-pentane</li>
+          <li>Ethene</li>
+        </ul>
+      </li>
+      <li><strong>Structure:</strong> 3D representations showing atomic arrangements and molecular bonding</li>
+      <li><strong>Material:</strong> High-quality, durable plastic or acrylic</li>
+      <li><strong>Function:</strong> Visual aid for understanding molecular structures of salts and hydrocarbons</li>
+      <li><strong>Application:</strong> Ideal for chemistry education in classrooms and laboratories</li>
+      <li><strong>Size:</strong> Varies by model, typically ranging from 6 to 12 inches in height</li>
+      <li><strong>Additional Information:</strong> Comes with instructional materials for enhanced learning</li>
+    </ul>
   </div>
 
+  <!-- Background Particles -->
   <canvas id="particles-bg"></canvas>
   <script src="./products-page/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

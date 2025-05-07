@@ -9,11 +9,51 @@
   <title>Universal Condenser Clamp (2067) - Spanco Tek</title>
   <link rel="icon" href="../assets/images/spancotek LOGO[1].png" type="image/x-icon" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: "Ubuntu", sans-serif;
       background-color: #f9f9f9;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-weight: bold;
+      color: #000;
+    }
+
+    .product-img {
+      max-width: 100%;
+      height: 300px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      margin-top: 2rem;
+      color: #34495e;
+    }
+
+    ul.custom-specs {
+      padding-left: 1.5rem;
+    }
+
+    ul.custom-specs li {
+      margin-bottom: 0.5rem;
     }
 
     #particles-bg {
@@ -26,69 +66,43 @@
       filter: blur(3px);
       pointer-events: none;
     }
-
-    .product-image {
-      max-height: 300px;
-    }
-
-    .card-title {
-      color: #0d6efd;
-    }
-
-    ul.custom-specs {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul.custom-specs li {
-      font-size: 1rem;
-      padding: 0.5rem 0;
-    }
-
-    @media (max-width: 576px) {
-      h1.display-5 {
-        font-size: 1.8rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-5 fw-bold">Universal Condenser Clamp (2067)</h1>
-      <p class="lead">Multi-functional clamp designed to securely hold condensers and glassware during lab experiments.</p>
+
+  <div class="container">
+    <h1 class="text-center">Universal Condenser Clamp (2067)</h1>
+    <h2 class="text-center mt-3">Multi-functional clamp designed for secure holding of condensers in laboratory setups</h2>
+
+    <!-- Product Image -->
+    <div class="text-center">
+      <img src="../assets/images/universal-condenser-clamp.jpg" alt="Universal Condenser Clamp" class="product-img" />
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-        <!-- Image Section -->
-        <div class="text-center mb-4">
-          <img src="../assets/images/universal-condenser-clamp.jpg" alt="Universal Condenser Clamp" class="img-fluid rounded shadow-sm product-image" />
-        </div>
+    <!-- Product Description -->
+    <p>
+      The Universal Condenser Clamp (2067) is designed to securely hold condensers and other laboratory glassware during distillation, condensation, and other similar experiments. With adjustable cork-lined jaws, this clamp offers stability and protection for fragile glass items while in use.
+    </p>
 
-        <!-- Technical Specifications -->
-        <div class="p-4 bg-white rounded shadow-sm">
-          <h2 class="card-title mb-4 text-center">Technical Specifications</h2>
-          <ul class="custom-specs">
-            <li><strong>Product Code:</strong> 2067</li>
-            <li><strong>Material:</strong> High-quality metal with corrosion-resistant finish</li>
-            <li><strong>Jaw Type:</strong> Cork-lined half-round cylindrical jaws</li>
-            <li><strong>Mounting:</strong> Includes a boss head for easy attachment to laboratory stands</li>
-            <li><strong>Compatibility:</strong> Suitable for a variety of laboratory glassware such as condensers</li>
-            <li><strong>Design:</strong> Adjustable design for secure and stable hold of various sizes of condensers</li>
-            <li><strong>Application:</strong> Ideal for distillation, condensation, and similar experiments</li>
-            <li><strong>Durability:</strong> Sturdy construction with long-lasting performance</li>
-            <li><strong>Dimensions:</strong> Adjustable to fit a range of condenser sizes</li>
-          </ul>
-        </div>
-
-
-      </div>
-    </div>
+    <!-- Technical Specifications -->
+    <h3 class="section-title">Technical Specifications</h3>
+    <ul class="custom-specs">
+      <li><strong>Product Code:</strong> 2067</li>
+      <li><strong>Material:</strong> High-quality metal with corrosion-resistant finish</li>
+      <li><strong>Jaw Type:</strong> Cork-lined half-round cylindrical jaws for secure grip</li>
+      <li><strong>Mounting:</strong> Includes a boss head for easy attachment to laboratory stands</li>
+      <li><strong>Compatibility:</strong> Suitable for a variety of laboratory glassware such as condensers</li>
+      <li><strong>Design:</strong> Adjustable design for secure and stable hold of various sizes of condensers</li>
+      <li><strong>Application:</strong> Ideal for distillation, condensation, and similar experiments</li>
+      <li><strong>Durability:</strong> Sturdy construction with long-lasting performance</li>
+      <li><strong>Dimensions:</strong> Adjustable to fit a range of condenser sizes</li>
+    </ul>
   </div>
 
+  <!-- Background Particles -->
   <canvas id="particles-bg"></canvas>
   <script src="./products-page/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

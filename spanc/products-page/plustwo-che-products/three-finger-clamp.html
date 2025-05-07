@@ -16,6 +16,49 @@
       background-color: #f9f9f9;
     }
 
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-weight: bold;
+      color: #000;
+    }
+
+    .product-img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      margin-top: 2rem;
+      color: #34495e;
+    }
+
+    ul.custom-specs {
+      padding-left: 1.5rem;
+    }
+
+    ul.custom-specs li {
+      margin-bottom: 0.5rem;
+    }
+
+    ul.custom-specs ul {
+      padding-left: 1.5rem;
+      list-style-type: disc;
+    }
+
     #particles-bg {
       position: fixed;
       top: 0;
@@ -27,24 +70,6 @@
       pointer-events: none;
     }
 
-    .product-image {
-      max-height: 300px;
-    }
-
-    .card-title {
-      color: #0d6efd;
-    }
-
-    ul.custom-specs {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul.custom-specs li {
-      padding: 0.5rem 0;
-      font-size: 1rem;
-    }
-
     @media (max-width: 576px) {
       h1.display-5 {
         font-size: 1.8rem;
@@ -53,42 +78,40 @@
   </style>
 </head>
 <body>
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-5 fw-bold">Three Finger Clamp (2068)</h1>
-      <p class="lead">Aluminium clamp with rubber-covered fingers for a secure grip in laboratory environments.</p>
+
+  <div class="container">
+    <h1 class="text-center">Three Finger Clamp (2068)</h1>
+    <h2 class="text-center mt-3">Aluminium clamp with rubber-covered fingers for a secure grip in laboratory environments.</h2>
+
+    <!-- Product Image -->
+    <div class="text-center">
+      <img src="../assets/images/black-phosphorus-model.jpg" alt="Three Finger Clamp (2068)" class="product-img" />
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-        <!-- Image Section -->
-        <div class="text-center mb-4">
-          <img src="../assets/images/black-phosphorus-model.jpg" alt="Three Finger Clamp (2068)" class="img-fluid rounded shadow-sm product-image" />
-        </div>
+    <!-- Description -->
+    <p>
+      The Three Finger Clamp (2068) is an essential tool for securing laboratory equipment. Made from durable aluminium with rubber-covered iron rods, it ensures a strong and secure grip while protecting your apparatus. The clamp is ideal for use in various laboratory settings where precision and safety are critical.
+    </p>
 
-        <!-- Technical Specifications -->
-        <div class="p-4 bg-white rounded shadow-sm">
-          <h2 class="card-title mb-4 text-center">Technical Specifications</h2>
-          <ul class="custom-specs">
-            <li><strong>Product Code:</strong> 2068</li>
-            <li><strong>Material:</strong> Aluminium body with rubber-covered iron rod</li>
-            <li><strong>Design:</strong> Ergonomically structured with three fingers for enhanced grip</li>
-            <li><strong>Clamp Mechanism:</strong> Three adjustable jaws for versatile clamping</li>
-            <li><strong>Rod Coating:</strong> Rubber-covered for secure holding and apparatus protection</li>
-            <li><strong>Application:</strong> Suitable for holding various labware and glassware</li>
-            <li><strong>Durability:</strong> Built for long-term use in laboratory environments</li>
-            <li><strong>Mounting:</strong> Secure and easy-to-use attachment mechanism</li>
-            <li><strong>Finish:</strong> Natural aluminium finish with rubber-coated contact points</li>
-          </ul>
-        </div>
-
-
-      </div>
-    </div>
+    <!-- Technical Specifications -->
+    <h3 class="section-title">Technical Specifications</h3>
+    <ul class="custom-specs">
+      <li><strong>Product Code:</strong> 2068</li>
+      <li><strong>Material:</strong> Aluminium body with rubber-covered iron rod</li>
+      <li><strong>Design:</strong> Ergonomically structured with three fingers for enhanced grip</li>
+      <li><strong>Clamp Mechanism:</strong> Three adjustable jaws for versatile clamping</li>
+      <li><strong>Rod Coating:</strong> Rubber-covered for secure holding and apparatus protection</li>
+      <li><strong>Application:</strong> Suitable for holding various labware and glassware</li>
+      <li><strong>Durability:</strong> Built for long-term use in laboratory environments</li>
+      <li><strong>Mounting:</strong> Secure and easy-to-use attachment mechanism</li>
+      <li><strong>Finish:</strong> Natural aluminium finish with rubber-coated contact points</li>
+    </ul>
   </div>
 
+  <!-- Background Particles -->
   <canvas id="particles-bg"></canvas>
   <script src="./products-page/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

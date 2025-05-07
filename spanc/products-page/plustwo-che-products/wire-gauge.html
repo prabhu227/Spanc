@@ -16,6 +16,49 @@
       background-color: #f9f9f9;
     }
 
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-weight: bold;
+      color: #000;
+    }
+
+    .product-img {
+      max-width: 100%;
+      height: 300px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      margin-top: 2rem;
+      color: #34495e;
+    }
+
+    ul.custom-specs {
+      padding-left: 1.5rem;
+    }
+
+    ul.custom-specs li {
+      margin-bottom: 0.5rem;
+    }
+
+    ul.custom-specs li ul {
+      padding-left: 1.2rem;
+      margin-top: 0.25rem;
+    }
+
     #particles-bg {
       position: fixed;
       top: 0;
@@ -26,74 +69,43 @@
       filter: blur(3px);
       pointer-events: none;
     }
-
-    .product-image {
-      max-height: 300px;
-    }
-
-    .card-title {
-      color: #0d6efd;
-    }
-
-    ul.custom-specs {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul.custom-specs li {
-      font-size: 1rem;
-      padding: 0.5rem 0;
-    }
-
-    ul.custom-specs li ul {
-      padding-left: 1.2rem;
-      margin-top: 0.25rem;
-    }
-
-    @media (max-width: 576px) {
-      h1.display-5 {
-        font-size: 1.8rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-5 fw-bold">Wire Gauge</h1>
-      <p class="lead">Durable gauze for heating flasks and beakers safely over Bunsen burners.</p>
+
+  <div class="container">
+    <h1 class="text-center">Wire Gauge</h1>
+    <h2 class="text-center mt-3">Durable gauze for heating flasks and beakers safely over Bunsen burners</h2>
+
+    <!-- Product Image -->
+    <div class="text-center">
+      <img src="../assets/images/black-phosphorus-model.jpg" alt="Wire Gauge for Laboratory Heating" class="product-img" />
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-        <!-- Image Section -->
-        <div class="text-center mb-4">
-          <img src="../assets/images/black-phosphorus-model.jpg" alt="Wire Gauge for Laboratory Heating" class="img-fluid rounded shadow-sm product-image" />
-        </div>
+    <!-- Product Description -->
+    <p>
+      The Wire Gauge is essential in laboratories, designed to evenly distribute heat under flasks and beakers when used over a Bunsen burner or tripod stand. Available in asbestos and full-metal frame variants, it ensures safety and durability during laboratory heating operations.
+    </p>
 
-        <!-- Specifications -->
-        <div class="p-4 bg-white rounded shadow-sm">
-          <h2 class="card-title mb-4 text-center">Technical Specifications</h2>
-          <ul class="custom-specs">
-            <li><strong>Material:</strong> Iron mesh with asbestos coating or full metal frame</li>
-            <li><strong>Variants:</strong>
-              <ul>
-                <li>No. 1: 6" x 6" with asbestos center</li>
-                <li>No. 2: 6" x 6" with full metal frame (Superior quality)</li>
-              </ul>
-            </li>
-            <li><strong>Purpose:</strong> Distributes heat evenly under flasks and beakers</li>
-            <li><strong>Application:</strong> Commonly used with Tripod Stands or Ring Clamps in chemistry labs</li>
-          </ul>
-        </div>
-
-
-      </div>
-    </div>
+    <!-- Technical Specifications -->
+    <h3 class="section-title">Technical Specifications</h3>
+    <ul class="custom-specs">
+      <li><strong>Material:</strong> Iron mesh with asbestos coating or full metal frame</li>
+      <li><strong>Variants:</strong>
+        <ul>
+          <li>No. 1: 6" x 6" with asbestos center</li>
+          <li>No. 2: 6" x 6" with full metal frame (Superior quality)</li>
+        </ul>
+      </li>
+      <li><strong>Purpose:</strong> Distributes heat evenly under flasks and beakers</li>
+      <li><strong>Application:</strong> Commonly used with Tripod Stands or Ring Clamps in chemistry labs</li>
+    </ul>
   </div>
 
+  <!-- Background Particles -->
   <canvas id="particles-bg"></canvas>
   <script src="./products-page/background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
