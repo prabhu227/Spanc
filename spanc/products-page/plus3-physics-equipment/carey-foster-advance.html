@@ -2,88 +2,129 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LOW RESISTANCE BY CAREY FOSTER’S BRIDGE | Product Specifications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Apparatus to determine low resistance using Carey Foster’s Bridge with precision galvanometer and copper wire bridge." />
   <meta name="keywords" content="Carey Foster’s Bridge, Low Resistance Measurement, Physics Lab, Electrical Bridge, SPANCO TEK" />
   <meta name="author" content="Spanco Tek" />
-  <link rel="icon" href="/spanc/assets/images/spancotek LOGO[1].png" type="image/x-icon" />
+  <link rel="icon" href="/spanc/assets/images/spancotek%20LOGO[1].png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <title>Low Resistance by Carey Foster’s Bridge - Product Specifications</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f5f5f5;
-      padding: 20px;
+      font-family: 'Ubuntu', sans-serif;
+      background-color: #f4f7fc;
+      margin: 0;
+      padding: 0;
     }
-    .specs-container {
-      background: #fff;
-      border-radius: 12px;
-      padding: 30px;
-      max-width: 1000px;
-      margin: auto;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
+
+    .image-box {
       text-align: center;
+      margin-bottom: 25px;
     }
-    .product-img {
+
+    .image-box img {
       width: 100%;
-      max-height: 300px;
-      object-fit: contain;
-      margin-bottom: 20px;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid #ccc;
     }
-    .spec-title {
-      font-weight: bold;
-      font-size: 2rem;
-      border-bottom: 2px solid #007bff;
-      display: inline-block;
-      padding-bottom: 8px;
-      margin-bottom: 30px;
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      line-height: 1.6;
     }
-    ul.spec-list {
-      list-style: none;
-      padding-left: 0;
-      text-align: left;
-      max-width: 800px;
-      margin: 0 auto 2rem auto;
+
+    section {
+      margin-bottom: 25px;
     }
-    h4 {
-      margin-top: 2rem;
-      color: #198754;
+
+    .note {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #7f8c8d;
+      margin-top: 30px;
     }
   </style>
 </head>
-
 <body>
-  <div class="specs-container">
-    <img src="path-to-your-image.jpg" alt="Low Resistance by Carey Foster's Bridge" class="product-img" />
 
-    <h2 class="text-primary">LOW RESISTANCE BY CAREY FOSTER’S BRIDGE</h2>
-    <p><strong class="text-secondary">Model Number:</strong> SPML-019</p>
+  <div class="container">
+    <h1 class="text-center mt-5">LOW RESISTANCE BY CAREY FOSTER’S BRIDGE</h1>
+    <p class="text-center text-muted">Model Number: <strong>SPML-019</strong></p>
 
-    <h2 class="spec-title">Technical Specifications</h2>
-    <ul class="spec-list">
-      <li>Brass terminal blocks for easy connections</li>
-      <li>High-quality uniform copper wire as bridge wire</li>
-      <li>Mounted on a strong wooden or acrylic base</li>
-      <li>Length scale marked in millimeters</li>
-      <li>Adjustable sliding jockey</li>
-      <li>Accurate resistance determination in the milliohm range</li>
-    </ul>
+    <!-- Product Image -->
+    <div class="image-box">
+      <img src="path-to-your-image.jpg" alt="Low Resistance by Carey Foster's Bridge">
+    </div>
 
-    <h4>Experiment</h4>
-    <ul class="spec-list">
-      <li>To determine an unknown low resistance using Carey Foster’s Bridge principle</li>
-    </ul>
+    <!-- Technical Specifications -->
+    <section class="specifications">
+      <h2>Technical Specifications</h2>
+      <ul>
+        <li>Brass terminal blocks for easy connections</li>
+        <li>High-quality uniform copper wire as bridge wire</li>
+        <li>Mounted on a strong wooden or acrylic base</li>
+        <li>Length scale marked in millimeters</li>
+        <li>Adjustable sliding jockey</li>
+        <li>Accurate resistance determination in the milliohm range</li>
+      </ul>
+    </section>
 
-    <h4>Scope of Supply</h4>
-    <ul class="spec-list">
-      <li>Carey Foster’s Bridge – 1 No</li>
-      <li>Connecting Wires – 1 Set</li>
-      <li>Instruction Manual – 1 No</li>
-    </ul>
+    <!-- Experiment Section -->
+    <section class="experiment">
+      <h2>Experiment</h2>
+      <p>To determine an unknown low resistance using Carey Foster’s Bridge principle.</p>
+    </section>
+
+    <!-- Scope of Supply Section -->
+    <section class="scope">
+      <h2>Scope of Supply</h2>
+      <ul id="supplyList"></ul>
+    </section>
+
+    <!-- Optional Accessories Section -->
+    <section class="optional-accessories">
+      <h2>Optional Accessories (Not Supplied)</h2>
+      <ul>
+        <li>Precision Galvanometer</li>
+        <li>Digital Multimeter</li>
+      </ul>
+    </section>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const supplyItems = [
+      "Carey Foster’s Bridge – 1 No",
+      "Connecting Wires – 1 Set",
+      "Instruction Manual – 1 No"
+    ];
+
+    const supplyList = document.getElementById("supplyList");
+    supplyItems.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      supplyList.appendChild(li);
+    });
+  </script>
+
   <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
   <script src="/background.js"></script>
 </body>

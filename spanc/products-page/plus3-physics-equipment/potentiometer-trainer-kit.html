@@ -3,100 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LOW RESISTANCE USING POTENTIOMETER | Product Specifications</title>
   <meta name="description" content="Lab trainer kit for measuring low resistance using potentiometer. Includes galvanometer, regulated power supply, standard resistors, and potentiometer wire." />
   <meta name="keywords" content="Potentiometer, Low Resistance Measurement, Physics Experiment, SPML-020, Electrical Lab Equipment" />
   <meta name="author" content="Spanco Tek" />
-  <link rel="icon" href="/spanc/assets/images/spancotek LOGO[1].png" type="image/x-icon" />
+  <title>Low Resistance Using Potentiometer - Product Specifications</title>
+  <link rel="icon" href="/spanc/assets/images/spancotek%20LOGO[1].png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f5f5f5;
-      padding: 20px;
+      font-family: 'Ubuntu', sans-serif;
+      background-color: #f4f7fc;
+      margin: 0;
+      padding: 0;
     }
-    .specs-container {
-      background: #fff;
-      border-radius: 12px;
-      padding: 30px;
-      max-width: 1000px;
-      margin: auto;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
+
+    .image-box {
       text-align: center;
+      margin-bottom: 25px;
     }
-    .product-img {
+
+    .image-box img {
       width: 100%;
-      max-height: 300px;
-      object-fit: contain;
-      margin-bottom: 20px;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid #ccc;
     }
-    .spec-title {
-      font-weight: bold;
-      font-size: 2rem;
-      border-bottom: 2px solid #007bff;
-      display: inline-block;
-      padding-bottom: 8px;
-      margin-bottom: 30px;
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      line-height: 1.6;
     }
-    ul.spec-list {
-      list-style: none;
-      padding-left: 0;
-      text-align: left;
-      max-width: 800px;
-      margin: 0 auto 2rem auto;
+
+    section {
+      margin-bottom: 25px;
     }
-    .footer-note {
-      text-align: center;
-      margin-top: 40px;
+
+    .note {
+      font-size: 0.9rem;
       font-style: italic;
-      color: #555;
-    }
-    h4 {
-      margin-top: 2rem;
-      color: #198754;
+      color: #7f8c8d;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
 
-  <div class="specs-container">
-    <img src="https://via.placeholder.com/600x400?text=Potentiometer+Kit" alt="Potentiometer Setup" class="product-img" />
+  <div class="container">
+    <h1 class="text-center mt-5">LOW RESISTANCE USING POTENTIOMETER</h1>
+    <p class="text-center text-muted"><strong>Model Number:</strong> SPML-020</p>
 
-    <h2 class="text-primary">LOW RESISTANCE USING POTENTIOMETER</h2>
-    <p><strong class="text-secondary">Model Number:</strong> SPML-020</p>
-
-    <h2 class="spec-title">Technical Specifications</h2>
-    <ul class="spec-list">
-      <li>DC Regulated Fixed Power Supply: 2V / 150 mA</li>
-      <li>DC Regulated Variable Power Supply: 0–20V</li>
-      <li>Standard Cell: 1.018V DC</li>
-      <li>Unknown Resistors: 1Ω, 5Ω, 10Ω</li>
-      <li>Galvanometer - Range: 30-0-30 µA, Analog Display, Panel Size: 70mm x 60mm</li>
-      <li>Ammeter - Range: 0–100 mA, Analog Display, Panel Size: 70mm x 60mm</li>
-      <li>Potentiometer with Jockey – Wooden Base, Brass Blocks, 100 cm Scale with Knife-edge Jockey</li>
-      <li>Mains Supply: 230V / 50Hz AC</li>
-    </ul>
-
-    <h4>Experiment</h4>
-    <ul class="spec-list">
-      <li>To determine a low resistance using a potentiometer</li>
-    </ul>
-
-    <h4>Scope of Supply</h4>
-    <ul class="spec-list">
-      <li>Trainer Kit – 1 No</li>
-      <li>Instruction Manual</li>
-      <li>Potentiometer (10-wire) with Jockey – 1 No</li>
-    </ul>
-
-    <div class="footer-note">
-      *Design & Aesthetics are subject to change without prior notice due to continuous product improvement
+    <!-- Product Image -->
+    <div class="image-box">
+      <img src="https://via.placeholder.com/600x400?text=Potentiometer+Kit" alt="Potentiometer Setup">
     </div>
+
+    <!-- Experiment Section -->
+    <section class="experiment">
+      <h2>Experiment</h2>
+      <ul>
+        <li>To determine a low resistance using a potentiometer</li>
+      </ul>
+    </section>
+
+    <!-- Scope of Supply Section -->
+    <section class="scope">
+      <h2>Scope of Supply</h2>
+      <ul id="supplyList"></ul>
+    </section>
+
+    <!-- Technical Specifications Section -->
+    <section class="specifications">
+      <h2>Technical Specifications</h2>
+      <ul id="techSpecsList"></ul>
+    </section>
+
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const supplyItems = [
+      "Trainer Kit – 1 No",
+      "Instruction Manual",
+      "Potentiometer (10-wire) with Jockey – 1 No"
+    ];
+
+    const techSpecs = [
+      "DC Regulated Fixed Power Supply: 2V / 150 mA",
+      "DC Regulated Variable Power Supply: 0–20V",
+      "Standard Cell: 1.018V DC",
+      "Unknown Resistors: 1Ω, 5Ω, 10Ω",
+      "Galvanometer - Range: 30-0-30 µA, Analog Display, Panel Size: 70mm x 60mm",
+      "Ammeter - Range: 0–100 mA, Analog Display, Panel Size: 70mm x 60mm",
+      "Potentiometer with Jockey – Wooden Base, Brass Blocks, 100 cm Scale with Knife-edge Jockey",
+      "Mains Supply: 230V / 50Hz AC"
+    ];
+
+    supplyItems.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("supplyList").appendChild(li);
+    });
+
+    techSpecs.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("techSpecsList").appendChild(li);
+    });
+  </script>
+
   <canvas id="particles-bg" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
   <script src="/background.js"></script>
+
 </body>
 </html>
