@@ -1,13 +1,10 @@
-
-
-
 const footerHTML = `
 <footer class="bg-dark text-light pt-5">
   <div class="container">
     <div class="row justify-content-around text-start text-md-start">
       <div class="col-12 col-sm-6 col-md-3 mb-4">
         <div class="footer-logo mb-2">
-          <img src="/spanc/assets/images/spanco-logo-R2.png" alt="Company Logo" class="img-fluid" style="max-height: 50px;">
+          <img src="https://res.cloudinary.com/drijzhqfp/image/upload/v1746606152/Spancotek/spanco-logo-R2_yds37l.png" alt="Company Logo" class="img-fluid" style="max-height: 50px;">
         </div>
         <p class="mt-3 small">Leading provider of advanced laboratory equipment and solutions for research facilities worldwide.</p>
       </div>
